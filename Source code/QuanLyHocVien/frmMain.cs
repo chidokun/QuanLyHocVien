@@ -108,5 +108,40 @@ namespace QuanLyHocVien
             pnlWorkspace.Controls.Add(frm);
             frm.Show();
         }
+
+        private void btnGVDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            frmDoiMatKhau frm = new frmDoiMatKhau();
+            frm.ShowDialog();
+        }
+
+        private void btnHVDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            frmDoiMatKhau frm = new frmDoiMatKhau();
+            frm.ShowDialog();
+        }
+
+        private void btnGVThayDoiThongTin_Click(object sender, EventArgs e)
+        {
+            frmThayDoiThongTinGV frm = new frmThayDoiThongTinGV();
+            frm.ShowDialog();
+        }
+
+        private void btnHVThayDoiThongTin_Click(object sender, EventArgs e)
+        {
+            frmThayDoiThongTinHV frm = new frmThayDoiThongTinHV();
+            frm.ShowDialog();
+        }
+
+        private void btnBangDiem_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmBangDiem frm = new frmBangDiem();
+            frm.Dock = DockStyle.Fill;
+            frm.TopLevel = false;
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
     }
 }

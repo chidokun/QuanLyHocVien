@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBangDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBangDiem.Designer.cs">
+      <DependentUpon>frmBangDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCaiDatVaQuyDinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +62,12 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoiMatKhau.Designer.cs">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLapPhieuGhiDanh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +79,18 @@
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThayDoiThongTinGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThayDoiThongTinGV.Designer.cs">
+      <DependentUpon>frmThayDoiThongTinGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThayDoiThongTinHV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThayDoiThongTinHV.Designer.cs">
+      <DependentUpon>frmThayDoiThongTinHV.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThongTinPhanMem.cs">
       <SubType>Form</SubType>
@@ -88,17 +112,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBangDiem.resx">
+      <DependentUpon>frmBangDiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCaiDatVaQuyDinh.resx">
       <DependentUpon>frmCaiDatVaQuyDinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDoiMatKhau.resx">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLapPhieuGhiDanh.resx">
       <DependentUpon>frmLapPhieuGhiDanh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThayDoiThongTinGV.resx">
+      <DependentUpon>frmThayDoiThongTinGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThayDoiThongTinHV.resx">
+      <DependentUpon>frmThayDoiThongTinHV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongTinPhanMem.resx">
       <DependentUpon>frmThongTinPhanMem.cs</DependentUpon>
@@ -222,6 +258,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_Close_9dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_MatKhau_64dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_GiangVien_64dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_HocVien_64dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_BangDiem_64dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

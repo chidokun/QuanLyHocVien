@@ -63,6 +63,16 @@ namespace QuanLyHocVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_BangDiem_64dp {
+            get {
+                object obj = ResourceManager.GetObject("icon_BangDiem_64dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_BaoCaoHocVienTheoThang_32dp {
             get {
                 object obj = ResourceManager.GetObject("icon_BaoCaoHocVienTheoThang_32dp", resourceCulture);
@@ -123,6 +133,26 @@ namespace QuanLyHocVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_GiangVien_64dp {
+            get {
+                object obj = ResourceManager.GetObject("icon_GiangVien_64dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_HocVien_64dp {
+            get {
+                object obj = ResourceManager.GetObject("icon_HocVien_64dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_KhoaHoc_32dp {
             get {
                 object obj = ResourceManager.GetObject("icon_KhoaHoc_32dp", resourceCulture);
@@ -156,6 +186,16 @@ namespace QuanLyHocVien.Properties {
         internal static System.Drawing.Bitmap icon_MatKhau_32dp {
             get {
                 object obj = ResourceManager.GetObject("icon_MatKhau_32dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_MatKhau_64dp {
+            get {
+                object obj = ResourceManager.GetObject("icon_MatKhau_64dp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
