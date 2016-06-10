@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnHuyBo = new System.Windows.Forms.Button();
+            this.btnLuuThongTin = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -40,11 +42,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnHuyBo = new System.Windows.Forms.Button();
-            this.btnLuuThongTin = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,6 +60,38 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(536, 61);
             this.panel1.TabIndex = 0;
+            // 
+            // btnHuyBo
+            // 
+            this.btnHuyBo.BackColor = System.Drawing.Color.Silver;
+            this.btnHuyBo.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnHuyBo.FlatAppearance.BorderSize = 0;
+            this.btnHuyBo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnHuyBo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuyBo.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnHuyBo.Location = new System.Drawing.Point(417, 12);
+            this.btnHuyBo.Name = "btnHuyBo";
+            this.btnHuyBo.Size = new System.Drawing.Size(107, 37);
+            this.btnHuyBo.TabIndex = 3;
+            this.btnHuyBo.Text = "Hủy bỏ";
+            this.btnHuyBo.UseVisualStyleBackColor = false;
+            this.btnHuyBo.Click += new System.EventHandler(this.btnHuyBo_Click);
+            // 
+            // btnLuuThongTin
+            // 
+            this.btnLuuThongTin.BackColor = System.Drawing.Color.Silver;
+            this.btnLuuThongTin.FlatAppearance.BorderSize = 0;
+            this.btnLuuThongTin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnLuuThongTin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnLuuThongTin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuuThongTin.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnLuuThongTin.Location = new System.Drawing.Point(304, 12);
+            this.btnLuuThongTin.Name = "btnLuuThongTin";
+            this.btnLuuThongTin.Size = new System.Drawing.Size(107, 37);
+            this.btnLuuThongTin.TabIndex = 2;
+            this.btnLuuThongTin.Text = "Lưu thông tin";
+            this.btnLuuThongTin.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -167,6 +199,16 @@
             this.label4.TabIndex = 19;
             this.label4.Text = "Tên trung tâm:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QuanLyHocVien.Properties.Resources.icon_TrungTam_64dp;
+            this.pictureBox1.Location = new System.Drawing.Point(33, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -187,53 +229,13 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Chỉnh sửa thông tin Trung tâm";
             // 
-            // btnHuyBo
-            // 
-            this.btnHuyBo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnHuyBo.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnHuyBo.FlatAppearance.BorderSize = 0;
-            this.btnHuyBo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnHuyBo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuyBo.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnHuyBo.Location = new System.Drawing.Point(417, 12);
-            this.btnHuyBo.Name = "btnHuyBo";
-            this.btnHuyBo.Size = new System.Drawing.Size(107, 37);
-            this.btnHuyBo.TabIndex = 3;
-            this.btnHuyBo.Text = "Hủy bỏ";
-            this.btnHuyBo.UseVisualStyleBackColor = false;
-            this.btnHuyBo.Click += new System.EventHandler(this.btnHuyBo_Click);
-            // 
-            // btnLuuThongTin
-            // 
-            this.btnLuuThongTin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnLuuThongTin.FlatAppearance.BorderSize = 0;
-            this.btnLuuThongTin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnLuuThongTin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnLuuThongTin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuuThongTin.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnLuuThongTin.Location = new System.Drawing.Point(304, 12);
-            this.btnLuuThongTin.Name = "btnLuuThongTin";
-            this.btnLuuThongTin.Size = new System.Drawing.Size(107, 37);
-            this.btnLuuThongTin.TabIndex = 2;
-            this.btnLuuThongTin.Text = "Lưu thông tin";
-            this.btnLuuThongTin.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::QuanLyHocVien.Properties.Resources.icon_TrungTam_64dp;
-            this.pictureBox1.Location = new System.Drawing.Point(33, 23);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmThongTinTrungTam
             // 
+            this.AcceptButton = this.btnLuuThongTin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnHuyBo;
             this.ClientSize = new System.Drawing.Size(536, 406);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);

@@ -80,5 +80,33 @@ namespace QuanLyHocVien
             frmThongTinPhanMem frm = new frmThongTinPhanMem();
             frm.ShowDialog();
         }
+
+        private void btnCaiDatVaQuyDinh_Click(object sender, EventArgs e)
+        {
+            frmCaiDatVaQuyDinh frm = new frmCaiDatVaQuyDinh();
+            frm.ShowDialog();
+        }
+
+        private void btnTiepNhanHocVien_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmTiepNhanHocVien frm = new frmTiepNhanHocVien();
+            frm.Dock = DockStyle.Fill;
+            frm.TopLevel = false;
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnLapPhieuGhiDanh_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmLapPhieuGhiDanh frm = new frmLapPhieuGhiDanh();
+            frm.Dock = DockStyle.Fill;
+            frm.TopLevel = false;
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
     }
 }

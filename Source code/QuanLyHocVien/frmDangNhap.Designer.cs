@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnDangNhap = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
+            this.btnDangNhap = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -63,61 +63,17 @@
             this.panel1.Size = new System.Drawing.Size(549, 233);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // checkBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label1.ForeColor = System.Drawing.Color.Green;
-            this.label1.Location = new System.Drawing.Point(147, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Chào mừng";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::QuanLyHocVien.Properties.Resources.icon_DangNhap_64dp;
-            this.pictureBox1.Location = new System.Drawing.Point(53, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(149, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(210, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Vui lòng đăng nhập trước khi sử dụng.";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(149, 70);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(345, 15);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Nếu chưa có tài khoản đăng nhập, vui lòng liên hệ quản trị viên.";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(98, 115);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 15);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Tên đăng nhập:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.textBox1.Location = new System.Drawing.Point(202, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(220, 25);
-            this.textBox1.TabIndex = 5;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(202, 192);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(182, 19);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "Lưu tên đăng nhập, mật khẩu";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // textBox2
             // 
@@ -136,17 +92,61 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Mật khẩu:";
             // 
-            // checkBox1
+            // textBox1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(202, 192);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(182, 19);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Lưu tên đăng nhập, mật khẩu";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.textBox1.Location = new System.Drawing.Point(202, 112);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(220, 25);
+            this.textBox1.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(98, 115);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 15);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Tên đăng nhập:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(149, 70);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(345, 15);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Nếu chưa có tài khoản đăng nhập, vui lòng liên hệ quản trị viên.";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(149, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(210, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Vui lòng đăng nhập trước khi sử dụng.";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QuanLyHocVien.Properties.Resources.icon_DangNhap_64dp;
+            this.pictureBox1.Location = new System.Drawing.Point(53, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.label1.ForeColor = System.Drawing.Color.Green;
+            this.label1.Location = new System.Drawing.Point(147, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Chào mừng";
             // 
             // panel2
             // 
@@ -159,28 +159,13 @@
             this.panel2.Size = new System.Drawing.Size(549, 66);
             this.panel2.TabIndex = 9;
             // 
-            // btnDangNhap
-            // 
-            this.btnDangNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnDangNhap.FlatAppearance.BorderSize = 0;
-            this.btnDangNhap.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnDangNhap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnDangNhap.Location = new System.Drawing.Point(308, 15);
-            this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(107, 37);
-            this.btnDangNhap.TabIndex = 0;
-            this.btnDangNhap.Text = "Đăng nhập";
-            this.btnDangNhap.UseVisualStyleBackColor = false;
-            // 
             // btnThoat
             // 
-            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnThoat.BackColor = System.Drawing.Color.Silver;
             this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThoat.FlatAppearance.BorderSize = 0;
             this.btnThoat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnThoat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnThoat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnThoat.Location = new System.Drawing.Point(421, 15);
@@ -189,6 +174,21 @@
             this.btnThoat.TabIndex = 1;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            // 
+            // btnDangNhap
+            // 
+            this.btnDangNhap.BackColor = System.Drawing.Color.Silver;
+            this.btnDangNhap.FlatAppearance.BorderSize = 0;
+            this.btnDangNhap.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnDangNhap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnDangNhap.Location = new System.Drawing.Point(308, 15);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(107, 37);
+            this.btnDangNhap.TabIndex = 0;
+            this.btnDangNhap.Text = "Đăng nhập";
+            this.btnDangNhap.UseVisualStyleBackColor = false;
             // 
             // frmDangNhap
             // 

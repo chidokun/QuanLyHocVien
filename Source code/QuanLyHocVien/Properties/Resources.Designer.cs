@@ -83,6 +83,16 @@ namespace QuanLyHocVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_Close_9dp {
+            get {
+                object obj = ResourceManager.GetObject("icon_Close_9dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_DangNhap_32dp {
             get {
                 object obj = ResourceManager.GetObject("icon_DangNhap_32dp", resourceCulture);
@@ -193,6 +203,16 @@ namespace QuanLyHocVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_Server_16dp {
+            get {
+                object obj = ResourceManager.GetObject("icon_Server_16dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_ThayDoiThongTin_32dp {
             get {
                 object obj = ResourceManager.GetObject("icon_ThayDoiThongTin_32dp", resourceCulture);
@@ -226,6 +246,16 @@ namespace QuanLyHocVien.Properties {
         internal static System.Drawing.Bitmap icon_TiepNhanHocVien_32dp {
             get {
                 object obj = ResourceManager.GetObject("icon_TiepNhanHocVien_32dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_Time_16dp {
+            get {
+                object obj = ResourceManager.GetObject("icon_Time_16dp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

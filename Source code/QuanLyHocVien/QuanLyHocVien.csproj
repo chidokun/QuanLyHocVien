@@ -44,11 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCaiDatVaQuyDinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCaiDatVaQuyDinh.Designer.cs">
+      <DependentUpon>frmCaiDatVaQuyDinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLapPhieuGhiDanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLapPhieuGhiDanh.Designer.cs">
+      <DependentUpon>frmLapPhieuGhiDanh.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -68,10 +80,22 @@
     <Compile Include="frmThongTinTrungTam.Designer.cs">
       <DependentUpon>frmThongTinTrungTam.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTiepNhanHocVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTiepNhanHocVien.Designer.cs">
+      <DependentUpon>frmTiepNhanHocVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCaiDatVaQuyDinh.resx">
+      <DependentUpon>frmCaiDatVaQuyDinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLapPhieuGhiDanh.resx">
+      <DependentUpon>frmLapPhieuGhiDanh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -81,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongTinTrungTam.resx">
       <DependentUpon>frmThongTinTrungTam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTiepNhanHocVien.resx">
+      <DependentUpon>frmTiepNhanHocVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -186,6 +213,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_TrungTam_64dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_Time_16dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_Server_16dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_Close_9dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
