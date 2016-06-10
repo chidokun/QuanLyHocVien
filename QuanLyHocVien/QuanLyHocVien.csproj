@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9E5CC4AD-D461-4662-8B68-082587EC4070}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QuanLyHocVien</RootNamespace>
+    <AssemblyName>QuanLyHocVien</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThongTinPhanMem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongTinPhanMem.Designer.cs">
+      <DependentUpon>frmThongTinPhanMem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThongTinTrungTam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongTinTrungTam.Designer.cs">
+      <DependentUpon>frmThongTinTrungTam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongTinPhanMem.resx">
+      <DependentUpon>frmThongTinPhanMem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongTinTrungTam.resx">
+      <DependentUpon>frmThongTinTrungTam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{f4cc2ba6-93db-40a9-b91b-b3ea682a4cfb}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{31127f93-2cd8-4dd4-9653-bc4ae82bc8ea}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_TroGiup_64dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_TroGiup_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_ThongTin_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_TrangMoDau_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_TiepNhanHocVien_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_LapPhieuGhiDanh_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_BaoCaoHocVienTheoThang_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_ThongKeHocPhi_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_QuanLyDiem_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_XemDiem_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_XepLop_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_DangNhap_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_ThayDoiThongTin_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_Lop_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_QuanLyHocVien_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_NhanVien_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_GiangVien_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_KhoaHoc_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_NguoiDung_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_CaiDat_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_TrungTam_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_MatKhau_32dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_DangNhap_64dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_TrungTam_64dp.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
