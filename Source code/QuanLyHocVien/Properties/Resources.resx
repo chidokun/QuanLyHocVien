@@ -181,6 +181,9 @@
   <data name="icon_DangNhap_32dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_DangNhap_32dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_NhanVien_64dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_NhanVien_64dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_Close_9dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_Close_9dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -202,13 +205,16 @@
   <data name="icon_TrungTam_64dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_TrungTam_64dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_BangDiem_64dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_BangDiem_64dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_CaiDat_32dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_CaiDat_32dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_BaoCaoHocVienTheoThang_32dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_BaoCaoHocVienTheoThang_32dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_BangDiem_64dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_BangDiem_64dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_LopHoc_64dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_LopHoc_64dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

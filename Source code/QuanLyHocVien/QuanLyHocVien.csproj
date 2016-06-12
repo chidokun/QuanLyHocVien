@@ -50,6 +50,12 @@
     <Compile Include="frmBangDiem.Designer.cs">
       <DependentUpon>frmBangDiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCacLopDaHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCacLopDaHoc.Designer.cs">
+      <DependentUpon>frmCacLopDaHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCaiDatVaQuyDinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,17 +74,83 @@
     <Compile Include="frmDoiMatKhau.Designer.cs">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGiangVienEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGiangVienEdit.Designer.cs">
+      <DependentUpon>frmGiangVienEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHocPhiHocVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHocPhiHocVien.Designer.cs">
+      <DependentUpon>frmHocPhiHocVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHocVienEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHocVienEdit.Designer.cs">
+      <DependentUpon>frmHocVienEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLapPhieuGhiDanh.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLapPhieuGhiDanh.Designer.cs">
       <DependentUpon>frmLapPhieuGhiDanh.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLopHocEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLopHocEdit.Designer.cs">
+      <DependentUpon>frmLopHocEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhanVienEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhanVienEdit.Designer.cs">
+      <DependentUpon>frmNhanVienEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyGiangVien.Designer.cs">
+      <DependentUpon>frmQuanLyGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyHocVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyHocVien.Designer.cs">
+      <DependentUpon>frmQuanLyHocVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyKhoaHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyKhoaHoc.Designer.cs">
+      <DependentUpon>frmQuanLyKhoaHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyLopHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyLopHoc.Designer.cs">
+      <DependentUpon>frmQuanLyLopHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyNhanVien.Designer.cs">
+      <DependentUpon>frmQuanLyNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQuanLyTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQuanLyTaiKhoan.Designer.cs">
+      <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThayDoiThongTinGV.cs">
       <SubType>Form</SubType>
@@ -110,10 +182,19 @@
     <Compile Include="frmTiepNhanHocVien.Designer.cs">
       <DependentUpon>frmTiepNhanHocVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmXemCacLopDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXemCacLopDay.Designer.cs">
+      <DependentUpon>frmXemCacLopDay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmBangDiem.resx">
       <DependentUpon>frmBangDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCacLopDaHoc.resx">
+      <DependentUpon>frmCacLopDaHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCaiDatVaQuyDinh.resx">
       <DependentUpon>frmCaiDatVaQuyDinh.cs</DependentUpon>
@@ -124,11 +205,44 @@
     <EmbeddedResource Include="frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGiangVienEdit.resx">
+      <DependentUpon>frmGiangVienEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHocPhiHocVien.resx">
+      <DependentUpon>frmHocPhiHocVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHocVienEdit.resx">
+      <DependentUpon>frmHocVienEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLapPhieuGhiDanh.resx">
       <DependentUpon>frmLapPhieuGhiDanh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLopHocEdit.resx">
+      <DependentUpon>frmLopHocEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhanVienEdit.resx">
+      <DependentUpon>frmNhanVienEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyGiangVien.resx">
+      <DependentUpon>frmQuanLyGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyHocVien.resx">
+      <DependentUpon>frmQuanLyHocVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyKhoaHoc.resx">
+      <DependentUpon>frmQuanLyKhoaHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyLopHoc.resx">
+      <DependentUpon>frmQuanLyLopHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyNhanVien.resx">
+      <DependentUpon>frmQuanLyNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQuanLyTaiKhoan.resx">
+      <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThayDoiThongTinGV.resx">
       <DependentUpon>frmThayDoiThongTinGV.cs</DependentUpon>
@@ -144,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTiepNhanHocVien.resx">
       <DependentUpon>frmTiepNhanHocVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXemCacLopDay.resx">
+      <DependentUpon>frmXemCacLopDay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -270,6 +387,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_BangDiem_64dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_NhanVien_64dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_LopHoc_64dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

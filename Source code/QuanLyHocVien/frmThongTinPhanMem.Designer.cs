@@ -117,18 +117,18 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(128, 122);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(216, 15);
+            this.label17.Size = new System.Drawing.Size(212, 15);
             this.label17.TabIndex = 6;
-            this.label17.Text = "Hà Thanh Phong - 1452XXXX (Analyzer)";
+            this.label17.Text = "Hà Thanh Phong - 14520667 (Analyzer)";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(128, 99);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(196, 15);
+            this.label16.Size = new System.Drawing.Size(192, 15);
             this.label16.TabIndex = 5;
-            this.label16.Text = "Đậu Thế Tiến - 1452XXXX (Analyzer)";
+            this.label16.Text = "Đậu Thế Tiến - 14520937 (Analyzer)";
             // 
             // label15
             // 

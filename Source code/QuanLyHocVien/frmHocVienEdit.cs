@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
 namespace QuanLyHocVien
 {
-    public partial class frmBangDiem : Form
+    public partial class frmHocVienEdit : Form
     {
-        public frmBangDiem()
+        public frmHocVienEdit()
         {
             InitializeComponent();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnHuyBo_Click(object sender, EventArgs e)
         {
             this.Close();
         }

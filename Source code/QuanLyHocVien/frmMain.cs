@@ -91,9 +91,7 @@ namespace QuanLyHocVien
         {
             pnlWorkspace.Controls.Clear();
 
-            frmTiepNhanHocVien frm = new frmTiepNhanHocVien();
-            frm.Dock = DockStyle.Fill;
-            frm.TopLevel = false;
+            frmTiepNhanHocVien frm = new frmTiepNhanHocVien() { Dock = DockStyle.Fill, TopLevel = false };
             pnlWorkspace.Controls.Add(frm);
             frm.Show();
         }
@@ -102,9 +100,7 @@ namespace QuanLyHocVien
         {
             pnlWorkspace.Controls.Clear();
 
-            frmLapPhieuGhiDanh frm = new frmLapPhieuGhiDanh();
-            frm.Dock = DockStyle.Fill;
-            frm.TopLevel = false;
+            frmLapPhieuGhiDanh frm = new frmLapPhieuGhiDanh() { Dock = DockStyle.Fill, TopLevel = false };
             pnlWorkspace.Controls.Add(frm);
             frm.Show();
         }
@@ -137,9 +133,88 @@ namespace QuanLyHocVien
         {
             pnlWorkspace.Controls.Clear();
 
-            frmBangDiem frm = new frmBangDiem();
-            frm.Dock = DockStyle.Fill;
-            frm.TopLevel = false;
+            frmBangDiem frm = new frmBangDiem() { Dock = DockStyle.Fill, TopLevel = false };
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnXemCacLopDay_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmXemCacLopDay frm = new frmXemCacLopDay() { Dock = DockStyle.Fill, TopLevel = false };
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnHocPhi_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmHocPhiHocVien frm = new frmHocPhiHocVien() { Dock = DockStyle.Fill, TopLevel = false };
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnCacLopDaHoc_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmCacLopDaHoc frm = new frmCacLopDaHoc() { Dock = DockStyle.Fill, TopLevel = false };
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnQuanLyHocVien_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmQuanLyHocVien frm = new frmQuanLyHocVien() { Dock = DockStyle.Fill, TopLevel = false };
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnQuanLyNhanVien_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmQuanLyNhanVien frm = new frmQuanLyNhanVien() { Dock = DockStyle.Fill, TopLevel = false };
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnQuanLyGiangVien_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmQuanLyGiangVien frm = new frmQuanLyGiangVien() { Dock = DockStyle.Fill, TopLevel = false };
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnQuanLyLopHoc_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmQuanLyLopHoc frm = new frmQuanLyLopHoc() { Dock = DockStyle.Fill, TopLevel = false };
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnQuanLyKhoaHoc_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmQuanLyKhoaHoc frm = new frmQuanLyKhoaHoc() { Dock = DockStyle.Fill, TopLevel = false };
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnQuanLyTaiKhoan_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmQuanLyTaiKhoan frm = new frmQuanLyTaiKhoan() { Dock = DockStyle.Fill, TopLevel = false };
             pnlWorkspace.Controls.Add(frm);
             frm.Show();
         }

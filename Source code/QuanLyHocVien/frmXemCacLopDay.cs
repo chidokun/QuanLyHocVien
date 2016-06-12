@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
 namespace QuanLyHocVien
 {
-    public partial class frmBangDiem : Form
+    public partial class frmXemCacLopDay : Form
     {
-        public frmBangDiem()
+        public frmXemCacLopDay()
         {
             InitializeComponent();
         }

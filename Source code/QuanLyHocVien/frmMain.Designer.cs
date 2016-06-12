@@ -94,7 +94,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1036, 88);
+            this.panel1.Size = new System.Drawing.Size(1024, 88);
             this.panel1.TabIndex = 0;
             // 
             // panel4
@@ -104,7 +104,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 28);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1036, 60);
+            this.panel4.Size = new System.Drawing.Size(1024, 60);
             this.panel4.TabIndex = 1;
             // 
             // tabRibbon
@@ -121,7 +121,7 @@
             this.tabRibbon.Location = new System.Drawing.Point(-4, -5);
             this.tabRibbon.Name = "tabRibbon";
             this.tabRibbon.SelectedIndex = 0;
-            this.tabRibbon.Size = new System.Drawing.Size(1044, 90);
+            this.tabRibbon.Size = new System.Drawing.Size(1032, 90);
             this.tabRibbon.TabIndex = 0;
             this.tabRibbon.TabStop = false;
             // 
@@ -138,7 +138,7 @@
             this.tabNhanVien.Location = new System.Drawing.Point(4, 4);
             this.tabNhanVien.Name = "tabNhanVien";
             this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNhanVien.Size = new System.Drawing.Size(1036, 62);
+            this.tabNhanVien.Size = new System.Drawing.Size(1024, 62);
             this.tabNhanVien.TabIndex = 0;
             this.tabNhanVien.Text = "Nhân viên";
             // 
@@ -151,7 +151,7 @@
             this.tabGiangVien.Location = new System.Drawing.Point(4, 4);
             this.tabGiangVien.Name = "tabGiangVien";
             this.tabGiangVien.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGiangVien.Size = new System.Drawing.Size(1036, 62);
+            this.tabGiangVien.Size = new System.Drawing.Size(1024, 62);
             this.tabGiangVien.TabIndex = 1;
             this.tabGiangVien.Text = "Giảng viên";
             // 
@@ -165,7 +165,7 @@
             this.tabHocVien.Controls.Add(this.btnBangDiem);
             this.tabHocVien.Location = new System.Drawing.Point(4, 4);
             this.tabHocVien.Name = "tabHocVien";
-            this.tabHocVien.Size = new System.Drawing.Size(1036, 62);
+            this.tabHocVien.Size = new System.Drawing.Size(1024, 62);
             this.tabHocVien.TabIndex = 2;
             this.tabHocVien.Text = "Học viên";
             // 
@@ -183,7 +183,7 @@
             this.tabQuanTri.Controls.Add(this.btnQuanLyHocVien);
             this.tabQuanTri.Location = new System.Drawing.Point(4, 4);
             this.tabQuanTri.Name = "tabQuanTri";
-            this.tabQuanTri.Size = new System.Drawing.Size(1036, 62);
+            this.tabQuanTri.Size = new System.Drawing.Size(1024, 62);
             this.tabQuanTri.TabIndex = 3;
             this.tabQuanTri.Text = "Quản trị";
             // 
@@ -195,7 +195,7 @@
             this.tabTroGiup.Controls.Add(this.btnTroGiup);
             this.tabTroGiup.Location = new System.Drawing.Point(4, 4);
             this.tabTroGiup.Name = "tabTroGiup";
-            this.tabTroGiup.Size = new System.Drawing.Size(1036, 62);
+            this.tabTroGiup.Size = new System.Drawing.Size(1024, 62);
             this.tabTroGiup.TabIndex = 4;
             this.tabTroGiup.Text = "Trợ giúp";
             // 
@@ -209,7 +209,7 @@
             this.pnlTabTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTabTitle.Location = new System.Drawing.Point(0, 0);
             this.pnlTabTitle.Name = "pnlTabTitle";
-            this.pnlTabTitle.Size = new System.Drawing.Size(1036, 28);
+            this.pnlTabTitle.Size = new System.Drawing.Size(1024, 28);
             this.pnlTabTitle.TabIndex = 0;
             // 
             // btnTroGiupTitle
@@ -298,7 +298,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 88);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1036, 5);
+            this.panel3.Size = new System.Drawing.Size(1024, 5);
             this.panel3.TabIndex = 2;
             // 
             // panel2
@@ -308,9 +308,9 @@
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 631);
+            this.panel2.Location = new System.Drawing.Point(0, 559);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1036, 24);
+            this.panel2.Size = new System.Drawing.Size(1024, 24);
             this.panel2.TabIndex = 3;
             // 
             // label1
@@ -328,7 +328,7 @@
             this.pnlWorkspace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlWorkspace.Location = new System.Drawing.Point(0, 93);
             this.pnlWorkspace.Name = "pnlWorkspace";
-            this.pnlWorkspace.Size = new System.Drawing.Size(1036, 538);
+            this.pnlWorkspace.Size = new System.Drawing.Size(1024, 466);
             this.pnlWorkspace.TabIndex = 4;
             // 
             // button2
@@ -340,7 +340,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = global::QuanLyHocVien.Properties.Resources.icon_Time_16dp;
-            this.button2.Location = new System.Drawing.Point(851, 0);
+            this.button2.Location = new System.Drawing.Point(839, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(179, 24);
             this.button2.TabIndex = 2;
@@ -358,7 +358,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::QuanLyHocVien.Properties.Resources.icon_Server_16dp;
-            this.button1.Location = new System.Drawing.Point(635, 0);
+            this.button1.Location = new System.Drawing.Point(623, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(210, 24);
             this.button1.TabIndex = 1;
@@ -488,6 +488,7 @@
             this.btnXemCacLopDay.Text = "Xem các lớp dạy";
             this.btnXemCacLopDay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXemCacLopDay.UseVisualStyleBackColor = false;
+            this.btnXemCacLopDay.Click += new System.EventHandler(this.btnXemCacLopDay_Click);
             // 
             // btnGVThayDoiThongTin
             // 
@@ -567,6 +568,7 @@
             this.btnCacLopDaHoc.Text = "Các lớp đã học";
             this.btnCacLopDaHoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCacLopDaHoc.UseVisualStyleBackColor = false;
+            this.btnCacLopDaHoc.Click += new System.EventHandler(this.btnCacLopDaHoc_Click);
             // 
             // btnHocPhi
             // 
@@ -582,6 +584,7 @@
             this.btnHocPhi.Text = "Học phí";
             this.btnHocPhi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHocPhi.UseVisualStyleBackColor = false;
+            this.btnHocPhi.Click += new System.EventHandler(this.btnHocPhi_Click);
             // 
             // btnBangDiem
             // 
@@ -645,6 +648,7 @@
             this.btnQuanLyTaiKhoan.Text = "Quản lý Tài khoản";
             this.btnQuanLyTaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuanLyTaiKhoan.UseVisualStyleBackColor = false;
+            this.btnQuanLyTaiKhoan.Click += new System.EventHandler(this.btnQuanLyTaiKhoan_Click);
             // 
             // btnQuanLyHocPhi
             // 
@@ -675,6 +679,7 @@
             this.btnQuanLyKhoaHoc.Text = "Quản lý Khóa học";
             this.btnQuanLyKhoaHoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuanLyKhoaHoc.UseVisualStyleBackColor = false;
+            this.btnQuanLyKhoaHoc.Click += new System.EventHandler(this.btnQuanLyKhoaHoc_Click);
             // 
             // btnQuanLyLopHoc
             // 
@@ -690,6 +695,7 @@
             this.btnQuanLyLopHoc.Text = "Quản lý Lớp học";
             this.btnQuanLyLopHoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuanLyLopHoc.UseVisualStyleBackColor = false;
+            this.btnQuanLyLopHoc.Click += new System.EventHandler(this.btnQuanLyLopHoc_Click);
             // 
             // btnQuanLyGiangVien
             // 
@@ -705,6 +711,7 @@
             this.btnQuanLyGiangVien.Text = "Quản lý Giảng viên";
             this.btnQuanLyGiangVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuanLyGiangVien.UseVisualStyleBackColor = false;
+            this.btnQuanLyGiangVien.Click += new System.EventHandler(this.btnQuanLyGiangVien_Click);
             // 
             // btnQuanLyNhanVien
             // 
@@ -720,6 +727,7 @@
             this.btnQuanLyNhanVien.Text = "Quản lý Nhân viên";
             this.btnQuanLyNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuanLyNhanVien.UseVisualStyleBackColor = false;
+            this.btnQuanLyNhanVien.Click += new System.EventHandler(this.btnQuanLyNhanVien_Click);
             // 
             // btnQuanLyHocVien
             // 
@@ -735,6 +743,7 @@
             this.btnQuanLyHocVien.Text = "Quản lý Học viên";
             this.btnQuanLyHocVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuanLyHocVien.UseVisualStyleBackColor = false;
+            this.btnQuanLyHocVien.Click += new System.EventHandler(this.btnQuanLyHocVien_Click);
             // 
             // btnTrangMoDau
             // 
@@ -787,12 +796,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1036, 655);
+            this.ClientSize = new System.Drawing.Size(1024, 583);
             this.Controls.Add(this.pnlWorkspace);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.MinimumSize = new System.Drawing.Size(1040, 511);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý Học viên Trung tâm Anh ngữ";

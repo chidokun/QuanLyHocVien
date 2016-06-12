@@ -33,5 +33,16 @@ namespace DataAccess.Properties {
                 return ((string)(this["QLHVTTECConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HOANGTUAN\\SQLEXPRESS;Initial Catalog=QLHVTTEC;Integrated Security=Tru" +
+            "e;Encrypt=False;TrustServerCertificate=True")]
+        public string QLHVTTECConnectionString1 {
+            get {
+                return ((string)(this["QLHVTTECConnectionString1"]));
+            }
+        }
     }
 }

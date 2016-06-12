@@ -183,6 +183,16 @@ namespace QuanLyHocVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_LopHoc_64dp {
+            get {
+                object obj = ResourceManager.GetObject("icon_LopHoc_64dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_MatKhau_32dp {
             get {
                 object obj = ResourceManager.GetObject("icon_MatKhau_32dp", resourceCulture);
@@ -216,6 +226,16 @@ namespace QuanLyHocVien.Properties {
         internal static System.Drawing.Bitmap icon_NhanVien_32dp {
             get {
                 object obj = ResourceManager.GetObject("icon_NhanVien_32dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_NhanVien_64dp {
+            get {
+                object obj = ResourceManager.GetObject("icon_NhanVien_64dp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
