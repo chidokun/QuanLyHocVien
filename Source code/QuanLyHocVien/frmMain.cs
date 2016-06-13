@@ -1,4 +1,9 @@
-﻿using System;
+﻿// Quản lý Học viên Trung tâm Anh ngữ
+// Copyright © 2016, VP2T
+// File "frmMain.cs"
+// Writing by Nguyễn Lê Hoàng Tuấn (nguyentuanit96@gmail.com)
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +18,7 @@ namespace QuanLyHocVien
     {
         public frmMain()
         {
+            BusinessLogic.GlobalSettings.LoadSettings();
             InitializeComponent();
         }
 
@@ -215,6 +221,24 @@ namespace QuanLyHocVien
             pnlWorkspace.Controls.Clear();
 
             frmQuanLyTaiKhoan frm = new frmQuanLyTaiKhoan() { Dock = DockStyle.Fill, TopLevel = false };
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnQuanLyDiem_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmQuanLyDiem frm = new frmQuanLyDiem() { Dock = DockStyle.Fill, TopLevel = false };
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnThongKeDiemTheoLop_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmThongKeDiemTheoLop frm = new frmThongKeDiemTheoLop() { Dock = DockStyle.Fill, TopLevel = false };
             pnlWorkspace.Controls.Add(frm);
             frm.Show();
         }

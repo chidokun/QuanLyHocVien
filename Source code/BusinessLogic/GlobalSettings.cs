@@ -12,11 +12,13 @@ namespace BusinessLogic
 
         public static string ConnectionString { get; set; }
 
+        public static object CurrentUser { get; set; }
+
         public static string ServerName { get; set; }
 
         public static void LoadSettings()
         {
-
+            Database = new QuanLyHocVienDataContext();
         }
     }
 }

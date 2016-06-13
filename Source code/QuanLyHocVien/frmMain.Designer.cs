@@ -396,6 +396,7 @@
             this.btnThongKeDiemTheoLop.Text = "Thống kê điểm theo lớp";
             this.btnThongKeDiemTheoLop.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThongKeDiemTheoLop.UseVisualStyleBackColor = false;
+            this.btnThongKeDiemTheoLop.Click += new System.EventHandler(this.btnThongKeDiemTheoLop_Click);
             // 
             // btnQuanLyDiem
             // 
@@ -411,6 +412,7 @@
             this.btnQuanLyDiem.Text = "Quản lý Điểm";
             this.btnQuanLyDiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuanLyDiem.UseVisualStyleBackColor = false;
+            this.btnQuanLyDiem.Click += new System.EventHandler(this.btnQuanLyDiem_Click);
             // 
             // btnThongKeHocPhi
             // 
