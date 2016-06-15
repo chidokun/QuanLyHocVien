@@ -40,11 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BangDiem.cs" />
+    <Compile Include="ChiTietTrungTam.cs" />
     <Compile Include="DangKy.cs" />
+    <Compile Include="GiangDay.cs" />
+    <Compile Include="GiangVien.cs" />
     <Compile Include="GlobalSettings.cs" />
     <Compile Include="HocVien.cs" />
     <Compile Include="KhoaHoc.cs" />
     <Compile Include="LoaiHV.cs" />
+    <Compile Include="LoaiNV.cs" />
+    <Compile Include="LopHoc.cs" />
+    <Compile Include="NhanVien.cs" />
     <Compile Include="PhieuGhiDanh.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

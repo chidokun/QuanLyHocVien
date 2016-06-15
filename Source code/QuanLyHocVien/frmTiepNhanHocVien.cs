@@ -166,28 +166,22 @@ namespace QuanLyHocVien
             {
                 if (isInsert)
                 {
-                    if ((string)cboLoaiHV.SelectedValue == "LHV00")
-                        busHocVien.Insert(LoadHocVien());
-                    else
-                        busHocVien.Insert(LoadHocVien(), new TAIKHOAN()
-                        {
-                            TenDangNhap = txtTenDangNhap.Text,
-                            MatKhau = txtMatKhau.Text,
-                        });
+                    busHocVien.Insert(LoadHocVien(), new TAIKHOAN()
+                    {
+                        TenDangNhap = txtTenDangNhap.Text,
+                        MatKhau = txtMatKhau.Text,
+                    });
 
                     InitializeHocVien();
                     MessageBox.Show("Thêm học viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    if ((string)cboLoaiHV.SelectedValue == "LHV00")
-                        busHocVien.Update(LoadHocVien());
-                    else
-                        busHocVien.Update(LoadHocVien(), new TAIKHOAN()
-                        {
-                            TenDangNhap = txtTenDangNhap.Text,
-                            MatKhau = txtMatKhau.Text,
-                        });
+                    busHocVien.Update(LoadHocVien(), new TAIKHOAN()
+                    {
+                        TenDangNhap = txtTenDangNhap.Text,
+                        MatKhau = txtMatKhau.Text,
+                    });
 
                     InitializeHocVien();
                     MessageBox.Show("Sửa học viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -196,7 +190,6 @@ namespace QuanLyHocVien
             catch
             {
                 MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
         }
 

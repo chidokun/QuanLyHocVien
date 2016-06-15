@@ -12,13 +12,32 @@ namespace BusinessLogic
 
         public static string ConnectionString { get; set; }
 
-        public static object CurrentUser { get; set; }
+        public static string CurrentUser { get; set; } = "admin"; //tạm
 
         public static string ServerName { get; set; }
 
-        public static void LoadSettings()
+        public static string CenterName { get; set; }
+        public static string CenterAddress { get; set; }
+        public static string CenterWebsite { get; set; }
+        public static string CenterEmail { get; set; }
+        public static string CenterTelephone { get; set; }
+
+        public static void LoadDatabase()
         {
-            Database = new QuanLyHocVienDataContext();
+            Database = new QuanLyHocVienDataContext(/*ConnectionString*/);
+        }
+
+        public static void LoadCenterInformation(CHITIETTRUNGTAM detail = null)
+        {
+            ChiTietTrungTam bus = new ChiTietTrungTam();
+            if (detail == null)
+                detail = bus.Select();
+            
+            CenterName = detail.TenTT;
+            CenterAddress = detail.DiaChiTT;
+            CenterWebsite = detail.Website;
+            CenterEmail = detail.EmailTT;
+            CenterTelephone = detail.SdtTT;
         }
     }
 }

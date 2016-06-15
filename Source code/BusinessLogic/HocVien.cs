@@ -26,6 +26,64 @@ namespace BusinessLogic
             return result.ToList();
         }
 
+        /// <summary>
+        /// Chọn tất cả học viên theo loại
+        /// </summary>
+        /// <param name="loai">Loại học viên</param>
+        /// <returns></returns>
+        public object SelectAll(LOAIHV loai)
+        {
+            var result = from p in GlobalSettings.Database.HOCVIENs
+                         where p.MaLoaiHV == loai.MaLoaiHV
+                         select new
+                         {
+                             MaHV = p.MaHV,
+                             TenHV = p.TenHV,
+                             NgaySinh = p.NgaySinh,
+                             GioiTinhHV = p.GioiTinhHV,
+                             DiaChi = p.DiaChi,
+                             SdtHV = p.SdtHV,
+                             EmailHV = p.EmailHV,
+                             NgayTiepNhan = p.NgayTiepNhan
+                         };
+
+            return result.ToList();
+        }
+
+        /// <summary>
+        /// Chọn các học viên thỏa điều kiện
+        /// </summary>
+        /// <param name="maHV">Mã học viên</param>
+        /// <param name="tenHV">Tên học viên</param>
+        /// <param name="gioiTinh">Giới tính</param>
+        /// <param name="tuNgay">Tiếp nhận từ ngày</param>
+        /// <param name="denNgay">Tiếp nhận đến ngày</param>
+        /// <param name="loai">Loại học viên</param>
+        /// <returns></returns>
+        public object SelectAll(string maHV, string tenHV, string gioiTinh, DateTime? tuNgay, DateTime? denNgay, LOAIHV loai)
+        {
+            var result = from p in GlobalSettings.Database.HOCVIENs
+                         where p.MaLoaiHV == loai.MaLoaiHV &&
+                                (maHV == null ? true : p.MaHV.Contains(maHV)) &&
+                                (tenHV == null ? true : p.TenHV.Contains(tenHV)) &&
+                                (gioiTinh == null ? true : p.GioiTinhHV.Contains(gioiTinh)) &&
+                                (tuNgay == null ? true : p.NgayTiepNhan >= tuNgay) &&
+                                (denNgay == null ? true : p.NgayTiepNhan <= denNgay)
+                         select new
+                         {
+                             MaHV = p.MaHV,
+                             TenHV = p.TenHV,
+                             NgaySinh = p.NgaySinh,
+                             GioiTinhHV = p.GioiTinhHV,
+                             DiaChi = p.DiaChi,
+                             SdtHV = p.SdtHV,
+                             EmailHV = p.EmailHV,
+                             NgayTiepNhan = p.NgayTiepNhan
+                         };
+
+            return result.ToList();
+        }
+
         public object SelectAllResult()
         {
             var result = from p in GlobalSettings.Database.HOCVIENs
@@ -70,9 +128,9 @@ namespace BusinessLogic
         /// Thêm một học viên
         /// </summary>
         /// <param name="hocVien">Học viên cần thêm</param>
-        public void Insert(HOCVIEN hocVien, TAIKHOAN taiKhoan = null)
+        public void Insert(HOCVIEN hocVien, TAIKHOAN taiKhoan)
         {
-            if (taiKhoan != null)
+            if (hocVien.MaLoaiHV == "LHV01")
                 Database.TAIKHOANs.InsertOnSubmit(taiKhoan);
             Database.HOCVIENs.InsertOnSubmit(hocVien);
             Database.SubmitChanges();
@@ -83,24 +141,34 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="hocVien">Học viên cần cập nhật</param>
         /// <param name="taiKhoan">Tài khoản cần thêm mới</param>
-        public void Update(HOCVIEN hocVien, TAIKHOAN taiKhoan = null)
+        public void Update(HOCVIEN hocVien, TAIKHOAN taiKhoan)
         {
-            if (taiKhoan != null)
+            var hocVienCu = Select(hocVien.MaHV);
+
+            //không thay đổi loại
+            hocVienCu.TenHV = hocVien.TenHV;
+            hocVienCu.NgaySinh = hocVien.NgaySinh;
+            hocVienCu.GioiTinhHV = hocVien.GioiTinhHV;
+            hocVienCu.DiaChi = hocVien.DiaChi;
+            hocVienCu.SdtHV = hocVien.SdtHV;
+            hocVienCu.EmailHV = hocVien.EmailHV;
+
+            if (hocVienCu.MaLoaiHV != hocVien.MaLoaiHV)
             {
-                Database.TAIKHOANs.InsertOnSubmit(taiKhoan);
-                Database.SubmitChanges();
+                //đổi từ tiềm năng sang chính thức
+                if (hocVien.MaLoaiHV == "LHV01")
+                {
+                    Database.TAIKHOANs.InsertOnSubmit(taiKhoan);
+                    hocVienCu.MaLoaiHV = hocVien.MaLoaiHV;
+                    hocVienCu.TenDangNhap = hocVien.TenDangNhap;
+                }
+                else
+                {
+                    hocVienCu.MaLoaiHV = hocVien.MaLoaiHV;
+                    Database.TAIKHOANs.DeleteOnSubmit((from p in Database.TAIKHOANs where p.TenDangNhap == hocVienCu.TenDangNhap select p).Single());
+                    hocVienCu.TenDangNhap = null;
+                }
             }
-
-            var temp = Select(hocVien.MaHV);
-            temp.TenHV = hocVien.TenHV;
-            temp.NgaySinh = hocVien.NgaySinh;
-            temp.GioiTinhHV = hocVien.GioiTinhHV;
-            temp.DiaChi = hocVien.DiaChi;
-            temp.SdtHV = hocVien.SdtHV;
-            temp.EmailHV = hocVien.EmailHV;
-            temp.MaLoaiHV = hocVien.MaLoaiHV;
-            temp.TenDangNhap = hocVien.TenDangNhap != null ? hocVien.TenDangNhap : null;
-
             Database.SubmitChanges();
         }
 
@@ -110,17 +178,18 @@ namespace BusinessLogic
         /// <param name="maHV">Mã học viên cần xóa</param>
         public void Delete(string maHV)
         {
-            var temp = (from p in GlobalSettings.Database.HOCVIENs
-                        where p.MaHV == maHV
-                        select p).Single();
+            var temp = Select(maHV);
+            string maLoai = temp.MaLoaiHV;
+            string tenDangNhap = temp.TenDangNhap;
 
             Database.HOCVIENs.DeleteOnSubmit(temp);
             Database.SubmitChanges();
 
-            string tenDN = temp.TenDangNhap;
-            TaiKhoan tk = new TaiKhoan();
-            if (tenDN != null)
-                tk.Delete(tenDN);
+            if (maLoai == "LHV01")
+            {
+                TaiKhoan tk = new TaiKhoan();
+                tk.Delete(tenDangNhap);
+            }
         }
 
         /// <summary>

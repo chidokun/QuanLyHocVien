@@ -28,41 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnHienTatCa = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.gridLop = new System.Windows.Forms.DataGridView();
+            this.btnDatLai = new System.Windows.Forms.Button();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.txtMaLop = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
+            this.btnTaoBaoCao = new System.Windows.Forms.Button();
+            this.lblTongCong = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridThongKe = new System.Windows.Forms.DataGridView();
+            this.clmMaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTenHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDiemNghe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDiemNoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDiemDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDiemViet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDiemTrungBinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
+            this.clmMaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLop)).BeginInit();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridThongKe)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -102,12 +102,12 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnHienTatCa);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.gridLop);
+            this.panel2.Controls.Add(this.btnDatLai);
+            this.panel2.Controls.Add(this.btnTimKiem);
+            this.panel2.Controls.Add(this.txtMaLop);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -116,22 +116,23 @@
             this.panel2.Size = new System.Drawing.Size(320, 481);
             this.panel2.TabIndex = 9;
             // 
-            // button1
+            // btnHienTatCa
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Silver;
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.button1.Location = new System.Drawing.Point(187, 433);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 29);
-            this.button1.TabIndex = 66;
-            this.button1.Text = "Hiện tất cả";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnHienTatCa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHienTatCa.BackColor = System.Drawing.Color.Silver;
+            this.btnHienTatCa.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnHienTatCa.FlatAppearance.BorderSize = 0;
+            this.btnHienTatCa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnHienTatCa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnHienTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHienTatCa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHienTatCa.Location = new System.Drawing.Point(187, 433);
+            this.btnHienTatCa.Name = "btnHienTatCa";
+            this.btnHienTatCa.Size = new System.Drawing.Size(113, 29);
+            this.btnHienTatCa.TabIndex = 66;
+            this.btnHienTatCa.Text = "Hiện tất cả";
+            this.btnHienTatCa.UseVisualStyleBackColor = false;
+            this.btnHienTatCa.Click += new System.EventHandler(this.btnHienTatCa_Click);
             // 
             // label4
             // 
@@ -142,89 +143,74 @@
             this.label4.TabIndex = 65;
             this.label4.Text = "Kết quả tìm kiếm";
             // 
-            // dataGridView1
+            // gridLop
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gridLop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 161);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(279, 262);
-            this.dataGridView1.TabIndex = 64;
+            this.gridLop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridLop.BackgroundColor = System.Drawing.Color.White;
+            this.gridLop.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmMaLop,
+            this.clmTenLop});
+            this.gridLop.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.gridLop.Location = new System.Drawing.Point(21, 161);
+            this.gridLop.MultiSelect = false;
+            this.gridLop.Name = "gridLop";
+            this.gridLop.ReadOnly = true;
+            this.gridLop.RowHeadersVisible = false;
+            this.gridLop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridLop.Size = new System.Drawing.Size(279, 262);
+            this.gridLop.TabIndex = 64;
+            this.gridLop.Click += new System.EventHandler(this.gridLop_Click);
             // 
-            // dataGridViewTextBoxColumn6
+            // btnDatLai
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "MaNV";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewTextBoxColumn6.FillWeight = 70F;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Mã lớp";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.btnDatLai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDatLai.BackColor = System.Drawing.Color.Silver;
+            this.btnDatLai.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnDatLai.FlatAppearance.BorderSize = 0;
+            this.btnDatLai.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnDatLai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnDatLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDatLai.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnDatLai.Location = new System.Drawing.Point(218, 89);
+            this.btnDatLai.Name = "btnDatLai";
+            this.btnDatLai.Size = new System.Drawing.Size(82, 29);
+            this.btnDatLai.TabIndex = 63;
+            this.btnDatLai.Text = "Đặt lại";
+            this.btnDatLai.UseVisualStyleBackColor = false;
+            this.btnDatLai.Click += new System.EventHandler(this.btnDatLai_Click);
             // 
-            // dataGridViewTextBoxColumn7
+            // btnTimKiem
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "TenHV";
-            this.dataGridViewTextBoxColumn7.FillWeight = 93.27411F;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Tên lớp";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTimKiem.BackColor = System.Drawing.Color.Silver;
+            this.btnTimKiem.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnTimKiem.FlatAppearance.BorderSize = 0;
+            this.btnTimKiem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnTimKiem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnTimKiem.Location = new System.Drawing.Point(121, 89);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(91, 29);
+            this.btnTimKiem.TabIndex = 62;
+            this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
-            // button4
+            // txtMaLop
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.Silver;
-            this.button4.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.button4.Location = new System.Drawing.Point(218, 89);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(82, 29);
-            this.button4.TabIndex = 63;
-            this.button4.Text = "Đặt lại";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.Silver;
-            this.button5.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.button5.Location = new System.Drawing.Point(121, 89);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(91, 29);
-            this.button5.TabIndex = 62;
-            this.button5.Text = "Tìm kiếm";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtMaLop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.textBox1.Location = new System.Drawing.Point(98, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 25);
-            this.textBox1.TabIndex = 51;
+            this.txtMaLop.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtMaLop.Location = new System.Drawing.Point(98, 45);
+            this.txtMaLop.Name = "txtMaLop";
+            this.txtMaLop.Size = new System.Drawing.Size(202, 25);
+            this.txtMaLop.TabIndex = 51;
             // 
             // label3
             // 
@@ -257,25 +243,42 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.button2);
-            this.panel6.Controls.Add(this.label25);
+            this.panel6.Controls.Add(this.btnTaoBaoCao);
+            this.panel6.Controls.Add(this.lblTongCong);
             this.panel6.Controls.Add(this.label24);
-            this.panel6.Controls.Add(this.dataGridView2);
+            this.panel6.Controls.Add(this.gridThongKe);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(325, 24);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(762, 481);
             this.panel6.TabIndex = 13;
             // 
-            // label25
+            // btnTaoBaoCao
             // 
-            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(16, 456);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(306, 15);
-            this.label25.TabIndex = 68;
-            this.label25.Text = "Tổng cộng: <num> học viên. Diểm trung bình: {0} điểm.";
+            this.btnTaoBaoCao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTaoBaoCao.BackColor = System.Drawing.Color.Silver;
+            this.btnTaoBaoCao.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnTaoBaoCao.FlatAppearance.BorderSize = 0;
+            this.btnTaoBaoCao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnTaoBaoCao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnTaoBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaoBaoCao.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnTaoBaoCao.Location = new System.Drawing.Point(634, 12);
+            this.btnTaoBaoCao.Name = "btnTaoBaoCao";
+            this.btnTaoBaoCao.Size = new System.Drawing.Size(113, 29);
+            this.btnTaoBaoCao.TabIndex = 69;
+            this.btnTaoBaoCao.Text = "Tạo báo cáo";
+            this.btnTaoBaoCao.UseVisualStyleBackColor = false;
+            // 
+            // lblTongCong
+            // 
+            this.lblTongCong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTongCong.AutoSize = true;
+            this.lblTongCong.Location = new System.Drawing.Point(16, 456);
+            this.lblTongCong.Name = "lblTongCong";
+            this.lblTongCong.Size = new System.Drawing.Size(348, 15);
+            this.lblTongCong.TabIndex = 68;
+            this.lblTongCong.Text = "Tổng cộng: <num> học viên. Điểm trung bình của lớp: {0} điểm.";
             // 
             // label24
             // 
@@ -286,52 +289,54 @@
             this.label24.TabIndex = 67;
             this.label24.Text = "Thống kê điểm của lớp";
             // 
-            // dataGridView2
+            // gridThongKe
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gridThongKe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
+            this.gridThongKe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridThongKe.BackgroundColor = System.Drawing.Color.White;
+            this.gridThongKe.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridThongKe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmMaHV,
+            this.clmTenHV,
             this.clmDiemNghe,
             this.clmDiemNoi,
             this.clmDiemDoc,
             this.clmDiemViet,
             this.clmDiemTrungBinh});
-            this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView2.Location = new System.Drawing.Point(19, 45);
-            this.dataGridView2.MultiSelect = false;
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(728, 408);
-            this.dataGridView2.TabIndex = 66;
+            this.gridThongKe.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.gridThongKe.Location = new System.Drawing.Point(19, 45);
+            this.gridThongKe.MultiSelect = false;
+            this.gridThongKe.Name = "gridThongKe";
+            this.gridThongKe.ReadOnly = true;
+            this.gridThongKe.RowHeadersVisible = false;
+            this.gridThongKe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridThongKe.Size = new System.Drawing.Size(728, 408);
+            this.gridThongKe.TabIndex = 66;
+            this.gridThongKe.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridThongKe_RowsAdded);
             // 
-            // dataGridViewTextBoxColumn1
+            // clmMaHV
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "MaNV";
+            this.clmMaHV.DataPropertyName = "MaHV";
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn1.FillWeight = 70F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã học viên";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle2;
+            this.clmMaHV.FillWeight = 70F;
+            this.clmMaHV.HeaderText = "Mã học viên";
+            this.clmMaHV.Name = "clmMaHV";
+            this.clmMaHV.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // clmTenHV
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TenHV";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên học viên";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.clmTenHV.DataPropertyName = "TenHV";
+            this.clmTenHV.HeaderText = "Tên học viên";
+            this.clmTenHV.Name = "clmTenHV";
+            this.clmTenHV.ReadOnly = true;
             // 
             // clmDiemNghe
             // 
+            this.clmDiemNghe.DataPropertyName = "DiemNghe";
             this.clmDiemNghe.FillWeight = 50F;
             this.clmDiemNghe.HeaderText = "Điểm nghe";
             this.clmDiemNghe.Name = "clmDiemNghe";
@@ -339,6 +344,7 @@
             // 
             // clmDiemNoi
             // 
+            this.clmDiemNoi.DataPropertyName = "DiemNoi";
             this.clmDiemNoi.FillWeight = 50F;
             this.clmDiemNoi.HeaderText = "Điểm nói";
             this.clmDiemNoi.Name = "clmDiemNoi";
@@ -346,6 +352,7 @@
             // 
             // clmDiemDoc
             // 
+            this.clmDiemDoc.DataPropertyName = "DiemDoc";
             this.clmDiemDoc.FillWeight = 50F;
             this.clmDiemDoc.HeaderText = "Điểm đọc";
             this.clmDiemDoc.Name = "clmDiemDoc";
@@ -353,6 +360,7 @@
             // 
             // clmDiemViet
             // 
+            this.clmDiemViet.DataPropertyName = "DiemViet";
             this.clmDiemViet.FillWeight = 50F;
             this.clmDiemViet.HeaderText = "Điểm viết";
             this.clmDiemViet.Name = "clmDiemViet";
@@ -360,6 +368,7 @@
             // 
             // clmDiemTrungBinh
             // 
+            this.clmDiemTrungBinh.DataPropertyName = "DiemTrungBinh";
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
             this.clmDiemTrungBinh.DefaultCellStyle = dataGridViewCellStyle3;
@@ -368,22 +377,23 @@
             this.clmDiemTrungBinh.Name = "clmDiemTrungBinh";
             this.clmDiemTrungBinh.ReadOnly = true;
             // 
-            // button2
+            // clmMaLop
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.Silver;
-            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.button2.Location = new System.Drawing.Point(634, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 29);
-            this.button2.TabIndex = 69;
-            this.button2.Text = "Tạo báo cáo";
-            this.button2.UseVisualStyleBackColor = false;
+            this.clmMaLop.DataPropertyName = "MaLop";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaLop.DefaultCellStyle = dataGridViewCellStyle1;
+            this.clmMaLop.FillWeight = 70F;
+            this.clmMaLop.HeaderText = "Mã lớp";
+            this.clmMaLop.Name = "clmMaLop";
+            this.clmMaLop.ReadOnly = true;
+            // 
+            // clmTenLop
+            // 
+            this.clmTenLop.DataPropertyName = "TenLop";
+            this.clmTenLop.FillWeight = 93.27411F;
+            this.clmTenLop.HeaderText = "Tên lớp";
+            this.clmTenLop.Name = "clmTenLop";
+            this.clmTenLop.ReadOnly = true;
             // 
             // frmThongKeDiemTheoLop
             // 
@@ -404,10 +414,10 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLop)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridThongKe)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -418,28 +428,28 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnHienTatCa;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView gridLop;
+        private System.Windows.Forms.Button btnDatLai;
+        private System.Windows.Forms.Button btnTimKiem;
+        private System.Windows.Forms.TextBox txtMaLop;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Button btnTaoBaoCao;
+        private System.Windows.Forms.Label lblTongCong;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridView gridThongKe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaHV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmTenHV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiemNghe;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiemNoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiemDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiemViet;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiemTrungBinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaLop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmTenLop;
     }
 }

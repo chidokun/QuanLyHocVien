@@ -11,6 +11,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using BusinessLogic;
+
 
 namespace QuanLyHocVien
 {
@@ -18,7 +20,7 @@ namespace QuanLyHocVien
     {
         public frmMain()
         {
-            BusinessLogic.GlobalSettings.LoadSettings();
+            BusinessLogic.GlobalSettings.LoadDatabase();
             InitializeComponent();
         }
 
@@ -113,13 +115,13 @@ namespace QuanLyHocVien
 
         private void btnGVDoiMatKhau_Click(object sender, EventArgs e)
         {
-            frmDoiMatKhau frm = new frmDoiMatKhau();
+            frmDoiMatKhau frm = new frmDoiMatKhau(GlobalSettings.CurrentUser);
             frm.ShowDialog();
         }
 
         private void btnHVDoiMatKhau_Click(object sender, EventArgs e)
         {
-            frmDoiMatKhau frm = new frmDoiMatKhau();
+            frmDoiMatKhau frm = new frmDoiMatKhau(GlobalSettings.CurrentUser);
             frm.ShowDialog();
         }
 

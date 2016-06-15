@@ -32,15 +32,15 @@
             this.btnHuyBo = new System.Windows.Forms.Button();
             this.btnLuuThongTin = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtWebsite = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTenTrungTam = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -92,18 +92,19 @@
             this.btnLuuThongTin.TabIndex = 2;
             this.btnLuuThongTin.Text = "Lưu thông tin";
             this.btnLuuThongTin.UseVisualStyleBackColor = false;
+            this.btnLuuThongTin.Click += new System.EventHandler(this.btnLuuThongTin_Click);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBox5);
+            this.panel2.Controls.Add(this.txtWebsite);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.txtSDT);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.txtDiaChi);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtTenTrungTam);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label2);
@@ -114,13 +115,13 @@
             this.panel2.Size = new System.Drawing.Size(536, 345);
             this.panel2.TabIndex = 1;
             // 
-            // textBox5
+            // txtWebsite
             // 
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.textBox5.Location = new System.Drawing.Point(164, 275);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(311, 25);
-            this.textBox5.TabIndex = 28;
+            this.txtWebsite.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtWebsite.Location = new System.Drawing.Point(164, 275);
+            this.txtWebsite.Name = "txtWebsite";
+            this.txtWebsite.Size = new System.Drawing.Size(311, 25);
+            this.txtWebsite.TabIndex = 28;
             // 
             // label7
             // 
@@ -131,13 +132,13 @@
             this.label7.TabIndex = 27;
             this.label7.Text = "Website:";
             // 
-            // textBox4
+            // txtEmail
             // 
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.textBox4.Location = new System.Drawing.Point(164, 231);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(311, 25);
-            this.textBox4.TabIndex = 26;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtEmail.Location = new System.Drawing.Point(164, 231);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(311, 25);
+            this.txtEmail.TabIndex = 26;
             // 
             // label6
             // 
@@ -148,13 +149,14 @@
             this.label6.TabIndex = 25;
             this.label6.Text = "Email hỗ trợ:";
             // 
-            // textBox3
+            // txtSDT
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.textBox3.Location = new System.Drawing.Point(164, 188);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(311, 25);
-            this.textBox3.TabIndex = 24;
+            this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtSDT.Location = new System.Drawing.Point(164, 188);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(311, 25);
+            this.txtSDT.TabIndex = 24;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // label5
             // 
@@ -165,13 +167,13 @@
             this.label5.TabIndex = 23;
             this.label5.Text = "Số điện thoại:";
             // 
-            // textBox2
+            // txtDiaChi
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.textBox2.Location = new System.Drawing.Point(164, 144);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(311, 25);
-            this.textBox2.TabIndex = 22;
+            this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtDiaChi.Location = new System.Drawing.Point(164, 144);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(311, 25);
+            this.txtDiaChi.TabIndex = 22;
             // 
             // label3
             // 
@@ -182,13 +184,13 @@
             this.label3.TabIndex = 21;
             this.label3.Text = "Địa chỉ:";
             // 
-            // textBox1
+            // txtTenTrungTam
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.textBox1.Location = new System.Drawing.Point(164, 101);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(311, 25);
-            this.textBox1.TabIndex = 20;
+            this.txtTenTrungTam.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtTenTrungTam.Location = new System.Drawing.Point(164, 101);
+            this.txtTenTrungTam.Name = "txtTenTrungTam";
+            this.txtTenTrungTam.Size = new System.Drawing.Size(311, 25);
+            this.txtTenTrungTam.TabIndex = 20;
             // 
             // label4
             // 
@@ -247,6 +249,7 @@
             this.Name = "frmThongTinTrungTam";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin trung tâm";
+            this.Load += new System.EventHandler(this.frmThongTinTrungTam_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -259,15 +262,15 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtWebsite;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTenTrungTam;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;

@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtMatKhauMoiAgain = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtMatKhauMoi = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtMatKhauCu = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnHuyBo = new System.Windows.Forms.Button();
             this.btnLuuThongTin = new System.Windows.Forms.Button();
@@ -50,30 +50,31 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.txtMatKhauMoiAgain);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.txtMatKhauMoi);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtMatKhauCu);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtTenDangNhap);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblUserName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(429, 310);
             this.panel1.TabIndex = 29;
             // 
-            // textBox4
+            // txtMatKhauMoiAgain
             // 
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.textBox4.Location = new System.Drawing.Point(146, 241);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(238, 25);
-            this.textBox4.TabIndex = 39;
+            this.txtMatKhauMoiAgain.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtMatKhauMoiAgain.Location = new System.Drawing.Point(146, 241);
+            this.txtMatKhauMoiAgain.Name = "txtMatKhauMoiAgain";
+            this.txtMatKhauMoiAgain.Size = new System.Drawing.Size(238, 25);
+            this.txtMatKhauMoiAgain.TabIndex = 39;
+            this.txtMatKhauMoiAgain.UseSystemPasswordChar = true;
             // 
             // label6
             // 
@@ -84,13 +85,14 @@
             this.label6.TabIndex = 38;
             this.label6.Text = "Nhập lại mật khẩu:";
             // 
-            // textBox3
+            // txtMatKhauMoi
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.textBox3.Location = new System.Drawing.Point(146, 198);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(238, 25);
-            this.textBox3.TabIndex = 37;
+            this.txtMatKhauMoi.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtMatKhauMoi.Location = new System.Drawing.Point(146, 198);
+            this.txtMatKhauMoi.Name = "txtMatKhauMoi";
+            this.txtMatKhauMoi.Size = new System.Drawing.Size(238, 25);
+            this.txtMatKhauMoi.TabIndex = 37;
+            this.txtMatKhauMoi.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -101,13 +103,14 @@
             this.label5.TabIndex = 36;
             this.label5.Text = "Mật khẩu mới:";
             // 
-            // textBox2
+            // txtMatKhauCu
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.textBox2.Location = new System.Drawing.Point(146, 154);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(238, 25);
-            this.textBox2.TabIndex = 35;
+            this.txtMatKhauCu.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtMatKhauCu.Location = new System.Drawing.Point(146, 154);
+            this.txtMatKhauCu.Name = "txtMatKhauCu";
+            this.txtMatKhauCu.Size = new System.Drawing.Size(238, 25);
+            this.txtMatKhauCu.TabIndex = 35;
+            this.txtMatKhauCu.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -118,14 +121,14 @@
             this.label3.TabIndex = 34;
             this.label3.Text = "Mật khẩu cũ:";
             // 
-            // textBox1
+            // txtTenDangNhap
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.textBox1.Location = new System.Drawing.Point(146, 109);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(238, 25);
-            this.textBox1.TabIndex = 33;
+            this.txtTenDangNhap.Enabled = false;
+            this.txtTenDangNhap.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtTenDangNhap.Location = new System.Drawing.Point(146, 109);
+            this.txtTenDangNhap.Name = "txtTenDangNhap";
+            this.txtTenDangNhap.Size = new System.Drawing.Size(238, 25);
+            this.txtTenDangNhap.TabIndex = 33;
             // 
             // label4
             // 
@@ -155,16 +158,16 @@
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // lblUserName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label1.ForeColor = System.Drawing.Color.Green;
-            this.label1.Location = new System.Drawing.Point(110, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 25);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "<user name>";
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.lblUserName.ForeColor = System.Drawing.Color.Green;
+            this.lblUserName.Location = new System.Drawing.Point(110, 29);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(126, 25);
+            this.lblUserName.TabIndex = 29;
+            this.lblUserName.Text = "<user name>";
             // 
             // panel2
             // 
@@ -209,6 +212,7 @@
             this.btnLuuThongTin.TabIndex = 2;
             this.btnLuuThongTin.Text = "Đổi mật khẩu";
             this.btnLuuThongTin.UseVisualStyleBackColor = false;
+            this.btnLuuThongTin.Click += new System.EventHandler(this.btnLuuThongTin_Click);
             // 
             // frmDoiMatKhau
             // 
@@ -226,6 +230,7 @@
             this.Name = "frmDoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đổi mật khẩu";
+            this.Load += new System.EventHandler(this.frmDoiMatKhau_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -237,17 +242,17 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtMatKhauMoiAgain;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtMatKhauMoi;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtMatKhauCu;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTenDangNhap;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnHuyBo;
         private System.Windows.Forms.Button btnLuuThongTin;
