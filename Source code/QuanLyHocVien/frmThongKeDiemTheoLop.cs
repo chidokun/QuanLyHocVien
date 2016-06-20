@@ -66,5 +66,13 @@ namespace QuanLyHocVien
         {
             lblTongCong.Text = string.Format("Tổng cộng: {0} học viên. Điểm trung bình của lớp: {1} điểm.", gridThongKe.Rows.Count, DiemTrungBinhLop());
         }
+
+        private void frmThongKeDiemTheoLop_Load(object sender, EventArgs e)
+        {
+            gridLop.AutoGenerateColumns = false;
+
+            btnHienTatCa_Click(sender,e);
+            gridLop_Click(sender, e);
+        }
     }
 }

@@ -3,7 +3,6 @@
 // File "frmGiangDay.cs"
 // Writing by Nguyễn Lê Hoàng Tuấn (nguyentuanit96@gmail.com)
 
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,15 +23,7 @@ namespace BusinessLogic
         {
             return (from p in Database.GIANGDAYs
                     where p.MaGV == maGV
-                    select new
-                    {
-                        MaLop = p.MaLop,
-                        TenLop = p.LOPHOC.TenLop,
-                        NgayBatDau = p.LOPHOC.NgayBD,
-                        NgayKetThuc = p.LOPHOC.NgayKT,
-                        DangMo = p.LOPHOC.DangMo,
-                        SiSo = p.LOPHOC.SiSo
-                    }).ToList();
+                    select p).ToList();
         }
 
 
@@ -48,6 +39,24 @@ namespace BusinessLogic
 
             Database.GIANGDAYs.DeleteAllOnSubmit(temp);
             Database.SubmitChanges();
+        }
+
+        /// <summary>
+        /// Tìm các lớp thỏa điều kiện
+        /// </summary>
+        /// <param name="maGV">Mã giảng viên</param>
+        /// <param name="tuNgay">Từ ngày</param>
+        /// <param name="denNgay">Đến ngày</param>
+        /// <param name="maKH">Mã khóa học</param>
+        /// <returns></returns>
+        public List<LOPHOC> SelectAll(string maGV, DateTime? tuNgay, DateTime? denNgay, string maKH)
+        {
+            return (from p in Database.GIANGDAYs
+                    where (maGV == null ? true : p.MaGV == maGV) &&
+                          (tuNgay == null ? true : p.LOPHOC.NgayBD >= tuNgay.Value) &&
+                          (denNgay == null ? true : p.LOPHOC.NgayKT <= denNgay.Value) &&
+                          (maKH == null ? true : p.LOPHOC.MaKH == maKH)
+                    select p.LOPHOC).ToList();
         }
     }
 }

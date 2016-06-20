@@ -67,6 +67,7 @@ namespace QuanLyHocVien
 
         private void btnHienTatCa_Click(object sender, EventArgs e)
         {
+            gridGV.AutoGenerateColumns = false;
             gridGV.DataSource = busGiangVien.SelectAll();
         }
 
@@ -126,7 +127,14 @@ namespace QuanLyHocVien
 
         private void gridGV_Click(object sender, EventArgs e)
         {
+            gridLop.AutoGenerateColumns = false;
             gridLop.DataSource = busGiangDay.Select(gridGV.SelectedRows[0].Cells["clmMaGV"].Value.ToString());
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            gridGV.DataSource = busGiangVien.SelectAll(chkMaGV.Checked ? txtMaGV.Text : null,
+                chkTenGV.Checked ? txtTenGV.Text : null, chkGioiTinh.Checked ? cboGioiTinh.Text : null);
         }
     }
 }

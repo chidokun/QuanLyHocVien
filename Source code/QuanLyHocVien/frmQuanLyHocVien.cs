@@ -81,6 +81,7 @@ namespace QuanLyHocVien
 
         private void btnXemTatCa_Click(object sender, EventArgs e)
         {
+            gridDSHV.AutoGenerateColumns = false;
             gridDSHV.DataSource = busHocVien.SelectAll((LOAIHV)cboLoaiHV.SelectedValue);
         }
 

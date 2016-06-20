@@ -65,6 +65,7 @@ namespace QuanLyHocVien
                 busCTTT.Update(LoadChiTiet());
 
                 MessageBox.Show("Thay đổi thông tin trung tâm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GlobalSettings.LoadCenterInformation();
                 this.Close();
             }
             catch

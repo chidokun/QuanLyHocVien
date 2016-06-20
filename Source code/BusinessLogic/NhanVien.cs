@@ -83,7 +83,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="nhanVien"></param>
         /// <param name="taiKhoan"></param>
-        public void Update(NHANVIEN nhanVien, TAIKHOAN taiKhoan)
+        public void Update(NHANVIEN nhanVien, TAIKHOAN taiKhoan = null)
         {
             var nhanVienCu = Select(nhanVien.MaNV);
 
@@ -93,9 +93,11 @@ namespace BusinessLogic
             nhanVienCu.MaLoaiNV = nhanVien.MaLoaiNV;
 
             Database.SubmitChanges();
-
-            TaiKhoan tk = new TaiKhoan();
-            tk.Update(taiKhoan);
+            if(taiKhoan!=null)
+            {
+                TaiKhoan tk = new TaiKhoan();
+                tk.Update(taiKhoan);
+            }          
         }
 
         /// <summary>

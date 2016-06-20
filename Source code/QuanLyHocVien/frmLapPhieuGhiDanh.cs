@@ -45,7 +45,8 @@ namespace QuanLyHocVien
 
         private void btnHienTatCa_Click(object sender, EventArgs e)
         {
-            gridDSHV.DataSource = busHocVien.SelectAllResult();
+            gridDSHV.AutoGenerateColumns = false;
+            gridDSHV.DataSource = busHocVien.SelectAll();
         }
 
         private void gridDSHV_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -62,11 +63,11 @@ namespace QuanLyHocVien
         {
             if (rdMaHV.Checked)
             {
-                gridDSHV.DataSource = busHocVien.SelectResultMaHV(txtMaHV.Text);
+                gridDSHV.DataSource = busHocVien.SelectAll(txtMaHV.Text,null,null,null,null,null);
             }
             else if (rdTenHV.Checked)
             {
-                gridDSHV.DataSource = busHocVien.SelectResultTenHV(txtTenHV.Text);
+                gridDSHV.DataSource = busHocVien.SelectAll(null,txtTenHV.Text,null,null,null,null);
             }
         }
 
@@ -82,6 +83,7 @@ namespace QuanLyHocVien
             //load danh sách phiếu
             gridPhieuGhiDanh.DataSource = busPhieuGhiDanh.SelectAll();
 
+            btnHienTatCa_Click(sender, e);
         }
 
 

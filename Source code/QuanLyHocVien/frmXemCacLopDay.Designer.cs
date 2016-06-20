@@ -125,6 +125,7 @@
             this.btnTimKiem.TabIndex = 43;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // cboKhoaHoc
             // 
@@ -291,9 +292,11 @@
             this.btnXemTatCa.TabIndex = 45;
             this.btnXemTatCa.Text = "Xem tất cả";
             this.btnXemTatCa.UseVisualStyleBackColor = false;
+            this.btnXemTatCa.Click += new System.EventHandler(this.btnXemTatCa_Click);
             // 
             // gridKetQuaTimKiem
             // 
+            this.gridKetQuaTimKiem.AllowUserToAddRows = false;
             this.gridKetQuaTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -312,6 +315,7 @@
             this.gridKetQuaTimKiem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridKetQuaTimKiem.Size = new System.Drawing.Size(299, 340);
             this.gridKetQuaTimKiem.TabIndex = 36;
+            this.gridKetQuaTimKiem.Click += new System.EventHandler(this.gridKetQuaTimKiem_Click);
             // 
             // clmMaLop
             // 

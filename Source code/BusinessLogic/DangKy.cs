@@ -1,4 +1,9 @@
-﻿using System;
+﻿// Quản lý Học viên Trung tâm Anh ngữ
+// Copyright © 2016, VP2T
+// File "DangKy.cs"
+// Writing by Nguyễn Lê Hoàng Tuấn (nguyentuanit96@gmail.com)
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +14,10 @@ namespace BusinessLogic
 {
     public class DangKy
     {
+        /// <summary>
+        /// Thêm một đăng ký
+        /// </summary>
+        /// <param name="dk"></param>
         public void Insert(DANGKY dk)
         {
             Database.DANGKies.InsertOnSubmit(dk);

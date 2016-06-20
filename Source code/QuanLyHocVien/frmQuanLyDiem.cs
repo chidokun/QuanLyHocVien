@@ -121,6 +121,13 @@ namespace QuanLyHocVien
             numDiemNoi.Value = 0;
             numDiemDoc.Value = 0;
             numDiemViet.Value = 0;
+
+            gridDSHV.AutoGenerateColumns = false;
+            gridLop.AutoGenerateColumns = false;
+
+            btnHienTatCa_Click(sender, e);
+            gridLop_Click(sender, e);
+            gridDSHV_Click(sender, e);
         }
 
         private void btnLuuThongTin_Click(object sender, EventArgs e)

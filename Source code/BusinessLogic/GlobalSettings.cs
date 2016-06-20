@@ -1,4 +1,9 @@
-﻿using System;
+﻿// Quản lý Học viên Trung tâm Anh ngữ
+// Copyright © 2016, VP2T
+// File "GlobalSettings.cs"
+// Writing by Nguyễn Lê Hoàng Tuấn (nguyentuanit96@gmail.com)
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +16,8 @@ namespace BusinessLogic
         public static QuanLyHocVienDataContext Database { get; set; }
 
         public static string ConnectionString { get; set; }
+
+        public static string UserID { get; set; } = "GV0001";
 
         public static string CurrentUser { get; set; } = "admin"; //tạm
 

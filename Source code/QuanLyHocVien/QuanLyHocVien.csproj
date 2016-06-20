@@ -54,6 +54,12 @@
     <Compile Include="frmBangDiem.Designer.cs">
       <DependentUpon>frmBangDiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBaoCaoHocVienTheoThang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoCaoHocVienTheoThang.Designer.cs">
+      <DependentUpon>frmBaoCaoHocVienTheoThang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCacLopDaHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,11 +186,23 @@
     <Compile Include="frmThayDoiThongTinHV.Designer.cs">
       <DependentUpon>frmThayDoiThongTinHV.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmThayDoiThongTinNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThayDoiThongTinNV.Designer.cs">
+      <DependentUpon>frmThayDoiThongTinNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThongKeDiemTheoLop.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmThongKeDiemTheoLop.Designer.cs">
       <DependentUpon>frmThongKeDiemTheoLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThongKeNoHocVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongKeNoHocVien.Designer.cs">
+      <DependentUpon>frmThongKeNoHocVien.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThongTinPhanMem.cs">
       <SubType>Form</SubType>
@@ -204,16 +222,31 @@
     <Compile Include="frmTiepNhanHocVien.Designer.cs">
       <DependentUpon>frmTiepNhanHocVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTrangMoDau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTrangMoDau.Designer.cs">
+      <DependentUpon>frmTrangMoDau.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmXemCacLopDay.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmXemCacLopDay.Designer.cs">
       <DependentUpon>frmXemCacLopDay.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmXepLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmXepLop.Designer.cs">
+      <DependentUpon>frmXepLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmBangDiem.resx">
       <DependentUpon>frmBangDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBaoCaoHocVienTheoThang.resx">
+      <DependentUpon>frmBaoCaoHocVienTheoThang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCacLopDaHoc.resx">
       <DependentUpon>frmCacLopDaHoc.cs</DependentUpon>
@@ -278,8 +311,14 @@
     <EmbeddedResource Include="frmThayDoiThongTinHV.resx">
       <DependentUpon>frmThayDoiThongTinHV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmThayDoiThongTinNV.resx">
+      <DependentUpon>frmThayDoiThongTinNV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmThongKeDiemTheoLop.resx">
       <DependentUpon>frmThongKeDiemTheoLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongKeNoHocVien.resx">
+      <DependentUpon>frmThongKeNoHocVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongTinPhanMem.resx">
       <DependentUpon>frmThongTinPhanMem.cs</DependentUpon>
@@ -290,8 +329,14 @@
     <EmbeddedResource Include="frmTiepNhanHocVien.resx">
       <DependentUpon>frmTiepNhanHocVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTrangMoDau.resx">
+      <DependentUpon>frmTrangMoDau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmXemCacLopDay.resx">
       <DependentUpon>frmXemCacLopDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmXepLop.resx">
+      <DependentUpon>frmXepLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

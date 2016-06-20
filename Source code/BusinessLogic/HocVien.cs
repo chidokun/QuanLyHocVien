@@ -20,10 +20,8 @@ namespace BusinessLogic
         /// <returns></returns>
         public object SelectAll()
         {
-            var result = from p in GlobalSettings.Database.HOCVIENs
-                         select new { MaHV = p.MaHV, TenHV = p.TenHV, NgaySinh = p.NgaySinh, GioiTinhHV = p.GioiTinhHV, SdtHV = p.SdtHV, EmailHV = p.EmailHV };
-
-            return result.ToList();
+            return (from p in GlobalSettings.Database.HOCVIENs
+                    select p).ToList();
         }
 
         /// <summary>
@@ -33,21 +31,9 @@ namespace BusinessLogic
         /// <returns></returns>
         public object SelectAll(LOAIHV loai)
         {
-            var result = from p in GlobalSettings.Database.HOCVIENs
+            return ( from p in GlobalSettings.Database.HOCVIENs
                          where p.MaLoaiHV == loai.MaLoaiHV
-                         select new
-                         {
-                             MaHV = p.MaHV,
-                             TenHV = p.TenHV,
-                             NgaySinh = p.NgaySinh,
-                             GioiTinhHV = p.GioiTinhHV,
-                             DiaChi = p.DiaChi,
-                             SdtHV = p.SdtHV,
-                             EmailHV = p.EmailHV,
-                             NgayTiepNhan = p.NgayTiepNhan
-                         };
-
-            return result.ToList();
+                         select p).ToList();
         }
 
         /// <summary>
@@ -62,55 +48,36 @@ namespace BusinessLogic
         /// <returns></returns>
         public object SelectAll(string maHV, string tenHV, string gioiTinh, DateTime? tuNgay, DateTime? denNgay, LOAIHV loai)
         {
-            var result = from p in GlobalSettings.Database.HOCVIENs
+            return (from p in GlobalSettings.Database.HOCVIENs
                          where p.MaLoaiHV == loai.MaLoaiHV &&
                                 (maHV == null ? true : p.MaHV.Contains(maHV)) &&
                                 (tenHV == null ? true : p.TenHV.Contains(tenHV)) &&
                                 (gioiTinh == null ? true : p.GioiTinhHV.Contains(gioiTinh)) &&
                                 (tuNgay == null ? true : p.NgayTiepNhan >= tuNgay) &&
                                 (denNgay == null ? true : p.NgayTiepNhan <= denNgay)
-                         select new
-                         {
-                             MaHV = p.MaHV,
-                             TenHV = p.TenHV,
-                             NgaySinh = p.NgaySinh,
-                             GioiTinhHV = p.GioiTinhHV,
-                             DiaChi = p.DiaChi,
-                             SdtHV = p.SdtHV,
-                             EmailHV = p.EmailHV,
-                             NgayTiepNhan = p.NgayTiepNhan
-                         };
-
-            return result.ToList();
+                         select p).ToList();
         }
 
-        public object SelectAllResult()
+        /// <summary>
+        /// Chọn danh sách học viên chưa có lớp
+        /// </summary>
+        /// <returns></returns>
+        public List<HOCVIEN> DanhSachChuaCoLop()
         {
-            var result = from p in GlobalSettings.Database.HOCVIENs
-                         where p.MaLoaiHV == "LHV00"
-                         select new { MaHV = p.MaHV, TenHV = p.TenHV, NgaySinh = p.NgaySinh, GioiTinhHV = p.GioiTinhHV };
-
-            return result.ToList();
+            return (from p in Database.HOCVIENs
+                    where ((from q in Database.BANGDIEMs
+                            where p.MaHV == q.MaHV
+                            select q).Count()) < (from r in Database.DANGKies
+                                                  where p.MaHV == r.MaHV
+                                                  select r).Count()
+                    select p).ToList();
+            //select new
+            //{
+            //    MaHV = p.MaHV,
+            //    TenHV = p.TenHV,
+            //    TenKH = p.DANGKies.KHOAHOC.TenKH
+            //}).ToList();
         }
-
-        public object SelectResultMaHV(string maHV)
-        {
-            var result = from p in GlobalSettings.Database.HOCVIENs
-                         where p.MaHV.Contains(maHV) && p.MaLoaiHV == "LHV00"
-                         select new { MaHV = p.MaHV, TenHV = p.TenHV, NgaySinh = p.NgaySinh, GioiTinhHV = p.GioiTinhHV };
-
-            return result.ToList();
-        }
-
-        public object SelectResultTenHV(string tenHV)
-        {
-            var result = from p in GlobalSettings.Database.HOCVIENs
-                         where p.TenHV.Contains(tenHV) && p.MaLoaiHV == "LHV00"
-                         select new { MaHV = p.MaHV, TenHV = p.TenHV, NgaySinh = p.NgaySinh, GioiTinhHV = p.GioiTinhHV };
-
-            return result.ToList();
-        }
-
 
         /// <summary>
         /// Chọn một học viên
@@ -141,7 +108,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="hocVien">Học viên cần cập nhật</param>
         /// <param name="taiKhoan">Tài khoản cần thêm mới</param>
-        public void Update(HOCVIEN hocVien, TAIKHOAN taiKhoan)
+        public void Update(HOCVIEN hocVien, TAIKHOAN taiKhoan = null)
         {
             var hocVienCu = Select(hocVien.MaHV);
 

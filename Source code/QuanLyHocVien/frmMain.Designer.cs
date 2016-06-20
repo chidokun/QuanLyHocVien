@@ -28,41 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tabRibbon = new System.Windows.Forms.TabControl();
             this.tabNhanVien = new System.Windows.Forms.TabPage();
-            this.tabGiangVien = new System.Windows.Forms.TabPage();
-            this.tabHocVien = new System.Windows.Forms.TabPage();
-            this.tabQuanTri = new System.Windows.Forms.TabPage();
-            this.tabTroGiup = new System.Windows.Forms.TabPage();
-            this.pnlTabTitle = new System.Windows.Forms.Panel();
-            this.btnTroGiupTitle = new System.Windows.Forms.Button();
-            this.btnQuanTriTitle = new System.Windows.Forms.Button();
-            this.btnHocVienTitle = new System.Windows.Forms.Button();
-            this.btnGiangVienTitle = new System.Windows.Forms.Button();
-            this.btnNhanVienTitle = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pnlWorkspace = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnThayDoiThongTinNV = new System.Windows.Forms.Button();
+            this.btnNVDoiMatKhau = new System.Windows.Forms.Button();
             this.btnXepLop = new System.Windows.Forms.Button();
             this.btnThongKeDiemTheoLop = new System.Windows.Forms.Button();
             this.btnQuanLyDiem = new System.Windows.Forms.Button();
-            this.btnThongKeHocPhi = new System.Windows.Forms.Button();
+            this.btnThongKeNoHocVien = new System.Windows.Forms.Button();
             this.btnBaoCaoHocVienTheoThang = new System.Windows.Forms.Button();
             this.btnLapPhieuGhiDanh = new System.Windows.Forms.Button();
             this.btnTiepNhanHocVien = new System.Windows.Forms.Button();
+            this.tabGiangVien = new System.Windows.Forms.TabPage();
             this.btnXemCacLopDay = new System.Windows.Forms.Button();
             this.btnGVThayDoiThongTin = new System.Windows.Forms.Button();
             this.btnGVDoiMatKhau = new System.Windows.Forms.Button();
+            this.tabHocVien = new System.Windows.Forms.TabPage();
             this.btnHVThayDoiThongTin = new System.Windows.Forms.Button();
             this.btnHVDoiMatKhau = new System.Windows.Forms.Button();
             this.btnCacLopDaHoc = new System.Windows.Forms.Button();
             this.btnHocPhi = new System.Windows.Forms.Button();
             this.btnBangDiem = new System.Windows.Forms.Button();
+            this.tabQuanTri = new System.Windows.Forms.TabPage();
             this.btnThongTinTrungTam = new System.Windows.Forms.Button();
             this.btnCaiDatVaQuyDinh = new System.Windows.Forms.Button();
             this.btnQuanLyTaiKhoan = new System.Windows.Forms.Button();
@@ -72,9 +62,23 @@
             this.btnQuanLyGiangVien = new System.Windows.Forms.Button();
             this.btnQuanLyNhanVien = new System.Windows.Forms.Button();
             this.btnQuanLyHocVien = new System.Windows.Forms.Button();
+            this.tabTroGiup = new System.Windows.Forms.TabPage();
             this.btnTrangMoDau = new System.Windows.Forms.Button();
             this.btnThongTinPhanMem = new System.Windows.Forms.Button();
             this.btnTroGiup = new System.Windows.Forms.Button();
+            this.pnlTabTitle = new System.Windows.Forms.Panel();
+            this.btnTroGiupTitle = new System.Windows.Forms.Button();
+            this.btnQuanTriTitle = new System.Windows.Forms.Button();
+            this.btnHocVienTitle = new System.Windows.Forms.Button();
+            this.btnGiangVienTitle = new System.Windows.Forms.Button();
+            this.btnNhanVienTitle = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblCenterName = new System.Windows.Forms.Label();
+            this.lblDateTime = new System.Windows.Forms.Button();
+            this.lblServerName = new System.Windows.Forms.Button();
+            this.pnlWorkspace = new System.Windows.Forms.Panel();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tabRibbon.SuspendLayout();
@@ -94,7 +98,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1024, 88);
+            this.panel1.Size = new System.Drawing.Size(1150, 88);
             this.panel1.TabIndex = 0;
             // 
             // panel4
@@ -104,7 +108,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 28);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1024, 60);
+            this.panel4.Size = new System.Drawing.Size(1150, 60);
             this.panel4.TabIndex = 1;
             // 
             // tabRibbon
@@ -121,251 +125,60 @@
             this.tabRibbon.Location = new System.Drawing.Point(-4, -5);
             this.tabRibbon.Name = "tabRibbon";
             this.tabRibbon.SelectedIndex = 0;
-            this.tabRibbon.Size = new System.Drawing.Size(1032, 90);
+            this.tabRibbon.Size = new System.Drawing.Size(1158, 90);
             this.tabRibbon.TabIndex = 0;
             this.tabRibbon.TabStop = false;
             // 
             // tabNhanVien
             // 
             this.tabNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.tabNhanVien.Controls.Add(this.btnThayDoiThongTinNV);
+            this.tabNhanVien.Controls.Add(this.btnNVDoiMatKhau);
             this.tabNhanVien.Controls.Add(this.btnXepLop);
             this.tabNhanVien.Controls.Add(this.btnThongKeDiemTheoLop);
             this.tabNhanVien.Controls.Add(this.btnQuanLyDiem);
-            this.tabNhanVien.Controls.Add(this.btnThongKeHocPhi);
+            this.tabNhanVien.Controls.Add(this.btnThongKeNoHocVien);
             this.tabNhanVien.Controls.Add(this.btnBaoCaoHocVienTheoThang);
             this.tabNhanVien.Controls.Add(this.btnLapPhieuGhiDanh);
             this.tabNhanVien.Controls.Add(this.btnTiepNhanHocVien);
             this.tabNhanVien.Location = new System.Drawing.Point(4, 4);
             this.tabNhanVien.Name = "tabNhanVien";
             this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNhanVien.Size = new System.Drawing.Size(1024, 62);
+            this.tabNhanVien.Size = new System.Drawing.Size(1150, 62);
             this.tabNhanVien.TabIndex = 0;
             this.tabNhanVien.Text = "Nhân viên";
             // 
-            // tabGiangVien
+            // btnThayDoiThongTinNV
             // 
-            this.tabGiangVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.tabGiangVien.Controls.Add(this.btnXemCacLopDay);
-            this.tabGiangVien.Controls.Add(this.btnGVThayDoiThongTin);
-            this.tabGiangVien.Controls.Add(this.btnGVDoiMatKhau);
-            this.tabGiangVien.Location = new System.Drawing.Point(4, 4);
-            this.tabGiangVien.Name = "tabGiangVien";
-            this.tabGiangVien.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGiangVien.Size = new System.Drawing.Size(1024, 62);
-            this.tabGiangVien.TabIndex = 1;
-            this.tabGiangVien.Text = "Giảng viên";
+            this.btnThayDoiThongTinNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.btnThayDoiThongTinNV.FlatAppearance.BorderSize = 0;
+            this.btnThayDoiThongTinNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThayDoiThongTinNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.btnThayDoiThongTinNV.Image = global::QuanLyHocVien.Properties.Resources.icon_ThayDoiThongTin_32dp;
+            this.btnThayDoiThongTinNV.Location = new System.Drawing.Point(1009, 7);
+            this.btnThayDoiThongTinNV.Name = "btnThayDoiThongTinNV";
+            this.btnThayDoiThongTinNV.Size = new System.Drawing.Size(100, 48);
+            this.btnThayDoiThongTinNV.TabIndex = 12;
+            this.btnThayDoiThongTinNV.Text = "Thay đổi thông tin";
+            this.btnThayDoiThongTinNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThayDoiThongTinNV.UseVisualStyleBackColor = false;
+            this.btnThayDoiThongTinNV.Click += new System.EventHandler(this.btnThayDoiThongTinNV_Click);
             // 
-            // tabHocVien
+            // btnNVDoiMatKhau
             // 
-            this.tabHocVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.tabHocVien.Controls.Add(this.btnHVThayDoiThongTin);
-            this.tabHocVien.Controls.Add(this.btnHVDoiMatKhau);
-            this.tabHocVien.Controls.Add(this.btnCacLopDaHoc);
-            this.tabHocVien.Controls.Add(this.btnHocPhi);
-            this.tabHocVien.Controls.Add(this.btnBangDiem);
-            this.tabHocVien.Location = new System.Drawing.Point(4, 4);
-            this.tabHocVien.Name = "tabHocVien";
-            this.tabHocVien.Size = new System.Drawing.Size(1024, 62);
-            this.tabHocVien.TabIndex = 2;
-            this.tabHocVien.Text = "Học viên";
-            // 
-            // tabQuanTri
-            // 
-            this.tabQuanTri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.tabQuanTri.Controls.Add(this.btnThongTinTrungTam);
-            this.tabQuanTri.Controls.Add(this.btnCaiDatVaQuyDinh);
-            this.tabQuanTri.Controls.Add(this.btnQuanLyTaiKhoan);
-            this.tabQuanTri.Controls.Add(this.btnQuanLyHocPhi);
-            this.tabQuanTri.Controls.Add(this.btnQuanLyKhoaHoc);
-            this.tabQuanTri.Controls.Add(this.btnQuanLyLopHoc);
-            this.tabQuanTri.Controls.Add(this.btnQuanLyGiangVien);
-            this.tabQuanTri.Controls.Add(this.btnQuanLyNhanVien);
-            this.tabQuanTri.Controls.Add(this.btnQuanLyHocVien);
-            this.tabQuanTri.Location = new System.Drawing.Point(4, 4);
-            this.tabQuanTri.Name = "tabQuanTri";
-            this.tabQuanTri.Size = new System.Drawing.Size(1024, 62);
-            this.tabQuanTri.TabIndex = 3;
-            this.tabQuanTri.Text = "Quản trị";
-            // 
-            // tabTroGiup
-            // 
-            this.tabTroGiup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.tabTroGiup.Controls.Add(this.btnTrangMoDau);
-            this.tabTroGiup.Controls.Add(this.btnThongTinPhanMem);
-            this.tabTroGiup.Controls.Add(this.btnTroGiup);
-            this.tabTroGiup.Location = new System.Drawing.Point(4, 4);
-            this.tabTroGiup.Name = "tabTroGiup";
-            this.tabTroGiup.Size = new System.Drawing.Size(1024, 62);
-            this.tabTroGiup.TabIndex = 4;
-            this.tabTroGiup.Text = "Trợ giúp";
-            // 
-            // pnlTabTitle
-            // 
-            this.pnlTabTitle.Controls.Add(this.btnTroGiupTitle);
-            this.pnlTabTitle.Controls.Add(this.btnQuanTriTitle);
-            this.pnlTabTitle.Controls.Add(this.btnHocVienTitle);
-            this.pnlTabTitle.Controls.Add(this.btnGiangVienTitle);
-            this.pnlTabTitle.Controls.Add(this.btnNhanVienTitle);
-            this.pnlTabTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTabTitle.Location = new System.Drawing.Point(0, 0);
-            this.pnlTabTitle.Name = "pnlTabTitle";
-            this.pnlTabTitle.Size = new System.Drawing.Size(1024, 28);
-            this.pnlTabTitle.TabIndex = 0;
-            // 
-            // btnTroGiupTitle
-            // 
-            this.btnTroGiupTitle.BackColor = System.Drawing.Color.White;
-            this.btnTroGiupTitle.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnTroGiupTitle.FlatAppearance.BorderSize = 0;
-            this.btnTroGiupTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTroGiupTitle.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnTroGiupTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
-            this.btnTroGiupTitle.Location = new System.Drawing.Point(384, 0);
-            this.btnTroGiupTitle.Name = "btnTroGiupTitle";
-            this.btnTroGiupTitle.Size = new System.Drawing.Size(96, 28);
-            this.btnTroGiupTitle.TabIndex = 4;
-            this.btnTroGiupTitle.Text = "Trợ giúp";
-            this.btnTroGiupTitle.UseVisualStyleBackColor = false;
-            this.btnTroGiupTitle.Click += new System.EventHandler(this.btnTroGiupTitle_Click);
-            // 
-            // btnQuanTriTitle
-            // 
-            this.btnQuanTriTitle.BackColor = System.Drawing.Color.White;
-            this.btnQuanTriTitle.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnQuanTriTitle.FlatAppearance.BorderSize = 0;
-            this.btnQuanTriTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuanTriTitle.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnQuanTriTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
-            this.btnQuanTriTitle.Location = new System.Drawing.Point(288, 0);
-            this.btnQuanTriTitle.Name = "btnQuanTriTitle";
-            this.btnQuanTriTitle.Size = new System.Drawing.Size(96, 28);
-            this.btnQuanTriTitle.TabIndex = 3;
-            this.btnQuanTriTitle.Text = "Quản trị";
-            this.btnQuanTriTitle.UseVisualStyleBackColor = false;
-            this.btnQuanTriTitle.Click += new System.EventHandler(this.btnQuanTriTitle_Click);
-            // 
-            // btnHocVienTitle
-            // 
-            this.btnHocVienTitle.BackColor = System.Drawing.Color.White;
-            this.btnHocVienTitle.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnHocVienTitle.FlatAppearance.BorderSize = 0;
-            this.btnHocVienTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHocVienTitle.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnHocVienTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
-            this.btnHocVienTitle.Location = new System.Drawing.Point(192, 0);
-            this.btnHocVienTitle.Name = "btnHocVienTitle";
-            this.btnHocVienTitle.Size = new System.Drawing.Size(96, 28);
-            this.btnHocVienTitle.TabIndex = 2;
-            this.btnHocVienTitle.Text = "Học viên";
-            this.btnHocVienTitle.UseVisualStyleBackColor = false;
-            this.btnHocVienTitle.Click += new System.EventHandler(this.btnHocVienTitle_Click);
-            // 
-            // btnGiangVienTitle
-            // 
-            this.btnGiangVienTitle.BackColor = System.Drawing.Color.White;
-            this.btnGiangVienTitle.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnGiangVienTitle.FlatAppearance.BorderSize = 0;
-            this.btnGiangVienTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGiangVienTitle.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnGiangVienTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
-            this.btnGiangVienTitle.Location = new System.Drawing.Point(96, 0);
-            this.btnGiangVienTitle.Name = "btnGiangVienTitle";
-            this.btnGiangVienTitle.Size = new System.Drawing.Size(96, 28);
-            this.btnGiangVienTitle.TabIndex = 1;
-            this.btnGiangVienTitle.Text = "Giảng viên";
-            this.btnGiangVienTitle.UseVisualStyleBackColor = false;
-            this.btnGiangVienTitle.Click += new System.EventHandler(this.btnGiangVienTitle_Click);
-            // 
-            // btnNhanVienTitle
-            // 
-            this.btnNhanVienTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.btnNhanVienTitle.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnNhanVienTitle.FlatAppearance.BorderSize = 0;
-            this.btnNhanVienTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNhanVienTitle.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnNhanVienTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
-            this.btnNhanVienTitle.Location = new System.Drawing.Point(0, 0);
-            this.btnNhanVienTitle.Name = "btnNhanVienTitle";
-            this.btnNhanVienTitle.Size = new System.Drawing.Size(96, 28);
-            this.btnNhanVienTitle.TabIndex = 0;
-            this.btnNhanVienTitle.Text = "Nhân viên";
-            this.btnNhanVienTitle.UseVisualStyleBackColor = false;
-            this.btnNhanVienTitle.Click += new System.EventHandler(this.btnNhanVienTitle_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.LightGray;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 88);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1024, 5);
-            this.panel3.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 559);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1024, 24);
-            this.panel2.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(7, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 15);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "<center name>";
-            // 
-            // pnlWorkspace
-            // 
-            this.pnlWorkspace.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlWorkspace.Location = new System.Drawing.Point(0, 93);
-            this.pnlWorkspace.Name = "pnlWorkspace";
-            this.pnlWorkspace.Size = new System.Drawing.Size(1024, 466);
-            this.pnlWorkspace.TabIndex = 4;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::QuanLyHocVien.Properties.Resources.icon_Time_16dp;
-            this.button2.Location = new System.Drawing.Point(839, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(179, 24);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "dd/MM/yyyy HH:mm:ss tt";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::QuanLyHocVien.Properties.Resources.icon_Server_16dp;
-            this.button1.Location = new System.Drawing.Point(623, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(210, 24);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "<server name>";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnNVDoiMatKhau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.btnNVDoiMatKhau.FlatAppearance.BorderSize = 0;
+            this.btnNVDoiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNVDoiMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.btnNVDoiMatKhau.Image = global::QuanLyHocVien.Properties.Resources.icon_MatKhau_32dp;
+            this.btnNVDoiMatKhau.Location = new System.Drawing.Point(884, 7);
+            this.btnNVDoiMatKhau.Name = "btnNVDoiMatKhau";
+            this.btnNVDoiMatKhau.Size = new System.Drawing.Size(119, 48);
+            this.btnNVDoiMatKhau.TabIndex = 11;
+            this.btnNVDoiMatKhau.Text = "Đổi mật khẩu";
+            this.btnNVDoiMatKhau.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNVDoiMatKhau.UseVisualStyleBackColor = false;
+            this.btnNVDoiMatKhau.Click += new System.EventHandler(this.btnNVDoiMatKhau_Click);
             // 
             // btnXepLop
             // 
@@ -381,6 +194,7 @@
             this.btnXepLop.Text = "Xếp lớp";
             this.btnXepLop.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXepLop.UseVisualStyleBackColor = false;
+            this.btnXepLop.Click += new System.EventHandler(this.btnXepLop_Click);
             // 
             // btnThongKeDiemTheoLop
             // 
@@ -414,20 +228,21 @@
             this.btnQuanLyDiem.UseVisualStyleBackColor = false;
             this.btnQuanLyDiem.Click += new System.EventHandler(this.btnQuanLyDiem_Click);
             // 
-            // btnThongKeHocPhi
+            // btnThongKeNoHocVien
             // 
-            this.btnThongKeHocPhi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.btnThongKeHocPhi.FlatAppearance.BorderSize = 0;
-            this.btnThongKeHocPhi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongKeHocPhi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
-            this.btnThongKeHocPhi.Image = global::QuanLyHocVien.Properties.Resources.icon_ThongKeHocPhi_32dp;
-            this.btnThongKeHocPhi.Location = new System.Drawing.Point(409, 7);
-            this.btnThongKeHocPhi.Name = "btnThongKeHocPhi";
-            this.btnThongKeHocPhi.Size = new System.Drawing.Size(107, 48);
-            this.btnThongKeHocPhi.TabIndex = 7;
-            this.btnThongKeHocPhi.Text = "Thống kê học phí";
-            this.btnThongKeHocPhi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThongKeHocPhi.UseVisualStyleBackColor = false;
+            this.btnThongKeNoHocVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.btnThongKeNoHocVien.FlatAppearance.BorderSize = 0;
+            this.btnThongKeNoHocVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKeNoHocVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.btnThongKeNoHocVien.Image = global::QuanLyHocVien.Properties.Resources.icon_ThongKeHocPhi_32dp;
+            this.btnThongKeNoHocVien.Location = new System.Drawing.Point(409, 7);
+            this.btnThongKeNoHocVien.Name = "btnThongKeNoHocVien";
+            this.btnThongKeNoHocVien.Size = new System.Drawing.Size(123, 48);
+            this.btnThongKeNoHocVien.TabIndex = 7;
+            this.btnThongKeNoHocVien.Text = "Thống kê nợ học viên";
+            this.btnThongKeNoHocVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThongKeNoHocVien.UseVisualStyleBackColor = false;
+            this.btnThongKeNoHocVien.Click += new System.EventHandler(this.btnThongKeNoHocVien_Click);
             // 
             // btnBaoCaoHocVienTheoThang
             // 
@@ -443,6 +258,7 @@
             this.btnBaoCaoHocVienTheoThang.Text = "Báo cáo học viên ghi danh theo tháng";
             this.btnBaoCaoHocVienTheoThang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBaoCaoHocVienTheoThang.UseVisualStyleBackColor = false;
+            this.btnBaoCaoHocVienTheoThang.Click += new System.EventHandler(this.btnBaoCaoHocVienTheoThang_Click);
             // 
             // btnLapPhieuGhiDanh
             // 
@@ -475,6 +291,19 @@
             this.btnTiepNhanHocVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTiepNhanHocVien.UseVisualStyleBackColor = false;
             this.btnTiepNhanHocVien.Click += new System.EventHandler(this.btnTiepNhanHocVien_Click);
+            // 
+            // tabGiangVien
+            // 
+            this.tabGiangVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.tabGiangVien.Controls.Add(this.btnXemCacLopDay);
+            this.tabGiangVien.Controls.Add(this.btnGVThayDoiThongTin);
+            this.tabGiangVien.Controls.Add(this.btnGVDoiMatKhau);
+            this.tabGiangVien.Location = new System.Drawing.Point(4, 4);
+            this.tabGiangVien.Name = "tabGiangVien";
+            this.tabGiangVien.Padding = new System.Windows.Forms.Padding(3);
+            this.tabGiangVien.Size = new System.Drawing.Size(1150, 62);
+            this.tabGiangVien.TabIndex = 1;
+            this.tabGiangVien.Text = "Giảng viên";
             // 
             // btnXemCacLopDay
             // 
@@ -523,6 +352,20 @@
             this.btnGVDoiMatKhau.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGVDoiMatKhau.UseVisualStyleBackColor = false;
             this.btnGVDoiMatKhau.Click += new System.EventHandler(this.btnGVDoiMatKhau_Click);
+            // 
+            // tabHocVien
+            // 
+            this.tabHocVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.tabHocVien.Controls.Add(this.btnHVThayDoiThongTin);
+            this.tabHocVien.Controls.Add(this.btnHVDoiMatKhau);
+            this.tabHocVien.Controls.Add(this.btnCacLopDaHoc);
+            this.tabHocVien.Controls.Add(this.btnHocPhi);
+            this.tabHocVien.Controls.Add(this.btnBangDiem);
+            this.tabHocVien.Location = new System.Drawing.Point(4, 4);
+            this.tabHocVien.Name = "tabHocVien";
+            this.tabHocVien.Size = new System.Drawing.Size(1150, 62);
+            this.tabHocVien.TabIndex = 2;
+            this.tabHocVien.Text = "Học viên";
             // 
             // btnHVThayDoiThongTin
             // 
@@ -603,6 +446,24 @@
             this.btnBangDiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBangDiem.UseVisualStyleBackColor = false;
             this.btnBangDiem.Click += new System.EventHandler(this.btnBangDiem_Click);
+            // 
+            // tabQuanTri
+            // 
+            this.tabQuanTri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.tabQuanTri.Controls.Add(this.btnThongTinTrungTam);
+            this.tabQuanTri.Controls.Add(this.btnCaiDatVaQuyDinh);
+            this.tabQuanTri.Controls.Add(this.btnQuanLyTaiKhoan);
+            this.tabQuanTri.Controls.Add(this.btnQuanLyHocPhi);
+            this.tabQuanTri.Controls.Add(this.btnQuanLyKhoaHoc);
+            this.tabQuanTri.Controls.Add(this.btnQuanLyLopHoc);
+            this.tabQuanTri.Controls.Add(this.btnQuanLyGiangVien);
+            this.tabQuanTri.Controls.Add(this.btnQuanLyNhanVien);
+            this.tabQuanTri.Controls.Add(this.btnQuanLyHocVien);
+            this.tabQuanTri.Location = new System.Drawing.Point(4, 4);
+            this.tabQuanTri.Name = "tabQuanTri";
+            this.tabQuanTri.Size = new System.Drawing.Size(1150, 62);
+            this.tabQuanTri.TabIndex = 3;
+            this.tabQuanTri.Text = "Quản trị";
             // 
             // btnThongTinTrungTam
             // 
@@ -747,6 +608,18 @@
             this.btnQuanLyHocVien.UseVisualStyleBackColor = false;
             this.btnQuanLyHocVien.Click += new System.EventHandler(this.btnQuanLyHocVien_Click);
             // 
+            // tabTroGiup
+            // 
+            this.tabTroGiup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.tabTroGiup.Controls.Add(this.btnTrangMoDau);
+            this.tabTroGiup.Controls.Add(this.btnThongTinPhanMem);
+            this.tabTroGiup.Controls.Add(this.btnTroGiup);
+            this.tabTroGiup.Location = new System.Drawing.Point(4, 4);
+            this.tabTroGiup.Name = "tabTroGiup";
+            this.tabTroGiup.Size = new System.Drawing.Size(1150, 62);
+            this.tabTroGiup.TabIndex = 4;
+            this.tabTroGiup.Text = "Trợ giúp";
+            // 
             // btnTrangMoDau
             // 
             this.btnTrangMoDau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
@@ -761,6 +634,7 @@
             this.btnTrangMoDau.Text = "Trang mở đầu";
             this.btnTrangMoDau.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTrangMoDau.UseVisualStyleBackColor = false;
+            this.btnTrangMoDau.Click += new System.EventHandler(this.btnTrangMoDau_Click);
             // 
             // btnThongTinPhanMem
             // 
@@ -793,12 +667,186 @@
             this.btnTroGiup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTroGiup.UseVisualStyleBackColor = false;
             // 
+            // pnlTabTitle
+            // 
+            this.pnlTabTitle.Controls.Add(this.btnTroGiupTitle);
+            this.pnlTabTitle.Controls.Add(this.btnQuanTriTitle);
+            this.pnlTabTitle.Controls.Add(this.btnHocVienTitle);
+            this.pnlTabTitle.Controls.Add(this.btnGiangVienTitle);
+            this.pnlTabTitle.Controls.Add(this.btnNhanVienTitle);
+            this.pnlTabTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTabTitle.Location = new System.Drawing.Point(0, 0);
+            this.pnlTabTitle.Name = "pnlTabTitle";
+            this.pnlTabTitle.Size = new System.Drawing.Size(1150, 28);
+            this.pnlTabTitle.TabIndex = 0;
+            // 
+            // btnTroGiupTitle
+            // 
+            this.btnTroGiupTitle.BackColor = System.Drawing.Color.White;
+            this.btnTroGiupTitle.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnTroGiupTitle.FlatAppearance.BorderSize = 0;
+            this.btnTroGiupTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTroGiupTitle.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnTroGiupTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.btnTroGiupTitle.Location = new System.Drawing.Point(384, 0);
+            this.btnTroGiupTitle.Name = "btnTroGiupTitle";
+            this.btnTroGiupTitle.Size = new System.Drawing.Size(96, 28);
+            this.btnTroGiupTitle.TabIndex = 4;
+            this.btnTroGiupTitle.Text = "Trợ giúp";
+            this.btnTroGiupTitle.UseVisualStyleBackColor = false;
+            this.btnTroGiupTitle.Click += new System.EventHandler(this.btnTroGiupTitle_Click);
+            // 
+            // btnQuanTriTitle
+            // 
+            this.btnQuanTriTitle.BackColor = System.Drawing.Color.White;
+            this.btnQuanTriTitle.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnQuanTriTitle.FlatAppearance.BorderSize = 0;
+            this.btnQuanTriTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuanTriTitle.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnQuanTriTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.btnQuanTriTitle.Location = new System.Drawing.Point(288, 0);
+            this.btnQuanTriTitle.Name = "btnQuanTriTitle";
+            this.btnQuanTriTitle.Size = new System.Drawing.Size(96, 28);
+            this.btnQuanTriTitle.TabIndex = 3;
+            this.btnQuanTriTitle.Text = "Quản trị";
+            this.btnQuanTriTitle.UseVisualStyleBackColor = false;
+            this.btnQuanTriTitle.Click += new System.EventHandler(this.btnQuanTriTitle_Click);
+            // 
+            // btnHocVienTitle
+            // 
+            this.btnHocVienTitle.BackColor = System.Drawing.Color.White;
+            this.btnHocVienTitle.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnHocVienTitle.FlatAppearance.BorderSize = 0;
+            this.btnHocVienTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHocVienTitle.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnHocVienTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.btnHocVienTitle.Location = new System.Drawing.Point(192, 0);
+            this.btnHocVienTitle.Name = "btnHocVienTitle";
+            this.btnHocVienTitle.Size = new System.Drawing.Size(96, 28);
+            this.btnHocVienTitle.TabIndex = 2;
+            this.btnHocVienTitle.Text = "Học viên";
+            this.btnHocVienTitle.UseVisualStyleBackColor = false;
+            this.btnHocVienTitle.Click += new System.EventHandler(this.btnHocVienTitle_Click);
+            // 
+            // btnGiangVienTitle
+            // 
+            this.btnGiangVienTitle.BackColor = System.Drawing.Color.White;
+            this.btnGiangVienTitle.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnGiangVienTitle.FlatAppearance.BorderSize = 0;
+            this.btnGiangVienTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGiangVienTitle.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnGiangVienTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.btnGiangVienTitle.Location = new System.Drawing.Point(96, 0);
+            this.btnGiangVienTitle.Name = "btnGiangVienTitle";
+            this.btnGiangVienTitle.Size = new System.Drawing.Size(96, 28);
+            this.btnGiangVienTitle.TabIndex = 1;
+            this.btnGiangVienTitle.Text = "Giảng viên";
+            this.btnGiangVienTitle.UseVisualStyleBackColor = false;
+            this.btnGiangVienTitle.Click += new System.EventHandler(this.btnGiangVienTitle_Click);
+            // 
+            // btnNhanVienTitle
+            // 
+            this.btnNhanVienTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.btnNhanVienTitle.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnNhanVienTitle.FlatAppearance.BorderSize = 0;
+            this.btnNhanVienTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhanVienTitle.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnNhanVienTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.btnNhanVienTitle.Location = new System.Drawing.Point(0, 0);
+            this.btnNhanVienTitle.Name = "btnNhanVienTitle";
+            this.btnNhanVienTitle.Size = new System.Drawing.Size(96, 28);
+            this.btnNhanVienTitle.TabIndex = 0;
+            this.btnNhanVienTitle.Text = "Nhân viên";
+            this.btnNhanVienTitle.UseVisualStyleBackColor = false;
+            this.btnNhanVienTitle.Click += new System.EventHandler(this.btnNhanVienTitle_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.LightGray;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 88);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1150, 5);
+            this.panel3.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            this.panel2.Controls.Add(this.lblCenterName);
+            this.panel2.Controls.Add(this.lblDateTime);
+            this.panel2.Controls.Add(this.lblServerName);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 559);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1150, 24);
+            this.panel2.TabIndex = 3;
+            // 
+            // lblCenterName
+            // 
+            this.lblCenterName.AutoSize = true;
+            this.lblCenterName.ForeColor = System.Drawing.Color.White;
+            this.lblCenterName.Location = new System.Drawing.Point(7, 5);
+            this.lblCenterName.Name = "lblCenterName";
+            this.lblCenterName.Size = new System.Drawing.Size(89, 15);
+            this.lblCenterName.TabIndex = 3;
+            this.lblCenterName.Text = "<center name>";
+            // 
+            // lblDateTime
+            // 
+            this.lblDateTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDateTime.FlatAppearance.BorderSize = 0;
+            this.lblDateTime.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            this.lblDateTime.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            this.lblDateTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblDateTime.ForeColor = System.Drawing.Color.White;
+            this.lblDateTime.Image = global::QuanLyHocVien.Properties.Resources.icon_Time_16dp;
+            this.lblDateTime.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblDateTime.Location = new System.Drawing.Point(965, 0);
+            this.lblDateTime.Name = "lblDateTime";
+            this.lblDateTime.Size = new System.Drawing.Size(179, 24);
+            this.lblDateTime.TabIndex = 2;
+            this.lblDateTime.Text = "dd/MM/yyyy HH:mm:ss tt";
+            this.lblDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDateTime.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.lblDateTime.UseVisualStyleBackColor = true;
+            // 
+            // lblServerName
+            // 
+            this.lblServerName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblServerName.FlatAppearance.BorderSize = 0;
+            this.lblServerName.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            this.lblServerName.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            this.lblServerName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblServerName.ForeColor = System.Drawing.Color.White;
+            this.lblServerName.Image = global::QuanLyHocVien.Properties.Resources.icon_Server_16dp;
+            this.lblServerName.Location = new System.Drawing.Point(749, 0);
+            this.lblServerName.Name = "lblServerName";
+            this.lblServerName.Size = new System.Drawing.Size(210, 24);
+            this.lblServerName.TabIndex = 1;
+            this.lblServerName.Text = "<server name>";
+            this.lblServerName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblServerName.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.lblServerName.UseVisualStyleBackColor = true;
+            // 
+            // pnlWorkspace
+            // 
+            this.pnlWorkspace.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlWorkspace.Location = new System.Drawing.Point(0, 93);
+            this.pnlWorkspace.Name = "pnlWorkspace";
+            this.pnlWorkspace.Size = new System.Drawing.Size(1150, 466);
+            this.pnlWorkspace.TabIndex = 4;
+            // 
+            // timer
+            // 
+            this.timer.Interval = 50;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1024, 583);
+            this.ClientSize = new System.Drawing.Size(1150, 583);
             this.Controls.Add(this.pnlWorkspace);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
@@ -809,6 +857,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý Học viên Trung tâm Anh ngữ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.tabRibbon.ResumeLayout(false);
@@ -852,7 +901,7 @@
         private System.Windows.Forms.Button btnXepLop;
         private System.Windows.Forms.Button btnThongKeDiemTheoLop;
         private System.Windows.Forms.Button btnQuanLyDiem;
-        private System.Windows.Forms.Button btnThongKeHocPhi;
+        private System.Windows.Forms.Button btnThongKeNoHocVien;
         private System.Windows.Forms.Button btnBaoCaoHocVienTheoThang;
         private System.Windows.Forms.Button btnLapPhieuGhiDanh;
         private System.Windows.Forms.Button btnTiepNhanHocVien;
@@ -870,8 +919,11 @@
         private System.Windows.Forms.Button btnTroGiup;
         private System.Windows.Forms.Button btnHVThayDoiThongTin;
         private System.Windows.Forms.Button btnHVDoiMatKhau;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button lblServerName;
+        private System.Windows.Forms.Label lblCenterName;
+        private System.Windows.Forms.Button lblDateTime;
+        private System.Windows.Forms.Button btnThayDoiThongTinNV;
+        private System.Windows.Forms.Button btnNVDoiMatKhau;
+        private System.Windows.Forms.Timer timer;
     }
 }

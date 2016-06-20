@@ -140,6 +140,7 @@ namespace QuanLyHocVien
         /// </summary>
         public void InitializeHocVien()
         {
+            gridDSHV.AutoGenerateColumns = false;
             gridDSHV.DataSource = busHocVien.SelectAll();
         }
 

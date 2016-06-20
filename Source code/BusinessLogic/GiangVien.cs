@@ -33,14 +33,7 @@ namespace BusinessLogic
         public object SelectAll()
         {
             return (from p in Database.GIANGVIENs
-                    select new
-                    {
-                        MaGV = p.MaGV,
-                        TenGV = p.TenGV,
-                        GioiTinhGV = p.GioiTinhGV,
-                        SdtGV = p.SdtGV,
-                        EmailGV = p.EmailGV
-                    }).ToList();
+                    select p).ToList();
         }
 
         /// <summary>
@@ -56,14 +49,7 @@ namespace BusinessLogic
                     where (maGV == null ? true : p.MaGV.Contains(maGV)) &&
                           (tenGV == null ? true : p.TenGV.Contains(tenGV)) &&
                           (gioiTinh == null ? true : p.GioiTinhGV == gioiTinh)
-                    select new
-                    {
-                        MaGV = p.MaGV,
-                        TenGV = p.TenGV,
-                        GioiTinhGV = p.GioiTinhGV,
-                        SdtGV = p.SdtGV,
-                        EmailGV = p.EmailGV
-                    }).ToList();
+                    select p).ToList();
         }
 
         /// <summary>
@@ -83,7 +69,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="giangVien"></param>
         /// <param name="taiKhoan"></param>
-        public void Update(GIANGVIEN giangVien, TAIKHOAN taiKhoan)
+        public void Update(GIANGVIEN giangVien, TAIKHOAN taiKhoan = null)
         {
             var giangVienCu = Select(giangVien.MaGV);
 
@@ -93,9 +79,11 @@ namespace BusinessLogic
             giangVienCu.EmailGV = giangVien.EmailGV;
 
             Database.SubmitChanges();
-
-            TaiKhoan tk = new TaiKhoan();
-            tk.Update(taiKhoan);
+            if(taiKhoan!=null)
+            {
+                TaiKhoan tk = new TaiKhoan();
+                tk.Update(taiKhoan);
+            }          
         }
 
         /// <summary>

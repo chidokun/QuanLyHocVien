@@ -20,7 +20,8 @@ namespace QuanLyHocVien
     {
         public frmMain()
         {
-            BusinessLogic.GlobalSettings.LoadDatabase();
+            GlobalSettings.LoadDatabase();
+            GlobalSettings.LoadCenterInformation();
             InitializeComponent();
         }
 
@@ -243,6 +244,68 @@ namespace QuanLyHocVien
             frmThongKeDiemTheoLop frm = new frmThongKeDiemTheoLop() { Dock = DockStyle.Fill, TopLevel = false };
             pnlWorkspace.Controls.Add(frm);
             frm.Show();
+        }
+
+        private void btnThongKeNoHocVien_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmThongKeNoHocVien frm = new frmThongKeNoHocVien() { Dock = DockStyle.Fill, TopLevel = false };
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnBaoCaoHocVienTheoThang_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmBaoCaoHocVienTheoThang frm = new frmBaoCaoHocVienTheoThang() { Dock = DockStyle.Fill, TopLevel = false };
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnTrangMoDau_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmTrangMoDau frm = new frmTrangMoDau() { Dock = DockStyle.Fill, TopLevel = false };
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            btnTrangMoDau_Click(sender, e);
+
+            timer.Start();
+        }
+
+        private void btnXepLop_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmXepLop frm = new frmXepLop() { Dock = DockStyle.Fill, TopLevel = false };
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnNVDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            frmDoiMatKhau frm = new frmDoiMatKhau(GlobalSettings.CurrentUser);
+            frm.ShowDialog();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            lblCenterName.Text = GlobalSettings.CenterName;
+            lblServerName.Text = GlobalSettings.ServerName;
+            lblDateTime.Text = DateTime.Now.ToString();
+        }
+
+        private void btnThayDoiThongTinNV_Click(object sender, EventArgs e)
+        {
+            frmThayDoiThongTinNV frm = new frmThayDoiThongTinNV();
+            frm.ShowDialog();
         }
     }
 }

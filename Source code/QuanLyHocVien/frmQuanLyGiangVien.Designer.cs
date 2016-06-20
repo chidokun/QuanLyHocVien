@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
@@ -49,8 +49,19 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblTongCongGV = new System.Windows.Forms.Label();
             this.gridGV = new System.Windows.Forms.DataGridView();
+            this.clmMaGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTenGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmGioiTinhGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSdtGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmEmailGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.gridLop = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDangMo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblTongCongLop = new System.Windows.Forms.Label();
@@ -59,17 +70,6 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.clmMaGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTenGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmGioiTinhGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSdtGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmEmailGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDangMo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -222,6 +222,7 @@
             this.btnTimKiem.TabIndex = 60;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtTenGV
             // 
@@ -346,6 +347,47 @@
             this.gridGV.Click += new System.EventHandler(this.gridGV_Click);
             this.gridGV.DoubleClick += new System.EventHandler(this.gridGV_DoubleClick);
             // 
+            // clmMaGV
+            // 
+            this.clmMaGV.DataPropertyName = "MaGV";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaGV.DefaultCellStyle = dataGridViewCellStyle1;
+            this.clmMaGV.FillWeight = 70F;
+            this.clmMaGV.HeaderText = "Mã giảng viên";
+            this.clmMaGV.Name = "clmMaGV";
+            this.clmMaGV.ReadOnly = true;
+            // 
+            // clmTenGV
+            // 
+            this.clmTenGV.DataPropertyName = "TenGV";
+            this.clmTenGV.FillWeight = 93.27411F;
+            this.clmTenGV.HeaderText = "Họ và tên";
+            this.clmTenGV.Name = "clmTenGV";
+            this.clmTenGV.ReadOnly = true;
+            // 
+            // clmGioiTinhGV
+            // 
+            this.clmGioiTinhGV.DataPropertyName = "GioiTinhGV";
+            this.clmGioiTinhGV.HeaderText = "Giới tính";
+            this.clmGioiTinhGV.Name = "clmGioiTinhGV";
+            this.clmGioiTinhGV.ReadOnly = true;
+            // 
+            // clmSdtGV
+            // 
+            this.clmSdtGV.DataPropertyName = "SdtGV";
+            this.clmSdtGV.FillWeight = 93.27411F;
+            this.clmSdtGV.HeaderText = "SĐT";
+            this.clmSdtGV.Name = "clmSdtGV";
+            this.clmSdtGV.ReadOnly = true;
+            // 
+            // clmEmailGV
+            // 
+            this.clmEmailGV.DataPropertyName = "EmailGV";
+            this.clmEmailGV.FillWeight = 93.27411F;
+            this.clmEmailGV.HeaderText = "Email";
+            this.clmEmailGV.Name = "clmEmailGV";
+            this.clmEmailGV.ReadOnly = true;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.gridLop);
@@ -383,6 +425,54 @@
             this.gridLop.TabIndex = 3;
             this.gridLop.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridLop_RowsAdded);
             this.gridLop.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridLop_RowsRemoved);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "MaLop";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn1.FillWeight = 70F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã lớp";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "TenLop";
+            this.dataGridViewTextBoxColumn2.FillWeight = 93.27411F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tên lớp";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "NgayBatDau";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Ngày bắt đầu";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "NgayKetThuc";
+            this.dataGridViewTextBoxColumn4.FillWeight = 93.27411F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Ngày kết thúc";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // clmDangMo
+            // 
+            this.clmDangMo.DataPropertyName = "DangMo";
+            this.clmDangMo.HeaderText = "Đang mở";
+            this.clmDangMo.Name = "clmDangMo";
+            this.clmDangMo.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "SiSo";
+            this.dataGridViewTextBoxColumn5.FillWeight = 93.27411F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Sỉ số";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // label6
             // 
@@ -488,95 +578,6 @@
             this.btnThem.Text = "Thêm giảng viên";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // clmMaGV
-            // 
-            this.clmMaGV.DataPropertyName = "MaGV";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaGV.DefaultCellStyle = dataGridViewCellStyle3;
-            this.clmMaGV.FillWeight = 70F;
-            this.clmMaGV.HeaderText = "Mã giảng viên";
-            this.clmMaGV.Name = "clmMaGV";
-            this.clmMaGV.ReadOnly = true;
-            // 
-            // clmTenGV
-            // 
-            this.clmTenGV.DataPropertyName = "TenGV";
-            this.clmTenGV.FillWeight = 93.27411F;
-            this.clmTenGV.HeaderText = "Họ và tên";
-            this.clmTenGV.Name = "clmTenGV";
-            this.clmTenGV.ReadOnly = true;
-            // 
-            // clmGioiTinhGV
-            // 
-            this.clmGioiTinhGV.DataPropertyName = "GioiTinhGV";
-            this.clmGioiTinhGV.HeaderText = "Giới tính";
-            this.clmGioiTinhGV.Name = "clmGioiTinhGV";
-            this.clmGioiTinhGV.ReadOnly = true;
-            // 
-            // clmSdtGV
-            // 
-            this.clmSdtGV.DataPropertyName = "SdtGV";
-            this.clmSdtGV.FillWeight = 93.27411F;
-            this.clmSdtGV.HeaderText = "SĐT";
-            this.clmSdtGV.Name = "clmSdtGV";
-            this.clmSdtGV.ReadOnly = true;
-            // 
-            // clmEmailGV
-            // 
-            this.clmEmailGV.DataPropertyName = "EmailGV";
-            this.clmEmailGV.FillWeight = 93.27411F;
-            this.clmEmailGV.HeaderText = "Email";
-            this.clmEmailGV.Name = "clmEmailGV";
-            this.clmEmailGV.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "MaLop";
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Blue;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewTextBoxColumn1.FillWeight = 70F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã lớp";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TenLop";
-            this.dataGridViewTextBoxColumn2.FillWeight = 93.27411F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên lớp";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "NgayBatDau";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Ngày bắt đầu";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "NgayKetThuc";
-            this.dataGridViewTextBoxColumn4.FillWeight = 93.27411F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Ngày kết thúc";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // clmDangMo
-            // 
-            this.clmDangMo.DataPropertyName = "DangMo";
-            this.clmDangMo.HeaderText = "Đang mở";
-            this.clmDangMo.Name = "clmDangMo";
-            this.clmDangMo.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "SiSo";
-            this.dataGridViewTextBoxColumn5.FillWeight = 93.27411F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Sỉ số";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // frmQuanLyGiangVien
             // 
