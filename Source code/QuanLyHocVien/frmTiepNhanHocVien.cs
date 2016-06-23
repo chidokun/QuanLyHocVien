@@ -4,8 +4,6 @@
 // Writing by Nguyễn Lê Hoàng Tuấn (nguyentuanit96@gmail.com)
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 using BusinessLogic;
 using DataAccess;
@@ -60,6 +58,9 @@ namespace QuanLyHocVien
             btnHuyBo.Enabled = true;
         }
 
+        /// <summary>
+        /// Đặt lại giá trị của các control trong panel
+        /// </summary>
         public void ResetPanelControl()
         {
             txtMaHV.Text = string.Empty;

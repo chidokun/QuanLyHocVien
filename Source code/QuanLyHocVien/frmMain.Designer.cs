@@ -79,6 +79,7 @@
             this.lblServerName = new System.Windows.Forms.Button();
             this.pnlWorkspace = new System.Windows.Forms.Panel();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.btnDangXuat = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tabRibbon.SuspendLayout();
@@ -669,6 +670,7 @@
             // 
             // pnlTabTitle
             // 
+            this.pnlTabTitle.Controls.Add(this.btnDangXuat);
             this.pnlTabTitle.Controls.Add(this.btnTroGiupTitle);
             this.pnlTabTitle.Controls.Add(this.btnQuanTriTitle);
             this.pnlTabTitle.Controls.Add(this.btnHocVienTitle);
@@ -841,6 +843,22 @@
             this.timer.Interval = 50;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.BackColor = System.Drawing.Color.White;
+            this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnDangXuat.FlatAppearance.BorderSize = 0;
+            this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnDangXuat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.btnDangXuat.Location = new System.Drawing.Point(1054, 0);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(96, 28);
+            this.btnDangXuat.TabIndex = 5;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.UseVisualStyleBackColor = false;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -925,5 +943,6 @@
         private System.Windows.Forms.Button btnThayDoiThongTinNV;
         private System.Windows.Forms.Button btnNVDoiMatKhau;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Button btnDangXuat;
     }
 }

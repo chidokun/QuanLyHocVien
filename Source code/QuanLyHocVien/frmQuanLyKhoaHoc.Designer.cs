@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
@@ -55,19 +56,19 @@
             this.txtMaKH = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.gridKH = new System.Windows.Forms.DataGridView();
-            this.clmMaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTenHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmHocPhi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmHSNghe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmHSNoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmHSDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmHSViet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblTongCong = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.clmMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmHocPhi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmHSNghe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmHSNoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmHSDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmHSViet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -347,6 +348,7 @@
             this.btnHuyBo.TabIndex = 18;
             this.btnHuyBo.Text = "Hủy bỏ";
             this.btnHuyBo.UseVisualStyleBackColor = false;
+            this.btnHuyBo.Click += new System.EventHandler(this.btnHuyBo_Click);
             // 
             // btnLuuThongTin
             // 
@@ -363,6 +365,7 @@
             this.btnLuuThongTin.TabIndex = 17;
             this.btnLuuThongTin.Text = "Lưu thông tin";
             this.btnLuuThongTin.UseVisualStyleBackColor = false;
+            this.btnLuuThongTin.Click += new System.EventHandler(this.btnLuuThongTin_Click);
             // 
             // txtTenKH
             // 
@@ -387,6 +390,7 @@
             // 
             this.txtMaKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMaKH.Enabled = false;
             this.txtMaKH.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtMaKH.Location = new System.Drawing.Point(131, 12);
             this.txtMaKH.Name = "txtMaKH";
@@ -412,8 +416,8 @@
             this.gridKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridKH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmMaHV,
-            this.clmTenHV,
+            this.clmMaKH,
+            this.clmTenKH,
             this.clmHocPhi,
             this.clmHSNghe,
             this.clmHSNoi,
@@ -427,45 +431,10 @@
             this.gridKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridKH.Size = new System.Drawing.Size(704, 437);
             this.gridKH.TabIndex = 1;
-            // 
-            // clmMaHV
-            // 
-            this.clmMaHV.DataPropertyName = "MaHV";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle1;
-            this.clmMaHV.HeaderText = "Mã khóa học";
-            this.clmMaHV.Name = "clmMaHV";
-            // 
-            // clmTenHV
-            // 
-            this.clmTenHV.DataPropertyName = "TenHV";
-            this.clmTenHV.HeaderText = "Tên khóa học";
-            this.clmTenHV.Name = "clmTenHV";
-            // 
-            // clmHocPhi
-            // 
-            this.clmHocPhi.HeaderText = "Học phí";
-            this.clmHocPhi.Name = "clmHocPhi";
-            // 
-            // clmHSNghe
-            // 
-            this.clmHSNghe.HeaderText = "Hệ số Nghe";
-            this.clmHSNghe.Name = "clmHSNghe";
-            // 
-            // clmHSNoi
-            // 
-            this.clmHSNoi.HeaderText = "Hệ số Nói";
-            this.clmHSNoi.Name = "clmHSNoi";
-            // 
-            // clmHSDoc
-            // 
-            this.clmHSDoc.HeaderText = "Hệ số Đọc";
-            this.clmHSDoc.Name = "clmHSDoc";
-            // 
-            // clmHSViet
-            // 
-            this.clmHSViet.HeaderText = "Hệ số Viết";
-            this.clmHSViet.Name = "clmHSViet";
+            this.gridKH.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridKH_RowsAdded);
+            this.gridKH.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridKH_RowsRemoved);
+            this.gridKH.Click += new System.EventHandler(this.gridKH_Click);
+            this.gridKH.DoubleClick += new System.EventHandler(this.gridKH_DoubleClick);
             // 
             // panel3
             // 
@@ -510,6 +479,7 @@
             this.btnXoa.TabIndex = 20;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -525,6 +495,7 @@
             this.btnSua.TabIndex = 19;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -540,6 +511,54 @@
             this.btnThem.TabIndex = 18;
             this.btnThem.Text = "Thêm khóa học";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // clmMaKH
+            // 
+            this.clmMaKH.DataPropertyName = "MaKH";
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaKH.DefaultCellStyle = dataGridViewCellStyle11;
+            this.clmMaKH.HeaderText = "Mã khóa học";
+            this.clmMaKH.Name = "clmMaKH";
+            // 
+            // clmTenKH
+            // 
+            this.clmTenKH.DataPropertyName = "TenKH";
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Green;
+            this.clmTenKH.DefaultCellStyle = dataGridViewCellStyle12;
+            this.clmTenKH.FillWeight = 120F;
+            this.clmTenKH.HeaderText = "Tên khóa học";
+            this.clmTenKH.Name = "clmTenKH";
+            // 
+            // clmHocPhi
+            // 
+            this.clmHocPhi.DataPropertyName = "HocPhi";
+            this.clmHocPhi.HeaderText = "Học phí";
+            this.clmHocPhi.Name = "clmHocPhi";
+            // 
+            // clmHSNghe
+            // 
+            this.clmHSNghe.DataPropertyName = "HeSoNghe";
+            this.clmHSNghe.HeaderText = "Hệ số Nghe";
+            this.clmHSNghe.Name = "clmHSNghe";
+            // 
+            // clmHSNoi
+            // 
+            this.clmHSNoi.DataPropertyName = "HeSoNoi";
+            this.clmHSNoi.HeaderText = "Hệ số Nói";
+            this.clmHSNoi.Name = "clmHSNoi";
+            // 
+            // clmHSDoc
+            // 
+            this.clmHSDoc.DataPropertyName = "HeSoDoc";
+            this.clmHSDoc.HeaderText = "Hệ số Đọc";
+            this.clmHSDoc.Name = "clmHSDoc";
+            // 
+            // clmHSViet
+            // 
+            this.clmHSViet.DataPropertyName = "HeSoViet";
+            this.clmHSViet.HeaderText = "Hệ số Viết";
+            this.clmHSViet.Name = "clmHSViet";
             // 
             // frmQuanLyKhoaHoc
             // 
@@ -554,6 +573,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmQuanLyKhoaHoc";
             this.Text = "Quản lý khóa học";
+            this.Load += new System.EventHandler(this.frmQuanLyKhoaHoc_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -602,18 +622,18 @@
         private System.Windows.Forms.TextBox txtMaKH;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView gridKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaHV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTenHV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmHocPhi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmHSNghe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmHSNoi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmHSDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmHSViet;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblTongCong;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmTenKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmHocPhi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmHSNghe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmHSNoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmHSDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmHSViet;
     }
 }

@@ -44,7 +44,7 @@ namespace QuanLyHocVien
 
         private void frmBangDiem_Load(object sender, EventArgs e)
         {
-            cboLop.DataSource = busBangDiem.SelectDSLop(GlobalSettings.CurrentUser);
+            cboLop.DataSource = busBangDiem.SelectDSLop(GlobalSettings.UserName);
             cboLop.DisplayMember = "TenLop";
             cboLop.ValueMember = "MaLop";
 
@@ -55,7 +55,7 @@ namespace QuanLyHocVien
 
         private void btnXem_Click(object sender, EventArgs e)
         {
-            LoadBangDiem(GlobalSettings.CurrentUser, cboLop.SelectedValue.ToString());
+            LoadBangDiem(GlobalSettings.UserName, cboLop.SelectedValue.ToString());
         }
 
         private void btnInBangDiem_Click(object sender, EventArgs e)

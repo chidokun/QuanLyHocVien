@@ -31,9 +31,9 @@ namespace BusinessLogic
         /// <returns></returns>
         public object SelectAll(LOAIHV loai)
         {
-            return ( from p in GlobalSettings.Database.HOCVIENs
-                         where p.MaLoaiHV == loai.MaLoaiHV
-                         select p).ToList();
+            return (from p in GlobalSettings.Database.HOCVIENs
+                    where p.MaLoaiHV == loai.MaLoaiHV
+                    select p).ToList();
         }
 
         /// <summary>
@@ -49,13 +49,13 @@ namespace BusinessLogic
         public object SelectAll(string maHV, string tenHV, string gioiTinh, DateTime? tuNgay, DateTime? denNgay, LOAIHV loai)
         {
             return (from p in GlobalSettings.Database.HOCVIENs
-                         where p.MaLoaiHV == loai.MaLoaiHV &&
-                                (maHV == null ? true : p.MaHV.Contains(maHV)) &&
-                                (tenHV == null ? true : p.TenHV.Contains(tenHV)) &&
-                                (gioiTinh == null ? true : p.GioiTinhHV.Contains(gioiTinh)) &&
-                                (tuNgay == null ? true : p.NgayTiepNhan >= tuNgay) &&
-                                (denNgay == null ? true : p.NgayTiepNhan <= denNgay)
-                         select p).ToList();
+                    where p.MaLoaiHV == loai.MaLoaiHV &&
+                           (maHV == null ? true : p.MaHV.Contains(maHV)) &&
+                           (tenHV == null ? true : p.TenHV.Contains(tenHV)) &&
+                           (gioiTinh == null ? true : p.GioiTinhHV.Contains(gioiTinh)) &&
+                           (tuNgay == null ? true : p.NgayTiepNhan >= tuNgay) &&
+                           (denNgay == null ? true : p.NgayTiepNhan <= denNgay)
+                    select p).ToList();
         }
 
         /// <summary>
@@ -169,7 +169,7 @@ namespace BusinessLogic
             var temp = from p in GlobalSettings.Database.HOCVIENs
                        where p.MaHV.StartsWith(result)
                        select p.MaHV;
-            int max = 0;
+            int max = -1;
 
             foreach (var i in temp)
             {

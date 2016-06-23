@@ -96,6 +96,59 @@ namespace BusinessLogic
         }
 
         /// <summary>
+        /// Trả về mã của tên đăng nhập
+        /// </summary>
+        /// <param name="tk"></param>
+        public string FullUserID(TAIKHOAN tk)
+        {
+            var a = (from p in Database.NHANVIENs
+                     where p.TenDangNhap == tk.TenDangNhap
+                     select p).SingleOrDefault();
+            if (a != null)
+                return a.MaNV;
+
+            var b = (from p in Database.HOCVIENs
+                     where p.TenDangNhap == tk.TenDangNhap
+                     select p).SingleOrDefault();
+            if (b != null)
+                return b.MaHV;
+
+            var c = (from p in Database.GIANGVIENs
+                     where p.TenDangNhap == tk.TenDangNhap
+                     select p).SingleOrDefault();
+            if (c != null)
+                return c.MaGV;
+
+            return null;
+        }
+
+        /// <summary>
+        /// Trả về kiểu người dùng của tên đăng nhập
+        /// </summary>
+        /// <param name="tk"></param>
+        public UserType? FullUserType(TAIKHOAN tk)
+        {
+            var a = (from p in Database.NHANVIENs
+                     where p.TenDangNhap == tk.TenDangNhap
+                     select p).SingleOrDefault();
+            if (a != null)
+                return UserType.NhanVien;
+
+            var b = (from p in Database.HOCVIENs
+                     where p.TenDangNhap == tk.TenDangNhap
+                     select p).SingleOrDefault();
+            if (b != null)
+                return UserType.HocVien;
+
+            var c = (from p in Database.GIANGVIENs
+                     where p.TenDangNhap == tk.TenDangNhap
+                     select p).SingleOrDefault();
+            if (c != null)
+                return UserType.GiangVien;
+            return null;
+        }
+
+        /// <summary>
         /// Trả về tên người dùng của tên đăng nhập
         /// </summary>
         /// <param name="tk"></param>
@@ -119,6 +172,25 @@ namespace BusinessLogic
             if (c != null)
                 return c.TenGV;
             return null;
+        }
+
+        /// <summary>
+        /// Xác định tên đăng nhập và mật khẩu có hợp lệ
+        /// </summary>
+        /// <param name="userName">Tên đăng nhập</param>
+        /// <param name="password">Mật khẩu</param>
+        /// <returns></returns>
+        public bool IsValid(string userName, string password)
+        {
+            try
+            {
+                return Select(userName).MatKhau == password;
+            }
+            catch
+            {
+                return false;
+            }
+            
         }
     }
 }

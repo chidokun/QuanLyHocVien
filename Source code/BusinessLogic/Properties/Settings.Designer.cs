@@ -34,5 +34,29 @@ namespace BusinessLogic.Properties {
                 this["ConnectionString"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Database_ServerName {
+            get {
+                return ((string)(this["Database_ServerName"]));
+            }
+            set {
+                this["Database_ServerName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Database_ServerCatalog {
+            get {
+                return ((string)(this["Database_ServerCatalog"]));
+            }
+            set {
+                this["Database_ServerCatalog"] = value;
+            }
+        }
     }
 }

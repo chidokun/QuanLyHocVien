@@ -12,17 +12,16 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BusinessLogic;
-
+using DataAccess;
 
 namespace QuanLyHocVien
 {
     public partial class frmMain : Form
     {
+        private NhanVien busNhanVien = new NhanVien();
         public frmMain()
         {
-            GlobalSettings.LoadDatabase();
-            GlobalSettings.LoadCenterInformation();
-            InitializeComponent();
+            InitializeComponent();                   
         }
 
         #region Ribbon bar
@@ -76,8 +75,6 @@ namespace QuanLyHocVien
         }
 
 
-        #endregion
-
         private void btnThongTinTrungTam_Click(object sender, EventArgs e)
         {
             frmThongTinTrungTam frm = new frmThongTinTrungTam();
@@ -116,13 +113,13 @@ namespace QuanLyHocVien
 
         private void btnGVDoiMatKhau_Click(object sender, EventArgs e)
         {
-            frmDoiMatKhau frm = new frmDoiMatKhau(GlobalSettings.CurrentUser);
+            frmDoiMatKhau frm = new frmDoiMatKhau(GlobalSettings.UserName);
             frm.ShowDialog();
         }
 
         private void btnHVDoiMatKhau_Click(object sender, EventArgs e)
         {
-            frmDoiMatKhau frm = new frmDoiMatKhau(GlobalSettings.CurrentUser);
+            frmDoiMatKhau frm = new frmDoiMatKhau(GlobalSettings.UserName);
             frm.ShowDialog();
         }
 
@@ -273,13 +270,6 @@ namespace QuanLyHocVien
             frm.Show();
         }
 
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            btnTrangMoDau_Click(sender, e);
-
-            timer.Start();
-        }
-
         private void btnXepLop_Click(object sender, EventArgs e)
         {
             pnlWorkspace.Controls.Clear();
@@ -291,7 +281,7 @@ namespace QuanLyHocVien
 
         private void btnNVDoiMatKhau_Click(object sender, EventArgs e)
         {
-            frmDoiMatKhau frm = new frmDoiMatKhau(GlobalSettings.CurrentUser);
+            frmDoiMatKhau frm = new frmDoiMatKhau(GlobalSettings.UserName);
             frm.ShowDialog();
         }
 
@@ -306,6 +296,177 @@ namespace QuanLyHocVien
         {
             frmThayDoiThongTinNV frm = new frmThayDoiThongTinNV();
             frm.ShowDialog();
+        }
+
+        #endregion
+
+        public void ResetRibbonControlStatus()
+        {
+            btnQuanTriTitle.Enabled = true;
+            btnNhanVienTitle.Enabled = true;
+            btnHocVienTitle.Enabled = true;
+            btnGiangVienTitle.Enabled = true;
+            btnTroGiup.Enabled = true;
+
+            btnTiepNhanHocVien.Enabled = true;
+            btnLapPhieuGhiDanh.Enabled = true;
+            btnBaoCaoHocVienTheoThang.Enabled = true;
+            btnThongKeNoHocVien.Enabled = true;
+            btnThongKeDiemTheoLop.Enabled = true;
+            btnQuanLyDiem.Enabled = true;
+            btnXepLop.Enabled = true;
+            btnQuanLyHocVien.Enabled = true;
+            btnQuanLyNhanVien.Enabled = true;
+            btnQuanLyGiangVien.Enabled = true;
+            btnQuanLyLopHoc.Enabled = true;
+            btnQuanLyKhoaHoc.Enabled = true;
+            btnQuanLyHocPhi.Enabled = true;
+            btnQuanLyTaiKhoan.Enabled = true;
+            btnCaiDatVaQuyDinh.Enabled = false;
+            btnQuanLyTaiKhoan.Enabled = false;
+            btnThongTinTrungTam.Enabled = false;
+        }
+
+        public void LoadGiaoDien()
+        {
+            ResetRibbonControlStatus();
+            PhanQuyen(GlobalSettings.UserType, GlobalSettings.UserName);
+            pnlWorkspace.Controls.Clear();
+
+            GlobalSettings.LoadCenterInformation();
+
+            btnTrangMoDau_Click(null, null);
+        }
+        public void DangNhap()
+        {
+            this.Hide();
+            try
+            {
+                GlobalSettings.ConnectToDatabase();
+
+                frmDangNhap frm = new frmDangNhap();
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadGiaoDien();
+
+                    this.Show();           
+
+                    timer.Start();
+                }
+            }
+            catch
+            {
+                Reconnect();
+            }
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            DangNhap();
+        }
+
+        private void Reconnect()
+        {
+            frmKetNoiCSDL frm = new frmKetNoiCSDL();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                if (DialogResult.Yes == MessageBox.Show("Bạn cần khởi động lại chương trình để thay đổi có hiệu lực." + Environment.NewLine + "Khởi động ngay?", "Khởi động lại", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                    Application.Restart();
+                else
+                    Application.Exit();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không thể sử dụng chương trình nếu kết nối cơ sở dữ liệu chưa được thiết lập" + Environment.NewLine + "Hãy chạy lại chương trình vào lần tới để thiết lập lại kết nối cơ sở dữ liệu", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Application.Exit();
+            }
+        }
+
+        /// <summary>
+        /// Phân quyền người dùng
+        /// </summary>
+        /// <param name="userType">Kiểu người dùng</param>
+        /// <param name="userName">Tên người dùng</param>
+        public void PhanQuyen(UserType userType, string userName)
+        {
+            switch (userType)
+            {
+                case UserType.NhanVien:
+                    string nvType = busNhanVien.Select(GlobalSettings.UserID).MaLoaiNV;
+                    switch (nvType)
+                    {
+                        //nhân viên ghi danh
+                        case "LNV01":
+                            btnGiangVienTitle.Enabled = false;
+                            btnHocVienTitle.Enabled = false;
+                            btnQuanTriTitle.Enabled = false;
+                            btnThongKeNoHocVien.Enabled = false;
+                            btnThongKeDiemTheoLop.Enabled = false;
+                            btnQuanLyDiem.Enabled = false;
+                            btnXepLop.Enabled = false;
+                            break;
+                        //nhân viên học vụ
+                        case "LNV02":
+                            btnGiangVienTitle.Enabled = false;
+                            btnHocVienTitle.Enabled = false;
+                            btnTiepNhanHocVien.Enabled = false;
+                            btnLapPhieuGhiDanh.Enabled = false;
+                            btnBaoCaoHocVienTheoThang.Enabled = false;
+                            btnThongKeNoHocVien.Enabled = false;
+                            btnQuanLyNhanVien.Enabled = false;
+                            btnQuanLyHocPhi.Enabled = false;
+                            btnQuanLyTaiKhoan.Enabled = false;
+                            btnCaiDatVaQuyDinh.Enabled = false;
+                            btnQuanLyTaiKhoan.Enabled = false;
+                            btnThongTinTrungTam.Enabled = false;
+                            break;
+                        //nhân viên kế toán
+                        case "LNV03":
+                            btnGiangVienTitle.Enabled = false;
+                            btnHocVienTitle.Enabled = false;
+                            btnTiepNhanHocVien.Enabled = false;
+                            btnLapPhieuGhiDanh.Enabled = false;
+                            btnBaoCaoHocVienTheoThang.Enabled = false;
+                            btnThongKeDiemTheoLop.Enabled = false;
+                            btnQuanLyDiem.Enabled = false;
+                            btnXepLop.Enabled = false;
+                            btnQuanLyHocVien.Enabled = false;
+                            btnQuanLyNhanVien.Enabled = false;
+                            btnQuanLyGiangVien.Enabled = false;
+                            btnQuanLyLopHoc.Enabled = false;
+                            btnQuanLyKhoaHoc.Enabled = false;
+                            btnQuanLyTaiKhoan.Enabled = false;
+                            btnCaiDatVaQuyDinh.Enabled = false;
+                            btnQuanLyTaiKhoan.Enabled = false;
+                            btnThongTinTrungTam.Enabled = false;
+                            break;
+                        default:
+                            break;                       
+                    }
+
+                    break;
+                case UserType.HocVien:
+                    btnNhanVienTitle.Enabled = false;
+                    btnQuanTriTitle.Enabled = false;
+                    btnGiangVienTitle.Enabled = false;
+                    btnHocVienTitle_Click(this.btnHocVienTitle, null);
+                    break;
+                case UserType.GiangVien:
+                    btnNhanVienTitle.Enabled = false;
+                    btnQuanTriTitle.Enabled = false;
+                    btnHocVienTitle.Enabled = false;
+                    btnGiangVienTitle_Click(this.btnGiangVienTitle, null);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            DangNhap();
         }
     }
 }
