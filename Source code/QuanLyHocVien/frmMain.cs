@@ -13,6 +13,8 @@ using System.Text;
 using System.Windows.Forms;
 using BusinessLogic;
 using DataAccess;
+using QuanLyHocVien.Pages;
+using QuanLyHocVien.Popups;
 
 namespace QuanLyHocVien
 {
@@ -97,18 +99,30 @@ namespace QuanLyHocVien
         {
             pnlWorkspace.Controls.Clear();
 
-            frmTiepNhanHocVien frm = new frmTiepNhanHocVien() { Dock = DockStyle.Fill, TopLevel = false };
-            pnlWorkspace.Controls.Add(frm);
-            frm.Show();
+            if(GlobalPages.TiepNhanHocVien == null)
+                GlobalPages.TiepNhanHocVien = new frmTiepNhanHocVien()
+                {
+                    Dock = DockStyle.Fill,
+                    TopLevel = false
+                };
+
+            pnlWorkspace.Controls.Add(GlobalPages.TiepNhanHocVien);
+            GlobalPages.TiepNhanHocVien.Show();
         }
 
         private void btnLapPhieuGhiDanh_Click(object sender, EventArgs e)
         {
             pnlWorkspace.Controls.Clear();
 
-            frmLapPhieuGhiDanh frm = new frmLapPhieuGhiDanh() { Dock = DockStyle.Fill, TopLevel = false };
-            pnlWorkspace.Controls.Add(frm);
-            frm.Show();
+            if (GlobalPages.LapPhieuGhiDanh == null) 
+                GlobalPages.LapPhieuGhiDanh = new frmLapPhieuGhiDanh()
+                {
+                    Dock = DockStyle.Fill,
+                    TopLevel = false
+                };
+
+            pnlWorkspace.Controls.Add(GlobalPages.LapPhieuGhiDanh);
+            GlobalPages.LapPhieuGhiDanh.Show();
         }
 
         private void btnGVDoiMatKhau_Click(object sender, EventArgs e)
@@ -298,15 +312,25 @@ namespace QuanLyHocVien
             frm.ShowDialog();
         }
 
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            DangNhap();
+        }
+
         #endregion
 
+        /// <summary>
+        /// Phục hồi trạng thái enable của Ribbon control
+        /// </summary>
         public void ResetRibbonControlStatus()
         {
-            btnQuanTriTitle.Enabled = true;
-            btnNhanVienTitle.Enabled = true;
-            btnHocVienTitle.Enabled = true;
-            btnGiangVienTitle.Enabled = true;
-            btnTroGiup.Enabled = true;
+            btnQuanTriTitle.Visible = true;
+            btnNhanVienTitle.Visible = true;
+            btnHocVienTitle.Visible = true;
+            btnGiangVienTitle.Visible = true;
+            btnTroGiup.Visible = true;
 
             btnTiepNhanHocVien.Enabled = true;
             btnLapPhieuGhiDanh.Enabled = true;
@@ -322,21 +346,31 @@ namespace QuanLyHocVien
             btnQuanLyKhoaHoc.Enabled = true;
             btnQuanLyHocPhi.Enabled = true;
             btnQuanLyTaiKhoan.Enabled = true;
-            btnCaiDatVaQuyDinh.Enabled = false;
-            btnQuanLyTaiKhoan.Enabled = false;
-            btnThongTinTrungTam.Enabled = false;
+            btnCaiDatVaQuyDinh.Enabled = true;
+            btnQuanLyTaiKhoan.Enabled = true;
+            btnThongTinTrungTam.Enabled = true;
         }
 
+        /// <summary>
+        /// Nạp giao diện phần mềm
+        /// </summary>
         public void LoadGiaoDien()
         {
             ResetRibbonControlStatus();
             PhanQuyen(GlobalSettings.UserType, GlobalSettings.UserName);
             pnlWorkspace.Controls.Clear();
 
+            if (GlobalSettings.UserType == UserType.NhanVien)
+                GlobalPages.LoadEssentialPages();
+
             GlobalSettings.LoadCenterInformation();
 
             btnTrangMoDau_Click(null, null);
         }
+
+        /// <summary>
+        /// Đăng nhập vào phần mềm
+        /// </summary>
         public void DangNhap()
         {
             this.Hide();
@@ -365,6 +399,9 @@ namespace QuanLyHocVien
             DangNhap();
         }
 
+        /// <summary>
+        /// Kết nối lại cơ sở dữ liệu
+        /// </summary>
         private void Reconnect()
         {
             frmKetNoiCSDL frm = new frmKetNoiCSDL();
@@ -397,18 +434,19 @@ namespace QuanLyHocVien
                     {
                         //nhân viên ghi danh
                         case "LNV01":
-                            btnGiangVienTitle.Enabled = false;
-                            btnHocVienTitle.Enabled = false;
-                            btnQuanTriTitle.Enabled = false;
+                            btnGiangVienTitle.Visible = false;
+                            btnHocVienTitle.Visible = false;
+                            btnQuanTriTitle.Visible = false;
                             btnThongKeNoHocVien.Enabled = false;
                             btnThongKeDiemTheoLop.Enabled = false;
                             btnQuanLyDiem.Enabled = false;
                             btnXepLop.Enabled = false;
+                            btnNhanVienTitle_Click(btnNhanVienTitle, null);
                             break;
                         //nhân viên học vụ
                         case "LNV02":
-                            btnGiangVienTitle.Enabled = false;
-                            btnHocVienTitle.Enabled = false;
+                            btnGiangVienTitle.Visible = false;
+                            btnHocVienTitle.Visible = false;
                             btnTiepNhanHocVien.Enabled = false;
                             btnLapPhieuGhiDanh.Enabled = false;
                             btnBaoCaoHocVienTheoThang.Enabled = false;
@@ -419,11 +457,12 @@ namespace QuanLyHocVien
                             btnCaiDatVaQuyDinh.Enabled = false;
                             btnQuanLyTaiKhoan.Enabled = false;
                             btnThongTinTrungTam.Enabled = false;
+                            btnNhanVienTitle_Click(btnNhanVienTitle, null);
                             break;
                         //nhân viên kế toán
                         case "LNV03":
-                            btnGiangVienTitle.Enabled = false;
-                            btnHocVienTitle.Enabled = false;
+                            btnGiangVienTitle.Visible = false;
+                            btnHocVienTitle.Visible = false;
                             btnTiepNhanHocVien.Enabled = false;
                             btnLapPhieuGhiDanh.Enabled = false;
                             btnBaoCaoHocVienTheoThang.Enabled = false;
@@ -439,34 +478,30 @@ namespace QuanLyHocVien
                             btnCaiDatVaQuyDinh.Enabled = false;
                             btnQuanLyTaiKhoan.Enabled = false;
                             btnThongTinTrungTam.Enabled = false;
+                            btnNhanVienTitle_Click(btnNhanVienTitle, null);
                             break;
                         default:
+                            btnHocVienTitle.Visible = false;
+                            btnGiangVienTitle.Visible = false;
+                            btnQuanTriTitle_Click(btnQuanTriTitle, null);
                             break;                       
                     }
-
                     break;
                 case UserType.HocVien:
-                    btnNhanVienTitle.Enabled = false;
-                    btnQuanTriTitle.Enabled = false;
-                    btnGiangVienTitle.Enabled = false;
+                    btnNhanVienTitle.Visible = false;
+                    btnQuanTriTitle.Visible = false;
+                    btnGiangVienTitle.Visible = false;
                     btnHocVienTitle_Click(this.btnHocVienTitle, null);
                     break;
                 case UserType.GiangVien:
-                    btnNhanVienTitle.Enabled = false;
-                    btnQuanTriTitle.Enabled = false;
-                    btnHocVienTitle.Enabled = false;
+                    btnNhanVienTitle.Visible = false;
+                    btnQuanTriTitle.Visible = false;
+                    btnHocVienTitle.Visible = false;
                     btnGiangVienTitle_Click(this.btnGiangVienTitle, null);
                     break;
                 default:
                     break;
             }
-        }
-
-        private void btnDangXuat_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-
-            DangNhap();
         }
     }
 }

@@ -48,76 +48,76 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmBangDiem.cs">
+    <Compile Include="Pages\frmBangDiem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBangDiem.Designer.cs">
+    <Compile Include="Pages\frmBangDiem.Designer.cs">
       <DependentUpon>frmBangDiem.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBaoCaoHocVienTheoThang.cs">
+    <Compile Include="Pages\frmBaoCaoHocVienTheoThang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBaoCaoHocVienTheoThang.Designer.cs">
+    <Compile Include="Pages\frmBaoCaoHocVienTheoThang.Designer.cs">
       <DependentUpon>frmBaoCaoHocVienTheoThang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCacLopDaHoc.cs">
+    <Compile Include="Pages\frmCacLopDaHoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCacLopDaHoc.Designer.cs">
+    <Compile Include="Pages\frmCacLopDaHoc.Designer.cs">
       <DependentUpon>frmCacLopDaHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCaiDatVaQuyDinh.cs">
+    <Compile Include="Popups\frmCaiDatVaQuyDinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCaiDatVaQuyDinh.Designer.cs">
+    <Compile Include="Popups\frmCaiDatVaQuyDinh.Designer.cs">
       <DependentUpon>frmCaiDatVaQuyDinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDangNhap.cs">
+    <Compile Include="Popups\frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDangNhap.Designer.cs">
+    <Compile Include="Popups\frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDoiMatKhau.cs">
+    <Compile Include="Popups\frmDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDoiMatKhau.Designer.cs">
+    <Compile Include="Popups\frmDoiMatKhau.Designer.cs">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGiangVienEdit.cs">
+    <Compile Include="Popups\frmGiangVienEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGiangVienEdit.Designer.cs">
+    <Compile Include="Popups\frmGiangVienEdit.Designer.cs">
       <DependentUpon>frmGiangVienEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHocPhiHocVien.cs">
+    <Compile Include="Pages\frmHocPhiHocVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHocPhiHocVien.Designer.cs">
+    <Compile Include="Pages\frmHocPhiHocVien.Designer.cs">
       <DependentUpon>frmHocPhiHocVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHocVienEdit.cs">
+    <Compile Include="Popups\frmHocVienEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHocVienEdit.Designer.cs">
+    <Compile Include="Popups\frmHocVienEdit.Designer.cs">
       <DependentUpon>frmHocVienEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmKetNoiCSDL.cs">
+    <Compile Include="Popups\frmKetNoiCSDL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmKetNoiCSDL.Designer.cs">
+    <Compile Include="Popups\frmKetNoiCSDL.Designer.cs">
       <DependentUpon>frmKetNoiCSDL.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLapPhieuGhiDanh.cs">
+    <Compile Include="Pages\frmLapPhieuGhiDanh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLapPhieuGhiDanh.Designer.cs">
+    <Compile Include="Pages\frmLapPhieuGhiDanh.Designer.cs">
       <DependentUpon>frmLapPhieuGhiDanh.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLopHocEdit.cs">
+    <Compile Include="Popups\frmLopHocEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLopHocEdit.Designer.cs">
+    <Compile Include="Popups\frmLopHocEdit.Designer.cs">
       <DependentUpon>frmLopHocEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
@@ -126,225 +126,226 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNhanVienEdit.cs">
+    <Compile Include="Popups\frmNhanVienEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNhanVienEdit.Designer.cs">
+    <Compile Include="Popups\frmNhanVienEdit.Designer.cs">
       <DependentUpon>frmNhanVienEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuanLyDiem.cs">
+    <Compile Include="Pages\frmQuanLyDiem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQuanLyDiem.Designer.cs">
+    <Compile Include="Pages\frmQuanLyDiem.Designer.cs">
       <DependentUpon>frmQuanLyDiem.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuanLyGiangVien.cs">
+    <Compile Include="Pages\frmQuanLyGiangVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQuanLyGiangVien.Designer.cs">
+    <Compile Include="Pages\frmQuanLyGiangVien.Designer.cs">
       <DependentUpon>frmQuanLyGiangVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuanLyHocVien.cs">
+    <Compile Include="Pages\frmQuanLyHocVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQuanLyHocVien.Designer.cs">
+    <Compile Include="Pages\frmQuanLyHocVien.Designer.cs">
       <DependentUpon>frmQuanLyHocVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuanLyKhoaHoc.cs">
+    <Compile Include="Pages\frmQuanLyKhoaHoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQuanLyKhoaHoc.Designer.cs">
+    <Compile Include="Pages\frmQuanLyKhoaHoc.Designer.cs">
       <DependentUpon>frmQuanLyKhoaHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuanLyLopHoc.cs">
+    <Compile Include="Pages\frmQuanLyLopHoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQuanLyLopHoc.Designer.cs">
+    <Compile Include="Pages\frmQuanLyLopHoc.Designer.cs">
       <DependentUpon>frmQuanLyLopHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuanLyNhanVien.cs">
+    <Compile Include="Pages\frmQuanLyNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQuanLyNhanVien.Designer.cs">
+    <Compile Include="Pages\frmQuanLyNhanVien.Designer.cs">
       <DependentUpon>frmQuanLyNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuanLyTaiKhoan.cs">
+    <Compile Include="Pages\frmQuanLyTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQuanLyTaiKhoan.Designer.cs">
+    <Compile Include="Pages\frmQuanLyTaiKhoan.Designer.cs">
       <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReport.cs">
+    <Compile Include="Popups\frmReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReport.Designer.cs">
+    <Compile Include="Popups\frmReport.Designer.cs">
       <DependentUpon>frmReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThayDoiThongTinGV.cs">
+    <Compile Include="Popups\frmThayDoiThongTinGV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThayDoiThongTinGV.Designer.cs">
+    <Compile Include="Popups\frmThayDoiThongTinGV.Designer.cs">
       <DependentUpon>frmThayDoiThongTinGV.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThayDoiThongTinHV.cs">
+    <Compile Include="Popups\frmThayDoiThongTinHV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThayDoiThongTinHV.Designer.cs">
+    <Compile Include="Popups\frmThayDoiThongTinHV.Designer.cs">
       <DependentUpon>frmThayDoiThongTinHV.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThayDoiThongTinNV.cs">
+    <Compile Include="Popups\frmThayDoiThongTinNV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThayDoiThongTinNV.Designer.cs">
+    <Compile Include="Popups\frmThayDoiThongTinNV.Designer.cs">
       <DependentUpon>frmThayDoiThongTinNV.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThongKeDiemTheoLop.cs">
+    <Compile Include="Pages\frmThongKeDiemTheoLop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThongKeDiemTheoLop.Designer.cs">
+    <Compile Include="Pages\frmThongKeDiemTheoLop.Designer.cs">
       <DependentUpon>frmThongKeDiemTheoLop.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThongKeNoHocVien.cs">
+    <Compile Include="Pages\frmThongKeNoHocVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThongKeNoHocVien.Designer.cs">
+    <Compile Include="Pages\frmThongKeNoHocVien.Designer.cs">
       <DependentUpon>frmThongKeNoHocVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThongTinPhanMem.cs">
+    <Compile Include="Popups\frmThongTinPhanMem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThongTinPhanMem.Designer.cs">
+    <Compile Include="Popups\frmThongTinPhanMem.Designer.cs">
       <DependentUpon>frmThongTinPhanMem.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThongTinTrungTam.cs">
+    <Compile Include="Popups\frmThongTinTrungTam.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThongTinTrungTam.Designer.cs">
+    <Compile Include="Popups\frmThongTinTrungTam.Designer.cs">
       <DependentUpon>frmThongTinTrungTam.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTiepNhanHocVien.cs">
+    <Compile Include="Pages\frmTiepNhanHocVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTiepNhanHocVien.Designer.cs">
+    <Compile Include="Pages\frmTiepNhanHocVien.Designer.cs">
       <DependentUpon>frmTiepNhanHocVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTrangMoDau.cs">
+    <Compile Include="Pages\frmTrangMoDau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTrangMoDau.Designer.cs">
+    <Compile Include="Pages\frmTrangMoDau.Designer.cs">
       <DependentUpon>frmTrangMoDau.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmXemCacLopDay.cs">
+    <Compile Include="Pages\frmXemCacLopDay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmXemCacLopDay.Designer.cs">
+    <Compile Include="Pages\frmXemCacLopDay.Designer.cs">
       <DependentUpon>frmXemCacLopDay.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmXepLop.cs">
+    <Compile Include="Pages\frmXepLop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmXepLop.Designer.cs">
+    <Compile Include="Pages\frmXepLop.Designer.cs">
       <DependentUpon>frmXepLop.cs</DependentUpon>
     </Compile>
+    <Compile Include="GlobalPages.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmBangDiem.resx">
+    <EmbeddedResource Include="Pages\frmBangDiem.resx">
       <DependentUpon>frmBangDiem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBaoCaoHocVienTheoThang.resx">
+    <EmbeddedResource Include="Pages\frmBaoCaoHocVienTheoThang.resx">
       <DependentUpon>frmBaoCaoHocVienTheoThang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCacLopDaHoc.resx">
+    <EmbeddedResource Include="Pages\frmCacLopDaHoc.resx">
       <DependentUpon>frmCacLopDaHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCaiDatVaQuyDinh.resx">
+    <EmbeddedResource Include="Popups\frmCaiDatVaQuyDinh.resx">
       <DependentUpon>frmCaiDatVaQuyDinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDangNhap.resx">
+    <EmbeddedResource Include="Popups\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDoiMatKhau.resx">
+    <EmbeddedResource Include="Popups\frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGiangVienEdit.resx">
+    <EmbeddedResource Include="Popups\frmGiangVienEdit.resx">
       <DependentUpon>frmGiangVienEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHocPhiHocVien.resx">
+    <EmbeddedResource Include="Pages\frmHocPhiHocVien.resx">
       <DependentUpon>frmHocPhiHocVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHocVienEdit.resx">
+    <EmbeddedResource Include="Popups\frmHocVienEdit.resx">
       <DependentUpon>frmHocVienEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmKetNoiCSDL.resx">
+    <EmbeddedResource Include="Popups\frmKetNoiCSDL.resx">
       <DependentUpon>frmKetNoiCSDL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLapPhieuGhiDanh.resx">
+    <EmbeddedResource Include="Pages\frmLapPhieuGhiDanh.resx">
       <DependentUpon>frmLapPhieuGhiDanh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLopHocEdit.resx">
+    <EmbeddedResource Include="Popups\frmLopHocEdit.resx">
       <DependentUpon>frmLopHocEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNhanVienEdit.resx">
+    <EmbeddedResource Include="Popups\frmNhanVienEdit.resx">
       <DependentUpon>frmNhanVienEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanLyDiem.resx">
+    <EmbeddedResource Include="Pages\frmQuanLyDiem.resx">
       <DependentUpon>frmQuanLyDiem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanLyGiangVien.resx">
+    <EmbeddedResource Include="Pages\frmQuanLyGiangVien.resx">
       <DependentUpon>frmQuanLyGiangVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanLyHocVien.resx">
+    <EmbeddedResource Include="Pages\frmQuanLyHocVien.resx">
       <DependentUpon>frmQuanLyHocVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanLyKhoaHoc.resx">
+    <EmbeddedResource Include="Pages\frmQuanLyKhoaHoc.resx">
       <DependentUpon>frmQuanLyKhoaHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanLyLopHoc.resx">
+    <EmbeddedResource Include="Pages\frmQuanLyLopHoc.resx">
       <DependentUpon>frmQuanLyLopHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanLyNhanVien.resx">
+    <EmbeddedResource Include="Pages\frmQuanLyNhanVien.resx">
       <DependentUpon>frmQuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanLyTaiKhoan.resx">
+    <EmbeddedResource Include="Pages\frmQuanLyTaiKhoan.resx">
       <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReport.resx">
+    <EmbeddedResource Include="Popups\frmReport.resx">
       <DependentUpon>frmReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThayDoiThongTinGV.resx">
+    <EmbeddedResource Include="Popups\frmThayDoiThongTinGV.resx">
       <DependentUpon>frmThayDoiThongTinGV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThayDoiThongTinHV.resx">
+    <EmbeddedResource Include="Popups\frmThayDoiThongTinHV.resx">
       <DependentUpon>frmThayDoiThongTinHV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThayDoiThongTinNV.resx">
+    <EmbeddedResource Include="Popups\frmThayDoiThongTinNV.resx">
       <DependentUpon>frmThayDoiThongTinNV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThongKeDiemTheoLop.resx">
+    <EmbeddedResource Include="Pages\frmThongKeDiemTheoLop.resx">
       <DependentUpon>frmThongKeDiemTheoLop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThongKeNoHocVien.resx">
+    <EmbeddedResource Include="Pages\frmThongKeNoHocVien.resx">
       <DependentUpon>frmThongKeNoHocVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThongTinPhanMem.resx">
+    <EmbeddedResource Include="Popups\frmThongTinPhanMem.resx">
       <DependentUpon>frmThongTinPhanMem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThongTinTrungTam.resx">
+    <EmbeddedResource Include="Popups\frmThongTinTrungTam.resx">
       <DependentUpon>frmThongTinTrungTam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTiepNhanHocVien.resx">
+    <EmbeddedResource Include="Pages\frmTiepNhanHocVien.resx">
       <DependentUpon>frmTiepNhanHocVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTrangMoDau.resx">
+    <EmbeddedResource Include="Pages\frmTrangMoDau.resx">
       <DependentUpon>frmTrangMoDau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmXemCacLopDay.resx">
+    <EmbeddedResource Include="Pages\frmXemCacLopDay.resx">
       <DependentUpon>frmXemCacLopDay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmXepLop.resx">
+    <EmbeddedResource Include="Pages\frmXepLop.resx">
       <DependentUpon>frmXepLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

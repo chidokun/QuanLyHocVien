@@ -67,6 +67,7 @@
             this.btnThongTinPhanMem = new System.Windows.Forms.Button();
             this.btnTroGiup = new System.Windows.Forms.Button();
             this.pnlTabTitle = new System.Windows.Forms.Panel();
+            this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnTroGiupTitle = new System.Windows.Forms.Button();
             this.btnQuanTriTitle = new System.Windows.Forms.Button();
             this.btnHocVienTitle = new System.Windows.Forms.Button();
@@ -79,7 +80,6 @@
             this.lblServerName = new System.Windows.Forms.Button();
             this.pnlWorkspace = new System.Windows.Forms.Panel();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.btnDangXuat = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tabRibbon.SuspendLayout();
@@ -682,6 +682,22 @@
             this.pnlTabTitle.Size = new System.Drawing.Size(1150, 28);
             this.pnlTabTitle.TabIndex = 0;
             // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.BackColor = System.Drawing.Color.White;
+            this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnDangXuat.FlatAppearance.BorderSize = 0;
+            this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnDangXuat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.btnDangXuat.Location = new System.Drawing.Point(1054, 0);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(96, 28);
+            this.btnDangXuat.TabIndex = 5;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.UseVisualStyleBackColor = false;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
+            // 
             // btnTroGiupTitle
             // 
             this.btnTroGiupTitle.BackColor = System.Drawing.Color.White;
@@ -842,22 +858,6 @@
             // 
             this.timer.Interval = 50;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // btnDangXuat
-            // 
-            this.btnDangXuat.BackColor = System.Drawing.Color.White;
-            this.btnDangXuat.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnDangXuat.FlatAppearance.BorderSize = 0;
-            this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnDangXuat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
-            this.btnDangXuat.Location = new System.Drawing.Point(1054, 0);
-            this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(96, 28);
-            this.btnDangXuat.TabIndex = 5;
-            this.btnDangXuat.Text = "Đăng xuất";
-            this.btnDangXuat.UseVisualStyleBackColor = false;
-            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // frmMain
             // 

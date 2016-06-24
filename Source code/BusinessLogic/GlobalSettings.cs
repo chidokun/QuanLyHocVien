@@ -89,6 +89,13 @@ namespace BusinessLogic
             ServerCatalog = Settings.Default.Database_ServerCatalog;
 
             Database = new QuanLyHocVienDataContext(ConnectionString);
+
+            //kiểm tra kết nối
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("select 1", connection);
+            cmd.ExecuteNonQuery();
+            connection.Close();
         }
 
         /// <summary>
@@ -119,10 +126,10 @@ namespace BusinessLogic
             {
                 con.Open();
 
-                using (SqlCommand cmd = new SqlCommand("sp_databases", con))               
-                    using (IDataReader dr = cmd.ExecuteReader())                    
-                        while (dr.Read())                        
-                            list.Add(dr[0].ToString());                                                         
+                using (SqlCommand cmd = new SqlCommand("sp_databases", con))
+                using (IDataReader dr = cmd.ExecuteReader())
+                    while (dr.Read())
+                        list.Add(dr[0].ToString());
             }
 
             return list;
