@@ -6,13 +6,14 @@
 using System;
 using System.Windows.Forms;
 using BusinessLogic;
-using DataAccess;
+using System.Threading;
 
 namespace QuanLyHocVien.Pages
 {
     public partial class frmBaoCaoHocVienTheoThang : Form
     {
         private PhieuGhiDanh busPhieuGhiDanh = new PhieuGhiDanh();
+
         public frmBaoCaoHocVienTheoThang()
         {
             InitializeComponent();
@@ -21,11 +22,23 @@ namespace QuanLyHocVien.Pages
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            GlobalPages.BaoCaoHocVienTheoThang = null;
         }
 
         private void btnXem_Click(object sender, EventArgs e)
         {
-            gridBaoCao.DataSource = busPhieuGhiDanh.BaoCaoHocVienGhiDanhTheoThang(dateThang.Value.Month, dateThang.Value.Year);
+            Thread th = new Thread(() =>
+            {
+                object dshv = busPhieuGhiDanh.BaoCaoHocVienGhiDanhTheoThang(dateThang.Value.Month, dateThang.Value.Year);
+
+                gridBaoCao.Invoke((MethodInvoker)delegate
+                {
+                    gridBaoCao.DataSource = dshv;
+                });
+            });
+
+            th.Start();
+
         }
 
         private void gridBaoCao_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)

@@ -65,6 +65,8 @@ namespace QuanLyHocVien.Popups
             };
         }
 
+        #region Events
+
         private void dateNgayBD_ValueChanged(object sender, EventArgs e)
         {
             if (isInsert)
@@ -103,5 +105,7 @@ namespace QuanLyHocVien.Popups
                 MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        #endregion
     }
 }

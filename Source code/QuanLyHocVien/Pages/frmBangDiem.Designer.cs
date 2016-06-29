@@ -30,10 +30,10 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnXem = new System.Windows.Forms.Button();
             this.cboLop = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -54,9 +54,8 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnInBangDiem = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -88,6 +87,20 @@
             this.label1.Size = new System.Drawing.Size(132, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "BẢNG ĐIỂM HỌC VIÊN";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.LightGray;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::QuanLyHocVien.Properties.Resources.icon_Close_9dp;
+            this.btnClose.Location = new System.Drawing.Point(929, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(28, 19);
+            this.btnClose.TabIndex = 0;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel2
             // 
@@ -127,7 +140,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btnXem);
             this.panel3.Controls.Add(this.cboLop);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -136,24 +148,6 @@
             this.panel3.Size = new System.Drawing.Size(494, 32);
             this.panel3.TabIndex = 0;
             // 
-            // btnXem
-            // 
-            this.btnXem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXem.BackColor = System.Drawing.Color.Silver;
-            this.btnXem.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnXem.FlatAppearance.BorderSize = 0;
-            this.btnXem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnXem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnXem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnXem.Location = new System.Drawing.Point(400, 2);
-            this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(91, 28);
-            this.btnXem.TabIndex = 38;
-            this.btnXem.Text = "Xem";
-            this.btnXem.UseVisualStyleBackColor = false;
-            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
-            // 
             // cboLop
             // 
             this.cboLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -161,8 +155,9 @@
             this.cboLop.FormattingEnabled = true;
             this.cboLop.Location = new System.Drawing.Point(67, 4);
             this.cboLop.Name = "cboLop";
-            this.cboLop.Size = new System.Drawing.Size(130, 25);
+            this.cboLop.Size = new System.Drawing.Size(197, 25);
             this.cboLop.TabIndex = 36;
+            this.cboLop.SelectedValueChanged += new System.EventHandler(this.cboLop_SelectedValueChanged);
             // 
             // label4
             // 
@@ -187,23 +182,23 @@
             // lblTenKhoa
             // 
             this.lblTenKhoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTenKhoa.AutoSize = true;
-            this.lblTenKhoa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblTenKhoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblTenKhoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblTenKhoa.Location = new System.Drawing.Point(396, 9);
+            this.lblTenKhoa.Location = new System.Drawing.Point(202, 5);
             this.lblTenKhoa.Name = "lblTenKhoa";
-            this.lblTenKhoa.Size = new System.Drawing.Size(94, 15);
+            this.lblTenKhoa.Size = new System.Drawing.Size(288, 21);
             this.lblTenKhoa.TabIndex = 40;
             this.lblTenKhoa.Text = "<course name>";
-            this.lblTenKhoa.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblTenKhoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblTenLop
             // 
             this.lblTenLop.AutoSize = true;
-            this.lblTenLop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
-            this.lblTenLop.Location = new System.Drawing.Point(3, 9);
+            this.lblTenLop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTenLop.ForeColor = System.Drawing.Color.Green;
+            this.lblTenLop.Location = new System.Drawing.Point(4, 5);
             this.lblTenLop.Name = "lblTenLop";
-            this.lblTenLop.Size = new System.Drawing.Size(81, 15);
+            this.lblTenLop.Size = new System.Drawing.Size(115, 21);
             this.lblTenLop.TabIndex = 39;
             this.lblTenLop.Text = "<class name>";
             // 
@@ -351,15 +346,14 @@
             // lblDiemTrungBinh
             // 
             this.lblDiemTrungBinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDiemTrungBinh.AutoSize = true;
             this.lblDiemTrungBinh.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblDiemTrungBinh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblDiemTrungBinh.Location = new System.Drawing.Point(449, 4);
+            this.lblDiemTrungBinh.Location = new System.Drawing.Point(413, 4);
             this.lblDiemTrungBinh.Name = "lblDiemTrungBinh";
-            this.lblDiemTrungBinh.Size = new System.Drawing.Size(26, 30);
+            this.lblDiemTrungBinh.Size = new System.Drawing.Size(77, 30);
             this.lblDiemTrungBinh.TabIndex = 37;
             this.lblDiemTrungBinh.Text = "0";
-            this.lblDiemTrungBinh.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDiemTrungBinh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
@@ -367,7 +361,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
-            this.label7.Location = new System.Drawing.Point(305, 9);
+            this.label7.Location = new System.Drawing.Point(297, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(120, 20);
             this.label7.TabIndex = 36;
@@ -410,17 +404,6 @@
             this.label2.TabIndex = 34;
             this.label2.Text = "Chọn Lớp rồi bấm Xem để xem bảng điểm";
             // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.lblTitle.ForeColor = System.Drawing.Color.Green;
-            this.lblTitle.Location = new System.Drawing.Point(120, 29);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(256, 25);
-            this.lblTitle.TabIndex = 32;
-            this.lblTitle.Text = "Bảng điểm của <user name>";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QuanLyHocVien.Properties.Resources.icon_BangDiem_64dp;
@@ -431,19 +414,16 @@
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             // 
-            // btnClose
+            // lblTitle
             // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.LightGray;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::QuanLyHocVien.Properties.Resources.icon_Close_9dp;
-            this.btnClose.Location = new System.Drawing.Point(929, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(28, 19);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.lblTitle.ForeColor = System.Drawing.Color.Green;
+            this.lblTitle.Location = new System.Drawing.Point(120, 29);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(256, 25);
+            this.lblTitle.TabIndex = 32;
+            this.lblTitle.Text = "Bảng điểm của <user name>";
             // 
             // frmBangDiem
             // 
@@ -490,7 +470,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cboLop;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnXem;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblTenKhoa;
         private System.Windows.Forms.Label lblTenLop;

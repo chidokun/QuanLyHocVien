@@ -64,6 +64,7 @@ namespace QuanLyHocVien.Popups
             };
         }
 
+        #region Events
 
         private void btnHuyBo_Click(object sender, EventArgs e)
         {
@@ -119,5 +120,7 @@ namespace QuanLyHocVien.Popups
                 e.Handled = true;
             }
         }
+
+        #endregion
     }
 }

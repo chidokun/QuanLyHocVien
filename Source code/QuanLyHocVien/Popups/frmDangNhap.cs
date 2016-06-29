@@ -20,6 +20,7 @@ namespace QuanLyHocVien.Popups
             InitializeComponent();
         }
 
+        #region Events
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
             chkSave.Checked = Settings.Default.Login_IsSaved;
@@ -65,5 +66,6 @@ namespace QuanLyHocVien.Popups
                 System.Media.SystemSounds.Exclamation.Play();
             }
         }
+        #endregion
     }
 }

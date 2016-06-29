@@ -1,13 +1,17 @@
-﻿using QuanLyHocVien.Pages;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿// Quản lý Học viên Trung tâm Anh ngữ
+// Copyright © 2016, VP2T
+// File "GlobalPages.cs"
+// Writing by Nguyễn Lê Hoàng Tuấn (nguyentuanit96@gmail.com)
+
+using QuanLyHocVien.Pages;
 using System.Threading;
 using System.Windows.Forms;
 
 namespace QuanLyHocVien
 {
+    /// <summary>
+    /// Lưu giữ các page trong quá trình chương trình hoạt động
+    /// </summary>
     public static class GlobalPages
     {
         public static frmTiepNhanHocVien TiepNhanHocVien { get; set; } = null;
@@ -24,6 +28,14 @@ namespace QuanLyHocVien
 
         public static frmXepLop XepLop { get; set; } = null;
 
+        public static frmXemCacLopDay XemCacLopDay { get; set; } = null;
+
+        public static frmBangDiem BangDiem { get; set; } = null;
+
+        public static frmHocPhiHocVien HocPhiHocVien { get; set; } = null;
+
+        public static frmCacLopDaHoc CacLopDaHoc { get; set; } = null;
+
         public static frmQuanLyHocVien QuanLyHocVien { get; set; } = null;
 
         public static frmQuanLyNhanVien QuanLyNhanVien { get; set; } = null;
@@ -34,11 +46,13 @@ namespace QuanLyHocVien
 
         public static frmQuanLyKhoaHoc QuanLyKhoaHoc { get; set; } = null;
 
-        //public static frmQuanLyHocPhi QuanLyHocPhi { get; set; }= null;
+        public static frmQuanLyHocPhi QuanLyHocPhi { get; set; } = null;
 
         public static frmQuanLyTaiKhoan QuanLyTaiKhoan { get; set; } = null;
 
-
+        /// <summary>
+        /// Nạp các page cần thiết
+        /// </summary>
         public static void LoadEssentialPages()
         {
             Thread thread = new Thread(() =>
@@ -63,6 +77,5 @@ namespace QuanLyHocVien
             thread.Priority = ThreadPriority.Highest;
             thread.Start();
         }
-
     }
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
@@ -37,6 +37,8 @@
             this.btnHienTatCa = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.gridLop = new System.Windows.Forms.DataGridView();
+            this.clmMaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDatLai = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtMaLop = new System.Windows.Forms.TextBox();
@@ -74,8 +76,6 @@
             this.lblTongCong = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.gridDSHV = new System.Windows.Forms.DataGridView();
-            this.clmMaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmMaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmTenHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -176,7 +176,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridLop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridLop.BackgroundColor = System.Drawing.Color.White;
-            this.gridLop.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridLop.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMaLop,
@@ -191,6 +191,24 @@
             this.gridLop.Size = new System.Drawing.Size(279, 258);
             this.gridLop.TabIndex = 64;
             this.gridLop.Click += new System.EventHandler(this.gridLop_Click);
+            // 
+            // clmMaLop
+            // 
+            this.clmMaLop.DataPropertyName = "MaLop";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaLop.DefaultCellStyle = dataGridViewCellStyle1;
+            this.clmMaLop.FillWeight = 70F;
+            this.clmMaLop.HeaderText = "Mã lớp";
+            this.clmMaLop.Name = "clmMaLop";
+            this.clmMaLop.ReadOnly = true;
+            // 
+            // clmTenLop
+            // 
+            this.clmTenLop.DataPropertyName = "TenLop";
+            this.clmTenLop.FillWeight = 93.27411F;
+            this.clmTenLop.HeaderText = "Tên lớp";
+            this.clmTenLop.Name = "clmTenLop";
+            this.clmTenLop.ReadOnly = true;
             // 
             // btnDatLai
             // 
@@ -638,7 +656,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridDSHV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridDSHV.BackgroundColor = System.Drawing.Color.White;
-            this.gridDSHV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridDSHV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridDSHV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridDSHV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMaHV,
@@ -657,29 +675,11 @@
             this.gridDSHV.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridDSHV_RowsRemoved);
             this.gridDSHV.Click += new System.EventHandler(this.gridDSHV_Click);
             // 
-            // clmMaLop
-            // 
-            this.clmMaLop.DataPropertyName = "MaLop";
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaLop.DefaultCellStyle = dataGridViewCellStyle7;
-            this.clmMaLop.FillWeight = 70F;
-            this.clmMaLop.HeaderText = "Mã lớp";
-            this.clmMaLop.Name = "clmMaLop";
-            this.clmMaLop.ReadOnly = true;
-            // 
-            // clmTenLop
-            // 
-            this.clmTenLop.DataPropertyName = "TenLop";
-            this.clmTenLop.FillWeight = 93.27411F;
-            this.clmTenLop.HeaderText = "Tên lớp";
-            this.clmTenLop.Name = "clmTenLop";
-            this.clmTenLop.ReadOnly = true;
-            // 
             // clmMaHV
             // 
             this.clmMaHV.DataPropertyName = "MaHV";
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle2;
             this.clmMaHV.FillWeight = 70F;
             this.clmMaHV.HeaderText = "Mã học viên";
             this.clmMaHV.Name = "clmMaHV";

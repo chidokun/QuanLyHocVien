@@ -35,6 +35,8 @@ namespace QuanLyHocVien.Popups
             };
         }
 
+        #region Events
+
         private void btnHuyBo_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -73,5 +75,7 @@ namespace QuanLyHocVien.Popups
                 MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        #endregion
     }
 }

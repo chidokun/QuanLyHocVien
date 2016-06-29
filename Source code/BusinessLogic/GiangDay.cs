@@ -49,14 +49,19 @@ namespace BusinessLogic
         /// <param name="denNgay">Đến ngày</param>
         /// <param name="maKH">Mã khóa học</param>
         /// <returns></returns>
-        public List<LOPHOC> SelectAll(string maGV, DateTime? tuNgay, DateTime? denNgay, string maKH)
+        public object SelectAll(string maGV, DateTime? tuNgay, DateTime? denNgay, string maKH)
         {
             return (from p in Database.GIANGDAYs
-                    where (maGV == null ? true : p.MaGV == maGV) &&
-                          (tuNgay == null ? true : p.LOPHOC.NgayBD >= tuNgay.Value) &&
-                          (denNgay == null ? true : p.LOPHOC.NgayKT <= denNgay.Value) &&
+                    where p.MaGV == maGV &&
+                          (tuNgay == null ? true : p.LOPHOC.NgayBD >= tuNgay) &&
+                          (denNgay == null ? true : p.LOPHOC.NgayKT <= denNgay) &&
                           (maKH == null ? true : p.LOPHOC.MaKH == maKH)
-                    select p.LOPHOC).ToList();
+                    select new
+                    {
+                        MaLop = p.MaLop,
+                        TenLop = p.LOPHOC.TenLop
+                    }).ToList();
+
         }
     }
 }

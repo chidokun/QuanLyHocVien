@@ -69,7 +69,6 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -83,7 +82,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridKH)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -157,7 +155,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
-            this.splitContainer1.Panel2.Controls.Add(this.panel6);
+            this.splitContainer1.Panel2.Controls.Add(this.gridKH);
             this.splitContainer1.Panel2.Controls.Add(this.panel3);
             this.splitContainer1.Panel2.Controls.Add(this.panel2);
             this.splitContainer1.Size = new System.Drawing.Size(1086, 516);
@@ -410,9 +408,13 @@
             // 
             // gridKH
             // 
+            this.gridKH.AllowUserToAddRows = false;
+            this.gridKH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridKH.BackgroundColor = System.Drawing.Color.White;
-            this.gridKH.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridKH.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridKH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMaKH,
@@ -422,14 +424,13 @@
             this.clmHSNoi,
             this.clmHSDoc,
             this.clmHSViet});
-            this.gridKH.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridKH.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridKH.Location = new System.Drawing.Point(1, 1);
+            this.gridKH.Location = new System.Drawing.Point(12, 39);
             this.gridKH.MultiSelect = false;
             this.gridKH.Name = "gridKH";
             this.gridKH.RowHeadersVisible = false;
             this.gridKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridKH.Size = new System.Drawing.Size(702, 435);
+            this.gridKH.Size = new System.Drawing.Size(704, 441);
             this.gridKH.TabIndex = 1;
             this.gridKH.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridKH_RowsAdded);
             this.gridKH.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridKH_RowsRemoved);
@@ -560,19 +561,6 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BackColor = System.Drawing.Color.Silver;
-            this.panel6.Controls.Add(this.gridKH);
-            this.panel6.Location = new System.Drawing.Point(12, 43);
-            this.panel6.Name = "panel6";
-            this.panel6.Padding = new System.Windows.Forms.Padding(1);
-            this.panel6.Size = new System.Drawing.Size(704, 437);
-            this.panel6.TabIndex = 15;
-            // 
             // frmQuanLyKhoaHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -603,7 +591,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -649,6 +636,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmHSNoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmHSDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmHSViet;
-        private System.Windows.Forms.Panel panel6;
     }
 }

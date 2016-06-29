@@ -18,6 +18,8 @@ namespace QuanLyHocVien.Popups
             InitializeComponent();
         }
 
+        #region Events
+
         private void btnHuyBo_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
@@ -85,5 +87,7 @@ namespace QuanLyHocVien.Popups
             DialogResult = DialogResult.OK;
             Close();
         }
+
+        #endregion
     }
 }

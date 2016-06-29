@@ -22,6 +22,7 @@ namespace QuanLyHocVien.Pages
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            GlobalPages.QuanLyTaiKhoan = null; 
         }
 
         private void chkTen_CheckedChanged(object sender, EventArgs e)

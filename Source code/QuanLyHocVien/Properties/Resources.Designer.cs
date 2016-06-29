@@ -103,6 +103,16 @@ namespace QuanLyHocVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_CSDL_32dp {
+            get {
+                object obj = ResourceManager.GetObject("icon_CSDL_32dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_CSDL_64dp {
             get {
                 object obj = ResourceManager.GetObject("icon_CSDL_64dp", resourceCulture);

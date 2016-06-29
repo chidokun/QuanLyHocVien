@@ -23,6 +23,7 @@ namespace QuanLyHocVien.Pages
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            GlobalPages.QuanLyNhanVien = null;
         }
 
         private void btnThem_Click(object sender, EventArgs e)

@@ -46,6 +46,7 @@ namespace BusinessLogic
                     select p).ToList();
         }
 
+
         /// <summary>
         /// Tự động sinh mã lớp
         /// </summary>

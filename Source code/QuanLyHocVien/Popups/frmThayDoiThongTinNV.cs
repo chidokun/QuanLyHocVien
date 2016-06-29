@@ -20,6 +20,8 @@ namespace QuanLyHocVien.Popups
             InitializeComponent();
         }
 
+        #region Events
+
         private void btnHuyBo_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -37,7 +39,6 @@ namespace QuanLyHocVien.Popups
             txtEmail.Text = nv.EmailNV;
             txtSDT.Text = nv.SdtNV;
             cboLoaiNV.SelectedValue = nv.MaLoaiNV;
-
         }
 
         private void btnLuuThongTin_Click(object sender, EventArgs e)
@@ -68,5 +69,7 @@ namespace QuanLyHocVien.Popups
                 e.Handled = true;
             }
         }
+
+        #endregion
     }
 }

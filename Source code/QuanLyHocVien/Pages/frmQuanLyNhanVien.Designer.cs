@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnDatLai = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.chkLoaiNV = new System.Windows.Forms.CheckBox();
@@ -44,6 +44,11 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label9 = new System.Windows.Forms.Label();
             this.gridNV = new System.Windows.Forms.DataGridView();
+            this.clmMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSdtNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmEmailNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTenLoaiNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblTongCong = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -54,12 +59,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.clmMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSdtNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmEmailNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTenLoaiNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -68,7 +67,6 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDatLai
@@ -230,7 +228,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
-            this.splitContainer1.Panel2.Controls.Add(this.panel4);
+            this.splitContainer1.Panel2.Controls.Add(this.gridNV);
             this.splitContainer1.Panel2.Controls.Add(this.panel3);
             this.splitContainer1.Panel2.Controls.Add(this.panel2);
             this.splitContainer1.Size = new System.Drawing.Size(1104, 478);
@@ -251,9 +249,12 @@
             this.gridNV.AllowUserToAddRows = false;
             this.gridNV.AllowUserToOrderColumns = true;
             this.gridNV.AllowUserToResizeRows = false;
+            this.gridNV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridNV.BackgroundColor = System.Drawing.Color.White;
-            this.gridNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridNV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridNV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMaNV,
@@ -261,18 +262,56 @@
             this.clmSdtNV,
             this.clmEmailNV,
             this.clmTenLoaiNV});
-            this.gridNV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridNV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridNV.Location = new System.Drawing.Point(1, 1);
+            this.gridNV.Location = new System.Drawing.Point(12, 38);
             this.gridNV.MultiSelect = false;
             this.gridNV.Name = "gridNV";
             this.gridNV.RowHeadersVisible = false;
             this.gridNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridNV.Size = new System.Drawing.Size(729, 397);
+            this.gridNV.Size = new System.Drawing.Size(731, 405);
             this.gridNV.TabIndex = 1;
             this.gridNV.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridNV_RowsAdded);
             this.gridNV.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridNV_RowsRemoved);
             this.gridNV.DoubleClick += new System.EventHandler(this.gridNV_DoubleClick);
+            // 
+            // clmMaNV
+            // 
+            this.clmMaNV.DataPropertyName = "MaNV";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaNV.DefaultCellStyle = dataGridViewCellStyle1;
+            this.clmMaNV.FillWeight = 70F;
+            this.clmMaNV.HeaderText = "Mã nhân viên";
+            this.clmMaNV.Name = "clmMaNV";
+            // 
+            // clmTenNV
+            // 
+            this.clmTenNV.DataPropertyName = "TenNV";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.clmTenNV.DefaultCellStyle = dataGridViewCellStyle2;
+            this.clmTenNV.FillWeight = 93.27411F;
+            this.clmTenNV.HeaderText = "Họ và tên";
+            this.clmTenNV.Name = "clmTenNV";
+            // 
+            // clmSdtNV
+            // 
+            this.clmSdtNV.DataPropertyName = "SdtNV";
+            this.clmSdtNV.FillWeight = 93.27411F;
+            this.clmSdtNV.HeaderText = "SĐT";
+            this.clmSdtNV.Name = "clmSdtNV";
+            // 
+            // clmEmailNV
+            // 
+            this.clmEmailNV.DataPropertyName = "EmailNV";
+            this.clmEmailNV.FillWeight = 93.27411F;
+            this.clmEmailNV.HeaderText = "Email";
+            this.clmEmailNV.Name = "clmEmailNV";
+            // 
+            // clmTenLoaiNV
+            // 
+            this.clmTenLoaiNV.DataPropertyName = "TenLoaiNV";
+            this.clmTenLoaiNV.FillWeight = 93.27411F;
+            this.clmTenLoaiNV.HeaderText = "Loại nhân viên";
+            this.clmTenLoaiNV.Name = "clmTenLoaiNV";
             // 
             // panel3
             // 
@@ -405,58 +444,6 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // clmMaNV
-            // 
-            this.clmMaNV.DataPropertyName = "MaNV";
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaNV.DefaultCellStyle = dataGridViewCellStyle13;
-            this.clmMaNV.FillWeight = 70F;
-            this.clmMaNV.HeaderText = "Mã nhân viên";
-            this.clmMaNV.Name = "clmMaNV";
-            // 
-            // clmTenNV
-            // 
-            this.clmTenNV.DataPropertyName = "TenNV";
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.clmTenNV.DefaultCellStyle = dataGridViewCellStyle14;
-            this.clmTenNV.FillWeight = 93.27411F;
-            this.clmTenNV.HeaderText = "Họ và tên";
-            this.clmTenNV.Name = "clmTenNV";
-            // 
-            // clmSdtNV
-            // 
-            this.clmSdtNV.DataPropertyName = "SdtNV";
-            this.clmSdtNV.FillWeight = 93.27411F;
-            this.clmSdtNV.HeaderText = "SĐT";
-            this.clmSdtNV.Name = "clmSdtNV";
-            // 
-            // clmEmailNV
-            // 
-            this.clmEmailNV.DataPropertyName = "EmailNV";
-            this.clmEmailNV.FillWeight = 93.27411F;
-            this.clmEmailNV.HeaderText = "Email";
-            this.clmEmailNV.Name = "clmEmailNV";
-            // 
-            // clmTenLoaiNV
-            // 
-            this.clmTenLoaiNV.DataPropertyName = "TenLoaiNV";
-            this.clmTenLoaiNV.FillWeight = 93.27411F;
-            this.clmTenLoaiNV.HeaderText = "Loại nhân viên";
-            this.clmTenLoaiNV.Name = "clmTenLoaiNV";
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.Silver;
-            this.panel4.Controls.Add(this.gridNV);
-            this.panel4.Location = new System.Drawing.Point(12, 43);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(1);
-            this.panel4.Size = new System.Drawing.Size(731, 399);
-            this.panel4.TabIndex = 3;
-            // 
             // frmQuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -482,7 +469,6 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -518,6 +504,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSdtNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmEmailNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmTenLoaiNV;
-        private System.Windows.Forms.Panel panel4;
     }
 }

@@ -413,7 +413,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridDSHV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridDSHV.BackgroundColor = System.Drawing.Color.White;
-            this.gridDSHV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridDSHV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridDSHV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridDSHV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMaHV,

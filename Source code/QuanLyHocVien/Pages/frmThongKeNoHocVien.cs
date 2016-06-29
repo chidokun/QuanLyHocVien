@@ -7,6 +7,7 @@ using System;
 using System.Windows.Forms;
 using BusinessLogic;
 using DataAccess;
+using System.Threading;
 
 namespace QuanLyHocVien.Pages
 {
@@ -33,7 +34,18 @@ namespace QuanLyHocVien.Pages
         private void frmThongKeNoHocVien_Load(object sender, EventArgs e)
         {
             gridBaoCao.AutoGenerateColumns = false;
-            gridBaoCao.DataSource = busPhieuGhiDanh.DanhSachNoHocPhi();
+
+            Thread th = new Thread(() =>
+            {
+                object source = busPhieuGhiDanh.DanhSachNoHocPhi();
+
+                gridBaoCao.Invoke((MethodInvoker)delegate
+                {
+                    gridBaoCao.DataSource = source;
+                });
+            });
+
+            th.Start();           
         }
 
         private void gridBaoCao_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -49,6 +61,7 @@ namespace QuanLyHocVien.Pages
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            GlobalPages.ThongKeNoHocVien = null;
         }
     }
 }

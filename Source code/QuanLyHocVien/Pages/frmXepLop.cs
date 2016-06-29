@@ -3,12 +3,12 @@
 // File "frmXepLop.cs"
 // Writing by Nguyễn Lê Hoàng Tuấn (nguyentuanit96@gmail.com)
 
-
 using System;
 using System.Windows.Forms;
 using BusinessLogic;
 using DataAccess;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace QuanLyHocVien.Pages
 {
@@ -18,6 +18,8 @@ namespace QuanLyHocVien.Pages
         private KhoaHoc busKhoaHoc = new KhoaHoc();
         private LopHoc busLopHoc = new LopHoc();
         private List<HOCVIEN> dsChuaCoLop;
+        private Thread thChuaCoLop;
+
 
         public frmXepLop()
         {
@@ -27,24 +29,36 @@ namespace QuanLyHocVien.Pages
         public void LoadDSHVChuaCoLop()
         {
             gridDSHV.Rows.Clear();
-            foreach (var i in dsChuaCoLop)
-            {
-                string[] s = { i.MaHV, i.TenHV, i.DANGKies.KHOAHOC.TenKH };
-                gridDSHV.Rows.Add(s);
-            }
+
+            //thChuaCoLop = new Thread(() =>
+            //{
+                dsChuaCoLop = busHocVien.DanhSachChuaCoLop();
+
+               // gridDSHV.Invoke((MethodInvoker)delegate
+                //{
+                    foreach (var i in dsChuaCoLop)
+                    {
+                        string[] s = { i.MaHV, i.TenHV, i.DANGKies.KHOAHOC.TenKH };
+                        gridDSHV.Rows.Add(s);
+                    }
+                //});
+            //});
+
+            //thChuaCoLop.Start();   
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            GlobalPages.XepLop = null;
         }
 
         private void frmXepLop_Load(object sender, EventArgs e)
         {
             //load danh sách học viên chưa có lớp
             gridDSHV.AutoGenerateColumns = false;
-            dsChuaCoLop = busHocVien.DanhSachChuaCoLop();
-            LoadDSHVChuaCoLop();           
+
+            LoadDSHVChuaCoLop();
 
             //load khóa học
             cboKhoa.DataSource = busKhoaHoc.SelectAll();
@@ -83,7 +97,7 @@ namespace QuanLyHocVien.Pages
             HOCVIEN hv = busHocVien.Select(gridDSHV.SelectedRows[0].Cells["clmMaHV"].Value.ToString());
 
             dsChuaCoLop.Remove(hv);
-            
+
 
             string[] s = { hv.MaHV, hv.TenHV, ((DateTime)hv.NgaySinh).ToString("dd/MM/yyyy"), hv.GioiTinhHV, hv.SdtHV, hv.DiaChi, hv.EmailHV };
             gridDSHVLop.Rows.Add(s);

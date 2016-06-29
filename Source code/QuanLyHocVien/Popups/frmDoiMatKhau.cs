@@ -23,6 +23,8 @@ namespace QuanLyHocVien.Popups
             currentUser = busTaiKhoan.Select(UserName);
         }
 
+        #region Events
+
         private void frmDoiMatKhau_Load(object sender, EventArgs e)
         {
 
@@ -56,5 +58,7 @@ namespace QuanLyHocVien.Popups
                 MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        #endregion
     }
 }

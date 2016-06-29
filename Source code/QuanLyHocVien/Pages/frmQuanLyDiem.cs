@@ -7,6 +7,7 @@ using System;
 using System.Windows.Forms;
 using BusinessLogic;
 using DataAccess;
+using System.Threading;
 
 namespace QuanLyHocVien.Pages
 {
@@ -14,6 +15,9 @@ namespace QuanLyHocVien.Pages
     {
         private LopHoc busLopHoc = new LopHoc();
         private BangDiem busBangDiem = new BangDiem();
+        private Thread thLop;
+        private Thread thHocVien;
+        private Thread thPanelDiem;
 
         public frmQuanLyDiem()
         {
@@ -59,16 +63,37 @@ namespace QuanLyHocVien.Pages
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            GlobalPages.QuanLyDiem = null;
         }
 
         private void btnHienTatCa_Click(object sender, EventArgs e)
         {
-            gridLop.DataSource = busLopHoc.SelectAll();
+            thLop = new Thread(() =>
+            {
+                object source = busLopHoc.SelectAll();
+
+                gridLop.Invoke((MethodInvoker)delegate
+                {
+                    gridLop.DataSource = source;
+                });
+            });
+
+            thLop.Start();
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            gridLop.DataSource = busLopHoc.Select(txtMaLop.Text);
+            thLop = new Thread(() =>
+            {
+                object source = busLopHoc.Select(txtMaLop.Text);
+
+                gridLop.Invoke((MethodInvoker)delegate
+                {
+                    gridLop.DataSource = source;
+                });
+            });
+
+            thLop.Start();
         }
 
         private void btnDatLai_Click(object sender, EventArgs e)
@@ -80,7 +105,18 @@ namespace QuanLyHocVien.Pages
         {
             try
             {
-                gridDSHV.DataSource = busBangDiem.SelectDSHV(gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString());
+                thHocVien = new Thread(() =>
+                {
+                    thLop.Join();
+                    object source = busBangDiem.SelectDSHV(gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString());
+
+                    gridDSHV.Invoke((MethodInvoker)delegate
+                    {
+                        gridDSHV.DataSource = source;
+                    });
+                });
+
+                thHocVien.Start();
             }
             catch { }
         }
@@ -99,8 +135,18 @@ namespace QuanLyHocVien.Pages
         {
             try
             {
-                LoadPanelDiem(gridDSHV.SelectedRows[0].Cells["clmMaHV"].Value.ToString(),
-                gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString());
+                thPanelDiem = new Thread(() =>
+                {
+                    thHocVien.Join();
+
+                    gridLop.Invoke((MethodInvoker)delegate
+                    {
+                        LoadPanelDiem(gridDSHV.SelectedRows[0].Cells["clmMaHV"].Value.ToString(),
+                                    gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString());
+                    });
+                });
+
+                thPanelDiem.Start();
             }
             catch { }
         }

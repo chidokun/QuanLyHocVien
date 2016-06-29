@@ -24,6 +24,7 @@ namespace QuanLyHocVien.Pages
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            GlobalPages.QuanLyLopHoc = null;
         }
 
         private void btnThem_Click(object sender, EventArgs e)

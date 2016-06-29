@@ -6,6 +6,7 @@
 using System.Linq;
 using DataAccess;
 using static BusinessLogic.GlobalSettings;
+using System;
 
 namespace BusinessLogic
 {
@@ -17,6 +18,10 @@ namespace BusinessLogic
         public string MaLop { get; set; }
         public string TenLop { get; set; }
         public string TenKH { get; set; }
+        public DateTime? NgayBD { get; set; }
+        public DateTime? NgayKT { get; set; }
+        public int? SiSo { get; set; }
+        public bool? DangMo { get; set; }
         public string MaHV { get; set; }
         public string TenHV { get; set; }
         public int DiemNghe { get; set; }
@@ -54,6 +59,10 @@ namespace BusinessLogic
                         MaLop = p.MaLop,
                         TenLop = p.LOPHOC.TenLop,
                         TenKH = p.LOPHOC.KHOAHOC.TenKH,
+                        NgayBD = p.LOPHOC.NgayBD,
+                        NgayKT = p.LOPHOC.NgayKT,
+                        SiSo = p.LOPHOC.SiSo,
+                        DangMo = p.LOPHOC.DangMo,
                         MaHV = p.MaHV,
                         TenHV = p.HOCVIEN.TenHV,
                         DiemNghe = (int)p.DiemNghe,
@@ -102,10 +111,13 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="maHV">Mã học viên</param>
         /// <returns></returns>
-        public object SelectDSLop(string maHV)
+        public object SelectDSLop(string maHV, DateTime? tuNgay = null, DateTime? denNgay = null, string maKH = null)
         {
             return (from p in Database.BANGDIEMs
-                    where p.MaHV == maHV
+                    where p.MaHV == maHV &&
+                        (tuNgay == null ? true : p.LOPHOC.NgayBD >= tuNgay) &&
+                        (denNgay == null ? true : p.LOPHOC.NgayKT <= denNgay) &&
+                        (maKH == null ? true : p.LOPHOC.MaKH == maKH)
                     select new
                     {
                         MaLop = p.MaLop,

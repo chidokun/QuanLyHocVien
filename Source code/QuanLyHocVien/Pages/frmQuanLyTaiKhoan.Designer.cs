@@ -404,12 +404,13 @@
             // 
             // gridKetQua
             // 
+            this.gridKetQua.AllowUserToAddRows = false;
             this.gridKetQua.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridKetQua.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridKetQua.BackgroundColor = System.Drawing.Color.White;
-            this.gridKetQua.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridKetQua.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridKetQua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridKetQua.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmTenDangNhap,

@@ -55,7 +55,6 @@
             this.chkMaLop = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.lblTongCong = new System.Windows.Forms.Label();
             this.gridLop = new System.Windows.Forms.DataGridView();
             this.clmMaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmTenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +62,7 @@
             this.clmNgayKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDangMo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.clmSiSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTongCong = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblSiSo = new System.Windows.Forms.Label();
             this.lblNgayKetThuc = new System.Windows.Forms.Label();
@@ -80,7 +80,6 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -90,7 +89,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridLop)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -399,7 +397,7 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.gridLop);
             this.panel5.Controls.Add(this.lblTongCong);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 37);
@@ -407,22 +405,15 @@
             this.panel5.Size = new System.Drawing.Size(749, 265);
             this.panel5.TabIndex = 4;
             // 
-            // lblTongCong
-            // 
-            this.lblTongCong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblTongCong.AutoSize = true;
-            this.lblTongCong.Location = new System.Drawing.Point(10, 240);
-            this.lblTongCong.Name = "lblTongCong";
-            this.lblTongCong.Size = new System.Drawing.Size(132, 15);
-            this.lblTongCong.TabIndex = 13;
-            this.lblTongCong.Text = "Tổng cộng: <num> lớp";
-            // 
             // gridLop
             // 
             this.gridLop.AllowUserToAddRows = false;
+            this.gridLop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridLop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridLop.BackgroundColor = System.Drawing.Color.White;
-            this.gridLop.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridLop.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMaLop,
@@ -431,15 +422,14 @@
             this.clmNgayKT,
             this.clmDangMo,
             this.clmSiSo});
-            this.gridLop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridLop.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridLop.Location = new System.Drawing.Point(1, 1);
+            this.gridLop.Location = new System.Drawing.Point(12, 5);
             this.gridLop.MultiSelect = false;
             this.gridLop.Name = "gridLop";
             this.gridLop.ReadOnly = true;
             this.gridLop.RowHeadersVisible = false;
             this.gridLop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridLop.Size = new System.Drawing.Size(722, 232);
+            this.gridLop.Size = new System.Drawing.Size(725, 232);
             this.gridLop.TabIndex = 12;
             this.gridLop.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridLop_RowsAdded);
             this.gridLop.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridLop_RowsRemoved);
@@ -495,6 +485,16 @@
             this.clmSiSo.HeaderText = "Sỉ số";
             this.clmSiSo.Name = "clmSiSo";
             this.clmSiSo.ReadOnly = true;
+            // 
+            // lblTongCong
+            // 
+            this.lblTongCong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTongCong.AutoSize = true;
+            this.lblTongCong.Location = new System.Drawing.Point(10, 240);
+            this.lblTongCong.Name = "lblTongCong";
+            this.lblTongCong.Size = new System.Drawing.Size(132, 15);
+            this.lblTongCong.TabIndex = 13;
+            this.lblTongCong.Text = "Tổng cộng: <num> lớp";
             // 
             // panel4
             // 
@@ -714,19 +714,6 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BackColor = System.Drawing.Color.Silver;
-            this.panel6.Controls.Add(this.gridLop);
-            this.panel6.Location = new System.Drawing.Point(13, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Padding = new System.Windows.Forms.Padding(1);
-            this.panel6.Size = new System.Drawing.Size(724, 234);
-            this.panel6.TabIndex = 14;
-            // 
             // frmQuanLyLopHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -754,7 +741,6 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -811,6 +797,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmNgayKT;
         private System.Windows.Forms.DataGridViewCheckBoxColumn clmDangMo;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSiSo;
-        private System.Windows.Forms.Panel panel6;
     }
 }

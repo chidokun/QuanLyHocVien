@@ -29,10 +29,10 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="loai">Loại học viên</param>
         /// <returns></returns>
-        public object SelectAll(LOAIHV loai)
+        public object SelectAll(string maloai)
         {
             return (from p in GlobalSettings.Database.HOCVIENs
-                    where p.MaLoaiHV == loai.MaLoaiHV
+                    where p.MaLoaiHV == maloai
                     select p).ToList();
         }
 
@@ -46,10 +46,10 @@ namespace BusinessLogic
         /// <param name="denNgay">Tiếp nhận đến ngày</param>
         /// <param name="loai">Loại học viên</param>
         /// <returns></returns>
-        public object SelectAll(string maHV, string tenHV, string gioiTinh, DateTime? tuNgay, DateTime? denNgay, LOAIHV loai)
+        public object SelectAll(string maHV, string tenHV, string gioiTinh, DateTime? tuNgay, DateTime? denNgay, string maLoai)
         {
             return (from p in GlobalSettings.Database.HOCVIENs
-                    where p.MaLoaiHV == loai.MaLoaiHV &&
+                    where  (maLoai == null ? true : p.MaLoaiHV == maLoai) &&
                            (maHV == null ? true : p.MaHV.Contains(maHV)) &&
                            (tenHV == null ? true : p.TenHV.Contains(tenHV)) &&
                            (gioiTinh == null ? true : p.GioiTinhHV.Contains(gioiTinh)) &&
@@ -65,11 +65,11 @@ namespace BusinessLogic
         public List<HOCVIEN> DanhSachChuaCoLop()
         {
             return (from p in Database.HOCVIENs
-                    where ((from q in Database.BANGDIEMs
+                    where (((from q in Database.BANGDIEMs
                             where p.MaHV == q.MaHV
                             select q).Count()) < (from r in Database.DANGKies
                                                   where p.MaHV == r.MaHV
-                                                  select r).Count()
+                                                  select r).Count())
                     select p).ToList();
             //select new
             //{

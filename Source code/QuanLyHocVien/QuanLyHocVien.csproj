@@ -66,11 +66,17 @@
     <Compile Include="Pages\frmCacLopDaHoc.Designer.cs">
       <DependentUpon>frmCacLopDaHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Popups\frmCaiDatVaQuyDinh.cs">
+    <Compile Include="Pages\frmQuanLyHocPhi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Popups\frmCaiDatVaQuyDinh.Designer.cs">
-      <DependentUpon>frmCaiDatVaQuyDinh.cs</DependentUpon>
+    <Compile Include="Pages\frmQuanLyHocPhi.Designer.cs">
+      <DependentUpon>frmQuanLyHocPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\frmQuyDinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\frmQuyDinh.Designer.cs">
+      <DependentUpon>frmQuyDinh.cs</DependentUpon>
     </Compile>
     <Compile Include="Popups\frmDangNhap.cs">
       <SubType>Form</SubType>
@@ -258,8 +264,11 @@
     <EmbeddedResource Include="Pages\frmCacLopDaHoc.resx">
       <DependentUpon>frmCacLopDaHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Popups\frmCaiDatVaQuyDinh.resx">
-      <DependentUpon>frmCaiDatVaQuyDinh.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\frmQuanLyHocPhi.resx">
+      <DependentUpon>frmQuanLyHocPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\frmQuyDinh.resx">
+      <DependentUpon>frmQuyDinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popups\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
@@ -483,6 +492,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_CSDL_64dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_CSDL_32dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

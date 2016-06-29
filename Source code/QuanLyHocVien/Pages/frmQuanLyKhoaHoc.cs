@@ -106,6 +106,7 @@ namespace QuanLyHocVien.Pages
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            GlobalPages.QuanLyKhoaHoc = null;
         }
 
         private void btnHuyBo_Click(object sender, EventArgs e)

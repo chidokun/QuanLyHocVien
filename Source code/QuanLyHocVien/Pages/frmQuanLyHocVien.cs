@@ -24,6 +24,7 @@ namespace QuanLyHocVien.Pages
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            GlobalPages.QuanLyHocVien = null;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -66,6 +67,7 @@ namespace QuanLyHocVien.Pages
         {
             cboLoaiHV.DataSource = busLoaiHV.SelectAll();
             cboLoaiHV.DisplayMember = "TenLoaiHV";
+            cboLoaiHV.ValueMember = "MaLoaiHV";
 
             btnXemTatCa_Click(sender, e);
         }
@@ -83,7 +85,7 @@ namespace QuanLyHocVien.Pages
         private void btnXemTatCa_Click(object sender, EventArgs e)
         {
             gridDSHV.AutoGenerateColumns = false;
-            gridDSHV.DataSource = busHocVien.SelectAll((LOAIHV)cboLoaiHV.SelectedValue);
+            gridDSHV.DataSource = busHocVien.SelectAll(cboLoaiHV.SelectedValue.ToString());
         }
 
         private void cboLoaiHV_SelectedValueChanged(object sender, EventArgs e)
@@ -98,7 +100,7 @@ namespace QuanLyHocVien.Pages
                 chkGioiTinh.Checked ? cboGioiTinh.Text : null,
                 chkNgayTiepNhan.Checked ? (DateTime?)dateTuNgay.Value : null,
                 chkNgayTiepNhan.Checked ? (DateTime?)dateDenNgay.Value : null,
-                (LOAIHV)cboLoaiHV.SelectedValue);
+                cboLoaiHV.SelectedValue.ToString());
         }
 
         private void btnSua_Click(object sender, EventArgs e)

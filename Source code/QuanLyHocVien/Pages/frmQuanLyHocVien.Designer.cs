@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gridDSHV = new System.Windows.Forms.DataGridView();
             this.clmMaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmTenHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,7 +69,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gridDSHV)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -78,7 +77,6 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridDSHV
@@ -86,9 +84,12 @@
             this.gridDSHV.AllowUserToAddRows = false;
             this.gridDSHV.AllowUserToOrderColumns = true;
             this.gridDSHV.AllowUserToResizeRows = false;
+            this.gridDSHV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridDSHV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridDSHV.BackgroundColor = System.Drawing.Color.White;
-            this.gridDSHV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridDSHV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridDSHV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridDSHV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMaHV,
@@ -99,15 +100,14 @@
             this.clmDiaChi,
             this.clmNgayTiepNhan,
             this.clmEmail});
-            this.gridDSHV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridDSHV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridDSHV.Location = new System.Drawing.Point(1, 1);
+            this.gridDSHV.Location = new System.Drawing.Point(12, 39);
             this.gridDSHV.MultiSelect = false;
             this.gridDSHV.Name = "gridDSHV";
             this.gridDSHV.ReadOnly = true;
             this.gridDSHV.RowHeadersVisible = false;
             this.gridDSHV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridDSHV.Size = new System.Drawing.Size(724, 406);
+            this.gridDSHV.Size = new System.Drawing.Size(727, 416);
             this.gridDSHV.TabIndex = 1;
             this.gridDSHV.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridDSHV_RowsAdded);
             this.gridDSHV.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridDSHV_RowsRemoved);
@@ -116,8 +116,8 @@
             // clmMaHV
             // 
             this.clmMaHV.DataPropertyName = "MaHV";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle1;
             this.clmMaHV.FillWeight = 75F;
             this.clmMaHV.HeaderText = "Mã học viên";
             this.clmMaHV.Name = "clmMaHV";
@@ -126,8 +126,8 @@
             // clmTenHV
             // 
             this.clmTenHV.DataPropertyName = "TenHV";
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Green;
-            this.clmTenHV.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green;
+            this.clmTenHV.DefaultCellStyle = dataGridViewCellStyle2;
             this.clmTenHV.FillWeight = 110F;
             this.clmTenHV.HeaderText = "Họ và tên";
             this.clmTenHV.Name = "clmTenHV";
@@ -327,7 +327,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
-            this.splitContainer1.Panel2.Controls.Add(this.panel4);
+            this.splitContainer1.Panel2.Controls.Add(this.gridDSHV);
             this.splitContainer1.Panel2.Controls.Add(this.panel3);
             this.splitContainer1.Panel2.Controls.Add(this.panel2);
             this.splitContainer1.Size = new System.Drawing.Size(1108, 495);
@@ -566,19 +566,6 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.Silver;
-            this.panel4.Controls.Add(this.gridDSHV);
-            this.panel4.Location = new System.Drawing.Point(12, 43);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(1);
-            this.panel4.Size = new System.Drawing.Size(726, 408);
-            this.panel4.TabIndex = 4;
-            // 
             // frmQuanLyHocVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -605,7 +592,6 @@
             this.splitContainer1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -651,6 +637,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmNgayTiepNhan;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmEmail;
-        private System.Windows.Forms.Panel panel4;
     }
 }

@@ -150,7 +150,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridLop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridLop.BackgroundColor = System.Drawing.Color.White;
-            this.gridLop.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridLop.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMaLop,
@@ -314,7 +314,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridThongKe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridThongKe.BackgroundColor = System.Drawing.Color.White;
-            this.gridThongKe.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridThongKe.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridThongKe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMaHV,
@@ -389,6 +389,8 @@
             this.clmDiemTrungBinh.DataPropertyName = "DiemTrungBinh";
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
             this.clmDiemTrungBinh.DefaultCellStyle = dataGridViewCellStyle3;
             this.clmDiemTrungBinh.FillWeight = 75F;
             this.clmDiemTrungBinh.HeaderText = "Điểm trung bình";
@@ -443,6 +445,8 @@
         private System.Windows.Forms.Label lblTongCong;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.DataGridView gridThongKe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaLop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmTenLop;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmMaHV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmTenHV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiemNghe;
@@ -450,7 +454,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiemDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiemViet;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiemTrungBinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTenLop;
     }
 }

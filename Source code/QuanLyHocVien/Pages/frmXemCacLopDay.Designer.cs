@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnDatLai = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
@@ -48,8 +49,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnXemTatCa = new System.Windows.Forms.Button();
             this.gridKetQuaTimKiem = new System.Windows.Forms.DataGridView();
-            this.clmMaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -65,6 +64,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.lblTenLop = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.clmMaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -302,7 +303,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridKetQuaTimKiem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridKetQuaTimKiem.BackgroundColor = System.Drawing.Color.White;
-            this.gridKetQuaTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridKetQuaTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridKetQuaTimKiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridKetQuaTimKiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMaLop,
@@ -316,21 +317,6 @@
             this.gridKetQuaTimKiem.Size = new System.Drawing.Size(299, 340);
             this.gridKetQuaTimKiem.TabIndex = 36;
             this.gridKetQuaTimKiem.Click += new System.EventHandler(this.gridKetQuaTimKiem_Click);
-            // 
-            // clmMaLop
-            // 
-            this.clmMaLop.DataPropertyName = "MaLop";
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaLop.DefaultCellStyle = dataGridViewCellStyle4;
-            this.clmMaLop.FillWeight = 50F;
-            this.clmMaLop.HeaderText = "Mã";
-            this.clmMaLop.Name = "clmMaLop";
-            // 
-            // clmTenLop
-            // 
-            this.clmTenLop.DataPropertyName = "TenLop";
-            this.clmTenLop.HeaderText = "Tên lớp";
-            this.clmTenLop.Name = "clmTenLop";
             // 
             // label5
             // 
@@ -502,6 +488,23 @@
             this.label6.TabIndex = 35;
             this.label6.Text = "Thông tin lớp dạy";
             // 
+            // clmMaLop
+            // 
+            this.clmMaLop.DataPropertyName = "MaLop";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaLop.DefaultCellStyle = dataGridViewCellStyle1;
+            this.clmMaLop.FillWeight = 50F;
+            this.clmMaLop.HeaderText = "Mã";
+            this.clmMaLop.Name = "clmMaLop";
+            // 
+            // clmTenLop
+            // 
+            this.clmTenLop.DataPropertyName = "TenLop";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green;
+            this.clmTenLop.DefaultCellStyle = dataGridViewCellStyle2;
+            this.clmTenLop.HeaderText = "Tên lớp";
+            this.clmTenLop.Name = "clmTenLop";
+            // 
             // frmXemCacLopDay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -555,8 +558,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView gridKetQuaTimKiem;
         private System.Windows.Forms.Button btnXemTatCa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTenLop;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label6;
@@ -571,5 +572,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblTenLop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaLop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmTenLop;
     }
 }

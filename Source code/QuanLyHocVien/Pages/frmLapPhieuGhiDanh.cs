@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿// Quản lý Học viên Trung tâm Anh ngữ
+// Copyright © 2016, VP2T
+// File "frmLapPhieuGhiDanh.cs"
+// Writing by Nguyễn Lê Hoàng Tuấn (nguyentuanit96@gmail.com)
+
+using System;
 using System.Windows.Forms;
 using BusinessLogic;
 using DataAccess;
+using System.Threading;
 
 namespace QuanLyHocVien.Pages
 {
@@ -16,10 +16,30 @@ namespace QuanLyHocVien.Pages
         private HocVien busHocVien = new HocVien();
         private KhoaHoc busKhoaHoc = new KhoaHoc();
         private PhieuGhiDanh busPhieuGhiDanh = new PhieuGhiDanh();
+        private Thread thHocVien;
+        private Thread thPhieuGhiDanh;
+        private Thread thInsert;
 
         public frmLapPhieuGhiDanh()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// Load các phiếu ghi danh
+        /// </summary>
+        public void LoadPhieuGhiDanh()
+        {
+            //thPhieuGhiDanh = new Thread(() =>
+            //{
+                object source = busPhieuGhiDanh.SelectAll();
+
+                //gridPhieuGhiDanh.Invoke((MethodInvoker)delegate
+               // {
+                    gridPhieuGhiDanh.DataSource = source;
+                //});
+            //});
+            //thPhieuGhiDanh.Start();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -47,7 +67,19 @@ namespace QuanLyHocVien.Pages
         private void btnHienTatCa_Click(object sender, EventArgs e)
         {
             gridDSHV.AutoGenerateColumns = false;
-            gridDSHV.DataSource = busHocVien.SelectAll();
+
+            thHocVien = new Thread(() =>
+            {
+                //thPhieuGhiDanh.Join();
+
+                object source = busHocVien.SelectAll();
+
+                gridDSHV.Invoke((MethodInvoker)delegate
+                {
+                    gridDSHV.DataSource = source;
+                });
+            });
+            thHocVien.Start();            
         }
 
         private void gridDSHV_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -82,8 +114,9 @@ namespace QuanLyHocVien.Pages
             txtMaPhieu.Text = busPhieuGhiDanh.AutoGenerateId();
 
             //load danh sách phiếu
-            gridPhieuGhiDanh.DataSource = busPhieuGhiDanh.SelectAll();
-
+            LoadPhieuGhiDanh();
+            
+            //load danh sách học viên
             btnHienTatCa_Click(sender, e);
         }
 
@@ -126,8 +159,7 @@ namespace QuanLyHocVien.Pages
                     NgayGhiDanh = dateNgayGhiDanh.Value,
                     DaDong = numDaDong.Value,
                     ConNo = numConNo.Value,
-                    MaNV = "NV0004",
-                    //MaNV = GlobalSettings.CurrentUser.MaNV
+                    MaNV = GlobalSettings.UserID,
 
                     DANGKies = new DANGKY()
                     {
@@ -138,7 +170,7 @@ namespace QuanLyHocVien.Pages
                 });
                 MessageBox.Show("Thêm phiếu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                gridPhieuGhiDanh.DataSource = busPhieuGhiDanh.SelectAll();
+                LoadPhieuGhiDanh();
                 btnDatLaiPhieu_Click(sender, e);
             }
             catch

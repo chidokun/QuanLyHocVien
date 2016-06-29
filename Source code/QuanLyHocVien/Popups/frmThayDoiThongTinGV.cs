@@ -4,12 +4,6 @@
 // Writing by Nguyễn Lê Hoàng Tuấn (nguyentuanit96@gmail.com)
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using BusinessLogic;
 using DataAccess;
@@ -24,6 +18,8 @@ namespace QuanLyHocVien.Popups
         {
             InitializeComponent();
         }
+
+        #region Events
 
         private void btnHuyBo_Click(object sender, EventArgs e)
         {
@@ -68,5 +64,7 @@ namespace QuanLyHocVien.Popups
                 MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        #endregion
     }
 }

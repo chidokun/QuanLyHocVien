@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblTongCong = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.gridBaoCao = new System.Windows.Forms.DataGridView();
@@ -47,7 +48,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.lblTongCong = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -68,9 +68,20 @@
             this.panel2.Size = new System.Drawing.Size(942, 469);
             this.panel2.TabIndex = 5;
             // 
+            // lblTongCong
+            // 
+            this.lblTongCong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTongCong.AutoSize = true;
+            this.lblTongCong.Location = new System.Drawing.Point(50, 445);
+            this.lblTongCong.Name = "lblTongCong";
+            this.lblTongCong.Size = new System.Drawing.Size(125, 15);
+            this.lblTongCong.TabIndex = 50;
+            this.lblTongCong.Text = "Tổng cộng: 0 học viên";
+            // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -95,9 +106,10 @@
             // 
             // gridBaoCao
             // 
+            this.gridBaoCao.AllowUserToAddRows = false;
             this.gridBaoCao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridBaoCao.BackgroundColor = System.Drawing.Color.White;
-            this.gridBaoCao.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridBaoCao.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridBaoCao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridBaoCao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMaHV,
@@ -121,8 +133,8 @@
             // clmMaHV
             // 
             this.clmMaHV.DataPropertyName = "MaHV";
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle2;
             this.clmMaHV.FillWeight = 70F;
             this.clmMaHV.HeaderText = "Mã học viên";
             this.clmMaHV.Name = "clmMaHV";
@@ -213,7 +225,7 @@
             this.btnXem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btnXem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnXem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnXem.Location = new System.Drawing.Point(293, 4);
             this.btnXem.Name = "btnXem";
             this.btnXem.Size = new System.Drawing.Size(83, 25);
@@ -278,18 +290,9 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lblTongCong
-            // 
-            this.lblTongCong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblTongCong.AutoSize = true;
-            this.lblTongCong.Location = new System.Drawing.Point(50, 445);
-            this.lblTongCong.Name = "lblTongCong";
-            this.lblTongCong.Size = new System.Drawing.Size(133, 15);
-            this.lblTongCong.TabIndex = 50;
-            this.lblTongCong.Text = "Tổng cộng: {0} học viên";
-            // 
             // frmBaoCaoHocVienTheoThang
             // 
+            this.AcceptButton = this.btnXem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -327,14 +330,14 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnTaoBaoCao;
         private System.Windows.Forms.Button btnXem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label lblTongCong;
+        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView gridBaoCao;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmMaHV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmTenHV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmGioiTinhHV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmNgayGhiDanh;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmTenKH;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label lblTongCong;
     }
 }

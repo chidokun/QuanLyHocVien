@@ -3,7 +3,6 @@
 // File "frmThongTinPhanMem.cs"
 // Writing by Nguyễn Lê Hoàng Tuấn (nguyentuanit96@gmail.com)
 
-
 using System;
 using System.Diagnostics;
 using System.Windows.Forms;
@@ -16,6 +15,8 @@ namespace QuanLyHocVien.Popups
         {
             InitializeComponent();
         }
+
+        #region Events
 
         private void btnOK_Click(object sender, EventArgs e)
         {
@@ -31,5 +32,7 @@ namespace QuanLyHocVien.Popups
         {
             Process.Start("mailto:nguyentuanit96@gmail.com");
         }
+
+        #endregion
     }
 }

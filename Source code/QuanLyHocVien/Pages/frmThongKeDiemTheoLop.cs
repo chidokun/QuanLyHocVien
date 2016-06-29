@@ -7,6 +7,7 @@ using System;
 using System.Windows.Forms;
 using BusinessLogic;
 using DataAccess;
+using System.Threading;
 
 namespace QuanLyHocVien.Pages
 {
@@ -14,6 +15,8 @@ namespace QuanLyHocVien.Pages
     {
         private LopHoc busLopHoc = new LopHoc();
         private BangDiem busBangDiem = new BangDiem();
+        private Thread thLop;
+        private Thread thBangDiem;
 
         public frmThongKeDiemTheoLop()
         {
@@ -36,11 +39,22 @@ namespace QuanLyHocVien.Pages
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            GlobalPages.ThongKeDiemTheoLop = null;
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            gridLop.DataSource = busLopHoc.Select(txtMaLop.Text);
+            thLop = new Thread(() =>
+            {
+                object source = busLopHoc.Select(txtMaLop.Text);
+
+                gridLop.Invoke((MethodInvoker)delegate
+                {
+                    gridLop.DataSource = source;
+                });
+            });
+
+            thLop.Start();  
         }
 
         private void btnDatLai_Click(object sender, EventArgs e)
@@ -50,14 +64,36 @@ namespace QuanLyHocVien.Pages
 
         private void btnHienTatCa_Click(object sender, EventArgs e)
         {
-            gridLop.DataSource = busLopHoc.SelectAll();
+            thLop = new Thread(() =>
+            {
+                object source = busLopHoc.SelectAll();
+
+                gridLop.Invoke((MethodInvoker)delegate
+                {
+                    gridLop.DataSource = source;
+                });
+            });
+
+            thLop.Start();
         }
 
         private void gridLop_Click(object sender, EventArgs e)
         {
             try
             {
-                gridThongKe.DataSource = busBangDiem.SelectBangDiemLop(gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString());
+                thBangDiem = new Thread(() =>
+                {
+                    thLop.Join();
+
+                    object source = busBangDiem.SelectBangDiemLop(gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString());
+
+                    gridThongKe.Invoke((MethodInvoker)delegate
+                    {
+                        gridThongKe.DataSource = source;
+                    });
+                });
+
+                thBangDiem.Start();
             }
             catch { }
         }

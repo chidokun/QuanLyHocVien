@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
@@ -49,10 +49,21 @@
             this.chkMaGV = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.lblTongCongGV = new System.Windows.Forms.Label();
             this.gridGV = new System.Windows.Forms.DataGridView();
+            this.clmMaGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTenGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmGioiTinhGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSdtGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmEmailGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTongCongGV = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.gridLop = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDangMo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblTongCongLop = new System.Windows.Forms.Label();
@@ -61,19 +72,6 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.clmMaGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTenGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmGioiTinhGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSdtGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmEmailGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDangMo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -85,8 +83,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridLop)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -122,6 +118,7 @@
             this.btnClose.Size = new System.Drawing.Size(28, 19);
             this.btnClose.TabIndex = 0;
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // splitContainer1
             // 
@@ -306,13 +303,86 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.gridGV);
             this.panel5.Controls.Add(this.lblTongCongGV);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 37);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(717, 182);
             this.panel5.TabIndex = 4;
+            // 
+            // gridGV
+            // 
+            this.gridGV.AllowUserToAddRows = false;
+            this.gridGV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridGV.BackgroundColor = System.Drawing.Color.White;
+            this.gridGV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gridGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmMaGV,
+            this.clmTenGV,
+            this.clmGioiTinhGV,
+            this.clmSdtGV,
+            this.clmEmailGV});
+            this.gridGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.gridGV.Location = new System.Drawing.Point(12, 3);
+            this.gridGV.MultiSelect = false;
+            this.gridGV.Name = "gridGV";
+            this.gridGV.ReadOnly = true;
+            this.gridGV.RowHeadersVisible = false;
+            this.gridGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridGV.Size = new System.Drawing.Size(693, 150);
+            this.gridGV.TabIndex = 2;
+            this.gridGV.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridGV_RowsAdded);
+            this.gridGV.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridGV_RowsRemoved);
+            this.gridGV.Click += new System.EventHandler(this.gridGV_Click);
+            this.gridGV.DoubleClick += new System.EventHandler(this.gridGV_DoubleClick);
+            // 
+            // clmMaGV
+            // 
+            this.clmMaGV.DataPropertyName = "MaGV";
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaGV.DefaultCellStyle = dataGridViewCellStyle5;
+            this.clmMaGV.FillWeight = 70F;
+            this.clmMaGV.HeaderText = "Mã giảng viên";
+            this.clmMaGV.Name = "clmMaGV";
+            this.clmMaGV.ReadOnly = true;
+            // 
+            // clmTenGV
+            // 
+            this.clmTenGV.DataPropertyName = "TenGV";
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Green;
+            this.clmTenGV.DefaultCellStyle = dataGridViewCellStyle6;
+            this.clmTenGV.FillWeight = 93.27411F;
+            this.clmTenGV.HeaderText = "Họ và tên";
+            this.clmTenGV.Name = "clmTenGV";
+            this.clmTenGV.ReadOnly = true;
+            // 
+            // clmGioiTinhGV
+            // 
+            this.clmGioiTinhGV.DataPropertyName = "GioiTinhGV";
+            this.clmGioiTinhGV.HeaderText = "Giới tính";
+            this.clmGioiTinhGV.Name = "clmGioiTinhGV";
+            this.clmGioiTinhGV.ReadOnly = true;
+            // 
+            // clmSdtGV
+            // 
+            this.clmSdtGV.DataPropertyName = "SdtGV";
+            this.clmSdtGV.FillWeight = 93.27411F;
+            this.clmSdtGV.HeaderText = "SĐT";
+            this.clmSdtGV.Name = "clmSdtGV";
+            this.clmSdtGV.ReadOnly = true;
+            // 
+            // clmEmailGV
+            // 
+            this.clmEmailGV.DataPropertyName = "EmailGV";
+            this.clmEmailGV.FillWeight = 93.27411F;
+            this.clmEmailGV.HeaderText = "Email";
+            this.clmEmailGV.Name = "clmEmailGV";
+            this.clmEmailGV.ReadOnly = true;
             // 
             // lblTongCongGV
             // 
@@ -324,37 +394,9 @@
             this.lblTongCongGV.TabIndex = 12;
             this.lblTongCongGV.Text = "Tổng cộng: <num> giảng viên";
             // 
-            // gridGV
-            // 
-            this.gridGV.AllowUserToAddRows = false;
-            this.gridGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridGV.BackgroundColor = System.Drawing.Color.White;
-            this.gridGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gridGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmMaGV,
-            this.clmTenGV,
-            this.clmGioiTinhGV,
-            this.clmSdtGV,
-            this.clmEmailGV});
-            this.gridGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridGV.Location = new System.Drawing.Point(1, 1);
-            this.gridGV.MultiSelect = false;
-            this.gridGV.Name = "gridGV";
-            this.gridGV.ReadOnly = true;
-            this.gridGV.RowHeadersVisible = false;
-            this.gridGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridGV.Size = new System.Drawing.Size(691, 150);
-            this.gridGV.TabIndex = 2;
-            this.gridGV.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridGV_RowsAdded);
-            this.gridGV.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridGV_RowsRemoved);
-            this.gridGV.Click += new System.EventHandler(this.gridGV_Click);
-            this.gridGV.DoubleClick += new System.EventHandler(this.gridGV_DoubleClick);
-            // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.panel7);
+            this.panel4.Controls.Add(this.gridLop);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 219);
@@ -367,9 +409,12 @@
             this.gridLop.AllowUserToAddRows = false;
             this.gridLop.AllowUserToOrderColumns = true;
             this.gridLop.AllowUserToResizeRows = false;
+            this.gridLop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridLop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridLop.BackgroundColor = System.Drawing.Color.White;
-            this.gridLop.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridLop.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -378,18 +423,67 @@
             this.dataGridViewTextBoxColumn4,
             this.clmDangMo,
             this.dataGridViewTextBoxColumn5});
-            this.gridLop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridLop.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridLop.Location = new System.Drawing.Point(1, 1);
+            this.gridLop.Location = new System.Drawing.Point(12, 23);
             this.gridLop.MultiSelect = false;
             this.gridLop.Name = "gridLop";
             this.gridLop.ReadOnly = true;
             this.gridLop.RowHeadersVisible = false;
             this.gridLop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridLop.Size = new System.Drawing.Size(689, 193);
+            this.gridLop.Size = new System.Drawing.Size(693, 196);
             this.gridLop.TabIndex = 3;
             this.gridLop.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridLop_RowsAdded);
             this.gridLop.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridLop_RowsRemoved);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "MaLop";
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Blue;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewTextBoxColumn1.FillWeight = 70F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã lớp";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "TenLop";
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Green;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn2.FillWeight = 93.27411F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tên lớp";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "NgayBatDau";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Ngày bắt đầu";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "NgayKetThuc";
+            this.dataGridViewTextBoxColumn4.FillWeight = 93.27411F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Ngày kết thúc";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // clmDangMo
+            // 
+            this.clmDangMo.DataPropertyName = "DangMo";
+            this.clmDangMo.HeaderText = "Đang mở";
+            this.clmDangMo.Name = "clmDangMo";
+            this.clmDangMo.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "SiSo";
+            this.dataGridViewTextBoxColumn5.FillWeight = 93.27411F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Sỉ số";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // label6
             // 
@@ -496,125 +590,6 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BackColor = System.Drawing.Color.Silver;
-            this.panel6.Controls.Add(this.gridGV);
-            this.panel6.Location = new System.Drawing.Point(12, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Padding = new System.Windows.Forms.Padding(1);
-            this.panel6.Size = new System.Drawing.Size(693, 152);
-            this.panel6.TabIndex = 13;
-            // 
-            // panel7
-            // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.BackColor = System.Drawing.Color.Silver;
-            this.panel7.Controls.Add(this.gridLop);
-            this.panel7.Location = new System.Drawing.Point(13, 24);
-            this.panel7.Name = "panel7";
-            this.panel7.Padding = new System.Windows.Forms.Padding(1);
-            this.panel7.Size = new System.Drawing.Size(691, 195);
-            this.panel7.TabIndex = 14;
-            // 
-            // clmMaGV
-            // 
-            this.clmMaGV.DataPropertyName = "MaGV";
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaGV.DefaultCellStyle = dataGridViewCellStyle9;
-            this.clmMaGV.FillWeight = 70F;
-            this.clmMaGV.HeaderText = "Mã giảng viên";
-            this.clmMaGV.Name = "clmMaGV";
-            this.clmMaGV.ReadOnly = true;
-            // 
-            // clmTenGV
-            // 
-            this.clmTenGV.DataPropertyName = "TenGV";
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Green;
-            this.clmTenGV.DefaultCellStyle = dataGridViewCellStyle10;
-            this.clmTenGV.FillWeight = 93.27411F;
-            this.clmTenGV.HeaderText = "Họ và tên";
-            this.clmTenGV.Name = "clmTenGV";
-            this.clmTenGV.ReadOnly = true;
-            // 
-            // clmGioiTinhGV
-            // 
-            this.clmGioiTinhGV.DataPropertyName = "GioiTinhGV";
-            this.clmGioiTinhGV.HeaderText = "Giới tính";
-            this.clmGioiTinhGV.Name = "clmGioiTinhGV";
-            this.clmGioiTinhGV.ReadOnly = true;
-            // 
-            // clmSdtGV
-            // 
-            this.clmSdtGV.DataPropertyName = "SdtGV";
-            this.clmSdtGV.FillWeight = 93.27411F;
-            this.clmSdtGV.HeaderText = "SĐT";
-            this.clmSdtGV.Name = "clmSdtGV";
-            this.clmSdtGV.ReadOnly = true;
-            // 
-            // clmEmailGV
-            // 
-            this.clmEmailGV.DataPropertyName = "EmailGV";
-            this.clmEmailGV.FillWeight = 93.27411F;
-            this.clmEmailGV.HeaderText = "Email";
-            this.clmEmailGV.Name = "clmEmailGV";
-            this.clmEmailGV.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "MaLop";
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Blue;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridViewTextBoxColumn1.FillWeight = 70F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã lớp";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TenLop";
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Green;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridViewTextBoxColumn2.FillWeight = 93.27411F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên lớp";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "NgayBatDau";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Ngày bắt đầu";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "NgayKetThuc";
-            this.dataGridViewTextBoxColumn4.FillWeight = 93.27411F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Ngày kết thúc";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // clmDangMo
-            // 
-            this.clmDangMo.DataPropertyName = "DangMo";
-            this.clmDangMo.HeaderText = "Đang mở";
-            this.clmDangMo.Name = "clmDangMo";
-            this.clmDangMo.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "SiSo";
-            this.dataGridViewTextBoxColumn5.FillWeight = 93.27411F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Sỉ số";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
             // frmQuanLyGiangVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -645,8 +620,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -682,13 +655,11 @@
         private System.Windows.Forms.DataGridView gridGV;
         private System.Windows.Forms.DataGridView gridLop;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmMaGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmTenGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmGioiTinhGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSdtGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmEmailGV;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

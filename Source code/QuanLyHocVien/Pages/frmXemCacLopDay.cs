@@ -4,12 +4,6 @@
 // Writing by Nguyễn Lê Hoàng Tuấn (nguyentuanit96@gmail.com)
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using BusinessLogic;
 using DataAccess;
@@ -33,13 +27,13 @@ namespace QuanLyHocVien.Pages
         /// <param name="lh"></param>
         public void LoadUI(LOPHOC lh = null)
         {
-            if(lh!=null)
+            if (lh != null)
             {
                 lblTenLop.Text = lh.TenLop;
-                lblMaLop.Text = lh.TenLop;
+                lblMaLop.Text = lh.MaLop;
                 lblKhoa.Text = lh.KHOAHOC.TenKH;
-                lblNgayBatDau.Text = lh.NgayBD.ToString();
-                lblNgayKetThuc.Text = lh.NgayKT.ToString();
+                lblNgayBatDau.Text = lh.NgayBD.Value.ToShortDateString();
+                lblNgayKetThuc.Text = lh.NgayKT.Value.ToShortDateString();
                 lblSiSo.Text = lh.SiSo.ToString();
             }
             else
@@ -51,7 +45,7 @@ namespace QuanLyHocVien.Pages
                 lblNgayKetThuc.Text = string.Empty;
                 lblSiSo.Text = string.Empty;
             }
-            
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -76,7 +70,9 @@ namespace QuanLyHocVien.Pages
             cboKhoaHoc.DisplayMember = "TenKH";
             cboKhoaHoc.ValueMember = "MaKH";
 
-            LoadUI();
+            gridKetQuaTimKiem.AutoGenerateColumns = false;
+
+            btnXemTatCa_Click(sender, e);
         }
 
         private void btnDatLai_Click(object sender, EventArgs e)
@@ -86,16 +82,18 @@ namespace QuanLyHocVien.Pages
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            gridKetQuaTimKiem.AutoGenerateColumns = false;
-            gridKetQuaTimKiem.DataSource = busGiangDay.SelectAll("GV0001", rdKhoangThoiGian.Checked ? (DateTime?)dateTuNgay.Value : null,
+
+            gridKetQuaTimKiem.DataSource = busGiangDay.SelectAll(GlobalSettings.UserID, rdKhoangThoiGian.Checked ? (DateTime?)dateTuNgay.Value : null,
                 rdKhoangThoiGian.Checked ? (DateTime?)dateDenNgay.Value : null, rdKhoaHoc.Checked ? cboKhoaHoc.SelectedValue.ToString() : null);
+
+            gridKetQuaTimKiem_Click(sender, e);
         }
 
         private void gridKetQuaTimKiem_Click(object sender, EventArgs e)
         {
             try
             {
-                LoadUI(busLopHoc.Select(gridKetQuaTimKiem.SelectedRows[0].Cells["MaLop"].Value.ToString()));
+                LoadUI(busLopHoc.Select(gridKetQuaTimKiem.SelectedRows[0].Cells["clmMaLop"].Value.ToString()));
             }
             catch
             {
@@ -105,8 +103,9 @@ namespace QuanLyHocVien.Pages
 
         private void btnXemTatCa_Click(object sender, EventArgs e)
         {
-            gridKetQuaTimKiem.AutoGenerateColumns = false;
-            gridKetQuaTimKiem.DataSource = busGiangDay.SelectAll("GV0001", null, null, null);
+            gridKetQuaTimKiem.DataSource = busGiangDay.SelectAll(GlobalSettings.UserID, null, null, null);
+
+            gridKetQuaTimKiem_Click(sender, e);
         }
     }
 }

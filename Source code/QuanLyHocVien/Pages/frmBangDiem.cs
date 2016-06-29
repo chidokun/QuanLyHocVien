@@ -15,6 +15,8 @@ namespace QuanLyHocVien.Pages
     public partial class frmBangDiem : Form
     {
         private BangDiem busBangDiem = new BangDiem();
+        private TaiKhoan busTaiKhoan = new TaiKhoan();
+        private bool isLoaded = false;
 
         public frmBangDiem()
         {
@@ -35,27 +37,28 @@ namespace QuanLyHocVien.Pages
             lblDiemNoi.Text = bangDiem.DiemNoi.ToString();
             lblDiemDoc.Text = bangDiem.DiemDoc.ToString();
             lblDiemViet.Text = bangDiem.DiemViet.ToString();
+            lblDiemTrungBinh.Text = bangDiem.DiemTrungBinh.ToString("N2");
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            GlobalPages.BangDiem = null;
         }
 
         private void frmBangDiem_Load(object sender, EventArgs e)
         {
-            cboLop.DataSource = busBangDiem.SelectDSLop(GlobalSettings.UserName);
+            lblTitle.Text = string.Format("Bảng điểm của {0}", busTaiKhoan.FullUserName(new TAIKHOAN() { TenDangNhap = GlobalSettings.UserName }));
+            cboLop.DataSource = busBangDiem.SelectDSLop(GlobalSettings.UserID);
             cboLop.DisplayMember = "TenLop";
             cboLop.ValueMember = "MaLop";
 
             lblTenLop.Text = lblTenKhoa.Text = string.Empty;
 
             lblDiemNghe.Text = lblDiemNoi.Text = lblDiemDoc.Text = lblDiemViet.Text = lblDiemTrungBinh.Text = 0.ToString();
-        }
 
-        private void btnXem_Click(object sender, EventArgs e)
-        {
-            LoadBangDiem(GlobalSettings.UserName, cboLop.SelectedValue.ToString());
+            isLoaded = true;
+            cboLop_SelectedValueChanged(sender, e);
         }
 
         private void btnInBangDiem_Click(object sender, EventArgs e)
@@ -74,6 +77,12 @@ namespace QuanLyHocVien.Pages
             //};
 
             //frm.ShowDialog();
+        }
+
+        private void cboLop_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (isLoaded)
+                LoadBangDiem(GlobalSettings.UserName, cboLop.SelectedValue.ToString());
         }
     }
 

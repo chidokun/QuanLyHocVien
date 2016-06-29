@@ -137,5 +137,11 @@ namespace QuanLyHocVien.Pages
             gridGV.DataSource = busGiangVien.SelectAll(chkMaGV.Checked ? txtMaGV.Text : null,
                 chkTenGV.Checked ? txtTenGV.Text : null, chkGioiTinh.Checked ? cboGioiTinh.Text : null);
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            GlobalPages.QuanLyGiangVien = null;
+        }
     }
 }

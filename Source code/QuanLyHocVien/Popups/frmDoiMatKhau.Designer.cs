@@ -216,9 +216,11 @@
             // 
             // frmDoiMatKhau
             // 
+            this.AcceptButton = this.btnLuuThongTin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnHuyBo;
             this.ClientSize = new System.Drawing.Size(429, 371);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);

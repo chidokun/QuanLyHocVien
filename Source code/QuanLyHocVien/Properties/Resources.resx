@@ -136,6 +136,9 @@
   <data name="icon_NhanVien_32dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_NhanVien_32dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_CSDL_64dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_CSDL_64dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_Lop_32dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_Lop_32dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -217,7 +220,7 @@
   <data name="icon_BaoCaoHocVienTheoThang_32dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_BaoCaoHocVienTheoThang_32dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_CSDL_64dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_CSDL_64dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_CSDL_32dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_CSDL_32dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
