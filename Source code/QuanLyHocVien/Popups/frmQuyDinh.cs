@@ -13,7 +13,6 @@ namespace QuanLyHocVien.Popups
 {
     public partial class frmQuyDinh : Form
     {
-        private QuyDinh busQuyDinh = new QuyDinh();
         private string currentQD;
 
         public frmQuyDinh()
@@ -26,7 +25,7 @@ namespace QuanLyHocVien.Popups
         private void frmQuyDinh_Load(object sender, EventArgs e)
         {
             gridQD.AutoGenerateColumns = false;
-            List<QUYDINH> source = busQuyDinh.SelectAll();
+            List<QUYDINH> source = QuyDinh.SelectAll();
             foreach (var i in source)
                 gridQD.Rows.Add(new string[]
                 {
@@ -64,7 +63,7 @@ namespace QuanLyHocVien.Popups
                 var rows = gridQD.Rows;
                 foreach (DataGridViewRow i in rows)
                 {
-                    busQuyDinh.Update(new QUYDINH()
+                    QuyDinh.Update(new QUYDINH()
                     {
                         MaQD = i.Cells["clmMaQD"].Value.ToString(),
                         GiaTri = Convert.ToInt16(i.Cells["clmGiaTri"].Value)

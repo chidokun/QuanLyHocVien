@@ -12,8 +12,6 @@ namespace QuanLyHocVien.Popups
 {
     public partial class frmThongTinTrungTam : Form
     {
-        private ChiTietTrungTam busCTTT = new ChiTietTrungTam();
-
         public frmThongTinTrungTam()
         {
             InitializeComponent();
@@ -44,7 +42,7 @@ namespace QuanLyHocVien.Popups
 
         private void frmThongTinTrungTam_Load(object sender, EventArgs e)
         {
-            var item = busCTTT.Select();
+            var item = ChiTietTrungTam.Select();
             txtTenTrungTam.Text = item.TenTT;
             txtDiaChi.Text = item.DiaChiTT;
             txtSDT.Text = item.SdtTT;
@@ -64,7 +62,7 @@ namespace QuanLyHocVien.Popups
         {
             try
             {
-                busCTTT.Update(LoadChiTiet());
+                ChiTietTrungTam.Update(LoadChiTiet());
 
                 MessageBox.Show("Thay đổi thông tin trung tâm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 GlobalSettings.LoadCenterInformation();

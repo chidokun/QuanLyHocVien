@@ -11,9 +11,6 @@ namespace QuanLyHocVien.Pages
 {
     public partial class frmHocPhiHocVien : Form
     {
-        private KhoaHoc busKhoaHoc = new KhoaHoc();
-        private BangDiem busBangDiem = new BangDiem();
-
         public frmHocPhiHocVien()
         {
             InitializeComponent();
@@ -29,7 +26,7 @@ namespace QuanLyHocVien.Pages
         {
             btnDatLai_Click(sender, e);
 
-            cboKhoaHoc.DataSource = busKhoaHoc.SelectAll();
+            cboKhoaHoc.DataSource = KhoaHoc.SelectAll();
             cboKhoaHoc.DisplayMember = "TenKH";
             cboKhoaHoc.ValueMember = "MaKH";
 
@@ -65,7 +62,7 @@ namespace QuanLyHocVien.Pages
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            gridLop.DataSource = busBangDiem.SelectDSLop(GlobalSettings.UserID, rdKhoangThoiGian.Checked ? (DateTime?)dateDenNgay.Value : null,
+            gridLop.DataSource = BangDiem.SelectDSLop(GlobalSettings.UserID, rdKhoangThoiGian.Checked ? (DateTime?)dateDenNgay.Value : null,
                 rdKhoangThoiGian.Checked ? (DateTime?)dateDenNgay.Value : null, rdKhoaHoc.Checked ? cboKhoaHoc.SelectedValue.ToString() : null);
 
             gridLop_Click(sender, e);
@@ -73,7 +70,7 @@ namespace QuanLyHocVien.Pages
 
         private void btnXemTatCa_Click(object sender, EventArgs e)
         {
-            gridLop.DataSource = busBangDiem.SelectDSLop(GlobalSettings.UserID);
+            gridLop.DataSource = BangDiem.SelectDSLop(GlobalSettings.UserID);
 
             gridLop_Click(sender, e);
         }

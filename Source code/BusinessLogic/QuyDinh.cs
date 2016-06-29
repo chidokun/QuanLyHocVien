@@ -12,13 +12,13 @@ using DataAccess;
 
 namespace BusinessLogic
 {
-    public class QuyDinh
+    public static class QuyDinh
     {
         /// <summary>
         /// Chọn tất cả các quy định
         /// </summary>
         /// <returns></returns>
-        public List<QUYDINH> SelectAll()
+        public static List<QUYDINH> SelectAll()
         {
             return (from p in Database.QUYDINHs
                     select p).ToList();
@@ -29,7 +29,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="maQD">Mã quy định</param>
         /// <returns></returns>
-        public QUYDINH Select(string maQD)
+        public static QUYDINH Select(string maQD)
         {
             return (from p in Database.QUYDINHs
                     where p.MaQD == maQD
@@ -40,7 +40,7 @@ namespace BusinessLogic
         /// Cập nhật một quy định
         /// </summary>
         /// <param name="qd">Quy định cần cập nhật</param>
-        public void Update(QUYDINH qd)
+        public static void Update(QUYDINH qd)
         {
             var qdCu = Select(qd.MaQD);
             qdCu.GiaTri = qd.GiaTri;

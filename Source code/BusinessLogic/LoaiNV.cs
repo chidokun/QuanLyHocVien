@@ -10,13 +10,13 @@ using static BusinessLogic.GlobalSettings;
 
 namespace BusinessLogic
 {
-    public class LoaiNV
+    public static class LoaiNV
     {
         /// <summary>
         /// Chọn tất cả loại nhân viên
         /// </summary>
         /// <returns></returns>
-        public List<LOAINV> SelectAll()
+        public static List<LOAINV> SelectAll()
         {
             return (from p in Database.LOAINVs
                     select p).ToList();

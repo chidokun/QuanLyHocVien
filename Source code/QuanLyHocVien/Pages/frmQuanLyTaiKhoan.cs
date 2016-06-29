@@ -12,8 +12,6 @@ namespace QuanLyHocVien.Pages
 {
     public partial class frmQuanLyTaiKhoan : Form
     {
-        private TaiKhoan busTaiKhoan = new TaiKhoan();
-
         public frmQuanLyTaiKhoan()
         {
             InitializeComponent();
@@ -58,12 +56,12 @@ namespace QuanLyHocVien.Pages
 
         private void btnXemTatCa_Click(object sender, EventArgs e)
         {
-            gridKetQua.DataSource = busTaiKhoan.SelectAll(null, null);
+            gridKetQua.DataSource = TaiKhoan.SelectAll(null, null);
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            gridKetQua.DataSource = busTaiKhoan.SelectAll(chkTen.Checked ? txtTen.Text : null, chkLoaiTK.Checked ? (int?)cboLoaiTK.SelectedIndex : null);
+            gridKetQua.DataSource = TaiKhoan.SelectAll(chkTen.Checked ? txtTen.Text : null, chkLoaiTK.Checked ? (UserType?)cboLoaiTK.SelectedIndex : null);
         }
 
         private void gridKetQua_Click(object sender, EventArgs e)
@@ -95,7 +93,7 @@ namespace QuanLyHocVien.Pages
         {
             try
             {
-                busTaiKhoan.Update(new TAIKHOAN()
+                TaiKhoan.Update(new TAIKHOAN()
                 {
                     TenDangNhap = txtTenDangNhap.Text,
                     MatKhau = txtMatKhau.Text,

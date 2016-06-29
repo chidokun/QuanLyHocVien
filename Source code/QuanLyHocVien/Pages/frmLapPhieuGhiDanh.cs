@@ -13,12 +13,7 @@ namespace QuanLyHocVien.Pages
 {
     public partial class frmLapPhieuGhiDanh : Form
     {
-        private HocVien busHocVien = new HocVien();
-        private KhoaHoc busKhoaHoc = new KhoaHoc();
-        private PhieuGhiDanh busPhieuGhiDanh = new PhieuGhiDanh();
         private Thread thHocVien;
-        private Thread thPhieuGhiDanh;
-        private Thread thInsert;
 
         public frmLapPhieuGhiDanh()
         {
@@ -32,7 +27,7 @@ namespace QuanLyHocVien.Pages
         {
             //thPhieuGhiDanh = new Thread(() =>
             //{
-                object source = busPhieuGhiDanh.SelectAll();
+                object source = PhieuGhiDanh.SelectAll();
 
                 //gridPhieuGhiDanh.Invoke((MethodInvoker)delegate
                // {
@@ -72,7 +67,7 @@ namespace QuanLyHocVien.Pages
             {
                 //thPhieuGhiDanh.Join();
 
-                object source = busHocVien.SelectAll();
+                object source = HocVien.SelectAll();
 
                 gridDSHV.Invoke((MethodInvoker)delegate
                 {
@@ -96,22 +91,22 @@ namespace QuanLyHocVien.Pages
         {
             if (rdMaHV.Checked)
             {
-                gridDSHV.DataSource = busHocVien.SelectAll(txtMaHV.Text,null,null,null,null,null);
+                gridDSHV.DataSource = HocVien.SelectAll(txtMaHV.Text,null,null,null,null,null);
             }
             else if (rdTenHV.Checked)
             {
-                gridDSHV.DataSource = busHocVien.SelectAll(null,txtTenHV.Text,null,null,null,null);
+                gridDSHV.DataSource = HocVien.SelectAll(null,txtTenHV.Text,null,null,null,null);
             }
         }
 
         private void frmLapPhieuGhiDanh_Load(object sender, EventArgs e)
         {
             //load khóa học
-            cboKhoaHoc.DataSource = busKhoaHoc.SelectAll();
+            cboKhoaHoc.DataSource = KhoaHoc.SelectAll();
             cboKhoaHoc.DisplayMember = "TenKH";
 
             //tạo mã phiếu
-            txtMaPhieu.Text = busPhieuGhiDanh.AutoGenerateId();
+            txtMaPhieu.Text = PhieuGhiDanh.AutoGenerateId();
 
             //load danh sách phiếu
             LoadPhieuGhiDanh();
@@ -145,7 +140,7 @@ namespace QuanLyHocVien.Pages
 
         private void btnDatLaiPhieu_Click(object sender, EventArgs e)
         {
-            txtMaPhieu.Text = busPhieuGhiDanh.AutoGenerateId();
+            txtMaPhieu.Text = PhieuGhiDanh.AutoGenerateId();
             numDaDong.Value = 0;
         }
 
@@ -153,7 +148,7 @@ namespace QuanLyHocVien.Pages
         {
             try
             {
-                busPhieuGhiDanh.Insert(new PHIEUGHIDANH()
+                PhieuGhiDanh.Insert(new PHIEUGHIDANH()
                 {
                     MaPhieu = txtMaPhieu.Text,
                     NgayGhiDanh = dateNgayGhiDanh.Value,

@@ -14,8 +14,6 @@ namespace QuanLyHocVien.Pages
 {
     public partial class frmBangDiem : Form
     {
-        private BangDiem busBangDiem = new BangDiem();
-        private TaiKhoan busTaiKhoan = new TaiKhoan();
         private bool isLoaded = false;
 
         public frmBangDiem()
@@ -30,7 +28,7 @@ namespace QuanLyHocVien.Pages
         /// <param name="maLop"></param>
         public void LoadBangDiem(string maHV, string maLop)
         {
-            var bangDiem = busBangDiem.SelectDetail(maHV, maLop);
+            var bangDiem = BangDiem.SelectDetail(maHV, maLop);
             lblTenLop.Text = bangDiem.TenLop;
             lblTenKhoa.Text = bangDiem.TenKH;
             lblDiemNghe.Text = bangDiem.DiemNghe.ToString();
@@ -48,8 +46,8 @@ namespace QuanLyHocVien.Pages
 
         private void frmBangDiem_Load(object sender, EventArgs e)
         {
-            lblTitle.Text = string.Format("Bảng điểm của {0}", busTaiKhoan.FullUserName(new TAIKHOAN() { TenDangNhap = GlobalSettings.UserName }));
-            cboLop.DataSource = busBangDiem.SelectDSLop(GlobalSettings.UserID);
+            lblTitle.Text = string.Format("Bảng điểm của {0}", TaiKhoan.FullUserName(new TAIKHOAN() { TenDangNhap = GlobalSettings.UserName }));
+            cboLop.DataSource = BangDiem.SelectDSLop(GlobalSettings.UserID);
             cboLop.DisplayMember = "TenLop";
             cboLop.ValueMember = "MaLop";
 

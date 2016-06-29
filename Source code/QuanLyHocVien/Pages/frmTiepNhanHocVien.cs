@@ -13,8 +13,6 @@ namespace QuanLyHocVien.Pages
 {
     public partial class frmTiepNhanHocVien : Form
     {
-        private LoaiHV busLoaiNV = new LoaiHV();
-        private HocVien busHocVien = new HocVien();
         private bool isInsert = false;
         private HOCVIEN hocVien;
 
@@ -81,7 +79,7 @@ namespace QuanLyHocVien.Pages
                 if (hv == null)
                 {
                     ResetPanelControl();
-                    txtMaHV.Text = busHocVien.AutoGenerateId();
+                    txtMaHV.Text = HocVien.AutoGenerateId();
                     txtTenDangNhap.Text = txtMaHV.Text;
                     cboLoaiHV_SelectedValueChanged(null, null);
                 }
@@ -130,7 +128,7 @@ namespace QuanLyHocVien.Pages
         /// </summary>
         public void InitializeLoaiHV()
         {
-            cboLoaiHV.DataSource = busLoaiNV.SelectAll();
+            cboLoaiHV.DataSource = LoaiHV.SelectAll();
             cboLoaiHV.DisplayMember = "TenLoaiHV";
             cboLoaiHV.ValueMember = "MaLoaiHV";
         }
@@ -144,7 +142,7 @@ namespace QuanLyHocVien.Pages
 
             Thread th = new Thread(() =>
             {
-                object dshv = busHocVien.SelectAll();
+                object dshv = HocVien.SelectAll();
 
                 gridDSHV.Invoke((MethodInvoker)delegate
                 {
@@ -165,9 +163,7 @@ namespace QuanLyHocVien.Pages
         {
             LockPanelControl();
             InitializeLoaiHV();
-            InitializeHocVien();
-
-            
+            InitializeHocVien();          
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -183,7 +179,7 @@ namespace QuanLyHocVien.Pages
             {
                 if (isInsert)
                 {
-                    busHocVien.Insert(LoadHocVien(), new TAIKHOAN()
+                    HocVien.Insert(LoadHocVien(), new TAIKHOAN()
                     {
                         TenDangNhap = txtTenDangNhap.Text,
                         MatKhau = txtMatKhau.Text,
@@ -194,7 +190,7 @@ namespace QuanLyHocVien.Pages
                 }
                 else
                 {
-                    busHocVien.Update(LoadHocVien(), new TAIKHOAN()
+                    HocVien.Update(LoadHocVien(), new TAIKHOAN()
                     {
                         TenDangNhap = txtTenDangNhap.Text,
                         MatKhau = txtMatKhau.Text,
@@ -213,7 +209,7 @@ namespace QuanLyHocVien.Pages
         private void gridDSHV_Click(object sender, EventArgs e)
         {
             LockPanelControl();
-            hocVien = busHocVien.Select(gridDSHV.SelectedRows[0].Cells["clmMaHV"].Value.ToString());
+            hocVien = HocVien.Select(gridDSHV.SelectedRows[0].Cells["clmMaHV"].Value.ToString());
             LoadPanelControl(hocVien);
         }
 
@@ -235,7 +231,7 @@ namespace QuanLyHocVien.Pages
             {
                 if (MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    busHocVien.Delete(txtMaHV.Text);
+                    HocVien.Delete(txtMaHV.Text);
 
                     MessageBox.Show("Xóa học viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     InitializeHocVien();
@@ -271,13 +267,13 @@ namespace QuanLyHocVien.Pages
         private void gridDSHV_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             lblTongCong.Text = string.Format("Tổng cộng: {0} học viên ({1} học viên chính thức và {2} học viên tiềm năng)",
-                busHocVien.Count(), busHocVien.CountChinhThuc(), busHocVien.CountTiemNang());
+                HocVien.Count(), HocVien.CountChinhThuc(), HocVien.CountTiemNang());
         }
 
         private void gridDSHV_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             lblTongCong.Text = string.Format("Tổng cộng: {0} học viên ({1} học viên chính thức và {2} học viên tiềm năng)",
-                busHocVien.Count(), busHocVien.CountChinhThuc(), busHocVien.CountTiemNang());
+                HocVien.Count(), HocVien.CountChinhThuc(), HocVien.CountTiemNang());
         }
     }
 }

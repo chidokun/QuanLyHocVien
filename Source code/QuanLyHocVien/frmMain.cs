@@ -16,8 +16,6 @@ namespace QuanLyHocVien
 {
     public partial class frmMain : Form
     {
-        private NhanVien busNhanVien = new NhanVien();
-
         public frmMain()
         {
             InitializeComponent();                   
@@ -532,7 +530,7 @@ namespace QuanLyHocVien
             switch (userType)
             {
                 case UserType.NhanVien:
-                    string nvType = busNhanVien.Select(GlobalSettings.UserID).MaLoaiNV;
+                    string nvType = NhanVien.Select(GlobalSettings.UserID).MaLoaiNV;
                     switch (nvType)
                     {
                         //nhân viên ghi danh

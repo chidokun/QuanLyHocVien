@@ -9,13 +9,13 @@ using DataAccess;
 
 namespace BusinessLogic
 {
-    public class ChiTietTrungTam
+    public static class ChiTietTrungTam
     {
         /// <summary>
         /// Lấy chi tiết trung tâm
         /// </summary>
         /// <returns></returns>
-        public CHITIETTRUNGTAM Select()
+        public static CHITIETTRUNGTAM Select()
         {
             return (from p in Database.CHITIETTRUNGTAMs
                     select p).Single();
@@ -25,7 +25,7 @@ namespace BusinessLogic
         /// Cập nhật chi tiết trung tâm
         /// </summary>
         /// <param name="ct"></param>
-        public void Update(CHITIETTRUNGTAM ct)
+        public static void Update(CHITIETTRUNGTAM ct)
         {
             Database.CHITIETTRUNGTAMs.DeleteOnSubmit(Select());
             Database.SubmitChanges();

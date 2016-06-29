@@ -13,9 +13,6 @@ namespace QuanLyHocVien.Pages
 {
     public partial class frmQuanLyHocVien : Form
     {
-        private LoaiHV busLoaiHV = new LoaiHV();
-        private HocVien busHocVien = new HocVien();
-
         public frmQuanLyHocVien()
         {
             InitializeComponent();
@@ -65,7 +62,7 @@ namespace QuanLyHocVien.Pages
 
         private void frmQuanLyHocVien_Load(object sender, EventArgs e)
         {
-            cboLoaiHV.DataSource = busLoaiHV.SelectAll();
+            cboLoaiHV.DataSource = LoaiHV.SelectAll();
             cboLoaiHV.DisplayMember = "TenLoaiHV";
             cboLoaiHV.ValueMember = "MaLoaiHV";
 
@@ -85,7 +82,7 @@ namespace QuanLyHocVien.Pages
         private void btnXemTatCa_Click(object sender, EventArgs e)
         {
             gridDSHV.AutoGenerateColumns = false;
-            gridDSHV.DataSource = busHocVien.SelectAll(cboLoaiHV.SelectedValue.ToString());
+            gridDSHV.DataSource = HocVien.SelectAll(cboLoaiHV.SelectedValue.ToString());
         }
 
         private void cboLoaiHV_SelectedValueChanged(object sender, EventArgs e)
@@ -95,7 +92,7 @@ namespace QuanLyHocVien.Pages
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            gridDSHV.DataSource = busHocVien.SelectAll(chkMaHV.Checked ? txtMaHV.Text : null,
+            gridDSHV.DataSource = HocVien.SelectAll(chkMaHV.Checked ? txtMaHV.Text : null,
                 chkTenHV.Checked ? txtTenHV.Text : null, 
                 chkGioiTinh.Checked ? cboGioiTinh.Text : null,
                 chkNgayTiepNhan.Checked ? (DateTime?)dateTuNgay.Value : null,
@@ -105,7 +102,7 @@ namespace QuanLyHocVien.Pages
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            frmHocVienEdit frm = new frmHocVienEdit(busHocVien.Select(gridDSHV.SelectedRows[0].Cells["clmMaHV"].Value.ToString()));
+            frmHocVienEdit frm = new frmHocVienEdit(HocVien.Select(gridDSHV.SelectedRows[0].Cells["clmMaHV"].Value.ToString()));
             frm.ShowDialog();
             btnXemTatCa_Click(sender, e);
         }
@@ -121,7 +118,7 @@ namespace QuanLyHocVien.Pages
             {
                 if (MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    busHocVien.Delete(gridDSHV.SelectedRows[0].Cells["clmMaHV"].Value.ToString());
+                    HocVien.Delete(gridDSHV.SelectedRows[0].Cells["clmMaHV"].Value.ToString());
 
                     MessageBox.Show("Xóa học viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnXemTatCa_Click(sender, e);

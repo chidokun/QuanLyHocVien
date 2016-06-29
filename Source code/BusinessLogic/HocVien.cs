@@ -12,13 +12,13 @@ using static BusinessLogic.GlobalSettings;
 
 namespace BusinessLogic
 {
-    public class HocVien
+    public static class HocVien
     {
         /// <summary>
         /// Chọn tất cả
         /// </summary>
         /// <returns></returns>
-        public object SelectAll()
+        public static object SelectAll()
         {
             return (from p in GlobalSettings.Database.HOCVIENs
                     select p).ToList();
@@ -29,7 +29,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="loai">Loại học viên</param>
         /// <returns></returns>
-        public object SelectAll(string maloai)
+        public static object SelectAll(string maloai)
         {
             return (from p in GlobalSettings.Database.HOCVIENs
                     where p.MaLoaiHV == maloai
@@ -46,7 +46,7 @@ namespace BusinessLogic
         /// <param name="denNgay">Tiếp nhận đến ngày</param>
         /// <param name="loai">Loại học viên</param>
         /// <returns></returns>
-        public object SelectAll(string maHV, string tenHV, string gioiTinh, DateTime? tuNgay, DateTime? denNgay, string maLoai)
+        public static object SelectAll(string maHV, string tenHV, string gioiTinh, DateTime? tuNgay, DateTime? denNgay, string maLoai)
         {
             return (from p in GlobalSettings.Database.HOCVIENs
                     where  (maLoai == null ? true : p.MaLoaiHV == maLoai) &&
@@ -62,7 +62,7 @@ namespace BusinessLogic
         /// Chọn danh sách học viên chưa có lớp
         /// </summary>
         /// <returns></returns>
-        public List<HOCVIEN> DanhSachChuaCoLop()
+        public static List<HOCVIEN> DanhSachChuaCoLop()
         {
             return (from p in Database.HOCVIENs
                     where (((from q in Database.BANGDIEMs
@@ -84,7 +84,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="maHV">Mã học viên</param>
         /// <returns></returns>
-        public HOCVIEN Select(string maHV)
+        public static HOCVIEN Select(string maHV)
         {
             return (from p in GlobalSettings.Database.HOCVIENs
                     where p.MaHV == maHV
@@ -95,7 +95,7 @@ namespace BusinessLogic
         /// Thêm một học viên
         /// </summary>
         /// <param name="hocVien">Học viên cần thêm</param>
-        public void Insert(HOCVIEN hocVien, TAIKHOAN taiKhoan)
+        public static void Insert(HOCVIEN hocVien, TAIKHOAN taiKhoan)
         {
             if (hocVien.MaLoaiHV == "LHV01")
                 Database.TAIKHOANs.InsertOnSubmit(taiKhoan);
@@ -108,7 +108,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="hocVien">Học viên cần cập nhật</param>
         /// <param name="taiKhoan">Tài khoản cần thêm mới</param>
-        public void Update(HOCVIEN hocVien, TAIKHOAN taiKhoan = null)
+        public static void Update(HOCVIEN hocVien, TAIKHOAN taiKhoan = null)
         {
             var hocVienCu = Select(hocVien.MaHV);
 
@@ -143,7 +143,7 @@ namespace BusinessLogic
         /// Xóa một học viên
         /// </summary>
         /// <param name="maHV">Mã học viên cần xóa</param>
-        public void Delete(string maHV)
+        public static void Delete(string maHV)
         {
             var temp = Select(maHV);
             string maLoai = temp.MaLoaiHV;
@@ -153,17 +153,14 @@ namespace BusinessLogic
             Database.SubmitChanges();
 
             if (maLoai == "LHV01")
-            {
-                TaiKhoan tk = new TaiKhoan();
-                tk.Delete(tenDangNhap);
-            }
+                TaiKhoan.Delete(tenDangNhap);
         }
 
         /// <summary>
         /// Tự động sinh mã học viên
         /// </summary>
         /// <returns></returns>
-        public string AutoGenerateId()
+        public static string AutoGenerateId()
         {
             string result = "HV" + DateTime.Now.ToString("yyMMdd");
             var temp = from p in GlobalSettings.Database.HOCVIENs
@@ -184,7 +181,7 @@ namespace BusinessLogic
         /// Đếm tổng học viên
         /// </summary>
         /// <returns></returns>
-        public int Count()
+        public static int Count()
         {
             return (from p in GlobalSettings.Database.HOCVIENs
                     select p).Count();
@@ -194,7 +191,7 @@ namespace BusinessLogic
         /// Đếm học viên tiềm năng
         /// </summary>
         /// <returns></returns>
-        public int CountTiemNang()
+        public static int CountTiemNang()
         {
             return (from p in GlobalSettings.Database.HOCVIENs
                     where p.MaLoaiHV == "LHV00"
@@ -205,7 +202,7 @@ namespace BusinessLogic
         /// Đếm học viên chính thức
         /// </summary>
         /// <returns></returns>
-        public int CountChinhThuc()
+        public static int CountChinhThuc()
         {
             return (from p in GlobalSettings.Database.HOCVIENs
                     where p.MaLoaiHV == "LHV01"

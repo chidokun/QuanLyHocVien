@@ -13,8 +13,6 @@ namespace QuanLyHocVien.Popups
 {
     public partial class frmDangNhap : Form
     {
-        private TaiKhoan busTaiKhoan = new TaiKhoan();
-
         public frmDangNhap()
         {
             InitializeComponent();
@@ -47,12 +45,12 @@ namespace QuanLyHocVien.Popups
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if (busTaiKhoan.IsValid(txtTenDangNhap.Text, txtMatKhau.Text))
+            if (TaiKhoan.IsValid(txtTenDangNhap.Text, txtMatKhau.Text))
             {
-                TAIKHOAN tk = busTaiKhoan.Select(txtTenDangNhap.Text);
-                GlobalSettings.UserID = busTaiKhoan.FullUserID(tk);
+                TAIKHOAN tk = TaiKhoan.Select(txtTenDangNhap.Text);
+                GlobalSettings.UserID = TaiKhoan.FullUserID(tk);
                 GlobalSettings.UserName = txtTenDangNhap.Text;
-                GlobalSettings.UserType = (UserType)busTaiKhoan.FullUserType(tk);
+                GlobalSettings.UserType = (UserType)TaiKhoan.FullUserType(tk);
 
                 Settings.Default.Login_UserName = txtTenDangNhap.Text;
                 Settings.Default.Login_Password = txtMatKhau.Text;

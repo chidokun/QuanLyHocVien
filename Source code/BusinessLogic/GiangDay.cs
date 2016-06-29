@@ -12,14 +12,14 @@ using static BusinessLogic.GlobalSettings;
 
 namespace BusinessLogic
 {
-    public class GiangDay
+    public static class GiangDay
     {
         /// <summary>
         /// Chọn danh sách lớp của giảng viên
         /// </summary>
         /// <param name="maGV"></param>
         /// <returns></returns>
-        public object Select(string maGV)
+        public static object Select(string maGV)
         {
             return (from p in Database.GIANGDAYs
                     where p.MaGV == maGV
@@ -31,7 +31,7 @@ namespace BusinessLogic
         /// Xóa một quá trình giảng dạy của giảng viên
         /// </summary>
         /// <param name="maGV"></param>
-        public void Delete(string maGV)
+        public static void Delete(string maGV)
         {
             var temp = (from p in Database.GIANGDAYs
                         where p.MaGV == maGV
@@ -49,7 +49,7 @@ namespace BusinessLogic
         /// <param name="denNgay">Đến ngày</param>
         /// <param name="maKH">Mã khóa học</param>
         /// <returns></returns>
-        public object SelectAll(string maGV, DateTime? tuNgay, DateTime? denNgay, string maKH)
+        public static object SelectAll(string maGV, DateTime? tuNgay, DateTime? denNgay, string maKH)
         {
             return (from p in Database.GIANGDAYs
                     where p.MaGV == maGV &&

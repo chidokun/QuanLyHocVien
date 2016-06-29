@@ -12,7 +12,6 @@ namespace QuanLyHocVien.Popups
 {
     public partial class frmGiangVienEdit : Form
     {
-        private GiangVien busGiangVien = new GiangVien();
         private GIANGVIEN gv;
         private bool isInsert;
 
@@ -31,7 +30,7 @@ namespace QuanLyHocVien.Popups
         {
             if (gv == null)
             {
-                txtMaGV.Text = busGiangVien.AutoGenerateId();
+                txtMaGV.Text = GiangVien.AutoGenerateId();
                 cboGioiTinh.SelectedIndex = 0;
             }
             else
@@ -90,7 +89,7 @@ namespace QuanLyHocVien.Popups
             {
                 if (isInsert)
                 {
-                    busGiangVien.Insert(LoadGiangVien(), new TAIKHOAN()
+                    GiangVien.Insert(LoadGiangVien(), new TAIKHOAN()
                     {
                         TenDangNhap = txtTenDangNhap.Text,
                         MatKhau = txtMatKhau.Text,
@@ -100,7 +99,7 @@ namespace QuanLyHocVien.Popups
                 }
                 else
                 {
-                    busGiangVien.Update(LoadGiangVien(), new TAIKHOAN()
+                    GiangVien.Update(LoadGiangVien(), new TAIKHOAN()
                     {
                         TenDangNhap = txtTenDangNhap.Text,
                         MatKhau = txtMatKhau.Text,

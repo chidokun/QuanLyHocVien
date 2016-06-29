@@ -13,8 +13,6 @@ namespace QuanLyHocVien.Pages
 {
     public partial class frmThongKeDiemTheoLop : Form
     {
-        private LopHoc busLopHoc = new LopHoc();
-        private BangDiem busBangDiem = new BangDiem();
         private Thread thLop;
         private Thread thBangDiem;
 
@@ -46,7 +44,7 @@ namespace QuanLyHocVien.Pages
         {
             thLop = new Thread(() =>
             {
-                object source = busLopHoc.Select(txtMaLop.Text);
+                object source = LopHoc.Select(txtMaLop.Text);
 
                 gridLop.Invoke((MethodInvoker)delegate
                 {
@@ -66,7 +64,7 @@ namespace QuanLyHocVien.Pages
         {
             thLop = new Thread(() =>
             {
-                object source = busLopHoc.SelectAll();
+                object source = LopHoc.SelectAll();
 
                 gridLop.Invoke((MethodInvoker)delegate
                 {
@@ -85,7 +83,7 @@ namespace QuanLyHocVien.Pages
                 {
                     thLop.Join();
 
-                    object source = busBangDiem.SelectBangDiemLop(gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString());
+                    object source = BangDiem.SelectBangDiemLop(gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString());
 
                     gridThongKe.Invoke((MethodInvoker)delegate
                     {

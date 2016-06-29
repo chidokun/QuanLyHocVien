@@ -12,7 +12,6 @@ namespace QuanLyHocVien.Popups
 {
     public partial class frmThayDoiThongTinHV : Form
     {
-        private HocVien busHocVien = new HocVien();
         private HOCVIEN hv;
 
         public frmThayDoiThongTinHV()
@@ -29,7 +28,7 @@ namespace QuanLyHocVien.Popups
 
         private void frmThayDoiThongTinHV_Load(object sender, EventArgs e)
         {
-            hv = busHocVien.Select(GlobalSettings.UserID);
+            hv = HocVien.Select(GlobalSettings.UserID);
 
             txtMaHV.Text = hv.MaHV;
             txtTenHV.Text = hv.TenHV;
@@ -52,7 +51,7 @@ namespace QuanLyHocVien.Popups
         {
             try
             {
-                busHocVien.Update(new HOCVIEN()
+                HocVien.Update(new HOCVIEN()
                 {
                     MaHV = txtMaHV.Text,
                     TenHV = txtTenHV.Text,

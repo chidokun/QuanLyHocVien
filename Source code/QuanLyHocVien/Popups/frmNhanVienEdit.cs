@@ -12,8 +12,6 @@ namespace QuanLyHocVien.Popups
 {
     public partial class frmNhanVienEdit : Form
     {
-        private LoaiNV busLoaiNV = new LoaiNV();
-        private NhanVien busNhanVien = new NhanVien();
         private NHANVIEN nv;
         private bool isInsert = false;
 
@@ -32,7 +30,7 @@ namespace QuanLyHocVien.Popups
         {
             if (nv == null)
             {
-                txtMaNV.Text = busNhanVien.AutoGenerateId();
+                txtMaNV.Text = NhanVien.AutoGenerateId();
             }
             else
             {
@@ -74,7 +72,7 @@ namespace QuanLyHocVien.Popups
         private void frmNhanVienEdit_Load(object sender, EventArgs e)
         {
             //load loại nhân viên
-            cboLoaiNV.DataSource = busLoaiNV.SelectAll();
+            cboLoaiNV.DataSource = LoaiNV.SelectAll();
             cboLoaiNV.DisplayMember = "TenLoaiNV";
             cboLoaiNV.ValueMember = "MaLoaiNV";
 
@@ -87,7 +85,7 @@ namespace QuanLyHocVien.Popups
             {
                 if (isInsert)
                 {
-                    busNhanVien.Insert(LoadNhanVien(), new TAIKHOAN()
+                    NhanVien.Insert(LoadNhanVien(), new TAIKHOAN()
                     {
                         TenDangNhap = txtTenDangNhap.Text,
                         MatKhau = txtMatKhau.Text,
@@ -97,7 +95,7 @@ namespace QuanLyHocVien.Popups
                 }
                 else
                 {
-                    busNhanVien.Update(LoadNhanVien(), new TAIKHOAN()
+                    NhanVien.Update(LoadNhanVien(), new TAIKHOAN()
                     {
                         TenDangNhap = txtTenDangNhap.Text,
                         MatKhau = txtMatKhau.Text,

@@ -12,10 +12,6 @@ namespace QuanLyHocVien.Pages
 {
     public partial class frmXemCacLopDay : Form
     {
-        private KhoaHoc busKhoaHoc = new KhoaHoc();
-        private GiangDay busGiangDay = new GiangDay();
-        private LopHoc busLopHoc = new LopHoc();
-
         public frmXemCacLopDay()
         {
             InitializeComponent();
@@ -66,7 +62,7 @@ namespace QuanLyHocVien.Pages
         private void frmXemCacLopDay_Load(object sender, EventArgs e)
         {
             //load khóa học
-            cboKhoaHoc.DataSource = busKhoaHoc.SelectAll();
+            cboKhoaHoc.DataSource = KhoaHoc.SelectAll();
             cboKhoaHoc.DisplayMember = "TenKH";
             cboKhoaHoc.ValueMember = "MaKH";
 
@@ -83,7 +79,7 @@ namespace QuanLyHocVien.Pages
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
 
-            gridKetQuaTimKiem.DataSource = busGiangDay.SelectAll(GlobalSettings.UserID, rdKhoangThoiGian.Checked ? (DateTime?)dateTuNgay.Value : null,
+            gridKetQuaTimKiem.DataSource = GiangDay.SelectAll(GlobalSettings.UserID, rdKhoangThoiGian.Checked ? (DateTime?)dateTuNgay.Value : null,
                 rdKhoangThoiGian.Checked ? (DateTime?)dateDenNgay.Value : null, rdKhoaHoc.Checked ? cboKhoaHoc.SelectedValue.ToString() : null);
 
             gridKetQuaTimKiem_Click(sender, e);
@@ -93,7 +89,7 @@ namespace QuanLyHocVien.Pages
         {
             try
             {
-                LoadUI(busLopHoc.Select(gridKetQuaTimKiem.SelectedRows[0].Cells["clmMaLop"].Value.ToString()));
+                LoadUI(LopHoc.Select(gridKetQuaTimKiem.SelectedRows[0].Cells["clmMaLop"].Value.ToString()));
             }
             catch
             {
@@ -103,7 +99,7 @@ namespace QuanLyHocVien.Pages
 
         private void btnXemTatCa_Click(object sender, EventArgs e)
         {
-            gridKetQuaTimKiem.DataSource = busGiangDay.SelectAll(GlobalSettings.UserID, null, null, null);
+            gridKetQuaTimKiem.DataSource = GiangDay.SelectAll(GlobalSettings.UserID, null, null, null);
 
             gridKetQuaTimKiem_Click(sender, e);
         }

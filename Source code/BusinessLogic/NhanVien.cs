@@ -12,14 +12,14 @@ using static BusinessLogic.GlobalSettings;
 
 namespace BusinessLogic
 {
-    public class NhanVien
+    public static class NhanVien
     {
         /// <summary>
         /// Chọn một nhân viên
         /// </summary>
         /// <param name="maNV"></param>
         /// <returns></returns>
-        public NHANVIEN Select(string maNV)
+        public static NHANVIEN Select(string maNV)
         {
             return (from p in Database.NHANVIENs
                     where p.MaNV == maNV
@@ -30,7 +30,7 @@ namespace BusinessLogic
         /// Lấy danh sách tất cả nhân viên
         /// </summary>
         /// <returns></returns>
-        public object SelectAll()
+        public static object SelectAll()
         {
             return (from p in Database.NHANVIENs
                     select new
@@ -50,7 +50,7 @@ namespace BusinessLogic
         /// <param name="tenNV">Tên nhân viên</param>
         /// <param name="maLoaiHV">Mã loại nhân viên</param>
         /// <returns></returns>
-        public object SelectAll(string maNV, string tenNV, string maLoaiHV)
+        public static object SelectAll(string maNV, string tenNV, string maLoaiHV)
         {
             return (from p in GlobalSettings.Database.NHANVIENs
                     where (maNV == null ? true : p.MaNV.Contains(maNV)) &&
@@ -71,7 +71,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="nhanVien">Nhân viên</param>
         /// <param name="taiKhoan">Tài khoản</param>
-        public void Insert(NHANVIEN nhanVien, TAIKHOAN taiKhoan)
+        public static void Insert(NHANVIEN nhanVien, TAIKHOAN taiKhoan)
         {
             Database.TAIKHOANs.InsertOnSubmit(taiKhoan);
             Database.NHANVIENs.InsertOnSubmit(nhanVien);
@@ -83,7 +83,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="nhanVien"></param>
         /// <param name="taiKhoan"></param>
-        public void Update(NHANVIEN nhanVien, TAIKHOAN taiKhoan = null)
+        public static void Update(NHANVIEN nhanVien, TAIKHOAN taiKhoan = null)
         {
             var nhanVienCu = Select(nhanVien.MaNV);
 
@@ -94,17 +94,14 @@ namespace BusinessLogic
 
             Database.SubmitChanges();
             if(taiKhoan!=null)
-            {
-                TaiKhoan tk = new TaiKhoan();
-                tk.Update(taiKhoan);
-            }          
+                TaiKhoan.Update(taiKhoan);         
         }
 
         /// <summary>
         /// Xóa một nhân viên
         /// </summary>
         /// <param name="maNV">Mã nhân viên cần xóa</param>
-        public void Delete(string maNV)
+        public static void Delete(string maNV)
         {
             var temp = Select(maNV);
             string tenDangNhap = temp.TenDangNhap;
@@ -112,15 +109,14 @@ namespace BusinessLogic
             Database.NHANVIENs.DeleteOnSubmit(temp);
             Database.SubmitChanges();
 
-            TaiKhoan tk = new TaiKhoan();
-            tk.Delete(tenDangNhap);
+            TaiKhoan.Delete(tenDangNhap);
         }
 
         /// <summary>
         /// Tự động sinh mã nhân viên
         /// </summary>
         /// <returns></returns>
-        public string AutoGenerateId()
+        public static string AutoGenerateId()
         {
             string result = "NV";
             var temp = from p in GlobalSettings.Database.NHANVIENs

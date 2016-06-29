@@ -3,20 +3,19 @@
 // File "KhoaHoc.cs"
 // Writing by Nguyễn Lê Hoàng Tuấn (nguyentuanit96@gmail.com)
 
-
 using System.Linq;
 using static BusinessLogic.GlobalSettings;
 using DataAccess;
 
 namespace BusinessLogic
 {
-    public class KhoaHoc
+    public static class KhoaHoc
     {
         /// <summary>
         /// Chọn tất cả khóa học
         /// </summary>
         /// <returns></returns>
-        public object SelectAll()
+        public static object SelectAll()
         {
             return (from p in Database.KHOAHOCs
                     select p).ToList();
@@ -27,7 +26,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="maKH">Mã khóa học</param>
         /// <returns></returns>
-        public KHOAHOC Select(string maKH)
+        public static KHOAHOC Select(string maKH)
         {
             return (from p in Database.KHOAHOCs
                     where p.MaKH == maKH
@@ -38,7 +37,7 @@ namespace BusinessLogic
         /// Thêm một khóa học
         /// </summary>
         /// <param name="kh">Khóa học cần thêm</param>
-        public void Insert(KHOAHOC kh)
+        public static void Insert(KHOAHOC kh)
         {
             Database.KHOAHOCs.InsertOnSubmit(kh);
             Database.SubmitChanges();
@@ -48,7 +47,7 @@ namespace BusinessLogic
         /// Cập nhật thông tin khóa học
         /// </summary>
         /// <param name="kh">Khóa học cần sửa</param>
-        public void Update(KHOAHOC kh)
+        public static void Update(KHOAHOC kh)
         {
             var khoaHocCu = Select(kh.MaKH);
 
@@ -66,7 +65,7 @@ namespace BusinessLogic
         /// Xóa một khóa học
         /// </summary>
         /// <param name="maKH">Mã khóa học</param>
-        public void Delete(string maKH)
+        public static void Delete(string maKH)
         {
             var kh = (from p in Database.KHOAHOCs
                       where p.MaKH == maKH
@@ -79,13 +78,12 @@ namespace BusinessLogic
             Database.DANGKies.DeleteAllOnSubmit(dk);
 
             //xóa bảng lớp học
-            LopHoc lh = new LopHoc();
             var l = from p in Database.LOPHOCs
                     where p.MaKH == maKH
                     select p;
             foreach (var i in l)
             {
-                lh.Delete(i.MaLop);
+                LopHoc.Delete(i.MaLop);
             }
 
             //xóa khóa học
@@ -97,7 +95,7 @@ namespace BusinessLogic
         /// Tự động sinh mã khóa học
         /// </summary>
         /// <returns></returns>
-        public string AutoGenerateId()
+        public static string AutoGenerateId()
         {
             string result = "KH";
             var temp = from p in GlobalSettings.Database.KHOAHOCs

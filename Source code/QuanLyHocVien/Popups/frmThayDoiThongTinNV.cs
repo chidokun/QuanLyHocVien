@@ -12,9 +12,6 @@ namespace QuanLyHocVien.Popups
 {
     public partial class frmThayDoiThongTinNV : Form
     {
-        private LoaiNV busLoaiNV = new LoaiNV();
-        private NhanVien busNhanVien = new NhanVien();
-
         public frmThayDoiThongTinNV()
         {
             InitializeComponent();
@@ -29,11 +26,11 @@ namespace QuanLyHocVien.Popups
 
         private void frmThayDoiThongTinNV_Load(object sender, EventArgs e)
         {
-            cboLoaiNV.DataSource = busLoaiNV.SelectAll();
+            cboLoaiNV.DataSource = LoaiNV.SelectAll();
             cboLoaiNV.DisplayMember = "TenLoaiNV";
             cboLoaiNV.ValueMember = "MaLoaiNV";
 
-            NHANVIEN nv = busNhanVien.Select(GlobalSettings.UserID);
+            NHANVIEN nv = NhanVien.Select(GlobalSettings.UserID);
             txtMaNV.Text = nv.MaNV;
             txtTenNV.Text = nv.TenNV;
             txtEmail.Text = nv.EmailNV;
@@ -45,7 +42,7 @@ namespace QuanLyHocVien.Popups
         {
             try
             {
-                busNhanVien.Update(new NHANVIEN()
+                NhanVien.Update(new NHANVIEN()
                 {
                     MaNV = txtMaNV.Text,
                     TenNV = txtTenNV.Text,

@@ -12,8 +12,6 @@ namespace QuanLyHocVien.Popups
 {
     public partial class frmThayDoiThongTinGV : Form
     {
-        private GiangVien busGiangVien = new GiangVien();
-
         public frmThayDoiThongTinGV()
         {
             InitializeComponent();
@@ -28,7 +26,7 @@ namespace QuanLyHocVien.Popups
 
         private void frmThayDoiThongTinGV_Load(object sender, EventArgs e)
         {
-            GIANGVIEN gv = busGiangVien.Select(GlobalSettings.UserID);
+            GIANGVIEN gv = GiangVien.Select(GlobalSettings.UserID);
             txtMaGV.Text = gv.MaGV;
             txtTenGV.Text = gv.TenGV;
             cboGioiTinh.Text = gv.GioiTinhGV;
@@ -48,7 +46,7 @@ namespace QuanLyHocVien.Popups
         {
             try
             {
-                busGiangVien.Update(new GIANGVIEN()
+                GiangVien.Update(new GIANGVIEN()
                 {
                     MaGV = txtMaGV.Text,
                     TenGV = txtTenGV.Text,

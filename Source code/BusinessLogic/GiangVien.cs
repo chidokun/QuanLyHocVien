@@ -12,14 +12,14 @@ using static BusinessLogic.GlobalSettings;
 
 namespace BusinessLogic
 {
-    public class GiangVien
+    public static class GiangVien
     {
         /// <summary>
         /// Chọn một giảng viên
         /// </summary>
         /// <param name="maGV"></param>
         /// <returns></returns>
-        public GIANGVIEN Select(string maGV)
+        public static GIANGVIEN Select(string maGV)
         {
             return (from p in Database.GIANGVIENs
                     where p.MaGV == maGV
@@ -30,7 +30,7 @@ namespace BusinessLogic
         /// Chọn tất cả giảng viên
         /// </summary>
         /// <returns></returns>
-        public object SelectAll()
+        public static object SelectAll()
         {
             return (from p in Database.GIANGVIENs
                     select p).ToList();
@@ -43,7 +43,7 @@ namespace BusinessLogic
         /// <param name="tenGV">Tên giảng viên</param>
         /// <param name="gioiTinh">Giới tính</param>
         /// <returns></returns>
-        public object SelectAll(string maGV, string tenGV, string gioiTinh)
+        public static object SelectAll(string maGV, string tenGV, string gioiTinh)
         {
             return (from p in Database.GIANGVIENs
                     where (maGV == null ? true : p.MaGV.Contains(maGV)) &&
@@ -57,7 +57,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="giangVien">Giảng viên</param>
         /// <param name="taiKhoan">Tài khoản</param>
-        public void Insert(GIANGVIEN giangVien, TAIKHOAN taiKhoan)
+        public static void Insert(GIANGVIEN giangVien, TAIKHOAN taiKhoan)
         {
             Database.TAIKHOANs.InsertOnSubmit(taiKhoan);
             Database.GIANGVIENs.InsertOnSubmit(giangVien);
@@ -69,7 +69,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="giangVien"></param>
         /// <param name="taiKhoan"></param>
-        public void Update(GIANGVIEN giangVien, TAIKHOAN taiKhoan = null)
+        public static void Update(GIANGVIEN giangVien, TAIKHOAN taiKhoan = null)
         {
             var giangVienCu = Select(giangVien.MaGV);
 
@@ -80,39 +80,34 @@ namespace BusinessLogic
 
             Database.SubmitChanges();
             if(taiKhoan!=null)
-            {
-                TaiKhoan tk = new TaiKhoan();
-                tk.Update(taiKhoan);
-            }          
+                TaiKhoan.Update(taiKhoan);    
         }
 
         /// <summary>
         /// Xóa một giảng viên
         /// </summary>
         /// <param name="maGV">Mã giảng viên cần xóa</param>
-        public void Delete(string maGV)
+        public static void Delete(string maGV)
         {
             var temp = Select(maGV);
             string tenDangNhap = temp.TenDangNhap;
 
             //xóa giảng dạy
-            GiangDay gd = new GiangDay();
-            gd.Delete(maGV);
+            GiangDay.Delete(maGV);
 
             //xóa giảng viên
             Database.GIANGVIENs.DeleteOnSubmit(temp);
             Database.SubmitChanges();
 
             //xóa tài khoản
-            TaiKhoan tk = new TaiKhoan();
-            tk.Delete(tenDangNhap);
+            TaiKhoan.Delete(tenDangNhap);
         }
 
         /// <summary>
         /// Tự động sinh mã giảng viên
         /// </summary>
         /// <returns></returns>
-        public string AutoGenerateId()
+        public static string AutoGenerateId()
         {
             string result = "GV";
             var temp = from p in GlobalSettings.Database.GIANGVIENs

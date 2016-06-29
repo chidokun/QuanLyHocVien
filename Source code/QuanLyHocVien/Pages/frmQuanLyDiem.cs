@@ -13,8 +13,6 @@ namespace QuanLyHocVien.Pages
 {
     public partial class frmQuanLyDiem : Form
     {
-        private LopHoc busLopHoc = new LopHoc();
-        private BangDiem busBangDiem = new BangDiem();
         private Thread thLop;
         private Thread thHocVien;
         private Thread thPanelDiem;
@@ -31,7 +29,7 @@ namespace QuanLyHocVien.Pages
         /// <param name="maLop">Mã lớp</param>
         public void LoadPanelDiem(string maHV, string maLop)
         {
-            var d = busBangDiem.SelectDetail(maHV, maLop);
+            var d = BangDiem.SelectDetail(maHV, maLop);
             lblMaLop.Text = d.MaLop;
             lblTenLop.Text = d.TenLop;
             lblKhoa.Text = d.TenKH;
@@ -70,7 +68,7 @@ namespace QuanLyHocVien.Pages
         {
             thLop = new Thread(() =>
             {
-                object source = busLopHoc.SelectAll();
+                object source = LopHoc.SelectAll();
 
                 gridLop.Invoke((MethodInvoker)delegate
                 {
@@ -85,7 +83,7 @@ namespace QuanLyHocVien.Pages
         {
             thLop = new Thread(() =>
             {
-                object source = busLopHoc.Select(txtMaLop.Text);
+                object source = LopHoc.Select(txtMaLop.Text);
 
                 gridLop.Invoke((MethodInvoker)delegate
                 {
@@ -108,7 +106,7 @@ namespace QuanLyHocVien.Pages
                 thHocVien = new Thread(() =>
                 {
                     thLop.Join();
-                    object source = busBangDiem.SelectDSHV(gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString());
+                    object source = BangDiem.SelectDSHV(gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString());
 
                     gridDSHV.Invoke((MethodInvoker)delegate
                     {
@@ -180,7 +178,7 @@ namespace QuanLyHocVien.Pages
         {
             try
             {
-                busBangDiem.Update(LoadDiem());
+                BangDiem.Update(LoadDiem());
 
                 MessageBox.Show("Cập nhật bảng điểm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

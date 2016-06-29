@@ -12,8 +12,6 @@ namespace QuanLyHocVien.Popups
 {
     public partial class frmHocVienEdit : Form
     {
-        private LoaiHV busLoaiHV = new LoaiHV();
-        private HocVien busHocVien = new HocVien();
         private HOCVIEN hv;
         private bool isInsert = true;
 
@@ -32,7 +30,7 @@ namespace QuanLyHocVien.Popups
         {
             if (hv == null)
             {
-                txtMaHV.Text = busHocVien.AutoGenerateId();
+                txtMaHV.Text = HocVien.AutoGenerateId();
                 cboGioiTinh.SelectedIndex = 0;
             }
             else
@@ -50,7 +48,7 @@ namespace QuanLyHocVien.Popups
                 {
                     cboLoaiHV.Enabled = false;
                     txtMatKhau.Enabled = false;
-                }                   
+                }
 
                 if (hv.TenDangNhap != null)
                 {
@@ -92,7 +90,7 @@ namespace QuanLyHocVien.Popups
 
         private void frmHocVienEdit_Load(object sender, EventArgs e)
         {
-            cboLoaiHV.DataSource = busLoaiHV.SelectAll();
+            cboLoaiHV.DataSource = LoaiHV.SelectAll();
             cboLoaiHV.DisplayMember = "TenLoaiHV";
             cboLoaiHV.ValueMember = "MaLoaiHV";
 
@@ -121,7 +119,7 @@ namespace QuanLyHocVien.Popups
             {
                 if (isInsert)
                 {
-                    busHocVien.Insert(LoadHocVien(), new TAIKHOAN()
+                    HocVien.Insert(LoadHocVien(), new TAIKHOAN()
                     {
                         TenDangNhap = txtTenDangNhap.Text,
                         MatKhau = txtMatKhau.Text,
@@ -131,7 +129,7 @@ namespace QuanLyHocVien.Popups
                 }
                 else
                 {
-                    busHocVien.Update(LoadHocVien(), new TAIKHOAN()
+                    HocVien.Update(LoadHocVien(), new TAIKHOAN()
                     {
                         TenDangNhap = txtTenDangNhap.Text,
                         MatKhau = txtMatKhau.Text,

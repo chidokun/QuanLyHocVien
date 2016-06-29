@@ -11,13 +11,13 @@ using DataAccess;
 
 namespace BusinessLogic
 {
-    public class LoaiHV
+    public static class LoaiHV
     {
         /// <summary>
         /// Chọn tất cả
         /// </summary>
         /// <returns></returns>
-        public List<LOAIHV> SelectAll()
+        public static List<LOAIHV> SelectAll()
         {
             var result = from p in GlobalSettings.Database.LOAIHVs
                          select p;

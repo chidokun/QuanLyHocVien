@@ -13,9 +13,6 @@ namespace QuanLyHocVien.Pages
 {
     public partial class frmQuanLyLopHoc : Form
     {
-        private LopHoc busLopHoc = new LopHoc();
-        private KhoaHoc busKhoaHoc = new KhoaHoc();
-
         public frmQuanLyLopHoc()
         {
             InitializeComponent();
@@ -63,7 +60,7 @@ namespace QuanLyHocVien.Pages
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            gridLop.DataSource = busLopHoc.SelectAll(chkMaLop.Checked ? txtMaLop.Text : null,
+            gridLop.DataSource = LopHoc.SelectAll(chkMaLop.Checked ? txtMaLop.Text : null,
                 chkTenLop.Checked ? txtTenLop.Text : null,
                 chkKhoa.Checked ? cboKhoa.SelectedValue.ToString() : null,
                 chkKhoangTG.Checked ? (DateTime?)dateTuNgay.Value : null,
@@ -84,7 +81,7 @@ namespace QuanLyHocVien.Pages
 
         private void frmQuanLyLopHoc_Load(object sender, EventArgs e)
         {
-            cboKhoa.DataSource = busKhoaHoc.SelectAll();
+            cboKhoa.DataSource = KhoaHoc.SelectAll();
             cboKhoa.DisplayMember = "TenKH";
             cboKhoa.ValueMember = "MaKH";
 
@@ -96,7 +93,7 @@ namespace QuanLyHocVien.Pages
 
         private void btnHienTatCa_Click(object sender, EventArgs e)
         {
-            gridLop.DataSource = busLopHoc.SelectAll();
+            gridLop.DataSource = LopHoc.SelectAll();
 
             gridLop_Click(sender, e);
         }
@@ -115,7 +112,7 @@ namespace QuanLyHocVien.Pages
         {
             try
             {
-                LOPHOC lop = busLopHoc.Select(gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString());
+                LOPHOC lop = LopHoc.Select(gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString());
 
                 lblTenLop.Text = lop.TenLop;
                 lblMaLop.Text = lop.MaLop;
@@ -134,7 +131,7 @@ namespace QuanLyHocVien.Pages
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            frmLopHocEdit frm = new frmLopHocEdit(busLopHoc.Select(gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString()));
+            frmLopHocEdit frm = new frmLopHocEdit(LopHoc.Select(gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString()));
             frm.Text = "Sửa thông tin lớp";
             frm.ShowDialog();
 
@@ -147,7 +144,7 @@ namespace QuanLyHocVien.Pages
             {
                 if (MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    busLopHoc.Delete(gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString());
+                    LopHoc.Delete(gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString());
 
                     MessageBox.Show("Xóa lớp thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

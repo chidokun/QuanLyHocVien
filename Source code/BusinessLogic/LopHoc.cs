@@ -12,13 +12,13 @@ using static BusinessLogic.GlobalSettings;
 
 namespace BusinessLogic
 {
-    public class LopHoc
+    public static class LopHoc
     {
         /// <summary>
         /// Lấy danh sách lớp
         /// </summary>
         /// <returns></returns>
-        public object SelectAll()
+        public static object SelectAll()
         {
             return (from p in Database.LOPHOCs
                     select p).ToList();
@@ -34,7 +34,7 @@ namespace BusinessLogic
         /// <param name="denNgay">Đến ngày</param>
         /// <param name="dangMo">Đang mở</param>
         /// <returns></returns>
-        public object SelectAll(string maLop, string tenLop, string maKH, DateTime? tuNgay, DateTime? denNgay, bool? dangMo)
+        public static object SelectAll(string maLop, string tenLop, string maKH, DateTime? tuNgay, DateTime? denNgay, bool? dangMo)
         {
             return (from p in Database.LOPHOCs
                     where (maLop==null?true:p.MaLop.Contains(maLop))&&
@@ -51,7 +51,7 @@ namespace BusinessLogic
         /// Tự động sinh mã lớp
         /// </summary>
         /// <returns></returns>
-        public string AutoGenerateId(DateTime ngayBD)
+        public static string AutoGenerateId(DateTime ngayBD)
         {
             string result = "LH" + ngayBD.ToString("yyMMdd");
             var temp = from p in GlobalSettings.Database.HOCVIENs
@@ -73,7 +73,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="maLop">Mã lớp</param>
         /// <returns></returns>
-        public LOPHOC Select(string maLop)
+        public static LOPHOC Select(string maLop)
         {
             return (from p in Database.LOPHOCs
                     where p.MaLop.Contains(maLop)
@@ -85,7 +85,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="maKhoa">Mã khóa học</param>
         /// <returns></returns>
-        public object DanhSachLopTrong(string maKhoa)
+        public static object DanhSachLopTrong(string maKhoa)
         {
             return (from p in Database.LOPHOCs
                     where p.SiSo == 0 && p.MaKH == maKhoa
@@ -100,7 +100,7 @@ namespace BusinessLogic
         /// Chèn lớp trống
         /// </summary>
         /// <param name="lh">Lớp học</param>
-        public void Insert(LOPHOC lh)
+        public static void Insert(LOPHOC lh)
         {
             Database.LOPHOCs.InsertOnSubmit(lh);
             Database.SubmitChanges();
@@ -110,7 +110,7 @@ namespace BusinessLogic
         /// Cập nhật thông tin lớp học
         /// </summary>
         /// <param name="lh">Lớp học</param>
-        public void Update(LOPHOC lh)
+        public static void Update(LOPHOC lh)
         {
             var lopCu = Select(lh.MaLop);
 
@@ -128,7 +128,7 @@ namespace BusinessLogic
         /// Xóa một lớp học
         /// </summary>
         /// <param name="maLop">Mã lớp</param>
-        public void Delete(string maLop)
+        public static void Delete(string maLop)
         {
             LOPHOC lh = Select(maLop);
 

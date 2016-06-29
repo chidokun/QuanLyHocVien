@@ -12,8 +12,7 @@ using System.Threading;
 namespace QuanLyHocVien.Pages
 {
     public partial class frmThongKeNoHocVien : Form
-    {
-        private PhieuGhiDanh busPhieuGhiDanh = new PhieuGhiDanh();
+    { 
         public frmThongKeNoHocVien()
         {
             InitializeComponent();
@@ -37,7 +36,7 @@ namespace QuanLyHocVien.Pages
 
             Thread th = new Thread(() =>
             {
-                object source = busPhieuGhiDanh.DanhSachNoHocPhi();
+                object source = PhieuGhiDanh.DanhSachNoHocPhi();
 
                 gridBaoCao.Invoke((MethodInvoker)delegate
                 {

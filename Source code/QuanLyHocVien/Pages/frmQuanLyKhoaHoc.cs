@@ -12,7 +12,6 @@ namespace QuanLyHocVien.Pages
 {
     public partial class frmQuanLyKhoaHoc : Form
     {
-        private KhoaHoc busKhoaHoc = new KhoaHoc();
         private bool isInsert = false;
 
         public frmQuanLyKhoaHoc()
@@ -100,7 +99,7 @@ namespace QuanLyHocVien.Pages
 
         public void LoadGridKhoaHoc()
         {
-            gridKH.DataSource = busKhoaHoc.SelectAll();
+            gridKH.DataSource = KhoaHoc.SelectAll();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -139,7 +138,7 @@ namespace QuanLyHocVien.Pages
 
             try
             {
-                LoadUI(busKhoaHoc.Select(gridKH.SelectedRows[0].Cells["clmMaKH"].Value.ToString()));
+                LoadUI(KhoaHoc.Select(gridKH.SelectedRows[0].Cells["clmMaKH"].Value.ToString()));
             }
             catch
             {
@@ -151,7 +150,7 @@ namespace QuanLyHocVien.Pages
         {
             UnlockPanelControl();
             ResetPanelControl();
-            txtMaKH.Text = busKhoaHoc.AutoGenerateId();
+            txtMaKH.Text = KhoaHoc.AutoGenerateId();
             isInsert = true;
         }
 
@@ -172,7 +171,7 @@ namespace QuanLyHocVien.Pages
             {
                 if (MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    busKhoaHoc.Delete(gridKH.SelectedRows[0].Cells["clmMaKH"].Value.ToString());
+                    KhoaHoc.Delete(gridKH.SelectedRows[0].Cells["clmMaKH"].Value.ToString());
 
                     MessageBox.Show("Xóa khóa học thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadGridKhoaHoc();
@@ -190,13 +189,13 @@ namespace QuanLyHocVien.Pages
             {
                 if (isInsert)
                 {
-                    busKhoaHoc.Insert(LoadKhoaHoc());
+                    KhoaHoc.Insert(LoadKhoaHoc());
 
                     MessageBox.Show("Thêm khóa học thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    busKhoaHoc.Update(LoadKhoaHoc());
+                    KhoaHoc.Update(LoadKhoaHoc());
 
                     MessageBox.Show("Sửa khóa học thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

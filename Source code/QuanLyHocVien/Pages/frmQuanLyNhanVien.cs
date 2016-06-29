@@ -12,9 +12,6 @@ namespace QuanLyHocVien.Pages
 {
     public partial class frmQuanLyNhanVien : Form
     {
-        private LoaiNV busLoaiNV = new LoaiNV();
-        private NhanVien busNhanVien = new NhanVien();
-
         public frmQuanLyNhanVien()
         {
             InitializeComponent();
@@ -59,7 +56,7 @@ namespace QuanLyHocVien.Pages
         private void frmQuanLyNhanVien_Load(object sender, EventArgs e)
         {
             //load loại nhân viên
-            cboLoaiNV.DataSource = busLoaiNV.SelectAll();
+            cboLoaiNV.DataSource = LoaiNV.SelectAll();
             cboLoaiNV.DisplayMember = "TenLoaiNV";
             cboLoaiNV.ValueMember = "MaLoaiNV";
 
@@ -79,18 +76,18 @@ namespace QuanLyHocVien.Pages
 
         private void btnHienTatCa_Click(object sender, EventArgs e)
         {
-            gridNV.DataSource = busNhanVien.SelectAll();
+            gridNV.DataSource = NhanVien.SelectAll();
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            gridNV.DataSource = busNhanVien.SelectAll(chkMaNV.Checked ? txtMaNV.Text : null,
+            gridNV.DataSource = NhanVien.SelectAll(chkMaNV.Checked ? txtMaNV.Text : null,
                 chkTenNV.Checked ? txtTenNV.Text : null, chkLoaiNV.Checked ? cboLoaiNV.SelectedValue.ToString() : null);
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            frmNhanVienEdit frm = new frmNhanVienEdit(busNhanVien.Select(gridNV.SelectedRows[0].Cells["clmMaNV"].Value.ToString()));
+            frmNhanVienEdit frm = new frmNhanVienEdit(NhanVien.Select(gridNV.SelectedRows[0].Cells["clmMaNV"].Value.ToString()));
             frm.ShowDialog();
 
             btnHienTatCa_Click(sender, e);
@@ -102,7 +99,7 @@ namespace QuanLyHocVien.Pages
             {
                 if (MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    busNhanVien.Delete(gridNV.SelectedRows[0].Cells["clmMaNV"].Value.ToString());
+                    NhanVien.Delete(gridNV.SelectedRows[0].Cells["clmMaNV"].Value.ToString());
 
                     MessageBox.Show("Xóa nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

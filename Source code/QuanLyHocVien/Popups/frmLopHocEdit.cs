@@ -12,8 +12,6 @@ namespace QuanLyHocVien.Popups
 {
     public partial class frmLopHocEdit : Form
     {
-        private KhoaHoc busKhoaHoc = new KhoaHoc();
-        private LopHoc busLopHoc = new LopHoc();
         private LOPHOC lh;
         private bool isInsert = false;
 
@@ -32,7 +30,7 @@ namespace QuanLyHocVien.Popups
         {
             if (lh == null)
             {
-                txtMaLop.Text = busLopHoc.AutoGenerateId(dateNgayBD.Value);
+                txtMaLop.Text = LopHoc.AutoGenerateId(dateNgayBD.Value);
             }
             else
             {
@@ -70,12 +68,12 @@ namespace QuanLyHocVien.Popups
         private void dateNgayBD_ValueChanged(object sender, EventArgs e)
         {
             if (isInsert)
-                txtMaLop.Text = busLopHoc.AutoGenerateId(dateNgayBD.Value);
+                txtMaLop.Text = LopHoc.AutoGenerateId(dateNgayBD.Value);
         }
 
         private void frmLopHocEdit_Load(object sender, EventArgs e)
         {
-            cboKhoa.DataSource = busKhoaHoc.SelectAll();
+            cboKhoa.DataSource = KhoaHoc.SelectAll();
             cboKhoa.DisplayMember = "TenKH";
             cboKhoa.ValueMember = "MaKH";
 
@@ -88,13 +86,13 @@ namespace QuanLyHocVien.Popups
             {
                 if (isInsert)
                 {
-                    busLopHoc.Insert(LoadLopHoc());
+                    LopHoc.Insert(LoadLopHoc());
 
                     MessageBox.Show("Thêm lớp thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    busLopHoc.Update(LoadLopHoc());
+                    LopHoc.Update(LoadLopHoc());
 
                     MessageBox.Show("Sửa lớp thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

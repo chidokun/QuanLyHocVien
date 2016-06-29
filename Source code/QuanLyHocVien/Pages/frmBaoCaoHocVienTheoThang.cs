@@ -12,8 +12,6 @@ namespace QuanLyHocVien.Pages
 {
     public partial class frmBaoCaoHocVienTheoThang : Form
     {
-        private PhieuGhiDanh busPhieuGhiDanh = new PhieuGhiDanh();
-
         public frmBaoCaoHocVienTheoThang()
         {
             InitializeComponent();
@@ -29,7 +27,7 @@ namespace QuanLyHocVien.Pages
         {
             Thread th = new Thread(() =>
             {
-                object dshv = busPhieuGhiDanh.BaoCaoHocVienGhiDanhTheoThang(dateThang.Value.Month, dateThang.Value.Year);
+                object dshv = PhieuGhiDanh.BaoCaoHocVienGhiDanhTheoThang(dateThang.Value.Month, dateThang.Value.Year);
 
                 gridBaoCao.Invoke((MethodInvoker)delegate
                 {
@@ -38,7 +36,6 @@ namespace QuanLyHocVien.Pages
             });
 
             th.Start();
-
         }
 
         private void gridBaoCao_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)

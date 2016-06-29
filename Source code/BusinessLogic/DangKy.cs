@@ -12,13 +12,13 @@ using DataAccess;
 
 namespace BusinessLogic
 {
-    public class DangKy
+    public static class DangKy
     {
         /// <summary>
         /// Thêm một đăng ký
         /// </summary>
         /// <param name="dk"></param>
-        public void Insert(DANGKY dk)
+        public static void Insert(DANGKY dk)
         {
             Database.DANGKies.InsertOnSubmit(dk);
             Database.SubmitChanges();

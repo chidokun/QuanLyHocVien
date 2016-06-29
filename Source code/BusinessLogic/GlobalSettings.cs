@@ -103,8 +103,7 @@ namespace BusinessLogic
         /// </summary>
         public static void LoadCenterInformation()
         {
-            ChiTietTrungTam bus = new ChiTietTrungTam();
-            CHITIETTRUNGTAM detail = bus.Select();
+            CHITIETTRUNGTAM detail = ChiTietTrungTam.Select();
 
             CenterName = detail.TenTT;
             CenterAddress = detail.DiaChiTT;

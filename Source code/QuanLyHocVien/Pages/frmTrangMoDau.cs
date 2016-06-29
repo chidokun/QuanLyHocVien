@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿// Quản lý Học viên Trung tâm Anh ngữ
+// Copyright © 2016, VP2T
+// File "frmTrangMoDau.cs"
+// Writing by Nguyễn Lê Hoàng Tuấn (nguyentuanit96@gmail.com)
+
+using System;
 using System.Windows.Forms;
 
 namespace QuanLyHocVien.Pages

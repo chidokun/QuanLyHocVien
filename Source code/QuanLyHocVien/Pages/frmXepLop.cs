@@ -14,9 +14,6 @@ namespace QuanLyHocVien.Pages
 {
     public partial class frmXepLop : Form
     {
-        private HocVien busHocVien = new HocVien();
-        private KhoaHoc busKhoaHoc = new KhoaHoc();
-        private LopHoc busLopHoc = new LopHoc();
         private List<HOCVIEN> dsChuaCoLop;
         private Thread thChuaCoLop;
 
@@ -32,7 +29,7 @@ namespace QuanLyHocVien.Pages
 
             //thChuaCoLop = new Thread(() =>
             //{
-                dsChuaCoLop = busHocVien.DanhSachChuaCoLop();
+                dsChuaCoLop = HocVien.DanhSachChuaCoLop();
 
                // gridDSHV.Invoke((MethodInvoker)delegate
                 //{
@@ -61,12 +58,12 @@ namespace QuanLyHocVien.Pages
             LoadDSHVChuaCoLop();
 
             //load khóa học
-            cboKhoa.DataSource = busKhoaHoc.SelectAll();
+            cboKhoa.DataSource = KhoaHoc.SelectAll();
             cboKhoa.DisplayMember = "TenKH";
             cboKhoa.ValueMember = "MaKH";
 
             //load lớp trống của khóa
-            cboLop.DataSource = busLopHoc.DanhSachLopTrong(cboKhoa.SelectedValue.ToString());
+            cboLop.DataSource = LopHoc.DanhSachLopTrong(cboKhoa.SelectedValue.ToString());
             cboLop.DisplayMember = "MaLop";
             cboLop.ValueMember = "MaLop";
 
@@ -94,7 +91,7 @@ namespace QuanLyHocVien.Pages
 
         private void btnThemVaoLop_Click(object sender, EventArgs e)
         {
-            HOCVIEN hv = busHocVien.Select(gridDSHV.SelectedRows[0].Cells["clmMaHV"].Value.ToString());
+            HOCVIEN hv = HocVien.Select(gridDSHV.SelectedRows[0].Cells["clmMaHV"].Value.ToString());
 
             dsChuaCoLop.Remove(hv);
 
@@ -106,7 +103,7 @@ namespace QuanLyHocVien.Pages
         private void cboLop_SelectedValueChanged(object sender, EventArgs e)
         {
             //load lớp trống của khóa
-            cboLop.DataSource = busLopHoc.DanhSachLopTrong(cboKhoa.SelectedValue.ToString());
+            cboLop.DataSource = LopHoc.DanhSachLopTrong(cboKhoa.SelectedValue.ToString());
             cboLop.DisplayMember = "MaLop";
             cboLop.ValueMember = "MaLop";
         }

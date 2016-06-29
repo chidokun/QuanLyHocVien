@@ -42,7 +42,7 @@ namespace BusinessLogic
         public double DiemTrungBinh { get; set; }
     }
 
-    public class BangDiem
+    public static class BangDiem
     {
         /// <summary>
         /// Lấy chi tiết của một bảng điểm
@@ -50,7 +50,7 @@ namespace BusinessLogic
         /// <param name="maHV">Mã học viên</param>
         /// <param name="maLop">Mã lớp</param>
         /// <returns></returns>
-        public BangDiemDetail SelectDetail(string maHV, string maLop)
+        public static BangDiemDetail SelectDetail(string maHV, string maLop)
         {
             return (from p in Database.BANGDIEMs
                     where p.MaLop == maLop && p.MaHV == maHV
@@ -82,7 +82,7 @@ namespace BusinessLogic
         /// <param name="maHV">Mã học viên</param>
         /// <param name="maLop">Mã lớp</param>
         /// <returns></returns>
-        public BANGDIEM Select(string maHV, string maLop)
+        public static BANGDIEM Select(string maHV, string maLop)
         {
             return (from p in Database.BANGDIEMs
                     where p.MaLop == maLop && p.MaHV == maHV
@@ -94,7 +94,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="maLop">Mã lớp</param>
         /// <returns></returns>
-        public object SelectDSHV(string maLop)
+        public static object SelectDSHV(string maLop)
         {
             return (from p in Database.BANGDIEMs
                     where p.MaLop == maLop
@@ -111,7 +111,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="maHV">Mã học viên</param>
         /// <returns></returns>
-        public object SelectDSLop(string maHV, DateTime? tuNgay = null, DateTime? denNgay = null, string maKH = null)
+        public static object SelectDSLop(string maHV, DateTime? tuNgay = null, DateTime? denNgay = null, string maKH = null)
         {
             return (from p in Database.BANGDIEMs
                     where p.MaHV == maHV &&
@@ -130,7 +130,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="maLop">Mã lớp</param>
         /// <returns></returns>
-        public object SelectBangDiemLop(string maLop)
+        public static object SelectBangDiemLop(string maLop)
         {
             return (from p in Database.BANGDIEMs
                     where p.MaLop == maLop
@@ -153,7 +153,7 @@ namespace BusinessLogic
         /// Cập nhật bảng điểm
         /// </summary>
         /// <param name="b"></param>
-        public void Update(BANGDIEM b)
+        public static void Update(BANGDIEM b)
         {
             var temp = Select(b.MaHV, b.MaLop);
 

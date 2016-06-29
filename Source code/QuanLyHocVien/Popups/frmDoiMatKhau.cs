@@ -12,15 +12,12 @@ namespace QuanLyHocVien.Popups
 {
     public partial class frmDoiMatKhau : Form
     {
-        private string UserName { get; set; }
-        private TaiKhoan busTaiKhoan = new TaiKhoan();
         private TAIKHOAN currentUser;
 
         public frmDoiMatKhau(string userName)
         {
             InitializeComponent();
-            UserName = userName;
-            currentUser = busTaiKhoan.Select(UserName);
+            currentUser = TaiKhoan.Select(userName);
         }
 
         #region Events
@@ -28,9 +25,9 @@ namespace QuanLyHocVien.Popups
         private void frmDoiMatKhau_Load(object sender, EventArgs e)
         {
 
-            lblUserName.Text = busTaiKhoan.FullUserName(currentUser);
+            lblUserName.Text = TaiKhoan.FullUserName(currentUser);
 
-            txtTenDangNhap.Text = UserName;
+            txtTenDangNhap.Text = GlobalSettings.UserName;
         }
 
         private void btnLuuThongTin_Click(object sender, EventArgs e)
@@ -42,7 +39,7 @@ namespace QuanLyHocVien.Popups
                     if (!string.IsNullOrEmpty(txtMatKhauMoi.Text) && txtMatKhauMoi.Text == txtMatKhauMoiAgain.Text)
                     {
                         currentUser.MatKhau = txtMatKhauMoi.Text;
-                        busTaiKhoan.Update(currentUser);
+                        TaiKhoan.Update(currentUser);
 
                         MessageBox.Show("Đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();

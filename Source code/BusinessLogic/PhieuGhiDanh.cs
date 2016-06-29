@@ -12,13 +12,13 @@ using DataAccess;
 
 namespace BusinessLogic
 {
-    public class PhieuGhiDanh
+    public static class PhieuGhiDanh
     {
         /// <summary>
         /// Chọn tất cả phiếu ghi danh
         /// </summary>
         /// <returns></returns>
-        public object SelectAll()
+        public static object SelectAll()
         {
             return (from p in Database.PHIEUGHIDANHs
                     select new
@@ -37,7 +37,7 @@ namespace BusinessLogic
         /// <param name="month">Tháng cần nhập</param>
         /// <param name="year">Năm cần nhập</param>
         /// <returns></returns>
-        public object BaoCaoHocVienGhiDanhTheoThang(int month, int year)
+        public static object BaoCaoHocVienGhiDanhTheoThang(int month, int year)
         {
             return (from p in Database.PHIEUGHIDANHs
                     where (p.NgayGhiDanh.Value.Month == month) &&
@@ -56,7 +56,7 @@ namespace BusinessLogic
         /// Danh sách nợ học phí
         /// </summary>
         /// <returns></returns>
-        public object DanhSachNoHocPhi()
+        public static object DanhSachNoHocPhi()
         {
             return (from p in Database.PHIEUGHIDANHs
                     where p.ConNo > 0
@@ -74,7 +74,7 @@ namespace BusinessLogic
         /// Thêm phiếu ghi danh
         /// </summary>
         /// <param name="p"></param>
-        public void Insert(PHIEUGHIDANH p)
+        public static void Insert(PHIEUGHIDANH p)
         {
             Database.PHIEUGHIDANHs.InsertOnSubmit(p);
 
@@ -85,7 +85,7 @@ namespace BusinessLogic
         /// Tự động sinh mã phiếu ghi danh
         /// </summary>
         /// <returns></returns>
-        public string AutoGenerateId()
+        public static string AutoGenerateId()
         {
             string result = "PG" + DateTime.Now.ToString("yyMMdd");
             var temp = from p in GlobalSettings.Database.PHIEUGHIDANHs

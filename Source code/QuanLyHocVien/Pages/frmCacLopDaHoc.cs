@@ -11,9 +11,6 @@ namespace QuanLyHocVien.Pages
 {
     public partial class frmCacLopDaHoc : Form
     {
-        private KhoaHoc busKhoaHoc = new KhoaHoc();
-        private BangDiem busBangDiem = new BangDiem();
-
         public frmCacLopDaHoc()
         {
             InitializeComponent();
@@ -27,7 +24,7 @@ namespace QuanLyHocVien.Pages
 
         private void frmCacLopDaHoc_Load(object sender, EventArgs e)
         {
-            cboKhoaHoc.DataSource = busKhoaHoc.SelectAll();
+            cboKhoaHoc.DataSource = KhoaHoc.SelectAll();
             cboKhoaHoc.DisplayMember = "TenKH";
             cboKhoaHoc.ValueMember = "MaKH";
 
@@ -49,7 +46,7 @@ namespace QuanLyHocVien.Pages
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            gridLop.DataSource = busBangDiem.SelectDSLop(GlobalSettings.UserID, rdKhoangThoiGian.Checked ? (DateTime?)dateDenNgay.Value : null,
+            gridLop.DataSource = BangDiem.SelectDSLop(GlobalSettings.UserID, rdKhoangThoiGian.Checked ? (DateTime?)dateDenNgay.Value : null,
                 rdKhoangThoiGian.Checked ? (DateTime?)dateDenNgay.Value : null, rdKhoaHoc.Checked ? cboKhoaHoc.SelectedValue.ToString() : null);
 
             gridLop_Click(sender, e);
@@ -62,7 +59,7 @@ namespace QuanLyHocVien.Pages
 
         private void btnXemTatCa_Click(object sender, EventArgs e)
         {
-            gridLop.DataSource = busBangDiem.SelectDSLop(GlobalSettings.UserID, null, null, null);
+            gridLop.DataSource = BangDiem.SelectDSLop(GlobalSettings.UserID, null, null, null);
 
             gridLop_Click(sender, e);
         }
@@ -71,7 +68,7 @@ namespace QuanLyHocVien.Pages
         {
             try
             {
-                var temp = busBangDiem.SelectDetail(GlobalSettings.UserID, gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString());
+                var temp = BangDiem.SelectDetail(GlobalSettings.UserID, gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString());
                 lblTenLop.Text = temp.TenLop;
                 lblMaLop.Text = temp.MaLop;
                 lblTenKH.Text = temp.TenKH;

@@ -4,12 +4,6 @@
 // Writing by Nguyễn Lê Hoàng Tuấn (nguyentuanit96@gmail.com)
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using BusinessLogic;
 using DataAccess;
@@ -19,9 +13,6 @@ namespace QuanLyHocVien.Pages
 {
     public partial class frmQuanLyGiangVien : Form
     {
-        private GiangVien busGiangVien = new GiangVien();
-        private GiangDay busGiangDay = new GiangDay();
-  
         public frmQuanLyGiangVien()
         {
             InitializeComponent();
@@ -69,7 +60,7 @@ namespace QuanLyHocVien.Pages
         private void btnHienTatCa_Click(object sender, EventArgs e)
         {
             gridGV.AutoGenerateColumns = false;
-            gridGV.DataSource = busGiangVien.SelectAll();
+            gridGV.DataSource = GiangVien.SelectAll();
         }
 
         private void gridGV_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -85,7 +76,7 @@ namespace QuanLyHocVien.Pages
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            frmGiangVienEdit frm = new frmGiangVienEdit(busGiangVien.Select(gridGV.SelectedRows[0].Cells["clmMaGV"].Value.ToString()));
+            frmGiangVienEdit frm = new frmGiangVienEdit(GiangVien.Select(gridGV.SelectedRows[0].Cells["clmMaGV"].Value.ToString()));
             frm.Text = "Cập nhật thông tin giảng viên";
             frm.ShowDialog();
 
@@ -98,7 +89,7 @@ namespace QuanLyHocVien.Pages
             {
                 if (MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    busGiangVien.Delete(gridGV.SelectedRows[0].Cells["clmMaGV"].Value.ToString());
+                    GiangVien.Delete(gridGV.SelectedRows[0].Cells["clmMaGV"].Value.ToString());
 
                     MessageBox.Show("Xóa giảng viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -129,12 +120,12 @@ namespace QuanLyHocVien.Pages
         private void gridGV_Click(object sender, EventArgs e)
         {
             gridLop.AutoGenerateColumns = false;
-            gridLop.DataSource = busGiangDay.Select(gridGV.SelectedRows[0].Cells["clmMaGV"].Value.ToString());
+            gridLop.DataSource = GiangDay.Select(gridGV.SelectedRows[0].Cells["clmMaGV"].Value.ToString());
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            gridGV.DataSource = busGiangVien.SelectAll(chkMaGV.Checked ? txtMaGV.Text : null,
+            gridGV.DataSource = GiangVien.SelectAll(chkMaGV.Checked ? txtMaGV.Text : null,
                 chkTenGV.Checked ? txtTenGV.Text : null, chkGioiTinh.Checked ? cboGioiTinh.Text : null);
         }
 
