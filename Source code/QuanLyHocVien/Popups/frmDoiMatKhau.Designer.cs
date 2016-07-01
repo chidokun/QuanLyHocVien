@@ -230,6 +230,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmDoiMatKhau";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đổi mật khẩu";
             this.Load += new System.EventHandler(this.frmDoiMatKhau_Load);

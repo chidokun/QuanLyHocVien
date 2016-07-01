@@ -14,9 +14,7 @@ namespace QuanLyHocVien.Pages
 {
     public partial class frmXepLop : Form
     {
-        private List<HOCVIEN> dsChuaCoLop;
-        private Thread thChuaCoLop;
-
+        private List<DANGKY> dsChuaCoLop;
 
         public frmXepLop()
         {
@@ -29,16 +27,16 @@ namespace QuanLyHocVien.Pages
 
             //thChuaCoLop = new Thread(() =>
             //{
-                dsChuaCoLop = HocVien.DanhSachChuaCoLop();
+            dsChuaCoLop = HocVien.DanhSachChuaCoLop();
 
-               // gridDSHV.Invoke((MethodInvoker)delegate
-                //{
-                    foreach (var i in dsChuaCoLop)
-                    {
-                        string[] s = { i.MaHV, i.TenHV, i.DANGKies.KHOAHOC.TenKH };
-                        gridDSHV.Rows.Add(s);
-                    }
-                //});
+            // gridDSHV.Invoke((MethodInvoker)delegate
+            //{
+            foreach (var i in dsChuaCoLop)
+            {
+                string[] s = { i.MaHV, i.HOCVIEN.TenHV, i.MaPhieu, i.KHOAHOC.TenKH };
+                gridDSHV.Rows.Add(s);
+            }
+            //});
             //});
 
             //thChuaCoLop.Start();   
@@ -91,21 +89,101 @@ namespace QuanLyHocVien.Pages
 
         private void btnThemVaoLop_Click(object sender, EventArgs e)
         {
-            HOCVIEN hv = HocVien.Select(gridDSHV.SelectedRows[0].Cells["clmMaHV"].Value.ToString());
+            try
+            {
+                HOCVIEN hv = HocVien.Select(gridDSHV.SelectedRows[0].Cells["clmMaHV"].Value.ToString());
 
-            dsChuaCoLop.Remove(hv);
+                string[] s = new string[]
+                {
+                    hv.MaHV,
+                    hv.TenHV,
+                    ((DateTime)hv.NgaySinh).ToString("dd/MM/yyyy"),
+                    hv.GioiTinhHV,
+                    hv.SdtHV,
+                    hv.DiaChi,
+                    gridDSHV.SelectedRows[0].Cells["clmMaPhieu"].Value.ToString()
+                };
 
+                gridDSHV.Rows.RemoveAt(gridDSHV.SelectedRows[0].Index);
 
-            string[] s = { hv.MaHV, hv.TenHV, ((DateTime)hv.NgaySinh).ToString("dd/MM/yyyy"), hv.GioiTinhHV, hv.SdtHV, hv.DiaChi, hv.EmailHV };
-            gridDSHVLop.Rows.Add(s);
+                gridDSHVLop.Rows.Add(s);
+            }
+            catch { }
         }
 
-        private void cboLop_SelectedValueChanged(object sender, EventArgs e)
+        private void btnBoKhoiLop_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (var i in dsChuaCoLop)
+                {
+                    if (gridDSHVLop.SelectedRows[0].Cells["clmMaHVLop"].Value.ToString() == i.MaHV)
+                    {
+                        string[] s = { i.MaHV, i.HOCVIEN.TenHV, i.MaPhieu, i.KHOAHOC.TenKH };
+                        gridDSHV.Rows.Add(s);
+                        break;
+                    }
+                }
+
+                gridDSHVLop.Rows.RemoveAt(gridDSHVLop.SelectedRows[0].Index);
+            }
+            catch { }
+        }
+
+        private void btnDatLai_Click(object sender, EventArgs e)
+        {
+            gridDSHVLop.Rows.Clear();
+
+            LoadDSHVChuaCoLop();
+        }
+
+        private void cboKhoa_SelectedValueChanged(object sender, EventArgs e)
         {
             //load lớp trống của khóa
             cboLop.DataSource = LopHoc.DanhSachLopTrong(cboKhoa.SelectedValue.ToString());
-            cboLop.DisplayMember = "MaLop";
+            cboLop.DisplayMember = "TenLop";
             cboLop.ValueMember = "MaLop";
+        }
+
+        private void btnLuuLop_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var rows = gridDSHVLop.Rows;
+
+                foreach (DataGridViewRow i in rows)
+                {
+                    BangDiem.Insert(new BANGDIEM()
+                    {
+                        MaHV = i.Cells["clmMaHVLop"].Value.ToString(),
+                        MaLop = cboLop.SelectedValue.ToString(),
+                        MaPhieu = i.Cells["clmMaPhieuLop"].Value.ToString(),
+                        DiemNghe = 0,
+                        DiemNoi = 0,
+                        DiemDoc = 0,
+                        DiemViet = 0
+                    });
+                }
+
+                LOPHOC lh = LopHoc.Select(cboLop.SelectedValue.ToString());
+                LopHoc.Update(new LOPHOC()
+                {
+                    MaLop = lh.MaLop,
+                    TenLop = lh.TenLop,
+                    NgayBD = lh.NgayBD,
+                    NgayKT = lh.NgayKT,
+                    SiSo = gridDSHVLop.Rows.Count,
+                    MaKH = lh.MaKH,
+                    DangMo = lh.DangMo
+                });
+
+                MessageBox.Show("Đã xếp lớp thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnDatLai_Click(sender, e);
+            }
+            catch
+            {
+                MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

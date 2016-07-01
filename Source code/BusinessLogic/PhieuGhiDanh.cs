@@ -56,7 +56,7 @@ namespace BusinessLogic
         /// Danh sách nợ học phí
         /// </summary>
         /// <returns></returns>
-        public static object DanhSachNoHocPhi()
+        public static object ThongKeDanhSachNoHocPhi()
         {
             return (from p in Database.PHIEUGHIDANHs
                     where p.ConNo > 0

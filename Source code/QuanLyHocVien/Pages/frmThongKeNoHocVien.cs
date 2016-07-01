@@ -36,7 +36,7 @@ namespace QuanLyHocVien.Pages
 
             Thread th = new Thread(() =>
             {
-                object source = PhieuGhiDanh.DanhSachNoHocPhi();
+                object source = PhieuGhiDanh.ThongKeDanhSachNoHocPhi();
 
                 gridBaoCao.Invoke((MethodInvoker)delegate
                 {

@@ -1,17 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLHVTTEC" Class="QuanLyHocVienDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=HOANGTUAN\SQLEXPRESS;Initial Catalog=QLHVTTEC;Integrated Security=True;Encrypt=False;TrustServerCertificate=True" SettingsObjectName="DataAccess.Properties.Settings" SettingsPropertyName="QLHVTTECConnectionString1" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.BANGDIEM" Member="BANGDIEMs">
-    <Type Name="BANGDIEM">
-      <Column Name="MaHV" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaLop" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="DiemNghe" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DiemNoi" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DiemDoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DiemViet" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="HOCVIEN_BANGDIEM" Member="HOCVIEN" ThisKey="MaHV" OtherKey="MaHV" Type="HOCVIEN" IsForeignKey="true" />
-      <Association Name="LOPHOC_BANGDIEM" Member="LOPHOC" ThisKey="MaLop" OtherKey="MaLop" Type="LOPHOC" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.CHITIETTRUNGTAM" Member="CHITIETTRUNGTAMs">
     <Type Name="CHITIETTRUNGTAM">
       <Column Name="TenTT" Type="System.String" DbType="NVarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -63,8 +51,8 @@
       <Column Name="MaLoaiHV" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
       <Column Name="NgayTiepNhan" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
       <Column Name="TenDangNhap" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Association Name="HOCVIEN_BANGDIEM" Member="BANGDIEMs" ThisKey="MaHV" OtherKey="MaHV" Type="BANGDIEM" />
       <Association Name="HOCVIEN_DANGKY" Member="DANGKies" ThisKey="MaHV" OtherKey="MaHV" Type="DANGKY" Cardinality="One" />
+      <Association Name="HOCVIEN_BANGDIEM" Member="BANGDIEMs" ThisKey="MaHV" OtherKey="MaHV" Type="BANGDIEM" />
       <Association Name="LOAIHV_HOCVIEN" Member="LOAIHV" ThisKey="MaLoaiHV" OtherKey="MaLoaiHV" Type="LOAIHV" IsForeignKey="true" />
       <Association Name="TAIKHOAN_HOCVIEN" Member="TAIKHOAN" ThisKey="TenDangNhap" OtherKey="TenDangNhap" Type="TAIKHOAN" IsForeignKey="true" />
     </Type>
@@ -78,8 +66,8 @@
       <Column Name="HeSoNoi" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="HeSoDoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="HeSoViet" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="KHOAHOC_LOPHOC" Member="LOPHOCs" ThisKey="MaKH" OtherKey="MaKH" Type="LOPHOC" />
       <Association Name="KHOAHOC_DANGKY" Member="DANGKies" ThisKey="MaKH" OtherKey="MaKH" Type="DANGKY" Cardinality="One" />
+      <Association Name="KHOAHOC_LOPHOC" Member="LOPHOCs" ThisKey="MaKH" OtherKey="MaKH" Type="LOPHOC" />
     </Type>
   </Table>
   <Table Name="dbo.LOAIHV" Member="LOAIHVs">
@@ -105,8 +93,8 @@
       <Column Name="SiSo" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaKH" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
       <Column Name="DangMo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="LOPHOC_BANGDIEM" Member="BANGDIEMs" ThisKey="MaLop" OtherKey="MaLop" Type="BANGDIEM" />
       <Association Name="LOPHOC_GIANGDAY" Member="GIANGDAYs" ThisKey="MaLop" OtherKey="MaLop" Type="GIANGDAY" />
+      <Association Name="LOPHOC_BANGDIEM" Member="BANGDIEMs" ThisKey="MaLop" OtherKey="MaLop" Type="BANGDIEM" />
       <Association Name="KHOAHOC_LOPHOC" Member="KHOAHOC" ThisKey="MaKH" OtherKey="MaKH" Type="KHOAHOC" IsForeignKey="true" />
     </Type>
   </Table>
@@ -131,6 +119,7 @@
       <Column Name="ConNo" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="MaNV" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
       <Association Name="PHIEUGHIDANH_DANGKY" Member="DANGKies" ThisKey="MaPhieu" OtherKey="MaPhieu" Type="DANGKY" Cardinality="One" />
+      <Association Name="PHIEUGHIDANH_BANGDIEM" Member="BANGDIEMs" ThisKey="MaPhieu" OtherKey="MaPhieu" Type="BANGDIEM" />
       <Association Name="NHANVIEN_PHIEUGHIDANH" Member="NHANVIEN" ThisKey="MaNV" OtherKey="MaNV" Type="NHANVIEN" IsForeignKey="true" />
     </Type>
   </Table>
@@ -148,6 +137,20 @@
       <Association Name="TAIKHOAN_GIANGVIEN" Member="GIANGVIENs" ThisKey="TenDangNhap" OtherKey="TenDangNhap" Type="GIANGVIEN" />
       <Association Name="TAIKHOAN_HOCVIEN" Member="HOCVIENs" ThisKey="TenDangNhap" OtherKey="TenDangNhap" Type="HOCVIEN" />
       <Association Name="TAIKHOAN_NHANVIEN" Member="NHANVIENs" ThisKey="TenDangNhap" OtherKey="TenDangNhap" Type="NHANVIEN" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BANGDIEM" Member="BANGDIEMs">
+    <Type Name="BANGDIEM">
+      <Column Name="MaHV" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaLop" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaPhieu" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DiemNghe" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiemNoi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiemDoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiemViet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="HOCVIEN_BANGDIEM" Member="HOCVIEN" ThisKey="MaHV" OtherKey="MaHV" Type="HOCVIEN" IsForeignKey="true" />
+      <Association Name="LOPHOC_BANGDIEM" Member="LOPHOC" ThisKey="MaLop" OtherKey="MaLop" Type="LOPHOC" IsForeignKey="true" />
+      <Association Name="PHIEUGHIDANH_BANGDIEM" Member="PHIEUGHIDANH" ThisKey="MaPhieu" OtherKey="MaPhieu" Type="PHIEUGHIDANH" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

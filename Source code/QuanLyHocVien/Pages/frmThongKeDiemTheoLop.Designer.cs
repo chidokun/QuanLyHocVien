@@ -82,9 +82,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(18, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 15);
+            this.label1.Size = new System.Drawing.Size(159, 15);
             this.label1.TabIndex = 1;
-            this.label1.Text = "QUẢN LÝ ĐIỂM";
+            this.label1.Text = "THỐNG KÊ ĐIỂM THEO LỚP";
             // 
             // btnClose
             // 

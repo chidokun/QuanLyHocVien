@@ -26,23 +26,13 @@ namespace QuanLyHocVien.Pages
         {
             btnDatLai_Click(sender, e);
 
+            gridLop.AutoGenerateColumns = false;
+
             cboKhoaHoc.DataSource = KhoaHoc.SelectAll();
             cboKhoaHoc.DisplayMember = "TenKH";
             cboKhoaHoc.ValueMember = "MaKH";
 
-            btnXemTatCa_Click(sender, e);
-
-            lblTenLop.Text = string.Empty;
-            lblMaLop.Text = string.Empty;
-            lblTenKH.Text = string.Empty;
-            lblNgayBD.Text = string.Empty;
-            lblNgayKT.Text = string.Empty;
-            lblSiSo.Text = string.Empty;
-            lblDaDong.Text = string.Empty;
-            lblConNo.Text = string.Empty;
-            lblTongNoTatCa.Text = string.Empty;
-
-            gridLop.AutoGenerateColumns = false;
+            btnXemTatCa_Click(sender, e);            
         }
 
         private void rdKhoangThoiGian_CheckedChanged(object sender, EventArgs e)
@@ -79,9 +69,29 @@ namespace QuanLyHocVien.Pages
         {
             try
             {
-
+                var f = BangDiem.Select(GlobalSettings.UserID, gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString());
+                lblTenLop.Text = f.LOPHOC.TenLop;
+                lblMaLop.Text = f.MaLop;
+                lblTenKH.Text = f.LOPHOC.KHOAHOC.TenKH;
+                lblNgayBD.Text = f.LOPHOC.NgayBD.Value.ToShortDateString();
+                lblNgayKT.Text = f.LOPHOC.NgayKT.Value.ToShortDateString();
+                lblSiSo.Text = f.LOPHOC.SiSo.ToString();
+                lblDaDong.Text = ((decimal)f.PHIEUGHIDANH.DaDong).ToString("C0");
+                lblConNo.Text = ((decimal)f.PHIEUGHIDANH.ConNo).ToString("C0");
+                lblTongNoTatCa.Text = BangDiem.TongNoCacLop(GlobalSettings.UserID).ToString("C0");
             }
-            catch { }
+            catch
+            {
+                lblTenLop.Text = string.Empty;
+                lblMaLop.Text = string.Empty;
+                lblTenKH.Text = string.Empty;
+                lblNgayBD.Text = string.Empty;
+                lblNgayKT.Text = string.Empty;
+                lblSiSo.Text = string.Empty;
+                lblDaDong.Text = string.Empty;
+                lblConNo.Text = string.Empty;
+                lblTongNoTatCa.Text = string.Empty;
+            }
         }
     }
 }

@@ -89,7 +89,7 @@ namespace QuanLyHocVien
         private void btnThongTinPhanMem_Click(object sender, EventArgs e)
         {
             frmThongTinPhanMem frm = new frmThongTinPhanMem();
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void btnTiepNhanHocVien_Click(object sender, EventArgs e)
@@ -466,6 +466,7 @@ namespace QuanLyHocVien
             btnQuanLyHocPhi.Enabled = true;
             btnQuanLyTaiKhoan.Enabled = true;
             btnThayDoiQuyDinh.Enabled = true;
+            btnKetNoiCSDL.Enabled = true;
             btnQuanLyTaiKhoan.Enabled = true;
             btnThongTinTrungTam.Enabled = true;
         }
@@ -556,6 +557,7 @@ namespace QuanLyHocVien
                             btnQuanLyHocPhi.Enabled = false;
                             btnQuanLyTaiKhoan.Enabled = false;
                             btnThayDoiQuyDinh.Enabled = false;
+                            btnKetNoiCSDL.Enabled = false;
                             btnQuanLyTaiKhoan.Enabled = false;
                             btnThongTinTrungTam.Enabled = false;
                             btnNhanVienTitle_Click(btnNhanVienTitle, null);
@@ -577,6 +579,7 @@ namespace QuanLyHocVien
                             btnQuanLyKhoaHoc.Enabled = false;
                             btnQuanLyTaiKhoan.Enabled = false;
                             btnThayDoiQuyDinh.Enabled = false;
+                            btnKetNoiCSDL.Enabled = false;
                             btnQuanLyTaiKhoan.Enabled = false;
                             btnThongTinTrungTam.Enabled = false;
                             btnNhanVienTitle_Click(btnNhanVienTitle, null);
@@ -611,6 +614,9 @@ namespace QuanLyHocVien
         public void LoadGiaoDien()
         {
             ResetRibbonControlStatus();
+
+            lblUserName.Text = GlobalSettings.UserName;
+
             PhanQuyen(GlobalSettings.UserType, GlobalSettings.UserName);
             pnlWorkspace.Controls.Clear();
 

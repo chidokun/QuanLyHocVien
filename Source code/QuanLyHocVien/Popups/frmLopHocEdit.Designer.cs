@@ -296,6 +296,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLopHocEdit";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm lớp học";
             this.Load += new System.EventHandler(this.frmLopHocEdit_Load);

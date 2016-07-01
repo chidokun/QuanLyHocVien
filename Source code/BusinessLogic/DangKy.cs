@@ -23,5 +23,19 @@ namespace BusinessLogic
             Database.DANGKies.InsertOnSubmit(dk);
             Database.SubmitChanges();
         }
+
+        /// <summary>
+        /// Chọn một đăng ký
+        /// </summary>
+        /// <param name="maHV">Mã học viên</param>
+        /// <param name="maKH">Mã khóa học</param>
+        /// <param name="maPhieu">Mã phiếu</param>
+        /// <returns></returns>
+        public static DANGKY Select(string maHV, string maKH, string maPhieu)
+        {
+            return (from p in Database.DANGKies
+                    where p.MaHV == maHV && p.MaKH == maKH && p.MaPhieu == maPhieu
+                    select p).Single();
+        }
     }
 }

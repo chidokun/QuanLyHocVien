@@ -69,7 +69,7 @@ namespace QuanLyHocVien
                 if (QuanLyGiangVien == null) QuanLyGiangVien = new frmQuanLyGiangVien() { Dock = DockStyle.Fill, TopLevel = false };
                 if (QuanLyLopHoc == null) QuanLyLopHoc = new frmQuanLyLopHoc() { Dock = DockStyle.Fill, TopLevel = false };
                 if (QuanLyKhoaHoc == null) QuanLyKhoaHoc = new frmQuanLyKhoaHoc() { Dock = DockStyle.Fill, TopLevel = false };
-                //if (QuanLyHocPhi == null) QuanLyHocPhi = new frmQuanLyHocPhi(){ Dock = DockStyle.Fill, TopLevel = false };
+                if (QuanLyHocPhi == null) QuanLyHocPhi = new frmQuanLyHocPhi(){ Dock = DockStyle.Fill, TopLevel = false };
                 if (QuanLyTaiKhoan == null) QuanLyTaiKhoan = new frmQuanLyTaiKhoan() { Dock = DockStyle.Fill, TopLevel = false };
 
             });

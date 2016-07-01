@@ -62,21 +62,12 @@ namespace BusinessLogic
         /// Chọn danh sách học viên chưa có lớp
         /// </summary>
         /// <returns></returns>
-        public static List<HOCVIEN> DanhSachChuaCoLop()
+        public static List<DANGKY> DanhSachChuaCoLop()
         {
-            return (from p in Database.HOCVIENs
-                    where (((from q in Database.BANGDIEMs
-                            where p.MaHV == q.MaHV
-                            select q).Count()) < (from r in Database.DANGKies
-                                                  where p.MaHV == r.MaHV
-                                                  select r).Count())
+            return (from p in Database.DANGKies
+                    where !(from q in Database.BANGDIEMs
+                            select q.MaPhieu).Contains(p.MaPhieu)
                     select p).ToList();
-            //select new
-            //{
-            //    MaHV = p.MaHV,
-            //    TenHV = p.TenHV,
-            //    TenKH = p.DANGKies.KHOAHOC.TenKH
-            //}).ToList();
         }
 
         /// <summary>

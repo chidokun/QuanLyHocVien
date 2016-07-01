@@ -98,7 +98,7 @@ namespace QuanLyHocVien.Pages
 
         private void gridThongKe_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            lblTongCong.Text = string.Format("Tổng cộng: {0} học viên. Điểm trung bình của lớp: {1} điểm.", gridThongKe.Rows.Count, DiemTrungBinhLop());
+            lblTongCong.Text = string.Format("Tổng cộng: {0} học viên. Điểm trung bình của lớp: {1:N2} điểm.", gridThongKe.Rows.Count, DiemTrungBinhLop());
         }
 
         private void frmThongKeDiemTheoLop_Load(object sender, EventArgs e)

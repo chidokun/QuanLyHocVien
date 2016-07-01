@@ -57,18 +57,18 @@
             this.txtMaHV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.gridDSHV = new System.Windows.Forms.DataGridView();
-            this.clmMaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTenHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSdtHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblTongCong = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.clmMaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTenHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSdtHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -408,6 +408,7 @@
             // 
             // gridDSHV
             // 
+            this.gridDSHV.AllowUserToAddRows = false;
             this.gridDSHV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -434,44 +435,6 @@
             this.gridDSHV.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridDSHV_RowsRemoved);
             this.gridDSHV.Click += new System.EventHandler(this.gridDSHV_Click);
             this.gridDSHV.DoubleClick += new System.EventHandler(this.gridDSHV_DoubleClick);
-            // 
-            // clmMaHV
-            // 
-            this.clmMaHV.DataPropertyName = "MaHV";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle1;
-            this.clmMaHV.HeaderText = "Mã học viên";
-            this.clmMaHV.Name = "clmMaHV";
-            // 
-            // clmTenHV
-            // 
-            this.clmTenHV.DataPropertyName = "TenHV";
-            this.clmTenHV.HeaderText = "Họ và tên";
-            this.clmTenHV.Name = "clmTenHV";
-            // 
-            // clmNgaySinh
-            // 
-            this.clmNgaySinh.DataPropertyName = "NgaySinh";
-            this.clmNgaySinh.HeaderText = "Ngày sinh";
-            this.clmNgaySinh.Name = "clmNgaySinh";
-            // 
-            // clmGioiTinh
-            // 
-            this.clmGioiTinh.DataPropertyName = "GioiTinhHV";
-            this.clmGioiTinh.HeaderText = "Giới tính";
-            this.clmGioiTinh.Name = "clmGioiTinh";
-            // 
-            // clmSdtHV
-            // 
-            this.clmSdtHV.DataPropertyName = "SdtHV";
-            this.clmSdtHV.HeaderText = "SĐT";
-            this.clmSdtHV.Name = "clmSdtHV";
-            // 
-            // clmEmail
-            // 
-            this.clmEmail.DataPropertyName = "EmailHV";
-            this.clmEmail.HeaderText = "Email";
-            this.clmEmail.Name = "clmEmail";
             // 
             // panel3
             // 
@@ -550,6 +513,44 @@
             this.btnThem.Text = "Thêm học viên";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // clmMaHV
+            // 
+            this.clmMaHV.DataPropertyName = "MaHV";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle1;
+            this.clmMaHV.HeaderText = "Mã học viên";
+            this.clmMaHV.Name = "clmMaHV";
+            // 
+            // clmTenHV
+            // 
+            this.clmTenHV.DataPropertyName = "TenHV";
+            this.clmTenHV.HeaderText = "Họ và tên";
+            this.clmTenHV.Name = "clmTenHV";
+            // 
+            // clmNgaySinh
+            // 
+            this.clmNgaySinh.DataPropertyName = "NgaySinh";
+            this.clmNgaySinh.HeaderText = "Ngày sinh";
+            this.clmNgaySinh.Name = "clmNgaySinh";
+            // 
+            // clmGioiTinh
+            // 
+            this.clmGioiTinh.DataPropertyName = "GioiTinhHV";
+            this.clmGioiTinh.HeaderText = "Giới tính";
+            this.clmGioiTinh.Name = "clmGioiTinh";
+            // 
+            // clmSdtHV
+            // 
+            this.clmSdtHV.DataPropertyName = "SdtHV";
+            this.clmSdtHV.HeaderText = "SĐT";
+            this.clmSdtHV.Name = "clmSdtHV";
+            // 
+            // clmEmail
+            // 
+            this.clmEmail.DataPropertyName = "EmailHV";
+            this.clmEmail.HeaderText = "Email";
+            this.clmEmail.Name = "clmEmail";
             // 
             // frmTiepNhanHocVien
             // 

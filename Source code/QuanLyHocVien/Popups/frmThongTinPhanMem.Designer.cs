@@ -359,6 +359,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThongTinPhanMem";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin phần mềm";
             this.Load += new System.EventHandler(this.frmThongTinPhanMem_Load);

@@ -259,6 +259,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThayDoiThongTinGV";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thay đổi thông tin giảng viên";
             this.Load += new System.EventHandler(this.frmThayDoiThongTinGV_Load);

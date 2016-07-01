@@ -247,6 +247,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThongTinTrungTam";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin trung tâm";
             this.Load += new System.EventHandler(this.frmThongTinTrungTam_Load);

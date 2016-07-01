@@ -126,6 +126,24 @@ namespace BusinessLogic
         }
 
         /// <summary>
+        /// Tổng nợ tất cả các lớp đã học
+        /// </summary>
+        /// <param name="maHV"></param>
+        /// <returns></returns>
+        public static decimal TongNoCacLop(string maHV)
+        {
+            var f = from p in Database.BANGDIEMs
+                    where p.MaHV == maHV
+                    select p;
+
+            decimal result = 0;
+            foreach (var i in f)
+                result += (decimal)i.PHIEUGHIDANH.ConNo;
+
+            return result;
+        }
+
+        /// <summary>
         /// Lấy bảng điểm trung bình của lớp
         /// </summary>
         /// <param name="maLop">Mã lớp</param>
@@ -150,6 +168,16 @@ namespace BusinessLogic
         }
 
         /// <summary>
+        /// Thêm một bảng điểm
+        /// </summary>
+        /// <param name="bd">Bảng điểm cần thêm</param>
+        public static void Insert(BANGDIEM bd)
+        {
+            Database.BANGDIEMs.InsertOnSubmit(bd);
+            Database.SubmitChanges();
+        }
+
+        /// <summary>
         /// Cập nhật bảng điểm
         /// </summary>
         /// <param name="b"></param>
@@ -163,6 +191,33 @@ namespace BusinessLogic
             temp.DiemViet = b.DiemViet;
 
             Database.SubmitChanges();
+        }
+
+        /// <summary>
+        /// Tìm danh sách học viên nợ học phí
+        /// </summary>
+        /// <param name="maHV">Mã học viên</param>
+        /// <param name="tenHV">Tên học viên</param>
+        /// <param name="gioiTinh">Giới tính</param>
+        /// <param name="_from">Số tiền từ bao nhiêu</param>
+        /// <param name="to">Số tiền đến bao nhiêu</param>
+        /// <returns></returns>
+        public static object DanhSachNoHocPhi(string maHV = null, string tenHV = null, string gioiTinh = null, decimal? _from = null, decimal? _to = null)
+        {
+            return (from p in Database.BANGDIEMs
+                    where p.PHIEUGHIDANH.ConNo > 0 &&
+                          (maHV == null ? true : p.MaHV.Contains(maHV)) &&
+                          (tenHV == null ? true : p.HOCVIEN.TenHV.Contains(tenHV)) &&
+                          (gioiTinh == null ? true : p.HOCVIEN.GioiTinhHV == gioiTinh) &&
+                          (_from == null || _to == null ? true : p.PHIEUGHIDANH.ConNo >= _from && p.PHIEUGHIDANH.ConNo <= _to)
+                    select new
+                    {
+                        MaHV = p.MaHV,
+                        TenHV = p.HOCVIEN.TenHV,
+                        GioiTinhHV = p.HOCVIEN.GioiTinhHV,
+                        MaLop = p.MaLop,
+                        ConNo = p.PHIEUGHIDANH.ConNo
+                    }).ToList();
         }
     }
 }

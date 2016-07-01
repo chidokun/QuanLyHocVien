@@ -322,6 +322,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmNhanVienEdit";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm nhân viên";
             this.Load += new System.EventHandler(this.frmNhanVienEdit_Load);
