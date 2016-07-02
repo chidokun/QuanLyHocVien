@@ -49,6 +49,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnXemTatCa = new System.Windows.Forms.Button();
             this.gridKetQuaTimKiem = new System.Windows.Forms.DataGridView();
+            this.clmMaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -64,8 +66,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.lblTenLop = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.clmMaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -102,11 +102,13 @@
             this.btnDatLai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnDatLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatLai.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnDatLai.Image = global::QuanLyHocVien.Properties.Resources.refresh_16x16;
             this.btnDatLai.Location = new System.Drawing.Point(229, 243);
             this.btnDatLai.Name = "btnDatLai";
             this.btnDatLai.Size = new System.Drawing.Size(82, 29);
             this.btnDatLai.TabIndex = 44;
             this.btnDatLai.Text = "Đặt lại";
+            this.btnDatLai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDatLai.UseVisualStyleBackColor = false;
             this.btnDatLai.Click += new System.EventHandler(this.btnDatLai_Click);
             // 
@@ -120,11 +122,13 @@
             this.btnTimKiem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnTimKiem.Location = new System.Drawing.Point(132, 243);
+            this.btnTimKiem.Image = global::QuanLyHocVien.Properties.Resources.zoom_16x16;
+            this.btnTimKiem.Location = new System.Drawing.Point(121, 243);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(91, 29);
+            this.btnTimKiem.Size = new System.Drawing.Size(102, 29);
             this.btnTimKiem.TabIndex = 43;
             this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = false;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
@@ -287,11 +291,13 @@
             this.btnXemTatCa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnXemTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXemTatCa.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnXemTatCa.Image = global::QuanLyHocVien.Properties.Resources.show_16x16;
             this.btnXemTatCa.Location = new System.Drawing.Point(209, 401);
             this.btnXemTatCa.Name = "btnXemTatCa";
             this.btnXemTatCa.Size = new System.Drawing.Size(113, 29);
             this.btnXemTatCa.TabIndex = 45;
             this.btnXemTatCa.Text = "Xem tất cả";
+            this.btnXemTatCa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXemTatCa.UseVisualStyleBackColor = false;
             this.btnXemTatCa.Click += new System.EventHandler(this.btnXemTatCa_Click);
             // 
@@ -317,6 +323,23 @@
             this.gridKetQuaTimKiem.Size = new System.Drawing.Size(299, 340);
             this.gridKetQuaTimKiem.TabIndex = 36;
             this.gridKetQuaTimKiem.Click += new System.EventHandler(this.gridKetQuaTimKiem_Click);
+            // 
+            // clmMaLop
+            // 
+            this.clmMaLop.DataPropertyName = "MaLop";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaLop.DefaultCellStyle = dataGridViewCellStyle1;
+            this.clmMaLop.FillWeight = 50F;
+            this.clmMaLop.HeaderText = "Mã";
+            this.clmMaLop.Name = "clmMaLop";
+            // 
+            // clmTenLop
+            // 
+            this.clmTenLop.DataPropertyName = "TenLop";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green;
+            this.clmTenLop.DefaultCellStyle = dataGridViewCellStyle2;
+            this.clmTenLop.HeaderText = "Tên lớp";
+            this.clmTenLop.Name = "clmTenLop";
             // 
             // label5
             // 
@@ -487,23 +510,6 @@
             this.label6.Size = new System.Drawing.Size(101, 15);
             this.label6.TabIndex = 35;
             this.label6.Text = "Thông tin lớp dạy";
-            // 
-            // clmMaLop
-            // 
-            this.clmMaLop.DataPropertyName = "MaLop";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaLop.DefaultCellStyle = dataGridViewCellStyle1;
-            this.clmMaLop.FillWeight = 50F;
-            this.clmMaLop.HeaderText = "Mã";
-            this.clmMaLop.Name = "clmMaLop";
-            // 
-            // clmTenLop
-            // 
-            this.clmTenLop.DataPropertyName = "TenLop";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green;
-            this.clmTenLop.DefaultCellStyle = dataGridViewCellStyle2;
-            this.clmTenLop.HeaderText = "Tên lớp";
-            this.clmTenLop.Name = "clmTenLop";
             // 
             // frmXemCacLopDay
             // 

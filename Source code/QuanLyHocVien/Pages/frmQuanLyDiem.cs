@@ -83,7 +83,7 @@ namespace QuanLyHocVien.Pages
         {
             thLop = new Thread(() =>
             {
-                object source = LopHoc.Select(txtMaLop.Text);
+                object source = LopHoc.SelectAll(txtMaLop.Text);
 
                 gridLop.Invoke((MethodInvoker)delegate
                 {

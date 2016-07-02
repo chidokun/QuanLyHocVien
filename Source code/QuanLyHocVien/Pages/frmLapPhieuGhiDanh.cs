@@ -8,12 +8,18 @@ using System.Windows.Forms;
 using BusinessLogic;
 using DataAccess;
 using System.Threading;
+using QuanLyHocVien.Reports;
+using Microsoft.Reporting.WinForms;
+using System.Collections.Generic;
 
 namespace QuanLyHocVien.Pages
 {
     public partial class frmLapPhieuGhiDanh : Form
     {
         private Thread thHocVien;
+        private string maPhieu;
+        private string maHV;
+        private string maKH;
 
         public frmLapPhieuGhiDanh()
         {
@@ -27,12 +33,12 @@ namespace QuanLyHocVien.Pages
         {
             //thPhieuGhiDanh = new Thread(() =>
             //{
-                object source = PhieuGhiDanh.SelectAll();
+            object source = PhieuGhiDanh.SelectAll();
 
-                //gridPhieuGhiDanh.Invoke((MethodInvoker)delegate
-               // {
-                    gridPhieuGhiDanh.DataSource = source;
-                //});
+            //gridPhieuGhiDanh.Invoke((MethodInvoker)delegate
+            // {
+            gridPhieuGhiDanh.DataSource = source;
+            //});
             //});
             //thPhieuGhiDanh.Start();
         }
@@ -74,7 +80,7 @@ namespace QuanLyHocVien.Pages
                     gridDSHV.DataSource = source;
                 });
             });
-            thHocVien.Start();            
+            thHocVien.Start();
         }
 
         private void gridDSHV_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -91,11 +97,11 @@ namespace QuanLyHocVien.Pages
         {
             if (rdMaHV.Checked)
             {
-                gridDSHV.DataSource = HocVien.SelectAll(txtMaHV.Text,null,null,null,null,null);
+                gridDSHV.DataSource = HocVien.SelectAll(txtMaHV.Text, null, null, null, null, null);
             }
             else if (rdTenHV.Checked)
             {
-                gridDSHV.DataSource = HocVien.SelectAll(null,txtTenHV.Text,null,null,null,null);
+                gridDSHV.DataSource = HocVien.SelectAll(null, txtTenHV.Text, null, null, null, null);
             }
         }
 
@@ -110,7 +116,7 @@ namespace QuanLyHocVien.Pages
 
             //load danh sách phiếu
             LoadPhieuGhiDanh();
-            
+
             //load danh sách học viên
             btnHienTatCa_Click(sender, e);
         }
@@ -148,9 +154,12 @@ namespace QuanLyHocVien.Pages
         {
             try
             {
+                maPhieu = txtMaPhieu.Text;
+                maHV = gridDSHV.SelectedRows[0].Cells["clmMaHV"].Value.ToString();
+                maKH = ((KHOAHOC)cboKhoaHoc.SelectedValue).MaKH;
                 PhieuGhiDanh.Insert(new PHIEUGHIDANH()
                 {
-                    MaPhieu = txtMaPhieu.Text,
+                    MaPhieu = maPhieu,
                     NgayGhiDanh = dateNgayGhiDanh.Value,
                     DaDong = numDaDong.Value,
                     ConNo = numConNo.Value,
@@ -158,20 +167,56 @@ namespace QuanLyHocVien.Pages
 
                     DANGKies = new DANGKY()
                     {
-                        MaHV = gridDSHV.SelectedRows[0].Cells["clmMaHV"].Value.ToString(),
-                        MaKH = ((KHOAHOC)cboKhoaHoc.SelectedValue).MaKH,
-                        MaPhieu = txtMaPhieu.Text
+                        MaHV = maHV,
+                        MaKH = maKH,
+                        MaPhieu = maPhieu
                     }
                 });
                 MessageBox.Show("Thêm phiếu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 LoadPhieuGhiDanh();
-                btnDatLaiPhieu_Click(sender, e);
             }
             catch
             {
                 MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnInBienLai_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn lưu phiếu?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                btnLuuPhieu_Click(sender, e);
+
+                frmReport frm = new frmReport();
+
+                DANGKY d = DangKy.Select(maHV, maKH, maPhieu);
+
+                List<ReportParameter> _params = new List<ReportParameter>()
+                {
+                    new ReportParameter("CenterName", GlobalSettings.CenterName),
+                    new ReportParameter("CenterWebsite", GlobalSettings.CenterWebsite),
+                    new ReportParameter("MaHV", maHV),
+                    new ReportParameter("TenHV", d.HOCVIEN.TenHV),
+                    new ReportParameter("TenKH", d.KHOAHOC.TenKH),
+                    new ReportParameter("HocPhi",((decimal)d.KHOAHOC.HocPhi).ToString("C0")),
+                    new ReportParameter("DaDong", ((decimal)d.PHIEUGHIDANH.DaDong).ToString("C0")),
+                    new ReportParameter("ConNo", ((decimal)d.PHIEUGHIDANH.ConNo).ToString("C0")),
+                };
+
+                frm.ReportViewer.LocalReport.ReportEmbeddedResource = "QuanLyHocVien.Reports.rptBienLaiHocPhi.rdlc";
+
+                frm.ReportViewer.LocalReport.SetParameters(_params);
+                frm.ReportViewer.LocalReport.DisplayName = "Biên lai học phí";
+                frm.Text = "Biên lai học phí";
+
+                frm.ShowDialog();
+            }
+        }
+
+        private void gridDSHV_Click(object sender, EventArgs e)
+        {
+            btnDatLaiPhieu_Click(sender, e);
         }
     }
 }

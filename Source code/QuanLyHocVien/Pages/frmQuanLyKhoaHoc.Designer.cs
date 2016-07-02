@@ -342,11 +342,13 @@
             this.btnHuyBo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuyBo.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnHuyBo.Image = global::QuanLyHocVien.Properties.Resources.cancel_16x16;
             this.btnHuyBo.Location = new System.Drawing.Point(233, 317);
             this.btnHuyBo.Name = "btnHuyBo";
             this.btnHuyBo.Size = new System.Drawing.Size(107, 34);
             this.btnHuyBo.TabIndex = 18;
             this.btnHuyBo.Text = "Hủy bỏ";
+            this.btnHuyBo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHuyBo.UseVisualStyleBackColor = false;
             this.btnHuyBo.Click += new System.EventHandler(this.btnHuyBo_Click);
             // 
@@ -359,11 +361,13 @@
             this.btnLuuThongTin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLuuThongTin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuuThongTin.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnLuuThongTin.Location = new System.Drawing.Point(120, 317);
+            this.btnLuuThongTin.Image = global::QuanLyHocVien.Properties.Resources.save_16x16;
+            this.btnLuuThongTin.Location = new System.Drawing.Point(106, 317);
             this.btnLuuThongTin.Name = "btnLuuThongTin";
-            this.btnLuuThongTin.Size = new System.Drawing.Size(107, 34);
+            this.btnLuuThongTin.Size = new System.Drawing.Size(121, 34);
             this.btnLuuThongTin.TabIndex = 17;
             this.btnLuuThongTin.Text = "Lưu thông tin";
+            this.btnLuuThongTin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuuThongTin.UseVisualStyleBackColor = false;
             this.btnLuuThongTin.Click += new System.EventHandler(this.btnLuuThongTin_Click);
             // 
@@ -521,11 +525,13 @@
             this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXoa.Image = global::QuanLyHocVien.Properties.Resources.deletelist_16x16;
             this.btnXoa.Location = new System.Drawing.Point(210, 6);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(71, 25);
             this.btnXoa.TabIndex = 20;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -537,11 +543,13 @@
             this.btnSua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSua.Image = global::QuanLyHocVien.Properties.Resources.edit_16x16;
             this.btnSua.Location = new System.Drawing.Point(133, 6);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(71, 25);
             this.btnSua.TabIndex = 19;
             this.btnSua.Text = "Sửa";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -553,11 +561,13 @@
             this.btnThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThem.Image = global::QuanLyHocVien.Properties.Resources.additem_16x16;
             this.btnThem.Location = new System.Drawing.Point(12, 6);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(115, 25);
             this.btnThem.TabIndex = 18;
             this.btnThem.Text = "Thêm khóa học";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 

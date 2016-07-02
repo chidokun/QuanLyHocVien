@@ -81,6 +81,18 @@ namespace BusinessLogic
         }
 
         /// <summary>
+        /// Tìm một lớp
+        /// </summary>
+        /// <param name="maLop">Mã lớp</param>
+        /// <returns></returns>
+        public static object SelectAll(string maLop)
+        {
+            return (from p in Database.LOPHOCs
+                    where p.MaLop.Contains(maLop)
+                    select p);
+        }
+
+        /// <summary>
         /// Lấy danh sách lớp trống
         /// </summary>
         /// <param name="maKhoa">Mã khóa học</param>

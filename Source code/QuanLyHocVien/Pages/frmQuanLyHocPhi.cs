@@ -6,6 +6,10 @@
 using System;
 using System.Windows.Forms;
 using BusinessLogic;
+using QuanLyHocVien.Reports;
+using DataAccess;
+using System.Collections.Generic;
+using Microsoft.Reporting.WinForms;
 
 namespace QuanLyHocVien.Pages
 {
@@ -108,6 +112,31 @@ namespace QuanLyHocVien.Pages
         private void btnLuuLai_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnInBienLai_Click(object sender, EventArgs e)
+        {
+            frmReport frm = new frmReport();
+
+            List<ReportParameter> _params = new List<ReportParameter>()
+                {
+                    new ReportParameter("CenterName", GlobalSettings.CenterName),
+                    new ReportParameter("CenterWebsite", GlobalSettings.CenterWebsite),
+                    new ReportParameter("MaHV", lblMaHV.Text),
+                    new ReportParameter("TenHV", lblTenHV.Text),
+                    new ReportParameter("TenKH", lblTenKH.Text),
+                    new ReportParameter("HocPhi",lblHocPhi.Text),
+                    new ReportParameter("DaDong", lblDaDong.Text),
+                    new ReportParameter("ConNo", lblConNo.Text),
+                };
+
+            frm.ReportViewer.LocalReport.ReportEmbeddedResource = "QuanLyHocVien.Reports.rptBienLaiHocPhi.rdlc";
+
+            frm.ReportViewer.LocalReport.SetParameters(_params);
+            frm.ReportViewer.LocalReport.DisplayName = "Biên lai học phí";
+            frm.Text = "Biên lai học phí";
+
+            frm.ShowDialog();
         }
     }
 }

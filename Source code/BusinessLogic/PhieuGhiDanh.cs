@@ -12,6 +12,22 @@ using DataAccess;
 
 namespace BusinessLogic
 {
+    public struct BaoCaoHocVienNo
+    {
+        public string MaHV { get; set; }
+        public string TenHV { get; set; }
+        public string GioiTinhHV { get; set; }
+        public string TenKH { get; set; }
+        public decimal? ConNo { get; set; }
+    }
+    public struct BaoCaoHocVienGhiDanh
+    {
+        public string MaHV { get; set; }
+        public string TenHV { get; set; }
+        public string GioiTinhHV { get; set; }
+        public DateTime? NgayGhiDanh { get; set; }
+        public string TenKH { get; set; }
+    }
     public static class PhieuGhiDanh
     {
         /// <summary>
@@ -37,37 +53,37 @@ namespace BusinessLogic
         /// <param name="month">Tháng cần nhập</param>
         /// <param name="year">Năm cần nhập</param>
         /// <returns></returns>
-        public static object BaoCaoHocVienGhiDanhTheoThang(int month, int year)
+        public static IQueryable<BaoCaoHocVienGhiDanh> BaoCaoHocVienGhiDanhTheoThang(int month, int year)
         {
-            return (from p in Database.PHIEUGHIDANHs
+            return from p in Database.PHIEUGHIDANHs
                     where (p.NgayGhiDanh.Value.Month == month) &&
                           (p.NgayGhiDanh.Value.Year == year)
-                    select new
+                    select new BaoCaoHocVienGhiDanh()
                     {
                         MaHV = p.DANGKies.MaHV,
                         TenHV = p.DANGKies.HOCVIEN.TenHV,
                         GioiTinhHV = p.DANGKies.HOCVIEN.GioiTinhHV,
                         NgayGhiDanh = p.NgayGhiDanh,
                         TenKH = p.DANGKies.KHOAHOC.TenKH
-                    }).ToList();
+                    };
         }
 
         /// <summary>
         /// Danh sách nợ học phí
         /// </summary>
         /// <returns></returns>
-        public static object ThongKeDanhSachNoHocPhi()
+        public static IQueryable<BaoCaoHocVienNo> ThongKeDanhSachNoHocPhi()
         {
             return (from p in Database.PHIEUGHIDANHs
                     where p.ConNo > 0
-                    select new
+                    select new BaoCaoHocVienNo()
                     {
                         MaHV = p.DANGKies.MaHV,
                         TenHV = p.DANGKies.HOCVIEN.TenHV,
                         GioiTinhHV = p.DANGKies.HOCVIEN.GioiTinhHV,
                         TenKH = p.DANGKies.KHOAHOC.TenKH,
                         ConNo = p.ConNo
-                    }).ToList();
+                    });
         }
 
         /// <summary>

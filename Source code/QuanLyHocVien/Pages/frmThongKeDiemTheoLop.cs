@@ -8,6 +8,10 @@ using System.Windows.Forms;
 using BusinessLogic;
 using DataAccess;
 using System.Threading;
+using QuanLyHocVien.Reports;
+using Microsoft.Reporting.WinForms;
+using System.Data;
+using System.Collections.Generic;
 
 namespace QuanLyHocVien.Pages
 {
@@ -52,7 +56,7 @@ namespace QuanLyHocVien.Pages
                 });
             });
 
-            thLop.Start();  
+            thLop.Start();
         }
 
         private void btnDatLai_Click(object sender, EventArgs e)
@@ -105,8 +109,42 @@ namespace QuanLyHocVien.Pages
         {
             gridLop.AutoGenerateColumns = false;
 
-            btnHienTatCa_Click(sender,e);
+            btnHienTatCa_Click(sender, e);
             gridLop_Click(sender, e);
+        }
+
+        private void btnTaoBaoCao_Click(object sender, EventArgs e)
+        {
+            frmReport frm = new frmReport();
+
+            List<ReportParameter> _params = new List<ReportParameter>()
+            {
+                new ReportParameter("CenterName", GlobalSettings.CenterName),
+                new ReportParameter("CenterWebsite", GlobalSettings.CenterWebsite),
+                new ReportParameter("MaLop", gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString()),
+                new ReportParameter("TenLop", gridLop.SelectedRows[0].Cells["clmTenLop"].Value.ToString()),
+                new ReportParameter("DiemTBLop", string.Format("{0:N2}",DiemTrungBinhLop()))
+            };
+
+            frm.ReportViewer.LocalReport.ReportEmbeddedResource = "QuanLyHocVien.Reports.rptBangDiemLop.rdlc";
+
+            dsSource.dtBangDiemLopDataTable dt = new dsSource.dtBangDiemLopDataTable();
+            var query = BangDiem.SelectBangDiemLop(gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString());
+            foreach (var i in query)
+            {
+                dt.Rows.Add(i.MaHV, i.TenHV, i.DiemNghe, i.DiemNoi, i.DiemDoc, i.DiemViet, i.DiemTrungBinh);
+            }
+
+            frm.ReportViewer.LocalReport.DataSources.Clear();
+            frm.ReportViewer.LocalReport.DataSources.Add(new ReportDataSource("ds", (DataTable)dt));
+
+            frm.ReportViewer.LocalReport.SetParameters(_params);
+            frm.ReportViewer.LocalReport.DisplayName = "Bảng điểm lớp";
+            frm.Text = "Thống kê điểm theo lớp";
+
+
+
+            frm.ShowDialog();
         }
     }
 }

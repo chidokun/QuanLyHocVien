@@ -1,4 +1,4 @@
-﻿namespace QuanLyHocVien.Popups
+﻿namespace QuanLyHocVien.Reports
 {
     partial class frmReport
     {
@@ -28,36 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // reportViewer
+            // reportViewer1
             // 
-            this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer.Name = "reportViewer";
-            this.reportViewer.Size = new System.Drawing.Size(929, 562);
-            this.reportViewer.TabIndex = 0;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyHocVien.Reports.rptInBangDiem.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(659, 450);
+            this.reportViewer1.TabIndex = 0;
             // 
-            // frmReport
+            // frmInBangDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(929, 562);
-            this.Controls.Add(this.reportViewer);
+            this.ClientSize = new System.Drawing.Size(659, 450);
+            this.Controls.Add(this.reportViewer1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Name = "frmReport";
+            this.Name = "frmInBangDiem";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Báo biểu";
-            this.Load += new System.EventHandler(this.frmReport_Load);
+            this.Text = "In bảng điểm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmInBangDiem_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

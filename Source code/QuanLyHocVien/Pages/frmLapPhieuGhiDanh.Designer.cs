@@ -28,15 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.gridDSHV = new System.Windows.Forms.DataGridView();
+            this.clmMaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTenHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rdTenHV = new System.Windows.Forms.RadioButton();
             this.rdMaHV = new System.Windows.Forms.RadioButton();
             this.btnDatLai = new System.Windows.Forms.Button();
@@ -47,11 +52,6 @@
             this.btnHienTatCa = new System.Windows.Forms.Button();
             this.lblTongCongHV = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.gridDSHV = new System.Windows.Forms.DataGridView();
-            this.clmMaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTenHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnDatLaiPhieu = new System.Windows.Forms.Button();
@@ -74,14 +74,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.lblTongCongPhieu = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.gridPhieuGhiDanh = new System.Windows.Forms.DataGridView();
             this.clmMaPhieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmMaHV_DS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmNgayGhiDanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDaDong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmConNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTongCongPhieu = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridDSHV)).BeginInit();
@@ -147,6 +147,58 @@
             this.panel2.Size = new System.Drawing.Size(374, 474);
             this.panel2.TabIndex = 2;
             // 
+            // gridDSHV
+            // 
+            this.gridDSHV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridDSHV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridDSHV.BackgroundColor = System.Drawing.Color.White;
+            this.gridDSHV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gridDSHV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridDSHV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmMaHV,
+            this.clmTenHV,
+            this.clmNgaySinh,
+            this.clmGioiTinh});
+            this.gridDSHV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.gridDSHV.Location = new System.Drawing.Point(12, 182);
+            this.gridDSHV.MultiSelect = false;
+            this.gridDSHV.Name = "gridDSHV";
+            this.gridDSHV.RowHeadersVisible = false;
+            this.gridDSHV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridDSHV.Size = new System.Drawing.Size(345, 231);
+            this.gridDSHV.TabIndex = 2;
+            this.gridDSHV.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridDSHV_RowsAdded);
+            this.gridDSHV.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridDSHV_RowsRemoved);
+            this.gridDSHV.Click += new System.EventHandler(this.gridDSHV_Click);
+            // 
+            // clmMaHV
+            // 
+            this.clmMaHV.DataPropertyName = "MaHV";
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle11;
+            this.clmMaHV.HeaderText = "Mã";
+            this.clmMaHV.Name = "clmMaHV";
+            // 
+            // clmTenHV
+            // 
+            this.clmTenHV.DataPropertyName = "TenHV";
+            this.clmTenHV.HeaderText = "Họ tên";
+            this.clmTenHV.Name = "clmTenHV";
+            // 
+            // clmNgaySinh
+            // 
+            this.clmNgaySinh.DataPropertyName = "NgaySinh";
+            this.clmNgaySinh.HeaderText = "Ngày sinh";
+            this.clmNgaySinh.Name = "clmNgaySinh";
+            // 
+            // clmGioiTinh
+            // 
+            this.clmGioiTinh.DataPropertyName = "GioiTinhHV";
+            this.clmGioiTinh.HeaderText = "Giới tính";
+            this.clmGioiTinh.Name = "clmGioiTinh";
+            // 
             // rdTenHV
             // 
             this.rdTenHV.AutoSize = true;
@@ -182,11 +234,13 @@
             this.btnDatLai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnDatLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatLai.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnDatLai.Image = global::QuanLyHocVien.Properties.Resources.refresh_16x16;
             this.btnDatLai.Location = new System.Drawing.Point(275, 106);
             this.btnDatLai.Name = "btnDatLai";
             this.btnDatLai.Size = new System.Drawing.Size(82, 29);
             this.btnDatLai.TabIndex = 38;
             this.btnDatLai.Text = "Đặt lại";
+            this.btnDatLai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDatLai.UseVisualStyleBackColor = false;
             this.btnDatLai.Click += new System.EventHandler(this.btnDatLai_Click);
             // 
@@ -200,11 +254,13 @@
             this.btnTimKiem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnTimKiem.Location = new System.Drawing.Point(178, 106);
+            this.btnTimKiem.Image = global::QuanLyHocVien.Properties.Resources.zoom_16x16;
+            this.btnTimKiem.Location = new System.Drawing.Point(170, 106);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(91, 29);
+            this.btnTimKiem.Size = new System.Drawing.Size(99, 29);
             this.btnTimKiem.TabIndex = 37;
             this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = false;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
@@ -248,11 +304,13 @@
             this.btnHienTatCa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnHienTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHienTatCa.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnHienTatCa.Image = global::QuanLyHocVien.Properties.Resources.show_16x16;
             this.btnHienTatCa.Location = new System.Drawing.Point(244, 419);
             this.btnHienTatCa.Name = "btnHienTatCa";
             this.btnHienTatCa.Size = new System.Drawing.Size(113, 29);
             this.btnHienTatCa.TabIndex = 31;
             this.btnHienTatCa.Text = "Hiện tất cả";
+            this.btnHienTatCa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHienTatCa.UseVisualStyleBackColor = false;
             this.btnHienTatCa.Click += new System.EventHandler(this.btnHienTatCa_Click);
             // 
@@ -274,57 +332,6 @@
             this.label2.Size = new System.Drawing.Size(145, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Kết quả tìm kiếm học viên";
-            // 
-            // gridDSHV
-            // 
-            this.gridDSHV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridDSHV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridDSHV.BackgroundColor = System.Drawing.Color.White;
-            this.gridDSHV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.gridDSHV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridDSHV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmMaHV,
-            this.clmTenHV,
-            this.clmNgaySinh,
-            this.clmGioiTinh});
-            this.gridDSHV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridDSHV.Location = new System.Drawing.Point(12, 163);
-            this.gridDSHV.MultiSelect = false;
-            this.gridDSHV.Name = "gridDSHV";
-            this.gridDSHV.RowHeadersVisible = false;
-            this.gridDSHV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridDSHV.Size = new System.Drawing.Size(345, 250);
-            this.gridDSHV.TabIndex = 2;
-            this.gridDSHV.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridDSHV_RowsAdded);
-            this.gridDSHV.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridDSHV_RowsRemoved);
-            // 
-            // clmMaHV
-            // 
-            this.clmMaHV.DataPropertyName = "MaHV";
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle6;
-            this.clmMaHV.HeaderText = "Mã";
-            this.clmMaHV.Name = "clmMaHV";
-            // 
-            // clmTenHV
-            // 
-            this.clmTenHV.DataPropertyName = "TenHV";
-            this.clmTenHV.HeaderText = "Họ tên";
-            this.clmTenHV.Name = "clmTenHV";
-            // 
-            // clmNgaySinh
-            // 
-            this.clmNgaySinh.DataPropertyName = "NgaySinh";
-            this.clmNgaySinh.HeaderText = "Ngày sinh";
-            this.clmNgaySinh.Name = "clmNgaySinh";
-            // 
-            // clmGioiTinh
-            // 
-            this.clmGioiTinh.DataPropertyName = "GioiTinhHV";
-            this.clmGioiTinh.HeaderText = "Giới tính";
-            this.clmGioiTinh.Name = "clmGioiTinh";
             // 
             // panel3
             // 
@@ -371,11 +378,13 @@
             this.btnDatLaiPhieu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnDatLaiPhieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatLaiPhieu.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnDatLaiPhieu.Image = global::QuanLyHocVien.Properties.Resources.refresh2_16x16;
             this.btnDatLaiPhieu.Location = new System.Drawing.Point(304, 315);
             this.btnDatLaiPhieu.Name = "btnDatLaiPhieu";
             this.btnDatLaiPhieu.Size = new System.Drawing.Size(83, 34);
             this.btnDatLaiPhieu.TabIndex = 31;
             this.btnDatLaiPhieu.Text = "Đặt lại";
+            this.btnDatLaiPhieu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDatLaiPhieu.UseVisualStyleBackColor = false;
             this.btnDatLaiPhieu.Click += new System.EventHandler(this.btnDatLaiPhieu_Click);
             // 
@@ -389,12 +398,15 @@
             this.btnInBienLai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnInBienLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInBienLai.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnInBienLai.Location = new System.Drawing.Point(215, 315);
+            this.btnInBienLai.Image = global::QuanLyHocVien.Properties.Resources.print_16x16;
+            this.btnInBienLai.Location = new System.Drawing.Point(205, 315);
             this.btnInBienLai.Name = "btnInBienLai";
-            this.btnInBienLai.Size = new System.Drawing.Size(83, 34);
+            this.btnInBienLai.Size = new System.Drawing.Size(93, 34);
             this.btnInBienLai.TabIndex = 30;
             this.btnInBienLai.Text = "In biên lai";
+            this.btnInBienLai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInBienLai.UseVisualStyleBackColor = false;
+            this.btnInBienLai.Click += new System.EventHandler(this.btnInBienLai_Click);
             // 
             // btnLuuPhieu
             // 
@@ -405,11 +417,13 @@
             this.btnLuuPhieu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLuuPhieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuuPhieu.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnLuuPhieu.Location = new System.Drawing.Point(121, 315);
+            this.btnLuuPhieu.Image = global::QuanLyHocVien.Properties.Resources.save_16x16;
+            this.btnLuuPhieu.Location = new System.Drawing.Point(98, 315);
             this.btnLuuPhieu.Name = "btnLuuPhieu";
-            this.btnLuuPhieu.Size = new System.Drawing.Size(88, 34);
+            this.btnLuuPhieu.Size = new System.Drawing.Size(101, 34);
             this.btnLuuPhieu.TabIndex = 29;
             this.btnLuuPhieu.Text = "Lưu phiếu";
+            this.btnLuuPhieu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuuPhieu.UseVisualStyleBackColor = false;
             this.btnLuuPhieu.Click += new System.EventHandler(this.btnLuuPhieu_Click);
             // 
@@ -614,25 +628,6 @@
             this.panel6.Size = new System.Drawing.Size(276, 474);
             this.panel6.TabIndex = 6;
             // 
-            // lblTongCongPhieu
-            // 
-            this.lblTongCongPhieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblTongCongPhieu.AutoSize = true;
-            this.lblTongCongPhieu.Location = new System.Drawing.Point(15, 450);
-            this.lblTongCongPhieu.Name = "lblTongCongPhieu";
-            this.lblTongCongPhieu.Size = new System.Drawing.Size(195, 15);
-            this.lblTongCongPhieu.TabIndex = 7;
-            this.lblTongCongPhieu.Text = "Tổng cộng: <num> phiếu ghi danh";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(15, 15);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(166, 15);
-            this.label14.TabIndex = 6;
-            this.label14.Text = "Danh sách các phiếu ghi danh";
-            // 
             // gridPhieuGhiDanh
             // 
             this.gridPhieuGhiDanh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -662,8 +657,8 @@
             // clmMaPhieu
             // 
             this.clmMaPhieu.DataPropertyName = "MaPhieu";
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaPhieu.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaPhieu.DefaultCellStyle = dataGridViewCellStyle12;
             this.clmMaPhieu.FillWeight = 80F;
             this.clmMaPhieu.HeaderText = "Mã phiếu";
             this.clmMaPhieu.Name = "clmMaPhieu";
@@ -671,8 +666,8 @@
             // clmMaHV_DS
             // 
             this.clmMaHV_DS.DataPropertyName = "MaHV";
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.clmMaHV_DS.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.clmMaHV_DS.DefaultCellStyle = dataGridViewCellStyle13;
             this.clmMaHV_DS.HeaderText = "Mã học viên";
             this.clmMaHV_DS.Name = "clmMaHV_DS";
             // 
@@ -685,24 +680,43 @@
             // clmDaDong
             // 
             this.clmDaDong.DataPropertyName = "DaDong";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "C0";
-            dataGridViewCellStyle9.NullValue = null;
-            this.clmDaDong.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.Format = "C0";
+            dataGridViewCellStyle14.NullValue = null;
+            this.clmDaDong.DefaultCellStyle = dataGridViewCellStyle14;
             this.clmDaDong.HeaderText = "Đã đóng";
             this.clmDaDong.Name = "clmDaDong";
             // 
             // clmConNo
             // 
             this.clmConNo.DataPropertyName = "ConNo";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle10.Format = "C0";
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            this.clmConNo.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle15.Format = "C0";
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.clmConNo.DefaultCellStyle = dataGridViewCellStyle15;
             this.clmConNo.HeaderText = "Còn nợ";
             this.clmConNo.Name = "clmConNo";
+            // 
+            // lblTongCongPhieu
+            // 
+            this.lblTongCongPhieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTongCongPhieu.AutoSize = true;
+            this.lblTongCongPhieu.Location = new System.Drawing.Point(15, 450);
+            this.lblTongCongPhieu.Name = "lblTongCongPhieu";
+            this.lblTongCongPhieu.Size = new System.Drawing.Size(195, 15);
+            this.lblTongCongPhieu.TabIndex = 7;
+            this.lblTongCongPhieu.Text = "Tổng cộng: <num> phiếu ghi danh";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(15, 15);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(166, 15);
+            this.label14.TabIndex = 6;
+            this.label14.Text = "Danh sách các phiếu ghi danh";
             // 
             // frmLapPhieuGhiDanh
             // 

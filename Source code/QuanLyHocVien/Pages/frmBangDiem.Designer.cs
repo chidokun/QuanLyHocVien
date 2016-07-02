@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -52,10 +51,11 @@
             this.lblDiemTrungBinh = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.btnInBangDiem = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.btnInBangDiem = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -87,20 +87,6 @@
             this.label1.Size = new System.Drawing.Size(132, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "BẢNG ĐIỂM HỌC VIÊN";
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.LightGray;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::QuanLyHocVien.Properties.Resources.icon_Close_9dp;
-            this.btnClose.Location = new System.Drawing.Point(929, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(28, 19);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel2
             // 
@@ -376,43 +362,15 @@
             this.panel6.Size = new System.Drawing.Size(494, 33);
             this.panel6.TabIndex = 4;
             // 
-            // btnInBangDiem
-            // 
-            this.btnInBangDiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInBangDiem.BackColor = System.Drawing.Color.Silver;
-            this.btnInBangDiem.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnInBangDiem.FlatAppearance.BorderSize = 0;
-            this.btnInBangDiem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnInBangDiem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnInBangDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInBangDiem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnInBangDiem.Location = new System.Drawing.Point(373, 2);
-            this.btnInBangDiem.Name = "btnInBangDiem";
-            this.btnInBangDiem.Size = new System.Drawing.Size(118, 28);
-            this.btnInBangDiem.TabIndex = 39;
-            this.btnInBangDiem.Text = "In bảng điểm";
-            this.btnInBangDiem.UseVisualStyleBackColor = false;
-            this.btnInBangDiem.Click += new System.EventHandler(this.btnInBangDiem_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
             this.label2.Location = new System.Drawing.Point(122, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(231, 15);
+            this.label2.Size = new System.Drawing.Size(208, 15);
             this.label2.TabIndex = 34;
-            this.label2.Text = "Chọn Lớp rồi bấm Xem để xem bảng điểm";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::QuanLyHocVien.Properties.Resources.icon_BangDiem_64dp;
-            this.pictureBox1.Location = new System.Drawing.Point(50, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
+            this.label2.Text = "Chọn Lớp để xem bảng điểm học viên";
             // 
             // lblTitle
             // 
@@ -424,6 +382,51 @@
             this.lblTitle.Size = new System.Drawing.Size(256, 25);
             this.lblTitle.TabIndex = 32;
             this.lblTitle.Text = "Bảng điểm của <user name>";
+            // 
+            // btnInBangDiem
+            // 
+            this.btnInBangDiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInBangDiem.BackColor = System.Drawing.Color.Silver;
+            this.btnInBangDiem.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnInBangDiem.FlatAppearance.BorderSize = 0;
+            this.btnInBangDiem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnInBangDiem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnInBangDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInBangDiem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnInBangDiem.Image = global::QuanLyHocVien.Properties.Resources.print_16x16;
+            this.btnInBangDiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInBangDiem.Location = new System.Drawing.Point(370, 2);
+            this.btnInBangDiem.Name = "btnInBangDiem";
+            this.btnInBangDiem.Size = new System.Drawing.Size(121, 28);
+            this.btnInBangDiem.TabIndex = 39;
+            this.btnInBangDiem.Text = "In bảng điểm";
+            this.btnInBangDiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInBangDiem.UseVisualStyleBackColor = false;
+            this.btnInBangDiem.Click += new System.EventHandler(this.btnInBangDiem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QuanLyHocVien.Properties.Resources.icon_BangDiem_64dp;
+            this.pictureBox1.Location = new System.Drawing.Point(50, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.LightGray;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::QuanLyHocVien.Properties.Resources.icon_Close_9dp;
+            this.btnClose.Location = new System.Drawing.Point(929, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(28, 19);
+            this.btnClose.TabIndex = 0;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmBangDiem
             // 

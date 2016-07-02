@@ -183,12 +183,6 @@
     <Compile Include="Pages\frmQuanLyTaiKhoan.Designer.cs">
       <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Popups\frmReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Popups\frmReport.Designer.cs">
-      <DependentUpon>frmReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="Popups\frmThayDoiThongTinGV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +252,17 @@
     <Compile Include="GlobalPages.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\dsSource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSource.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Pages\frmBangDiem.resx">
       <DependentUpon>frmBangDiem.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,9 +329,6 @@
     <EmbeddedResource Include="Pages\frmQuanLyTaiKhoan.resx">
       <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Popups\frmReport.resx">
-      <DependentUpon>frmReport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Popups\frmThayDoiThongTinGV.resx">
       <DependentUpon>frmThayDoiThongTinGV.cs</DependentUpon>
     </EmbeddedResource>
@@ -370,6 +372,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptBangDiemLop.rdlc" />
+    <EmbeddedResource Include="Reports\rptBaoCaoHocVienGhiDanhTheoThang.rdlc" />
+    <EmbeddedResource Include="Reports\rptBaoCaoHocVienNo.rdlc" />
+    <EmbeddedResource Include="Reports\rptBienLaiHocPhi.rdlc" />
+    <EmbeddedResource Include="Reports\rptInBangDiem.rdlc" />
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -391,10 +401,19 @@
       <Name>DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Reports\" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Reports\dsSource.xsc">
+      <DependentUpon>dsSource.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\dsSource.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSource.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\dsSource.xss">
+      <DependentUpon>dsSource.xsd</DependentUpon>
+    </None>
     <None Include="Resources\icon_TroGiup_64dp.png" />
   </ItemGroup>
   <ItemGroup>
@@ -501,6 +520,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ApplicationIcon.ico" />
+    <None Include="Resources\remove_16x16.png" />
+    <None Include="Resources\add_16x16.png" />
+    <None Include="Resources\deletelist_16x16.png" />
+    <None Include="Resources\edit_16x16.png" />
+    <None Include="Resources\additem_16x16.png" />
+    <None Include="Resources\cancel_16x16.png" />
+    <None Include="Resources\save_16x16.png" />
+    <None Include="Resources\refresh_16x16.png" />
+    <None Include="Resources\show_16x16.png" />
+    <None Include="Resources\refresh2_16x16.png" />
+    <None Include="Resources\zoom_16x16.png" />
+    <None Include="Resources\preview_16x16.png" />
+    <None Include="Resources\print_16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

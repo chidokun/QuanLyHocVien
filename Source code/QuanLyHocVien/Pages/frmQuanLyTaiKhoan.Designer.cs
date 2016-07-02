@@ -144,11 +144,13 @@
             this.btnDatLai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnDatLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatLai.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnDatLai.Image = global::QuanLyHocVien.Properties.Resources.refresh_16x16;
             this.btnDatLai.Location = new System.Drawing.Point(239, 199);
             this.btnDatLai.Name = "btnDatLai";
             this.btnDatLai.Size = new System.Drawing.Size(82, 29);
             this.btnDatLai.TabIndex = 71;
             this.btnDatLai.Text = "Đặt lại";
+            this.btnDatLai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDatLai.UseVisualStyleBackColor = false;
             this.btnDatLai.Click += new System.EventHandler(this.btnDatLai_Click);
             // 
@@ -162,11 +164,13 @@
             this.btnTimKiem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnTimKiem.Location = new System.Drawing.Point(142, 199);
+            this.btnTimKiem.Image = global::QuanLyHocVien.Properties.Resources.zoom_16x16;
+            this.btnTimKiem.Location = new System.Drawing.Point(134, 199);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(91, 29);
+            this.btnTimKiem.Size = new System.Drawing.Size(99, 29);
             this.btnTimKiem.TabIndex = 70;
             this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = false;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
@@ -269,11 +273,13 @@
             this.btnHuyBo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuyBo.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnHuyBo.Location = new System.Drawing.Point(164, 144);
+            this.btnHuyBo.Image = global::QuanLyHocVien.Properties.Resources.cancel_16x16;
+            this.btnHuyBo.Location = new System.Drawing.Point(181, 144);
             this.btnHuyBo.Name = "btnHuyBo";
-            this.btnHuyBo.Size = new System.Drawing.Size(107, 34);
+            this.btnHuyBo.Size = new System.Drawing.Size(90, 34);
             this.btnHuyBo.TabIndex = 72;
             this.btnHuyBo.Text = "Hủy bỏ";
+            this.btnHuyBo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHuyBo.UseVisualStyleBackColor = false;
             this.btnHuyBo.Click += new System.EventHandler(this.btnHuyBo_Click);
             // 
@@ -286,11 +292,13 @@
             this.btnLuuThongTin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLuuThongTin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuuThongTin.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnLuuThongTin.Image = global::QuanLyHocVien.Properties.Resources.save_16x16;
             this.btnLuuThongTin.Location = new System.Drawing.Point(51, 144);
             this.btnLuuThongTin.Name = "btnLuuThongTin";
-            this.btnLuuThongTin.Size = new System.Drawing.Size(107, 34);
+            this.btnLuuThongTin.Size = new System.Drawing.Size(124, 34);
             this.btnLuuThongTin.TabIndex = 71;
             this.btnLuuThongTin.Text = "Lưu thông tin";
+            this.btnLuuThongTin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuuThongTin.UseVisualStyleBackColor = false;
             this.btnLuuThongTin.Click += new System.EventHandler(this.btnLuuThongTin_Click);
             // 
@@ -375,11 +383,13 @@
             this.btnXemTatCa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnXemTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXemTatCa.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnXemTatCa.Image = global::QuanLyHocVien.Properties.Resources.show_16x16;
             this.btnXemTatCa.Location = new System.Drawing.Point(332, 424);
             this.btnXemTatCa.Name = "btnXemTatCa";
             this.btnXemTatCa.Size = new System.Drawing.Size(113, 29);
             this.btnXemTatCa.TabIndex = 67;
             this.btnXemTatCa.Text = "Xem tất cả";
+            this.btnXemTatCa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXemTatCa.UseVisualStyleBackColor = false;
             this.btnXemTatCa.Click += new System.EventHandler(this.btnXemTatCa_Click);
             // 

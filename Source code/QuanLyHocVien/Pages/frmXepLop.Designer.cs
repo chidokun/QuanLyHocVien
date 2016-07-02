@@ -139,11 +139,13 @@
             this.btnThemVaoLop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnThemVaoLop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemVaoLop.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnThemVaoLop.Image = global::QuanLyHocVien.Properties.Resources.add_16x16;
             this.btnThemVaoLop.Location = new System.Drawing.Point(269, 396);
             this.btnThemVaoLop.Name = "btnThemVaoLop";
             this.btnThemVaoLop.Size = new System.Drawing.Size(128, 34);
             this.btnThemVaoLop.TabIndex = 30;
             this.btnThemVaoLop.Text = "Thêm vào lớp";
+            this.btnThemVaoLop.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThemVaoLop.UseVisualStyleBackColor = false;
             this.btnThemVaoLop.Click += new System.EventHandler(this.btnThemVaoLop_Click);
             // 
@@ -153,9 +155,9 @@
             this.lblTongCongHV.AutoSize = true;
             this.lblTongCongHV.Location = new System.Drawing.Point(18, 442);
             this.lblTongCongHV.Name = "lblTongCongHV";
-            this.lblTongCongHV.Size = new System.Drawing.Size(133, 15);
+            this.lblTongCongHV.Size = new System.Drawing.Size(125, 15);
             this.lblTongCongHV.TabIndex = 14;
-            this.lblTongCongHV.Text = "Tổng cộng: {0} học viên";
+            this.lblTongCongHV.Text = "Tổng cộng: 0 học viên";
             // 
             // gridDSHV
             // 
@@ -246,11 +248,13 @@
             this.btnBoKhoiLop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnBoKhoiLop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBoKhoiLop.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnBoKhoiLop.Image = global::QuanLyHocVien.Properties.Resources.remove_16x16;
             this.btnBoKhoiLop.Location = new System.Drawing.Point(18, 396);
             this.btnBoKhoiLop.Name = "btnBoKhoiLop";
             this.btnBoKhoiLop.Size = new System.Drawing.Size(117, 34);
             this.btnBoKhoiLop.TabIndex = 72;
             this.btnBoKhoiLop.Text = "Bỏ khỏi lớp";
+            this.btnBoKhoiLop.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBoKhoiLop.UseVisualStyleBackColor = false;
             this.btnBoKhoiLop.Click += new System.EventHandler(this.btnBoKhoiLop_Click);
             // 
@@ -264,11 +268,13 @@
             this.btnDatLai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnDatLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatLai.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnDatLai.Image = global::QuanLyHocVien.Properties.Resources.refresh2_16x16;
             this.btnDatLai.Location = new System.Drawing.Point(584, 396);
             this.btnDatLai.Name = "btnDatLai";
             this.btnDatLai.Size = new System.Drawing.Size(83, 34);
             this.btnDatLai.TabIndex = 71;
             this.btnDatLai.Text = "Đặt lại";
+            this.btnDatLai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDatLai.UseVisualStyleBackColor = false;
             this.btnDatLai.Click += new System.EventHandler(this.btnDatLai_Click);
             // 
@@ -281,11 +287,13 @@
             this.btnLuuLop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLuuLop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuuLop.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnLuuLop.Image = global::QuanLyHocVien.Properties.Resources.save_16x16;
             this.btnLuuLop.Location = new System.Drawing.Point(482, 396);
             this.btnLuuLop.Name = "btnLuuLop";
             this.btnLuuLop.Size = new System.Drawing.Size(96, 34);
             this.btnLuuLop.TabIndex = 70;
             this.btnLuuLop.Text = "Lưu lớp";
+            this.btnLuuLop.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuuLop.UseVisualStyleBackColor = false;
             this.btnLuuLop.Click += new System.EventHandler(this.btnLuuLop_Click);
             // 

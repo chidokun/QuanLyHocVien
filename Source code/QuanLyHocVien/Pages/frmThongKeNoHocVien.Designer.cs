@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
@@ -37,19 +37,19 @@
             this.btnTaoBaoCao = new System.Windows.Forms.Button();
             this.lblTongCong = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.gridBaoCao = new System.Windows.Forms.DataGridView();
-            this.clmConNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmGioiTinhHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTenHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmMaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.gridBaoCao = new System.Windows.Forms.DataGridView();
+            this.clmMaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTenHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmGioiTinhHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmConNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridBaoCao)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridBaoCao)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -109,12 +109,15 @@
             this.btnTaoBaoCao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnTaoBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaoBaoCao.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnTaoBaoCao.Image = global::QuanLyHocVien.Properties.Resources.print_16x16;
             this.btnTaoBaoCao.Location = new System.Drawing.Point(786, 16);
             this.btnTaoBaoCao.Name = "btnTaoBaoCao";
-            this.btnTaoBaoCao.Size = new System.Drawing.Size(109, 25);
+            this.btnTaoBaoCao.Size = new System.Drawing.Size(109, 30);
             this.btnTaoBaoCao.TabIndex = 64;
             this.btnTaoBaoCao.Text = "Tạo báo cáo";
+            this.btnTaoBaoCao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTaoBaoCao.UseVisualStyleBackColor = false;
+            this.btnTaoBaoCao.Click += new System.EventHandler(this.btnTaoBaoCao_Click);
             // 
             // lblTongCong
             // 
@@ -143,16 +146,16 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(909, 377);
             this.tableLayoutPanel2.TabIndex = 48;
             // 
-            // label2
+            // panel4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label2.ForeColor = System.Drawing.Color.Green;
-            this.label2.Location = new System.Drawing.Point(17, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(287, 21);
-            this.label2.TabIndex = 46;
-            this.label2.Text = "Danh sách các học viên đang nợ học phí";
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.gridBaoCao);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(32, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Padding = new System.Windows.Forms.Padding(1);
+            this.panel4.Size = new System.Drawing.Size(844, 371);
+            this.panel4.TabIndex = 0;
             // 
             // gridBaoCao
             // 
@@ -179,32 +182,15 @@
             this.gridBaoCao.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridBaoCao_RowsAdded);
             this.gridBaoCao.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridBaoCao_RowsRemoved);
             // 
-            // clmConNo
+            // clmMaHV
             // 
-            this.clmConNo.DataPropertyName = "ConNo";
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle6.Format = "C0";
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            this.clmConNo.DefaultCellStyle = dataGridViewCellStyle6;
-            this.clmConNo.HeaderText = "Còn nợ";
-            this.clmConNo.Name = "clmConNo";
-            this.clmConNo.ReadOnly = true;
-            // 
-            // clmTenKH
-            // 
-            this.clmTenKH.DataPropertyName = "TenKH";
-            this.clmTenKH.HeaderText = "Khóa học";
-            this.clmTenKH.Name = "clmTenKH";
-            this.clmTenKH.ReadOnly = true;
-            // 
-            // clmGioiTinhHV
-            // 
-            this.clmGioiTinhHV.DataPropertyName = "GioiTinhHV";
-            this.clmGioiTinhHV.FillWeight = 50F;
-            this.clmGioiTinhHV.HeaderText = "Giới tính";
-            this.clmGioiTinhHV.Name = "clmGioiTinhHV";
-            this.clmGioiTinhHV.ReadOnly = true;
+            this.clmMaHV.DataPropertyName = "MaHV";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle1;
+            this.clmMaHV.FillWeight = 70F;
+            this.clmMaHV.HeaderText = "Mã học viên";
+            this.clmMaHV.Name = "clmMaHV";
+            this.clmMaHV.ReadOnly = true;
             // 
             // clmTenHV
             // 
@@ -214,26 +200,43 @@
             this.clmTenHV.Name = "clmTenHV";
             this.clmTenHV.ReadOnly = true;
             // 
-            // clmMaHV
+            // clmGioiTinhHV
             // 
-            this.clmMaHV.DataPropertyName = "MaHV";
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle5;
-            this.clmMaHV.FillWeight = 70F;
-            this.clmMaHV.HeaderText = "Mã học viên";
-            this.clmMaHV.Name = "clmMaHV";
-            this.clmMaHV.ReadOnly = true;
+            this.clmGioiTinhHV.DataPropertyName = "GioiTinhHV";
+            this.clmGioiTinhHV.FillWeight = 50F;
+            this.clmGioiTinhHV.HeaderText = "Giới tính";
+            this.clmGioiTinhHV.Name = "clmGioiTinhHV";
+            this.clmGioiTinhHV.ReadOnly = true;
             // 
-            // panel4
+            // clmTenKH
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.gridBaoCao);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(32, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(1);
-            this.panel4.Size = new System.Drawing.Size(844, 371);
-            this.panel4.TabIndex = 0;
+            this.clmTenKH.DataPropertyName = "TenKH";
+            this.clmTenKH.HeaderText = "Khóa học";
+            this.clmTenKH.Name = "clmTenKH";
+            this.clmTenKH.ReadOnly = true;
+            // 
+            // clmConNo
+            // 
+            this.clmConNo.DataPropertyName = "ConNo";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.Format = "C0";
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.clmConNo.DefaultCellStyle = dataGridViewCellStyle2;
+            this.clmConNo.HeaderText = "Còn nợ";
+            this.clmConNo.Name = "clmConNo";
+            this.clmConNo.ReadOnly = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label2.ForeColor = System.Drawing.Color.Green;
+            this.label2.Location = new System.Drawing.Point(17, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(287, 21);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "Danh sách các học viên đang nợ học phí";
             // 
             // frmThongKeNoHocVien
             // 
@@ -254,8 +257,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridBaoCao)).EndInit();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridBaoCao)).EndInit();
             this.ResumeLayout(false);
 
         }

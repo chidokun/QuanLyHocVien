@@ -126,11 +126,13 @@
             this.btnHienTatCa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnHienTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHienTatCa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHienTatCa.Image = global::QuanLyHocVien.Properties.Resources.show_16x16;
             this.btnHienTatCa.Location = new System.Drawing.Point(187, 433);
             this.btnHienTatCa.Name = "btnHienTatCa";
             this.btnHienTatCa.Size = new System.Drawing.Size(113, 29);
             this.btnHienTatCa.TabIndex = 66;
             this.btnHienTatCa.Text = "Hiện tất cả";
+            this.btnHienTatCa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHienTatCa.UseVisualStyleBackColor = false;
             this.btnHienTatCa.Click += new System.EventHandler(this.btnHienTatCa_Click);
             // 
@@ -194,11 +196,13 @@
             this.btnDatLai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnDatLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatLai.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnDatLai.Image = global::QuanLyHocVien.Properties.Resources.refresh_16x16;
             this.btnDatLai.Location = new System.Drawing.Point(218, 89);
             this.btnDatLai.Name = "btnDatLai";
             this.btnDatLai.Size = new System.Drawing.Size(82, 29);
             this.btnDatLai.TabIndex = 63;
             this.btnDatLai.Text = "Đặt lại";
+            this.btnDatLai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDatLai.UseVisualStyleBackColor = false;
             this.btnDatLai.Click += new System.EventHandler(this.btnDatLai_Click);
             // 
@@ -212,11 +216,13 @@
             this.btnTimKiem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnTimKiem.Location = new System.Drawing.Point(121, 89);
+            this.btnTimKiem.Image = global::QuanLyHocVien.Properties.Resources.zoom_16x16;
+            this.btnTimKiem.Location = new System.Drawing.Point(116, 89);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(91, 29);
+            this.btnTimKiem.Size = new System.Drawing.Size(96, 29);
             this.btnTimKiem.TabIndex = 62;
             this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = false;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
@@ -281,12 +287,15 @@
             this.btnTaoBaoCao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnTaoBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaoBaoCao.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnTaoBaoCao.Image = global::QuanLyHocVien.Properties.Resources.print_16x16;
             this.btnTaoBaoCao.Location = new System.Drawing.Point(634, 12);
             this.btnTaoBaoCao.Name = "btnTaoBaoCao";
             this.btnTaoBaoCao.Size = new System.Drawing.Size(113, 29);
             this.btnTaoBaoCao.TabIndex = 69;
             this.btnTaoBaoCao.Text = "Tạo báo cáo";
+            this.btnTaoBaoCao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTaoBaoCao.UseVisualStyleBackColor = false;
+            this.btnTaoBaoCao.Click += new System.EventHandler(this.btnTaoBaoCao_Click);
             // 
             // lblTongCong
             // 

@@ -58,5 +58,16 @@ namespace QuanLyHocVien.Properties {
                 this["Login_IsSaved"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HOANGTUAN\\SQLEXPRESS;Initial Catalog=QLHVTTEC;Integrated Security=Tru" +
+            "e")]
+        public string QLHVTTECConnectionString {
+            get {
+                return ((string)(this["QLHVTTECConnectionString"]));
+            }
+        }
     }
 }

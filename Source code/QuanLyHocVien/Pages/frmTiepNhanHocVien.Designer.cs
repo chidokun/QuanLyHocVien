@@ -57,18 +57,18 @@
             this.txtMaHV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.gridDSHV = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblTongCong = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
             this.clmMaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmTenHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSdtHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblTongCong = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -166,11 +166,13 @@
             this.btnHuyBo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuyBo.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnHuyBo.Image = global::QuanLyHocVien.Properties.Resources.cancel_16x16;
             this.btnHuyBo.Location = new System.Drawing.Point(233, 451);
             this.btnHuyBo.Name = "btnHuyBo";
             this.btnHuyBo.Size = new System.Drawing.Size(107, 34);
             this.btnHuyBo.TabIndex = 18;
             this.btnHuyBo.Text = "Hủy bỏ";
+            this.btnHuyBo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHuyBo.UseVisualStyleBackColor = false;
             this.btnHuyBo.Click += new System.EventHandler(this.btnHuyBo_Click);
             // 
@@ -183,11 +185,13 @@
             this.btnLuuThongTin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLuuThongTin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuuThongTin.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnLuuThongTin.Location = new System.Drawing.Point(120, 451);
+            this.btnLuuThongTin.Image = global::QuanLyHocVien.Properties.Resources.save_16x16;
+            this.btnLuuThongTin.Location = new System.Drawing.Point(106, 451);
             this.btnLuuThongTin.Name = "btnLuuThongTin";
-            this.btnLuuThongTin.Size = new System.Drawing.Size(107, 34);
+            this.btnLuuThongTin.Size = new System.Drawing.Size(121, 34);
             this.btnLuuThongTin.TabIndex = 17;
             this.btnLuuThongTin.Text = "Lưu thông tin";
+            this.btnLuuThongTin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuuThongTin.UseVisualStyleBackColor = false;
             this.btnLuuThongTin.Click += new System.EventHandler(this.btnLuuThongTin_Click);
             // 
@@ -436,6 +440,44 @@
             this.gridDSHV.Click += new System.EventHandler(this.gridDSHV_Click);
             this.gridDSHV.DoubleClick += new System.EventHandler(this.gridDSHV_DoubleClick);
             // 
+            // clmMaHV
+            // 
+            this.clmMaHV.DataPropertyName = "MaHV";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle1;
+            this.clmMaHV.HeaderText = "Mã học viên";
+            this.clmMaHV.Name = "clmMaHV";
+            // 
+            // clmTenHV
+            // 
+            this.clmTenHV.DataPropertyName = "TenHV";
+            this.clmTenHV.HeaderText = "Họ và tên";
+            this.clmTenHV.Name = "clmTenHV";
+            // 
+            // clmNgaySinh
+            // 
+            this.clmNgaySinh.DataPropertyName = "NgaySinh";
+            this.clmNgaySinh.HeaderText = "Ngày sinh";
+            this.clmNgaySinh.Name = "clmNgaySinh";
+            // 
+            // clmGioiTinh
+            // 
+            this.clmGioiTinh.DataPropertyName = "GioiTinhHV";
+            this.clmGioiTinh.HeaderText = "Giới tính";
+            this.clmGioiTinh.Name = "clmGioiTinh";
+            // 
+            // clmSdtHV
+            // 
+            this.clmSdtHV.DataPropertyName = "SdtHV";
+            this.clmSdtHV.HeaderText = "SĐT";
+            this.clmSdtHV.Name = "clmSdtHV";
+            // 
+            // clmEmail
+            // 
+            this.clmEmail.DataPropertyName = "EmailHV";
+            this.clmEmail.HeaderText = "Email";
+            this.clmEmail.Name = "clmEmail";
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.lblTongCong);
@@ -474,11 +516,13 @@
             this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXoa.Image = global::QuanLyHocVien.Properties.Resources.deletelist_16x16;
             this.btnXoa.Location = new System.Drawing.Point(210, 6);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(71, 25);
             this.btnXoa.TabIndex = 20;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -490,11 +534,13 @@
             this.btnSua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSua.Image = global::QuanLyHocVien.Properties.Resources.edit_16x16;
             this.btnSua.Location = new System.Drawing.Point(133, 6);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(71, 25);
             this.btnSua.TabIndex = 19;
             this.btnSua.Text = "Sửa";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -506,51 +552,15 @@
             this.btnThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThem.Image = global::QuanLyHocVien.Properties.Resources.additem_16x16;
             this.btnThem.Location = new System.Drawing.Point(12, 6);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(115, 25);
             this.btnThem.TabIndex = 18;
             this.btnThem.Text = "Thêm học viên";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // clmMaHV
-            // 
-            this.clmMaHV.DataPropertyName = "MaHV";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle1;
-            this.clmMaHV.HeaderText = "Mã học viên";
-            this.clmMaHV.Name = "clmMaHV";
-            // 
-            // clmTenHV
-            // 
-            this.clmTenHV.DataPropertyName = "TenHV";
-            this.clmTenHV.HeaderText = "Họ và tên";
-            this.clmTenHV.Name = "clmTenHV";
-            // 
-            // clmNgaySinh
-            // 
-            this.clmNgaySinh.DataPropertyName = "NgaySinh";
-            this.clmNgaySinh.HeaderText = "Ngày sinh";
-            this.clmNgaySinh.Name = "clmNgaySinh";
-            // 
-            // clmGioiTinh
-            // 
-            this.clmGioiTinh.DataPropertyName = "GioiTinhHV";
-            this.clmGioiTinh.HeaderText = "Giới tính";
-            this.clmGioiTinh.Name = "clmGioiTinh";
-            // 
-            // clmSdtHV
-            // 
-            this.clmSdtHV.DataPropertyName = "SdtHV";
-            this.clmSdtHV.HeaderText = "SĐT";
-            this.clmSdtHV.Name = "clmSdtHV";
-            // 
-            // clmEmail
-            // 
-            this.clmEmail.DataPropertyName = "EmailHV";
-            this.clmEmail.HeaderText = "Email";
-            this.clmEmail.Name = "clmEmail";
             // 
             // frmTiepNhanHocVien
             // 

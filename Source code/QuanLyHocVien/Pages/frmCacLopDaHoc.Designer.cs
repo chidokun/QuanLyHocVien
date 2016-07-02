@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblDiemTB = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -48,15 +48,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnXemTatCa = new System.Windows.Forms.Button();
             this.gridLop = new System.Windows.Forms.DataGridView();
             this.clmMaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmTenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnDatLai = new System.Windows.Forms.Button();
-            this.btnTimKiem = new System.Windows.Forms.Button();
             this.cboKhoaHoc = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.rdKhoaHoc = new System.Windows.Forms.RadioButton();
@@ -68,6 +65,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnXemTatCa = new System.Windows.Forms.Button();
+            this.btnDatLai = new System.Windows.Forms.Button();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -295,24 +295,6 @@
             this.panel4.Size = new System.Drawing.Size(341, 458);
             this.panel4.TabIndex = 17;
             // 
-            // btnXemTatCa
-            // 
-            this.btnXemTatCa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXemTatCa.BackColor = System.Drawing.Color.Silver;
-            this.btnXemTatCa.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnXemTatCa.FlatAppearance.BorderSize = 0;
-            this.btnXemTatCa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnXemTatCa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnXemTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXemTatCa.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnXemTatCa.Location = new System.Drawing.Point(212, 417);
-            this.btnXemTatCa.Name = "btnXemTatCa";
-            this.btnXemTatCa.Size = new System.Drawing.Size(113, 29);
-            this.btnXemTatCa.TabIndex = 45;
-            this.btnXemTatCa.Text = "Xem tất cả";
-            this.btnXemTatCa.UseVisualStyleBackColor = false;
-            this.btnXemTatCa.Click += new System.EventHandler(this.btnXemTatCa_Click);
-            // 
             // gridLop
             // 
             this.gridLop.AllowUserToAddRows = false;
@@ -339,8 +321,8 @@
             // clmMaLop
             // 
             this.clmMaLop.DataPropertyName = "MaLop";
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaLop.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaLop.DefaultCellStyle = dataGridViewCellStyle1;
             this.clmMaLop.FillWeight = 50F;
             this.clmMaLop.HeaderText = "Mã";
             this.clmMaLop.Name = "clmMaLop";
@@ -388,42 +370,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(325, 458);
             this.panel2.TabIndex = 15;
-            // 
-            // btnDatLai
-            // 
-            this.btnDatLai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDatLai.BackColor = System.Drawing.Color.Silver;
-            this.btnDatLai.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnDatLai.FlatAppearance.BorderSize = 0;
-            this.btnDatLai.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnDatLai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnDatLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDatLai.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnDatLai.Location = new System.Drawing.Point(229, 243);
-            this.btnDatLai.Name = "btnDatLai";
-            this.btnDatLai.Size = new System.Drawing.Size(82, 29);
-            this.btnDatLai.TabIndex = 44;
-            this.btnDatLai.Text = "Đặt lại";
-            this.btnDatLai.UseVisualStyleBackColor = false;
-            this.btnDatLai.Click += new System.EventHandler(this.btnDatLai_Click);
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTimKiem.BackColor = System.Drawing.Color.Silver;
-            this.btnTimKiem.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnTimKiem.FlatAppearance.BorderSize = 0;
-            this.btnTimKiem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnTimKiem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnTimKiem.Location = new System.Drawing.Point(132, 243);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(91, 29);
-            this.btnTimKiem.TabIndex = 43;
-            this.btnTimKiem.Text = "Tìm kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = false;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // cboKhoaHoc
             // 
@@ -539,6 +485,66 @@
             this.label1.Size = new System.Drawing.Size(102, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "CÁC LỚP ĐÃ HỌC";
+            // 
+            // btnXemTatCa
+            // 
+            this.btnXemTatCa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXemTatCa.BackColor = System.Drawing.Color.Silver;
+            this.btnXemTatCa.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnXemTatCa.FlatAppearance.BorderSize = 0;
+            this.btnXemTatCa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnXemTatCa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnXemTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXemTatCa.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnXemTatCa.Image = global::QuanLyHocVien.Properties.Resources.show_16x16;
+            this.btnXemTatCa.Location = new System.Drawing.Point(212, 417);
+            this.btnXemTatCa.Name = "btnXemTatCa";
+            this.btnXemTatCa.Size = new System.Drawing.Size(113, 29);
+            this.btnXemTatCa.TabIndex = 45;
+            this.btnXemTatCa.Text = "Xem tất cả";
+            this.btnXemTatCa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXemTatCa.UseVisualStyleBackColor = false;
+            this.btnXemTatCa.Click += new System.EventHandler(this.btnXemTatCa_Click);
+            // 
+            // btnDatLai
+            // 
+            this.btnDatLai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDatLai.BackColor = System.Drawing.Color.Silver;
+            this.btnDatLai.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnDatLai.FlatAppearance.BorderSize = 0;
+            this.btnDatLai.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnDatLai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnDatLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDatLai.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnDatLai.Image = global::QuanLyHocVien.Properties.Resources.refresh_16x16;
+            this.btnDatLai.Location = new System.Drawing.Point(229, 243);
+            this.btnDatLai.Name = "btnDatLai";
+            this.btnDatLai.Size = new System.Drawing.Size(82, 29);
+            this.btnDatLai.TabIndex = 44;
+            this.btnDatLai.Text = "Đặt lại";
+            this.btnDatLai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDatLai.UseVisualStyleBackColor = false;
+            this.btnDatLai.Click += new System.EventHandler(this.btnDatLai_Click);
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTimKiem.BackColor = System.Drawing.Color.Silver;
+            this.btnTimKiem.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnTimKiem.FlatAppearance.BorderSize = 0;
+            this.btnTimKiem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnTimKiem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnTimKiem.Image = global::QuanLyHocVien.Properties.Resources.zoom_16x16;
+            this.btnTimKiem.Location = new System.Drawing.Point(121, 243);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(102, 29);
+            this.btnTimKiem.TabIndex = 43;
+            this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnClose
             // 

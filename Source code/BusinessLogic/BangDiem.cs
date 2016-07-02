@@ -148,7 +148,7 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="maLop">Mã lớp</param>
         /// <returns></returns>
-        public static object SelectBangDiemLop(string maLop)
+        public static IQueryable<BangDiemTrungBinh> SelectBangDiemLop(string maLop)
         {
             return (from p in Database.BANGDIEMs
                     where p.MaLop == maLop
@@ -164,7 +164,7 @@ namespace BusinessLogic
                                         (int)p.DiemNoi * (double)p.LOPHOC.KHOAHOC.HeSoNoi / 100 +
                                         (int)p.DiemDoc * (double)p.LOPHOC.KHOAHOC.HeSoDoc / 100 +
                                         (int)p.DiemViet * (double)p.LOPHOC.KHOAHOC.HeSoViet / 100
-                    }).ToList();
+                    });
         }
 
         /// <summary>

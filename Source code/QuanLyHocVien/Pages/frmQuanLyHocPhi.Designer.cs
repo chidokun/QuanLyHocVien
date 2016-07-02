@@ -35,6 +35,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.gridKetQua = new System.Windows.Forms.DataGridView();
+            this.clmMaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTenHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmGioiTinhHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmMaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmConNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnHienTatCa = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -85,11 +90,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.clmMaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTenHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmGioiTinhHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmMaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmConNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridKetQua)).BeginInit();
@@ -152,6 +152,55 @@
             this.gridKetQua.TabIndex = 67;
             this.gridKetQua.Click += new System.EventHandler(this.gridKetQua_Click);
             // 
+            // clmMaHV
+            // 
+            this.clmMaHV.DataPropertyName = "MaHV";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle1;
+            this.clmMaHV.FillWeight = 75F;
+            this.clmMaHV.HeaderText = "Mã học viên";
+            this.clmMaHV.Name = "clmMaHV";
+            this.clmMaHV.ReadOnly = true;
+            // 
+            // clmTenHV
+            // 
+            this.clmTenHV.DataPropertyName = "TenHV";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green;
+            this.clmTenHV.DefaultCellStyle = dataGridViewCellStyle2;
+            this.clmTenHV.FillWeight = 150F;
+            this.clmTenHV.HeaderText = "Họ và tên";
+            this.clmTenHV.Name = "clmTenHV";
+            this.clmTenHV.ReadOnly = true;
+            // 
+            // clmGioiTinhHV
+            // 
+            this.clmGioiTinhHV.DataPropertyName = "GioiTinhHV";
+            this.clmGioiTinhHV.FillWeight = 70F;
+            this.clmGioiTinhHV.HeaderText = "Giới tính";
+            this.clmGioiTinhHV.Name = "clmGioiTinhHV";
+            this.clmGioiTinhHV.ReadOnly = true;
+            // 
+            // clmMaLop
+            // 
+            this.clmMaLop.DataPropertyName = "MaLop";
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaLop.DefaultCellStyle = dataGridViewCellStyle3;
+            this.clmMaLop.HeaderText = "Lớp học";
+            this.clmMaLop.Name = "clmMaLop";
+            this.clmMaLop.ReadOnly = true;
+            // 
+            // clmConNo
+            // 
+            this.clmConNo.DataPropertyName = "ConNo";
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle4.Format = "C0";
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.clmConNo.DefaultCellStyle = dataGridViewCellStyle4;
+            this.clmConNo.HeaderText = "Còn nợ";
+            this.clmConNo.Name = "clmConNo";
+            this.clmConNo.ReadOnly = true;
+            // 
             // btnHienTatCa
             // 
             this.btnHienTatCa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -162,11 +211,13 @@
             this.btnHienTatCa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnHienTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHienTatCa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHienTatCa.Image = global::QuanLyHocVien.Properties.Resources.show_16x16;
             this.btnHienTatCa.Location = new System.Drawing.Point(221, 461);
             this.btnHienTatCa.Name = "btnHienTatCa";
             this.btnHienTatCa.Size = new System.Drawing.Size(113, 29);
             this.btnHienTatCa.TabIndex = 66;
             this.btnHienTatCa.Text = "Hiện tất cả";
+            this.btnHienTatCa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHienTatCa.UseVisualStyleBackColor = false;
             this.btnHienTatCa.Click += new System.EventHandler(this.btnHienTatCa_Click);
             // 
@@ -228,12 +279,15 @@
             this.btnInBienLai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnInBienLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInBienLai.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnInBienLai.Location = new System.Drawing.Point(297, 407);
+            this.btnInBienLai.Image = global::QuanLyHocVien.Properties.Resources.print_16x16;
+            this.btnInBienLai.Location = new System.Drawing.Point(288, 407);
             this.btnInBienLai.Name = "btnInBienLai";
-            this.btnInBienLai.Size = new System.Drawing.Size(83, 34);
+            this.btnInBienLai.Size = new System.Drawing.Size(92, 34);
             this.btnInBienLai.TabIndex = 85;
             this.btnInBienLai.Text = "In biên lai";
+            this.btnInBienLai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInBienLai.UseVisualStyleBackColor = false;
+            this.btnInBienLai.Click += new System.EventHandler(this.btnInBienLai_Click);
             // 
             // btnLuuLai
             // 
@@ -244,11 +298,13 @@
             this.btnLuuLai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLuuLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuuLai.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnLuuLai.Location = new System.Drawing.Point(203, 407);
+            this.btnLuuLai.Image = global::QuanLyHocVien.Properties.Resources.save_16x16;
+            this.btnLuuLai.Location = new System.Drawing.Point(194, 407);
             this.btnLuuLai.Name = "btnLuuLai";
             this.btnLuuLai.Size = new System.Drawing.Size(88, 34);
             this.btnLuuLai.TabIndex = 84;
             this.btnLuuLai.Text = "Lưu lại";
+            this.btnLuuLai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuuLai.UseVisualStyleBackColor = false;
             this.btnLuuLai.Click += new System.EventHandler(this.btnLuuLai_Click);
             // 
@@ -526,11 +582,13 @@
             this.btnDatLai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnDatLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatLai.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnDatLai.Image = global::QuanLyHocVien.Properties.Resources.refresh_16x16;
             this.btnDatLai.Location = new System.Drawing.Point(212, 355);
             this.btnDatLai.Name = "btnDatLai";
             this.btnDatLai.Size = new System.Drawing.Size(82, 29);
             this.btnDatLai.TabIndex = 72;
             this.btnDatLai.Text = "Đặt lại";
+            this.btnDatLai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDatLai.UseVisualStyleBackColor = false;
             this.btnDatLai.Click += new System.EventHandler(this.btnDatLai_Click);
             // 
@@ -544,11 +602,13 @@
             this.btnTimKiem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnTimKiem.Location = new System.Drawing.Point(115, 355);
+            this.btnTimKiem.Image = global::QuanLyHocVien.Properties.Resources.zoom_16x16;
+            this.btnTimKiem.Location = new System.Drawing.Point(111, 355);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(91, 29);
+            this.btnTimKiem.Size = new System.Drawing.Size(95, 29);
             this.btnTimKiem.TabIndex = 71;
             this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = false;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
@@ -635,7 +695,7 @@
             // chkSoTienNo
             // 
             this.chkSoTienNo.AutoSize = true;
-            this.chkSoTienNo.Location = new System.Drawing.Point(21, 239);
+            this.chkSoTienNo.Location = new System.Drawing.Point(22, 239);
             this.chkSoTienNo.Name = "chkSoTienNo";
             this.chkSoTienNo.Size = new System.Drawing.Size(108, 19);
             this.chkSoTienNo.TabIndex = 64;
@@ -787,55 +847,6 @@
             this.btnClose.TabIndex = 0;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // clmMaHV
-            // 
-            this.clmMaHV.DataPropertyName = "MaHV";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle1;
-            this.clmMaHV.FillWeight = 75F;
-            this.clmMaHV.HeaderText = "Mã học viên";
-            this.clmMaHV.Name = "clmMaHV";
-            this.clmMaHV.ReadOnly = true;
-            // 
-            // clmTenHV
-            // 
-            this.clmTenHV.DataPropertyName = "TenHV";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green;
-            this.clmTenHV.DefaultCellStyle = dataGridViewCellStyle2;
-            this.clmTenHV.FillWeight = 150F;
-            this.clmTenHV.HeaderText = "Họ và tên";
-            this.clmTenHV.Name = "clmTenHV";
-            this.clmTenHV.ReadOnly = true;
-            // 
-            // clmGioiTinhHV
-            // 
-            this.clmGioiTinhHV.DataPropertyName = "GioiTinhHV";
-            this.clmGioiTinhHV.FillWeight = 70F;
-            this.clmGioiTinhHV.HeaderText = "Giới tính";
-            this.clmGioiTinhHV.Name = "clmGioiTinhHV";
-            this.clmGioiTinhHV.ReadOnly = true;
-            // 
-            // clmMaLop
-            // 
-            this.clmMaLop.DataPropertyName = "MaLop";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaLop.DefaultCellStyle = dataGridViewCellStyle3;
-            this.clmMaLop.HeaderText = "Lớp học";
-            this.clmMaLop.Name = "clmMaLop";
-            this.clmMaLop.ReadOnly = true;
-            // 
-            // clmConNo
-            // 
-            this.clmConNo.DataPropertyName = "ConNo";
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle4.Format = "C0";
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            this.clmConNo.DefaultCellStyle = dataGridViewCellStyle4;
-            this.clmConNo.HeaderText = "Còn nợ";
-            this.clmConNo.Name = "clmConNo";
-            this.clmConNo.ReadOnly = true;
             // 
             // frmQuanLyHocPhi
             // 
