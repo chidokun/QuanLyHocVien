@@ -20,6 +20,7 @@ namespace QuanLyHocVien.Pages
         private string maPhieu;
         private string maHV;
         private string maKH;
+        private bool isSave = false;
 
         public frmLapPhieuGhiDanh()
         {
@@ -43,6 +44,32 @@ namespace QuanLyHocVien.Pages
             //thPhieuGhiDanh.Start();
         }
 
+        /// <summary>
+        /// Kiểm tra nhập liệu tìm kiếm có hợp lệ
+        /// </summary>
+        public void ValidateSearch()
+        {
+            if (rdMaHV.Checked && txtMaHV.Text == string.Empty)
+                throw new ArgumentException("Mã học viên không được trống");
+            if (rdTenHV.Checked && txtTenHV.Text == string.Empty)
+                throw new ArgumentException("Họ và tên học viên không được trống");
+        }
+
+        /// <summary>
+        /// Kiểm tra phiếu ghi danh có hợp lệ
+        /// </summary>
+        public void ValidatePhieu()
+        {
+            var f = DangKy.SelectAll(gridDSHV.SelectedRows[0].Cells["clmMaHV"].Value.ToString());
+
+            foreach (var i in f)
+                if (i.PHIEUGHIDANH.ConNo > 0)
+                    throw new Exception("Học viên đang nợ không được phép ghi danh mới");
+            if (numDaDong.Value < GlobalSettings.QuyDinh["QD0001"])
+                throw new Exception(string.Format("Số tiền đóng khi ghi danh phải ít nhất bằng {0:C0}", GlobalSettings.QuyDinh["QD0001"]));
+        }
+
+        #region Events
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -95,13 +122,18 @@ namespace QuanLyHocVien.Pages
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            if (rdMaHV.Checked)
+            try
             {
-                gridDSHV.DataSource = HocVien.SelectAll(txtMaHV.Text, null, null, null, null, null);
+                ValidateSearch();
+
+                if (rdMaHV.Checked)
+                    gridDSHV.DataSource = HocVien.SelectAll(txtMaHV.Text, null, null, null, null, null);
+                else if (rdTenHV.Checked)
+                    gridDSHV.DataSource = HocVien.SelectAll(null, txtTenHV.Text, null, null, null, null);
             }
-            else if (rdTenHV.Checked)
+            catch (ArgumentException ex)
             {
-                gridDSHV.DataSource = HocVien.SelectAll(null, txtTenHV.Text, null, null, null, null);
+                MessageBox.Show(ex.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -154,6 +186,8 @@ namespace QuanLyHocVien.Pages
         {
             try
             {
+                ValidatePhieu();
+
                 maPhieu = txtMaPhieu.Text;
                 maHV = gridDSHV.SelectedRows[0].Cells["clmMaHV"].Value.ToString();
                 maKH = ((KHOAHOC)cboKhoaHoc.SelectedValue).MaKH;
@@ -172,22 +206,50 @@ namespace QuanLyHocVien.Pages
                         MaPhieu = maPhieu
                     }
                 });
-                MessageBox.Show("Thêm phiếu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                MessageBox.Show(string.Format("Phiếu ghi danh {0} đã được thêm thành công", maPhieu), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                var h = HocVien.Select(maHV);
+                if (h.MaLoaiHV == "LHV00")
+                {
+                    HocVien.Update(new HOCVIEN()
+                    {
+                        MaHV = h.MaHV,
+                        TenHV = h.TenHV,
+                        GioiTinhHV = h.GioiTinhHV,
+                        NgaySinh = h.NgaySinh,
+                        DiaChi = h.DiaChi,
+                        SdtHV = h.SdtHV,
+                        EmailHV = h.EmailHV,
+                        NgayTiepNhan = h.NgayTiepNhan,
+                        MaLoaiHV = "LHV01",
+                        TenDangNhap = h.MaHV,
+                    },
+                    new TAIKHOAN()
+                    {
+                        TenDangNhap = h.MaHV,
+                        MatKhau = h.MaHV
+                    });
+                    MessageBox.Show(string.Format("Học viên {0} đã được chuyển thành học viên chính thức với tài khoản:{1}Tên đăng nhập: {2}{3}Mật khẩu: {4}",
+                        h.TenHV, Environment.NewLine, h.MaHV, Environment.NewLine, h.MaHV),
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                isSave = true;
                 LoadPhieuGhiDanh();
+                if (MessageBox.Show("Bạn có muốn in phiếu ghi danh vừa lưu?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    btnInBienLai_Click(sender, e);
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnInBienLai_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn lưu phiếu?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (isSave)
             {
-                btnLuuPhieu_Click(sender, e);
-
                 frmReport frm = new frmReport();
 
                 DANGKY d = DangKy.Select(maHV, maKH, maPhieu);
@@ -212,11 +274,15 @@ namespace QuanLyHocVien.Pages
 
                 frm.ShowDialog();
             }
+            else
+                MessageBox.Show("Vui lòng lưu phiếu trước khi in", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void gridDSHV_Click(object sender, EventArgs e)
         {
+            isSave = false;
             btnDatLaiPhieu_Click(sender, e);
         }
+        #endregion
     }
 }

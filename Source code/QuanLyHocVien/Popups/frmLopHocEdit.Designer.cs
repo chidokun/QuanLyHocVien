@@ -48,6 +48,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnHuyBo = new System.Windows.Forms.Button();
             this.btnLuuThongTin = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -55,6 +56,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.rdDong);
             this.panel2.Controls.Add(this.rdMo);
             this.panel2.Controls.Add(this.label6);
@@ -282,6 +284,16 @@
             this.btnLuuThongTin.UseVisualStyleBackColor = false;
             this.btnLuuThongTin.Click += new System.EventHandler(this.btnLuuThongTin_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(382, 131);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(20, 15);
+            this.label8.TabIndex = 79;
+            this.label8.Text = "(*)";
+            // 
             // frmLopHocEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -330,5 +342,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RadioButton rdDong;
         private System.Windows.Forms.RadioButton rdMo;
+        private System.Windows.Forms.Label label8;
     }
 }

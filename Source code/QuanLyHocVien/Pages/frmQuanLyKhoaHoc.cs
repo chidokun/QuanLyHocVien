@@ -97,11 +97,21 @@ namespace QuanLyHocVien.Pages
             };
         }
 
+        /// <summary>
+        /// Kiểm tra hợp lệ các hệ số
+        /// </summary>
+        public void ValidateHeSo()
+        {
+            if (numDiemDoc.Value + numDiemNghe.Value + numDiemNoi.Value + numDiemViet.Value != 100)
+                throw new ArgumentException("Tổng các hệ số điểm phải bằng 100%");
+        }
+
         public void LoadGridKhoaHoc()
         {
             gridKH.DataSource = KhoaHoc.SelectAll();
         }
 
+        #region Events
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -119,7 +129,7 @@ namespace QuanLyHocVien.Pages
 
             LockPanelControl();
             LoadGridKhoaHoc();
-            gridKH_Click(sender, e);         
+            gridKH_Click(sender, e);
         }
 
         private void gridKH_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -187,6 +197,8 @@ namespace QuanLyHocVien.Pages
         {
             try
             {
+                ValidateHeSo();
+
                 if (isInsert)
                 {
                     KhoaHoc.Insert(LoadKhoaHoc());
@@ -201,10 +213,15 @@ namespace QuanLyHocVien.Pages
                 }
                 LoadGridKhoaHoc();
             }
-            catch
+            catch (ArgumentException ex)
             {
-                MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
     }
 }

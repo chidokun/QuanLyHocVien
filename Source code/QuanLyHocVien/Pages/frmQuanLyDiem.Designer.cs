@@ -174,6 +174,7 @@
             // gridLop
             // 
             this.gridLop.AllowUserToAddRows = false;
+            this.gridLop.AllowUserToResizeRows = false;
             this.gridLop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -663,6 +664,7 @@
             // gridDSHV
             // 
             this.gridDSHV.AllowUserToAddRows = false;
+            this.gridDSHV.AllowUserToResizeRows = false;
             this.gridDSHV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));

@@ -43,6 +43,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnHuyBo = new System.Windows.Forms.Button();
             this.btnLuuThongTin = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -50,6 +53,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtMatKhauMoiAgain);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtMatKhauMoi);
@@ -214,6 +220,36 @@
             this.btnLuuThongTin.UseVisualStyleBackColor = false;
             this.btnLuuThongTin.Click += new System.EventHandler(this.btnLuuThongTin_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(390, 159);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 15);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "(*)";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(390, 203);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(20, 15);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "(*)";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(390, 246);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(20, 15);
+            this.label8.TabIndex = 42;
+            this.label8.Text = "(*)";
+            // 
             // frmDoiMatKhau
             // 
             this.AcceptButton = this.btnLuuThongTin;
@@ -259,5 +295,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnHuyBo;
         private System.Windows.Forms.Button btnLuuThongTin;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label1;
     }
 }

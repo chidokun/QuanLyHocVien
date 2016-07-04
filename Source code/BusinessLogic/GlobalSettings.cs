@@ -77,6 +77,11 @@ namespace BusinessLogic
         /// </summary>
         public static string CenterTelephone { get; set; }
 
+        /// <summary>
+        /// Đại diện cho danh sách quy định
+        /// </summary>
+        public static Dictionary<string,int> QuyDinh { get; set; }
+
 
         /// <summary>
         /// Kết nối đến cơ sở dữ liệu
@@ -144,6 +149,19 @@ namespace BusinessLogic
             Settings.Default.Database_ServerCatalog = ServerCatalog;
 
             Settings.Default.Save();
+        }
+
+        /// <summary>
+        /// Nạp danh sách quy định
+        /// </summary>
+        public static void LoadQuyDinh()
+        {
+            QuyDinh = new Dictionary<string, int>();
+
+            var f = BusinessLogic.QuyDinh.SelectAll();
+
+            foreach (var i in f)
+                QuyDinh.Add(i.MaQD, (int)i.GiaTri);
         }
     }
 }

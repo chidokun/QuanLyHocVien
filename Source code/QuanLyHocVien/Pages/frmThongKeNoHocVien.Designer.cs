@@ -125,9 +125,9 @@
             this.lblTongCong.AutoSize = true;
             this.lblTongCong.Location = new System.Drawing.Point(48, 441);
             this.lblTongCong.Name = "lblTongCong";
-            this.lblTongCong.Size = new System.Drawing.Size(271, 15);
+            this.lblTongCong.Size = new System.Drawing.Size(255, 15);
             this.lblTongCong.TabIndex = 49;
-            this.lblTongCong.Text = "Tổng cộng: {0} học viên còn nợ. Tổng nợ: {1} VNĐ";
+            this.lblTongCong.Text = "Tổng cộng: 0 học viên còn nợ. Tổng nợ: 0 VNĐ";
             // 
             // tableLayoutPanel2
             // 
@@ -159,6 +159,8 @@
             // 
             // gridBaoCao
             // 
+            this.gridBaoCao.AllowUserToAddRows = false;
+            this.gridBaoCao.AllowUserToResizeRows = false;
             this.gridBaoCao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridBaoCao.BackgroundColor = System.Drawing.Color.White;
             this.gridBaoCao.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;

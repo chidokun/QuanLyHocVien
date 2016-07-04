@@ -21,6 +21,7 @@ namespace QuanLyHocVien.Pages
             InitializeComponent();
         }
 
+        #region Events
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -87,5 +88,11 @@ namespace QuanLyHocVien.Pages
 
             frm.ShowDialog();
         }
+
+        private void frmBaoCaoHocVienTheoThang_Load(object sender, EventArgs e)
+        {
+            dateThang.MaxDate = DateTime.Now;
+        }
+        #endregion
     }
 }

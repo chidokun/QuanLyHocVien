@@ -24,6 +24,8 @@ namespace QuanLyHocVien.Pages
 
         private void frmHocPhiHocVien_Load(object sender, EventArgs e)
         {
+            dateTuNgay.MaxDate = dateDenNgay.MaxDate = DateTime.Now;
+
             btnDatLai_Click(sender, e);
 
             gridLop.AutoGenerateColumns = false;
@@ -92,6 +94,11 @@ namespace QuanLyHocVien.Pages
                 lblConNo.Text = string.Empty;
                 lblTongNoTatCa.Text = string.Empty;
             }
+        }
+
+        private void dateDenNgay_ValueChanged(object sender, EventArgs e)
+        {
+            dateTuNgay.MaxDate = dateDenNgay.Value;
         }
     }
 }

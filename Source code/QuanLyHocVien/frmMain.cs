@@ -624,6 +624,7 @@ namespace QuanLyHocVien
                 GlobalPages.LoadEssentialPages();
 
             GlobalSettings.LoadCenterInformation();
+            GlobalSettings.LoadQuyDinh();
 
             btnTrangMoDau_Click(null, null);
         }

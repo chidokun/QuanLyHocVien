@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnDatLai = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.chkLoaiNV = new System.Windows.Forms.CheckBox();
@@ -251,7 +251,6 @@
             // gridNV
             // 
             this.gridNV.AllowUserToAddRows = false;
-            this.gridNV.AllowUserToOrderColumns = true;
             this.gridNV.AllowUserToResizeRows = false;
             this.gridNV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -281,8 +280,8 @@
             // clmMaNV
             // 
             this.clmMaNV.DataPropertyName = "MaNV";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaNV.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaNV.DefaultCellStyle = dataGridViewCellStyle3;
             this.clmMaNV.FillWeight = 70F;
             this.clmMaNV.HeaderText = "Mã nhân viên";
             this.clmMaNV.Name = "clmMaNV";
@@ -290,8 +289,8 @@
             // clmTenNV
             // 
             this.clmTenNV.DataPropertyName = "TenNV";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.clmTenNV.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.clmTenNV.DefaultCellStyle = dataGridViewCellStyle4;
             this.clmTenNV.FillWeight = 93.27411F;
             this.clmTenNV.HeaderText = "Họ và tên";
             this.clmTenNV.Name = "clmTenNV";
@@ -331,9 +330,9 @@
             this.lblTongCong.AutoSize = true;
             this.lblTongCong.Location = new System.Drawing.Point(9, 7);
             this.lblTongCong.Name = "lblTongCong";
-            this.lblTongCong.Size = new System.Drawing.Size(167, 15);
+            this.lblTongCong.Size = new System.Drawing.Size(132, 15);
             this.lblTongCong.TabIndex = 11;
-            this.lblTongCong.Text = "Tổng cộng: <num> nhân viên";
+            this.lblTongCong.Text = "Tổng cộng: 0 nhân viên";
             // 
             // panel2
             // 

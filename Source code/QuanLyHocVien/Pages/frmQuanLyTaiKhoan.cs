@@ -17,6 +17,15 @@ namespace QuanLyHocVien.Pages
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Kiểm tra nhập liệu tìm kiếm có hợp lệ
+        /// </summary>
+        public void ValidateSearch()
+        {
+            if (chkTen.Checked && txtTen.Text == string.Empty)
+                throw new ArgumentException("Mã lớp không được trống");
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -61,7 +70,20 @@ namespace QuanLyHocVien.Pages
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            gridKetQua.DataSource = TaiKhoan.SelectAll(chkTen.Checked ? txtTen.Text : null, chkLoaiTK.Checked ? (UserType?)cboLoaiTK.SelectedIndex : null);
+            try
+            {
+                ValidateSearch();
+
+                gridKetQua.DataSource = TaiKhoan.SelectAll(chkTen.Checked ? txtTen.Text : null, chkLoaiTK.Checked ? (UserType?)cboLoaiTK.SelectedIndex : null);
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void gridKetQua_Click(object sender, EventArgs e)

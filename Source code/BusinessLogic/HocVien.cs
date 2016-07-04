@@ -110,6 +110,7 @@ namespace BusinessLogic
             hocVienCu.DiaChi = hocVien.DiaChi;
             hocVienCu.SdtHV = hocVien.SdtHV;
             hocVienCu.EmailHV = hocVien.EmailHV;
+            hocVienCu.NgayTiepNhan = hocVien.NgayTiepNhan;
 
             if (hocVienCu.MaLoaiHV != hocVien.MaLoaiHV)
             {

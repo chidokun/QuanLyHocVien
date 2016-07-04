@@ -399,9 +399,9 @@
             this.lblTongCong.AutoSize = true;
             this.lblTongCong.Location = new System.Drawing.Point(13, 451);
             this.lblTongCong.Name = "lblTongCong";
-            this.lblTongCong.Size = new System.Drawing.Size(154, 15);
+            this.lblTongCong.Size = new System.Drawing.Size(119, 15);
             this.lblTongCong.TabIndex = 65;
-            this.lblTongCong.Text = "Tổng cộng: <num> kết quả";
+            this.lblTongCong.Text = "Tổng cộng: 0 kết quả";
             // 
             // label4
             // 
@@ -415,6 +415,7 @@
             // gridKetQua
             // 
             this.gridKetQua.AllowUserToAddRows = false;
+            this.gridKetQua.AllowUserToResizeRows = false;
             this.gridKetQua.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));

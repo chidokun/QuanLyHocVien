@@ -17,6 +17,17 @@ namespace QuanLyHocVien.Popups
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Kiểm tra hợp lệ
+        /// </summary>
+        public void ValidateLuu()
+        {
+            if (string.IsNullOrWhiteSpace(txtSDT.Text))
+                throw new ArgumentException("Số điện thoại không được trống");
+            if (string.IsNullOrWhiteSpace(txtEmail.Text))
+                throw new ArgumentException("Email không được trống");
+        }
+
         #region Events
 
         private void btnHuyBo_Click(object sender, EventArgs e)
@@ -46,6 +57,8 @@ namespace QuanLyHocVien.Popups
         {
             try
             {
+                ValidateLuu();
+
                 GiangVien.Update(new GIANGVIEN()
                 {
                     MaGV = txtMaGV.Text,
@@ -57,9 +70,13 @@ namespace QuanLyHocVien.Popups
 
                 MessageBox.Show("Cập nhật thông tin giảng viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch
+            catch (ArgumentException ex)
             {
-                MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

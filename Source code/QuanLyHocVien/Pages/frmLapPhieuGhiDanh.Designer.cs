@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
@@ -149,6 +149,8 @@
             // 
             // gridDSHV
             // 
+            this.gridDSHV.AllowUserToAddRows = false;
+            this.gridDSHV.AllowUserToResizeRows = false;
             this.gridDSHV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -176,8 +178,8 @@
             // clmMaHV
             // 
             this.clmMaHV.DataPropertyName = "MaHV";
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle1;
             this.clmMaHV.HeaderText = "Mã";
             this.clmMaHV.Name = "clmMaHV";
             // 
@@ -630,6 +632,8 @@
             // 
             // gridPhieuGhiDanh
             // 
+            this.gridPhieuGhiDanh.AllowUserToAddRows = false;
+            this.gridPhieuGhiDanh.AllowUserToResizeRows = false;
             this.gridPhieuGhiDanh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -657,8 +661,8 @@
             // clmMaPhieu
             // 
             this.clmMaPhieu.DataPropertyName = "MaPhieu";
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaPhieu.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaPhieu.DefaultCellStyle = dataGridViewCellStyle2;
             this.clmMaPhieu.FillWeight = 80F;
             this.clmMaPhieu.HeaderText = "Mã phiếu";
             this.clmMaPhieu.Name = "clmMaPhieu";
@@ -666,8 +670,8 @@
             // clmMaHV_DS
             // 
             this.clmMaHV_DS.DataPropertyName = "MaHV";
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.clmMaHV_DS.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.clmMaHV_DS.DefaultCellStyle = dataGridViewCellStyle3;
             this.clmMaHV_DS.HeaderText = "Mã học viên";
             this.clmMaHV_DS.Name = "clmMaHV_DS";
             // 
@@ -680,22 +684,22 @@
             // clmDaDong
             // 
             this.clmDaDong.DataPropertyName = "DaDong";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Format = "C0";
-            dataGridViewCellStyle14.NullValue = null;
-            this.clmDaDong.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.clmDaDong.DefaultCellStyle = dataGridViewCellStyle4;
             this.clmDaDong.HeaderText = "Đã đóng";
             this.clmDaDong.Name = "clmDaDong";
             // 
             // clmConNo
             // 
             this.clmConNo.DataPropertyName = "ConNo";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle15.Format = "C0";
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            this.clmConNo.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle5.Format = "C0";
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.clmConNo.DefaultCellStyle = dataGridViewCellStyle5;
             this.clmConNo.HeaderText = "Còn nợ";
             this.clmConNo.Name = "clmConNo";
             // 

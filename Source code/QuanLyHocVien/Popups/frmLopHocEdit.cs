@@ -63,16 +63,30 @@ namespace QuanLyHocVien.Popups
             };
         }
 
+        /// <summary>
+        /// Kiểm tra nhập liệu tìm kiếm có hợp lệ
+        /// </summary>
+        public void ValidateLuu()
+        {
+            if (string.IsNullOrWhiteSpace(txtTenLop.Text))
+                throw new ArgumentException("Tên lớp không được trống");
+        }
+
         #region Events
 
         private void dateNgayBD_ValueChanged(object sender, EventArgs e)
         {
             if (isInsert)
                 txtMaLop.Text = LopHoc.AutoGenerateId(dateNgayBD.Value);
+
+            dateNgayKT.MinDate = dateNgayBD.Value;
+            dateNgayKT.Value = dateNgayBD.Value + TimeSpan.FromDays(180);
         }
 
         private void frmLopHocEdit_Load(object sender, EventArgs e)
         {
+            dateNgayBD.Value = DateTime.Now;
+
             cboKhoa.DataSource = KhoaHoc.SelectAll();
             cboKhoa.DisplayMember = "TenKH";
             cboKhoa.ValueMember = "MaKH";
@@ -84,6 +98,8 @@ namespace QuanLyHocVien.Popups
         {
             try
             {
+                ValidateLuu();
+
                 if (isInsert)
                 {
                     LopHoc.Insert(LoadLopHoc());
@@ -98,9 +114,13 @@ namespace QuanLyHocVien.Popups
                 }
                 this.Close();
             }
-            catch
+            catch (ArgumentException ex)
             {
-                MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

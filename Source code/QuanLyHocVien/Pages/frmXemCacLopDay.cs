@@ -41,9 +41,9 @@ namespace QuanLyHocVien.Pages
                 lblNgayKetThuc.Text = string.Empty;
                 lblSiSo.Text = string.Empty;
             }
-
         }
 
+        #region Events
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -61,6 +61,8 @@ namespace QuanLyHocVien.Pages
 
         private void frmXemCacLopDay_Load(object sender, EventArgs e)
         {
+            dateTuNgay.MaxDate = dateDenNgay.MaxDate = DateTime.Now;
+
             //load khóa học
             cboKhoaHoc.DataSource = KhoaHoc.SelectAll();
             cboKhoaHoc.DisplayMember = "TenKH";
@@ -103,5 +105,11 @@ namespace QuanLyHocVien.Pages
 
             gridKetQuaTimKiem_Click(sender, e);
         }
+
+        private void dateDenNgay_ValueChanged(object sender, EventArgs e)
+        {
+            dateTuNgay.MaxDate = dateDenNgay.Value;
+        }
+        #endregion
     }
 }

@@ -21,27 +21,23 @@ namespace QuanLyHocVien.Pages
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Nạp danh sách chưa có lớp lên giao diện
+        /// </summary>
         public void LoadDSHVChuaCoLop()
         {
             gridDSHV.Rows.Clear();
 
-            //thChuaCoLop = new Thread(() =>
-            //{
             dsChuaCoLop = HocVien.DanhSachChuaCoLop();
 
-            // gridDSHV.Invoke((MethodInvoker)delegate
-            //{
             foreach (var i in dsChuaCoLop)
             {
                 string[] s = { i.MaHV, i.HOCVIEN.TenHV, i.MaPhieu, i.KHOAHOC.TenKH };
                 gridDSHV.Rows.Add(s);
             }
-            //});
-            //});
-
-            //thChuaCoLop.Start();   
         }
 
+        #region Events
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -93,20 +89,25 @@ namespace QuanLyHocVien.Pages
             {
                 HOCVIEN hv = HocVien.Select(gridDSHV.SelectedRows[0].Cells["clmMaHV"].Value.ToString());
 
-                string[] s = new string[]
+                if (gridDSHVLop.Rows.Count < GlobalSettings.QuyDinh["QD0000"] ||
+                MessageBox.Show("Số học viên tối đa của lớp là " + GlobalSettings.QuyDinh["QD0000"] + Environment.NewLine + "Bạn có chắc sẽ thêm?",
+                    "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    hv.MaHV,
-                    hv.TenHV,
-                    ((DateTime)hv.NgaySinh).ToString("dd/MM/yyyy"),
-                    hv.GioiTinhHV,
-                    hv.SdtHV,
-                    hv.DiaChi,
-                    gridDSHV.SelectedRows[0].Cells["clmMaPhieu"].Value.ToString()
-                };
+                    string[] s = new string[]
+                    {
+                        hv.MaHV,
+                        hv.TenHV,
+                        ((DateTime)hv.NgaySinh).ToString("dd/MM/yyyy"),
+                        hv.GioiTinhHV,
+                        hv.SdtHV,
+                        hv.DiaChi,
+                        gridDSHV.SelectedRows[0].Cells["clmMaPhieu"].Value.ToString()
+                    };
 
-                gridDSHV.Rows.RemoveAt(gridDSHV.SelectedRows[0].Index);
+                    gridDSHV.Rows.RemoveAt(gridDSHV.SelectedRows[0].Index);
 
-                gridDSHVLop.Rows.Add(s);
+                    gridDSHVLop.Rows.Add(s);
+                }
             }
             catch { }
         }
@@ -185,5 +186,6 @@ namespace QuanLyHocVien.Pages
                 MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
     }
 }

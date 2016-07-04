@@ -147,6 +147,8 @@
             // 
             // gridLop
             // 
+            this.gridLop.AllowUserToAddRows = false;
+            this.gridLop.AllowUserToResizeRows = false;
             this.gridLop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -303,9 +305,9 @@
             this.lblTongCong.AutoSize = true;
             this.lblTongCong.Location = new System.Drawing.Point(16, 456);
             this.lblTongCong.Name = "lblTongCong";
-            this.lblTongCong.Size = new System.Drawing.Size(348, 15);
+            this.lblTongCong.Size = new System.Drawing.Size(305, 15);
             this.lblTongCong.TabIndex = 68;
-            this.lblTongCong.Text = "Tổng cộng: <num> học viên. Điểm trung bình của lớp: {0} điểm.";
+            this.lblTongCong.Text = "Tổng cộng: 0 học viên. Điểm trung bình của lớp: 0 điểm.";
             // 
             // label24
             // 
@@ -318,6 +320,8 @@
             // 
             // gridThongKe
             // 
+            this.gridThongKe.AllowUserToAddRows = false;
+            this.gridThongKe.AllowUserToResizeRows = false;
             this.gridThongKe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));

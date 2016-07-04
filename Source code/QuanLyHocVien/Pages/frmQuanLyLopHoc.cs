@@ -18,6 +18,18 @@ namespace QuanLyHocVien.Pages
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Kiểm tra nhập liệu tìm kiếm có hợp lệ
+        /// </summary>
+        public void ValidateSearch()
+        {
+            if (chkMaLop.Checked && txtMaLop.Text == string.Empty)
+                throw new ArgumentException("Mã lớp không được trống");
+            if (chkTenLop.Checked && txtTenLop.Text == string.Empty)
+                throw new ArgumentException("Tên lớp không được trống");
+        }
+
+        #region Events
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -27,7 +39,7 @@ namespace QuanLyHocVien.Pages
         private void btnThem_Click(object sender, EventArgs e)
         {
             frmLopHocEdit frm = new frmLopHocEdit();
-            frm.Text = "Thêm lớp";
+            frm.Text = "Thêm lớp mới";
             frm.ShowDialog();
 
             btnHienTatCa_Click(sender, e);
@@ -60,12 +72,25 @@ namespace QuanLyHocVien.Pages
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            gridLop.DataSource = LopHoc.SelectAll(chkMaLop.Checked ? txtMaLop.Text : null,
-                chkTenLop.Checked ? txtTenLop.Text : null,
-                chkKhoa.Checked ? cboKhoa.SelectedValue.ToString() : null,
-                chkKhoangTG.Checked ? (DateTime?)dateTuNgay.Value : null,
-                chkKhoangTG.Checked ? (DateTime?)dateDenNgay.Value : null,
-                chkTinhTrang.Checked ? (bool?)rdMo.Checked : null);
+            try
+            {
+                ValidateSearch();
+
+                gridLop.DataSource = LopHoc.SelectAll(chkMaLop.Checked ? txtMaLop.Text : null,
+                    chkTenLop.Checked ? txtTenLop.Text : null,
+                    chkKhoa.Checked ? cboKhoa.SelectedValue.ToString() : null,
+                    chkKhoangTG.Checked ? (DateTime?)dateTuNgay.Value : null,
+                    chkKhoangTG.Checked ? (DateTime?)dateDenNgay.Value : null,
+                    chkTinhTrang.Checked ? (bool?)rdMo.Checked : null);
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnDatLai_Click(object sender, EventArgs e)
@@ -81,6 +106,8 @@ namespace QuanLyHocVien.Pages
 
         private void frmQuanLyLopHoc_Load(object sender, EventArgs e)
         {
+            dateTuNgay.MaxDate = dateDenNgay.MaxDate = DateTime.Now;
+
             cboKhoa.DataSource = KhoaHoc.SelectAll();
             cboKhoa.DisplayMember = "TenKH";
             cboKhoa.ValueMember = "MaKH";
@@ -132,7 +159,7 @@ namespace QuanLyHocVien.Pages
         private void btnSua_Click(object sender, EventArgs e)
         {
             frmLopHocEdit frm = new frmLopHocEdit(LopHoc.Select(gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString()));
-            frm.Text = "Sửa thông tin lớp";
+            frm.Text = "Cập nhật thông tin lớp";
             frm.ShowDialog();
 
             btnHienTatCa_Click(sender, e);
@@ -156,5 +183,11 @@ namespace QuanLyHocVien.Pages
                 MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void dateDenNgay_ValueChanged(object sender, EventArgs e)
+        {
+            dateTuNgay.MaxDate = dateDenNgay.Value;
+        }
+        #endregion
     }
 }

@@ -49,6 +49,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnHuyBo = new System.Windows.Forms.Button();
             this.btnLuuThongTin = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -56,6 +58,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.txtDiaChi);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
@@ -285,6 +289,26 @@
             this.btnLuuThongTin.UseVisualStyleBackColor = false;
             this.btnLuuThongTin.Click += new System.EventHandler(this.btnLuuThongTin_Click);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(390, 296);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(20, 15);
+            this.label14.TabIndex = 60;
+            this.label14.Text = "(*)";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(390, 339);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(20, 15);
+            this.label10.TabIndex = 61;
+            this.label10.Text = "(*)";
+            // 
             // frmThayDoiThongTinHV
             // 
             this.AcceptButton = this.btnLuuThongTin;
@@ -336,5 +360,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateNgaySinh;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label14;
     }
 }

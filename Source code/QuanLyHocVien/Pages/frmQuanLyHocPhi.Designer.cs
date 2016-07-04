@@ -39,6 +39,7 @@
             this.clmTenHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmGioiTinhHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmMaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmMaPhieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmConNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnHienTatCa = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -128,6 +129,7 @@
             // gridKetQua
             // 
             this.gridKetQua.AllowUserToAddRows = false;
+            this.gridKetQua.AllowUserToResizeRows = false;
             this.gridKetQua.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -140,6 +142,7 @@
             this.clmTenHV,
             this.clmGioiTinhHV,
             this.clmMaLop,
+            this.clmMaPhieu,
             this.clmConNo});
             this.gridKetQua.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridKetQua.Location = new System.Drawing.Point(21, 36);
@@ -188,6 +191,13 @@
             this.clmMaLop.HeaderText = "Lớp học";
             this.clmMaLop.Name = "clmMaLop";
             this.clmMaLop.ReadOnly = true;
+            // 
+            // clmMaPhieu
+            // 
+            this.clmMaPhieu.DataPropertyName = "MaPhieu";
+            this.clmMaPhieu.HeaderText = "Mã phiếu";
+            this.clmMaPhieu.Name = "clmMaPhieu";
+            this.clmMaPhieu.ReadOnly = true;
             // 
             // clmConNo
             // 
@@ -280,7 +290,7 @@
             this.btnInBienLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInBienLai.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnInBienLai.Image = global::QuanLyHocVien.Properties.Resources.print_16x16;
-            this.btnInBienLai.Location = new System.Drawing.Point(288, 407);
+            this.btnInBienLai.Location = new System.Drawing.Point(282, 387);
             this.btnInBienLai.Name = "btnInBienLai";
             this.btnInBienLai.Size = new System.Drawing.Size(92, 34);
             this.btnInBienLai.TabIndex = 85;
@@ -299,7 +309,7 @@
             this.btnLuuLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuuLai.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnLuuLai.Image = global::QuanLyHocVien.Properties.Resources.save_16x16;
-            this.btnLuuLai.Location = new System.Drawing.Point(194, 407);
+            this.btnLuuLai.Location = new System.Drawing.Point(188, 387);
             this.btnLuuLai.Name = "btnLuuLai";
             this.btnLuuLai.Size = new System.Drawing.Size(88, 34);
             this.btnLuuLai.TabIndex = 84;
@@ -327,6 +337,11 @@
             this.numNop.BackColor = System.Drawing.Color.White;
             this.numNop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.numNop.ForeColor = System.Drawing.Color.Blue;
+            this.numNop.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numNop.Location = new System.Drawing.Point(161, 342);
             this.numNop.Maximum = new decimal(new int[] {
             1661992959,
@@ -642,6 +657,7 @@
             this.numDen.Size = new System.Drawing.Size(138, 25);
             this.numDen.TabIndex = 69;
             this.numDen.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numDen.ValueChanged += new System.EventHandler(this.numDen_ValueChanged);
             // 
             // label11
             // 
@@ -682,6 +698,7 @@
             this.numTu.Size = new System.Drawing.Size(138, 25);
             this.numTu.TabIndex = 66;
             this.numTu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numTu.ValueChanged += new System.EventHandler(this.numTu_ValueChanged);
             // 
             // label8
             // 
@@ -938,6 +955,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmTenHV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmGioiTinhHV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmMaLop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaPhieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmConNo;
     }
 }

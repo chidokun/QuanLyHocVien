@@ -23,7 +23,15 @@ namespace BusinessLogic
         {
             return (from p in Database.GIANGDAYs
                     where p.MaGV == maGV
-                    select p).ToList();
+                    select new
+                    {
+                        MaLop = p.MaLop,
+                        TenLop = p.LOPHOC.TenLop,
+                        NgayBD = p.LOPHOC.NgayBD,
+                        NgayKT = p.LOPHOC.NgayKT,
+                        DangMo = p.LOPHOC.DangMo,
+                        SiSo = p.LOPHOC.SiSo
+                    }).ToList();
         }
 
 

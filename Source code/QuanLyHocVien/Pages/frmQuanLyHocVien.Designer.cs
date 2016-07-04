@@ -392,6 +392,7 @@
             this.dateDenNgay.Name = "dateDenNgay";
             this.dateDenNgay.Size = new System.Drawing.Size(196, 25);
             this.dateDenNgay.TabIndex = 59;
+            this.dateDenNgay.ValueChanged += new System.EventHandler(this.dateDenNgay_ValueChanged);
             // 
             // label6
             // 

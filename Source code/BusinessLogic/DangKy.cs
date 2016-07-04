@@ -37,5 +37,17 @@ namespace BusinessLogic
                     where p.MaHV == maHV && p.MaKH == maKH && p.MaPhieu == maPhieu
                     select p).Single();
         }
+
+        /// <summary>
+        /// Tìm một đăng ký
+        /// </summary>
+        /// <param name="maHV">Mã học viên</param>
+        /// <returns></returns>
+        public static IQueryable<DANGKY> SelectAll(string maHV)
+        {
+            return (from p in Database.DANGKies
+                    where p.MaHV == maHV
+                    select p);
+        }
     }
 }

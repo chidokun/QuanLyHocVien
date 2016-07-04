@@ -28,19 +28,28 @@ namespace QuanLyHocVien.Popups
 
         private void btnKiemTra_Click(object sender, EventArgs e)
         {
-            connectionString = string.Format("Data Source={0};Initial Catalog=master;", txtTenServer.Text);
-
-            if (cboKieuXacThuc.SelectedIndex == 0)
-                connectionString += "Integrated Security=True;";
-            else
-                connectionString += string.Format("User Id={0};Password={1};", txtTenDangNhap.Text, txtMatKhau.Text);
-
             try
             {
+                if (string.IsNullOrWhiteSpace(txtTenServer.Text))
+                    throw new ArgumentException("Tên đăng nhập không được trống");
+
+                connectionString = string.Format("Data Source={0};Initial Catalog=master;", txtTenServer.Text);
+
+                if (cboKieuXacThuc.SelectedIndex == 0)
+                    connectionString += "Integrated Security=True;";
+                else
+                    connectionString += string.Format("User Id={0};Password={1};", txtTenDangNhap.Text, txtMatKhau.Text);
+
+
                 cboDatabase.DataSource = GlobalSettings.GetDatabaseList(connectionString);
 
                 MessageBox.Show("Kết nối thành công!" + Environment.NewLine + "Vui lòng chọn cơ sở dữ liệu trong danh sách bên dưới.", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cboDatabase.Enabled = true;
+                btnLuuThongTin.Enabled = true;
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch
             {

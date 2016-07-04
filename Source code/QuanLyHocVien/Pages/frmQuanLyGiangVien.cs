@@ -18,6 +18,18 @@ namespace QuanLyHocVien.Pages
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Kiểm tra nhập liệu tìm kiếm có hợp lệ
+        /// </summary>
+        public void ValidateSearch()
+        {
+            if (chkMaGV.Checked && txtMaGV.Text == string.Empty)
+                throw new ArgumentException("Mã giảng viên không được trống");
+            if (chkTenGV.Checked && txtTenGV.Text == string.Empty)
+                throw new ArgumentException("Họ và tên giảng viên không được trống");
+        }
+
+        #region Events
         private void btnThem_Click(object sender, EventArgs e)
         {
             frmGiangVienEdit frm = new frmGiangVienEdit(null);
@@ -54,7 +66,7 @@ namespace QuanLyHocVien.Pages
         {
             btnDatLai_Click(sender, e);
             btnHienTatCa_Click(sender, e);
-            
+            gridGV_Click(sender, e);
         }
 
         private void btnHienTatCa_Click(object sender, EventArgs e)
@@ -65,7 +77,7 @@ namespace QuanLyHocVien.Pages
 
         private void gridGV_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            lblTongCongGV.Text = string.Format("Tổng cộng: {0} giảng viên",gridGV.Rows.Count);
+            lblTongCongGV.Text = string.Format("Tổng cộng: {0} giảng viên", gridGV.Rows.Count);
         }
 
         private void gridGV_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
@@ -109,7 +121,7 @@ namespace QuanLyHocVien.Pages
 
         private void gridLop_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            lblTongCongLop.Text = string.Format("Tổng cộng: {0} lớp",gridLop.Rows.Count);
+            lblTongCongLop.Text = string.Format("Tổng cộng: {0} lớp", gridLop.Rows.Count);
         }
 
         private void gridLop_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
@@ -125,8 +137,21 @@ namespace QuanLyHocVien.Pages
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            gridGV.DataSource = GiangVien.SelectAll(chkMaGV.Checked ? txtMaGV.Text : null,
-                chkTenGV.Checked ? txtTenGV.Text : null, chkGioiTinh.Checked ? cboGioiTinh.Text : null);
+            try
+            {
+                ValidateSearch();
+
+                gridGV.DataSource = GiangVien.SelectAll(chkMaGV.Checked ? txtMaGV.Text : null,
+                    chkTenGV.Checked ? txtTenGV.Text : null, chkGioiTinh.Checked ? cboGioiTinh.Text : null);
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -134,5 +159,6 @@ namespace QuanLyHocVien.Pages
             this.Close();
             GlobalPages.QuanLyGiangVien = null;
         }
+        #endregion
     }
 }

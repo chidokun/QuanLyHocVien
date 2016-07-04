@@ -216,7 +216,8 @@ namespace BusinessLogic
                         TenHV = p.HOCVIEN.TenHV,
                         GioiTinhHV = p.HOCVIEN.GioiTinhHV,
                         MaLop = p.MaLop,
-                        ConNo = p.PHIEUGHIDANH.ConNo
+                        ConNo = p.PHIEUGHIDANH.ConNo,
+                        MaPhieu = p.MaPhieu
                     }).ToList();
         }
     }

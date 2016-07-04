@@ -213,6 +213,7 @@
             this.dateDenNgay.Name = "dateDenNgay";
             this.dateDenNgay.Size = new System.Drawing.Size(185, 25);
             this.dateDenNgay.TabIndex = 69;
+            this.dateDenNgay.ValueChanged += new System.EventHandler(this.dateDenNgay_ValueChanged);
             // 
             // label5
             // 
@@ -412,6 +413,7 @@
             // gridLop
             // 
             this.gridLop.AllowUserToAddRows = false;
+            this.gridLop.AllowUserToResizeRows = false;
             this.gridLop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -496,9 +498,9 @@
             this.lblTongCong.AutoSize = true;
             this.lblTongCong.Location = new System.Drawing.Point(10, 240);
             this.lblTongCong.Name = "lblTongCong";
-            this.lblTongCong.Size = new System.Drawing.Size(132, 15);
+            this.lblTongCong.Size = new System.Drawing.Size(97, 15);
             this.lblTongCong.TabIndex = 13;
-            this.lblTongCong.Text = "Tổng cộng: <num> lớp";
+            this.lblTongCong.Text = "Tổng cộng: 0 lớp";
             // 
             // panel4
             // 

@@ -520,6 +520,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ApplicationIcon.ico" />
+    <None Include="Resources\ec-logo.png" />
     <None Include="Resources\remove_16x16.png" />
     <None Include="Resources\add_16x16.png" />
     <None Include="Resources\deletelist_16x16.png" />

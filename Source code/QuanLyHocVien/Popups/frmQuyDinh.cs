@@ -66,10 +66,11 @@ namespace QuanLyHocVien.Popups
                     QuyDinh.Update(new QUYDINH()
                     {
                         MaQD = i.Cells["clmMaQD"].Value.ToString(),
-                        GiaTri = Convert.ToInt16(i.Cells["clmGiaTri"].Value)
+                        GiaTri = Convert.ToInt32(i.Cells["clmGiaTri"].Value)
                     });
                 }
                 MessageBox.Show("Lưu các quy định thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GlobalSettings.LoadQuyDinh();
                 this.Close();
             }
             catch

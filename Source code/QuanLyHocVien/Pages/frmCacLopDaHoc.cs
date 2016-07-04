@@ -16,6 +16,7 @@ namespace QuanLyHocVien.Pages
             InitializeComponent();
         }
 
+        #region Events
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -24,6 +25,8 @@ namespace QuanLyHocVien.Pages
 
         private void frmCacLopDaHoc_Load(object sender, EventArgs e)
         {
+            dateTuNgay.MaxDate = dateDenNgay.MaxDate = DateTime.Now;
+
             cboKhoaHoc.DataSource = KhoaHoc.SelectAll();
             cboKhoaHoc.DisplayMember = "TenKH";
             cboKhoaHoc.ValueMember = "MaKH";
@@ -90,5 +93,11 @@ namespace QuanLyHocVien.Pages
                 lblDiemTB.Text = string.Empty;
             }
         }
+
+        private void dateDenNgay_ValueChanged(object sender, EventArgs e)
+        {
+            dateTuNgay.MaxDate = dateDenNgay.Value;
+        }
+        #endregion
     }
 }

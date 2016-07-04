@@ -17,6 +17,17 @@ namespace QuanLyHocVien.Pages
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Kiểm tra nhập liệu tìm kiếm có hợp lệ
+        /// </summary>
+        public void ValidateSearch()
+        {
+            if (chkMaNV.Checked && txtMaNV.Text == string.Empty)
+                throw new ArgumentException("Mã nhân viên không được trống");
+            if (chkTenNV.Checked && txtTenNV.Text == string.Empty)
+                throw new ArgumentException("Họ và tên nhân viên không được trống");
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -26,6 +37,7 @@ namespace QuanLyHocVien.Pages
         private void btnThem_Click(object sender, EventArgs e)
         {
             frmNhanVienEdit frm = new frmNhanVienEdit(null);
+            frm.Text = "Thêm nhân viên mới";
             frm.ShowDialog();
 
             btnHienTatCa_Click(sender, e);
@@ -81,13 +93,27 @@ namespace QuanLyHocVien.Pages
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            gridNV.DataSource = NhanVien.SelectAll(chkMaNV.Checked ? txtMaNV.Text : null,
+            try
+            {
+                ValidateSearch();
+
+                gridNV.DataSource = NhanVien.SelectAll(chkMaNV.Checked ? txtMaNV.Text : null,
                 chkTenNV.Checked ? txtTenNV.Text : null, chkLoaiNV.Checked ? cboLoaiNV.SelectedValue.ToString() : null);
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             frmNhanVienEdit frm = new frmNhanVienEdit(NhanVien.Select(gridNV.SelectedRows[0].Cells["clmMaNV"].Value.ToString()));
+            frm.Text = "Cập nhật thông tin nhân viên";
             frm.ShowDialog();
 
             btnHienTatCa_Click(sender, e);

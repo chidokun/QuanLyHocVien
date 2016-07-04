@@ -38,6 +38,15 @@ namespace QuanLyHocVien.Pages
             return diem / gridThongKe.Rows.Count;
         }
 
+        /// <summary>
+        /// Kiểm tra nhập liệu tìm kiếm có hợp lệ
+        /// </summary>
+        public void ValidateSearch()
+        {
+            if (string.IsNullOrWhiteSpace(txtMaLop.Text))
+                throw new ArgumentException("Mã lớp không được trống");
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -46,17 +55,30 @@ namespace QuanLyHocVien.Pages
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            thLop = new Thread(() =>
+            try
             {
-                object source = LopHoc.Select(txtMaLop.Text);
+                ValidateSearch();
 
-                gridLop.Invoke((MethodInvoker)delegate
+                thLop = new Thread(() =>
                 {
-                    gridLop.DataSource = source;
-                });
-            });
+                    object source = LopHoc.Select(txtMaLop.Text);
 
-            thLop.Start();
+                    gridLop.Invoke((MethodInvoker)delegate
+                    {
+                        gridLop.DataSource = source;
+                    });
+                });
+
+                thLop.Start();
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnDatLai_Click(object sender, EventArgs e)
@@ -141,8 +163,6 @@ namespace QuanLyHocVien.Pages
             frm.ReportViewer.LocalReport.SetParameters(_params);
             frm.ReportViewer.LocalReport.DisplayName = "Bảng điểm lớp";
             frm.Text = "Thống kê điểm theo lớp";
-
-
 
             frm.ShowDialog();
         }

@@ -63,6 +63,23 @@ namespace QuanLyHocVien.Popups
             };
         }
 
+        /// <summary>
+        /// Kiểm tra hợp lệ
+        /// </summary>
+        public void ValidateLuu()
+        {
+            if (string.IsNullOrWhiteSpace(txtTenGV.Text))
+                throw new ArgumentException("Họ và tên giảng viên không được trống");
+            if (string.IsNullOrWhiteSpace(txtSDT.Text))
+                throw new ArgumentException("Số điện thoại giảng viên không được trống");
+            if (string.IsNullOrWhiteSpace(txtEmail.Text))
+                throw new ArgumentException("Email giảng viên không được trống");
+            if (string.IsNullOrWhiteSpace(txtTenDangNhap.Text))
+                throw new ArgumentException("Tên đăng nhập giảng viên không được trống");
+            if (string.IsNullOrWhiteSpace(txtMatKhau.Text))
+                throw new ArgumentException("Mật khẩu giảng viên không được trống");
+        }
+
         #region Events
 
         private void btnHuyBo_Click(object sender, EventArgs e)
@@ -87,6 +104,8 @@ namespace QuanLyHocVien.Popups
         {
             try
             {
+                ValidateLuu();
+
                 if (isInsert)
                 {
                     GiangVien.Insert(LoadGiangVien(), new TAIKHOAN()
@@ -109,9 +128,13 @@ namespace QuanLyHocVien.Popups
                 }
                 this.Close();
             }
-            catch
+            catch (ArgumentException ex)
             {
-                MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

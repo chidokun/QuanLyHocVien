@@ -62,7 +62,7 @@ namespace QuanLyHocVien.Pages
         {
             txtMaHV.Text = string.Empty;
             txtHoTen.Text = string.Empty;
-            dateNgaySinh.Value = DateTime.Now;
+            dateNgaySinh.Value = dateNgaySinh.MaxDate;
             cboGioiTinh.SelectedIndex = 0;
             txtDiaChi.Text = string.Empty;
             txtSDT.Text = string.Empty;
@@ -72,6 +72,10 @@ namespace QuanLyHocVien.Pages
             txtMatKhau.Text = string.Empty;
         }
 
+        /// <summary>
+        /// Nạp học viên lên giao diện
+        /// </summary>
+        /// <param name="hv"></param>
         public void LoadPanelControl(HOCVIEN hv = null)
         {
             try
@@ -105,6 +109,10 @@ namespace QuanLyHocVien.Pages
 
         }
 
+        /// <summary>
+        /// Nạp giao diện thành học viên
+        /// </summary>
+        /// <returns></returns>
         public HOCVIEN LoadHocVien()
         {
             hocVien = new HOCVIEN()
@@ -153,6 +161,19 @@ namespace QuanLyHocVien.Pages
             th.Start();
         }
 
+        /// <summary>
+        /// Kiểm tra thông tin nhập vào có đầy đủ và hợp lệ
+        /// </summary>
+        public void ValidateLuu()
+        {
+            if (string.IsNullOrWhiteSpace(txtHoTen.Text))
+                throw new ArgumentException("Họ và tên không được trống");
+            if (string.IsNullOrWhiteSpace(txtDiaChi.Text))
+                throw new ArgumentException("Địa chỉ không được trống");
+            if (string.IsNullOrWhiteSpace(txtSDT.Text))
+                throw new ArgumentException("Số điện thoại không được trống");
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -161,6 +182,8 @@ namespace QuanLyHocVien.Pages
 
         private void frmTiepNhanHocVien_Load(object sender, EventArgs e)
         {
+            dateNgaySinh.MaxDate = DateTime.Now;
+
             LockPanelControl();
             InitializeLoaiHV();
             InitializeHocVien();          
@@ -177,6 +200,8 @@ namespace QuanLyHocVien.Pages
         {
             try
             {
+                ValidateLuu();
+
                 if (isInsert)
                 {
                     HocVien.Insert(LoadHocVien(), new TAIKHOAN()
@@ -200,9 +225,13 @@ namespace QuanLyHocVien.Pages
                     MessageBox.Show("Sửa học viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch
+            catch (ArgumentException ex)
             {
-                MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -260,6 +289,7 @@ namespace QuanLyHocVien.Pages
             else
             {
                 txtTenDangNhap.Text = txtMaHV.Text;
+                txtMatKhau.Text = txtMaHV.Text;
                 txtMatKhau.Enabled = true;
             }
         }
@@ -274,6 +304,14 @@ namespace QuanLyHocVien.Pages
         {
             lblTongCong.Text = string.Format("Tổng cộng: {0} học viên ({1} học viên chính thức và {2} học viên tiềm năng)",
                 HocVien.Count(), HocVien.CountChinhThuc(), HocVien.CountTiemNang());
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

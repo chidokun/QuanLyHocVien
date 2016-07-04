@@ -56,16 +56,16 @@ namespace BusinessLogic
         public static IQueryable<BaoCaoHocVienGhiDanh> BaoCaoHocVienGhiDanhTheoThang(int month, int year)
         {
             return from p in Database.PHIEUGHIDANHs
-                    where (p.NgayGhiDanh.Value.Month == month) &&
-                          (p.NgayGhiDanh.Value.Year == year)
-                    select new BaoCaoHocVienGhiDanh()
-                    {
-                        MaHV = p.DANGKies.MaHV,
-                        TenHV = p.DANGKies.HOCVIEN.TenHV,
-                        GioiTinhHV = p.DANGKies.HOCVIEN.GioiTinhHV,
-                        NgayGhiDanh = p.NgayGhiDanh,
-                        TenKH = p.DANGKies.KHOAHOC.TenKH
-                    };
+                   where (p.NgayGhiDanh.Value.Month == month) &&
+                         (p.NgayGhiDanh.Value.Year == year)
+                   select new BaoCaoHocVienGhiDanh()
+                   {
+                       MaHV = p.DANGKies.MaHV,
+                       TenHV = p.DANGKies.HOCVIEN.TenHV,
+                       GioiTinhHV = p.DANGKies.HOCVIEN.GioiTinhHV,
+                       NgayGhiDanh = p.NgayGhiDanh,
+                       TenKH = p.DANGKies.KHOAHOC.TenKH
+                   };
         }
 
         /// <summary>
@@ -87,12 +87,40 @@ namespace BusinessLogic
         }
 
         /// <summary>
+        /// Chọn một phiếu ghi danh
+        /// </summary>
+        /// <param name="maPhieu">Mã phiếu</param>
+        /// <returns></returns>
+        public static PHIEUGHIDANH Select(string maPhieu)
+        {
+            return (from p in Database.PHIEUGHIDANHs
+                    where p.MaPhieu == maPhieu
+                    select p).Single();
+        }
+
+        /// <summary>
         /// Thêm phiếu ghi danh
         /// </summary>
         /// <param name="p"></param>
         public static void Insert(PHIEUGHIDANH p)
         {
             Database.PHIEUGHIDANHs.InsertOnSubmit(p);
+
+            Database.SubmitChanges();
+        }
+
+        /// <summary>
+        /// Cập nhật phiếu ghi danh
+        /// </summary>
+        /// <param name="ph"></param>
+        public static void Update(PHIEUGHIDANH ph)
+        {
+            PHIEUGHIDANH pCu = Select(ph.MaPhieu);
+
+            pCu.NgayGhiDanh = ph.NgayGhiDanh;
+            pCu.DaDong = ph.DaDong;
+            pCu.ConNo = ph.ConNo;
+            pCu.MaNV = ph.MaNV;
 
             Database.SubmitChanges();
         }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTongCong = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -42,11 +42,11 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnTaoBaoCao = new System.Windows.Forms.Button();
+            this.btnXem = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dateThang = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnXem = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -107,6 +107,7 @@
             // gridBaoCao
             // 
             this.gridBaoCao.AllowUserToAddRows = false;
+            this.gridBaoCao.AllowUserToResizeRows = false;
             this.gridBaoCao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridBaoCao.BackgroundColor = System.Drawing.Color.White;
             this.gridBaoCao.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -133,8 +134,8 @@
             // clmMaHV
             // 
             this.clmMaHV.DataPropertyName = "MaHV";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle4;
             this.clmMaHV.FillWeight = 70F;
             this.clmMaHV.HeaderText = "Mã học viên";
             this.clmMaHV.Name = "clmMaHV";
@@ -219,6 +220,26 @@
             this.btnTaoBaoCao.UseVisualStyleBackColor = false;
             this.btnTaoBaoCao.Click += new System.EventHandler(this.btnTaoBaoCao_Click);
             // 
+            // btnXem
+            // 
+            this.btnXem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXem.BackColor = System.Drawing.Color.Silver;
+            this.btnXem.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnXem.FlatAppearance.BorderSize = 0;
+            this.btnXem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnXem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnXem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnXem.Image = global::QuanLyHocVien.Properties.Resources.preview_16x16;
+            this.btnXem.Location = new System.Drawing.Point(293, 4);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(83, 25);
+            this.btnXem.TabIndex = 62;
+            this.btnXem.Text = "Xem";
+            this.btnXem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXem.UseVisualStyleBackColor = false;
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -237,7 +258,7 @@
             this.dateThang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateThang.Location = new System.Drawing.Point(79, 4);
             this.dateThang.Name = "dateThang";
-            this.dateThang.Size = new System.Drawing.Size(208, 25);
+            this.dateThang.Size = new System.Drawing.Size(190, 25);
             this.dateThang.TabIndex = 42;
             // 
             // panel1
@@ -260,26 +281,6 @@
             this.label1.Size = new System.Drawing.Size(259, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "BÁO CÁO HỌC VIÊN GHI DANH THEO THÁNG";
-            // 
-            // btnXem
-            // 
-            this.btnXem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXem.BackColor = System.Drawing.Color.Silver;
-            this.btnXem.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnXem.FlatAppearance.BorderSize = 0;
-            this.btnXem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnXem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnXem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnXem.Image = global::QuanLyHocVien.Properties.Resources.preview_16x16;
-            this.btnXem.Location = new System.Drawing.Point(293, 4);
-            this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(83, 25);
-            this.btnXem.TabIndex = 62;
-            this.btnXem.Text = "Xem";
-            this.btnXem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXem.UseVisualStyleBackColor = false;
-            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // btnClose
             // 
@@ -309,6 +310,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBaoCaoHocVienTheoThang";
             this.Text = "Báo cáo học viên ghi danh theo tháng";
+            this.Load += new System.EventHandler(this.frmBaoCaoHocVienTheoThang_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

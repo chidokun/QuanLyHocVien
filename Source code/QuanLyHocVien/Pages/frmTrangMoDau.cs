@@ -4,6 +4,7 @@
 // Writing by Nguyễn Lê Hoàng Tuấn (nguyentuanit96@gmail.com)
 
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace QuanLyHocVien.Pages
@@ -18,6 +19,11 @@ namespace QuanLyHocVien.Pages
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lblTroGiup_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/chidokun/QuanLyHocVien/wiki");
         }
     }
 }

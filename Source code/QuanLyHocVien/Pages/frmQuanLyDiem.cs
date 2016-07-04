@@ -58,6 +58,16 @@ namespace QuanLyHocVien.Pages
             };
         }
 
+        /// <summary>
+        /// Kiểm tra nhập liệu tìm kiếm có hợp lệ
+        /// </summary>
+        public void ValidateSearch()
+        {
+            if (txtMaLop.Text == string.Empty)
+                throw new ArgumentException("Mã lớp không được trống");
+        }
+
+        #region Events
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -81,17 +91,30 @@ namespace QuanLyHocVien.Pages
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            thLop = new Thread(() =>
+            try
             {
-                object source = LopHoc.SelectAll(txtMaLop.Text);
+                ValidateSearch();
 
-                gridLop.Invoke((MethodInvoker)delegate
+                thLop = new Thread(() =>
                 {
-                    gridLop.DataSource = source;
-                });
-            });
+                    object source = LopHoc.SelectAll(txtMaLop.Text);
 
-            thLop.Start();
+                    gridLop.Invoke((MethodInvoker)delegate
+                    {
+                        gridLop.DataSource = source;
+                    });
+                });
+
+                thLop.Start();
+            }
+            catch(ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnDatLai_Click(object sender, EventArgs e)
@@ -187,5 +210,6 @@ namespace QuanLyHocVien.Pages
                 MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
     }
 }

@@ -18,6 +18,17 @@ namespace QuanLyHocVien.Pages
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Kiểm tra nhập liệu tìm kiếm có hợp lệ
+        /// </summary>
+        public void ValidateSearch()
+        {
+            if (chkMaHV.Checked && txtMaHV.Text == string.Empty)
+                throw new ArgumentException("Mã học viên không được trống");
+            if (chkTenHV.Checked && txtTenHV.Text == string.Empty)
+                throw new ArgumentException("Họ và tên học viên không được trống");
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -27,6 +38,7 @@ namespace QuanLyHocVien.Pages
         private void btnThem_Click(object sender, EventArgs e)
         {
             frmHocVienEdit frm = new frmHocVienEdit(null);
+            frm.Text = "Thêm học viên mới";
             frm.ShowDialog();
             btnXemTatCa_Click(sender, e);
         }
@@ -62,9 +74,13 @@ namespace QuanLyHocVien.Pages
 
         private void frmQuanLyHocVien_Load(object sender, EventArgs e)
         {
+            dateTuNgay.MaxDate = dateDenNgay.MaxDate = DateTime.Now;
+
             cboLoaiHV.DataSource = LoaiHV.SelectAll();
             cboLoaiHV.DisplayMember = "TenLoaiHV";
             cboLoaiHV.ValueMember = "MaLoaiHV";
+
+            cboGioiTinh.SelectedIndex = 0;
 
             btnXemTatCa_Click(sender, e);
         }
@@ -92,17 +108,31 @@ namespace QuanLyHocVien.Pages
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            gridDSHV.DataSource = HocVien.SelectAll(chkMaHV.Checked ? txtMaHV.Text : null,
-                chkTenHV.Checked ? txtTenHV.Text : null, 
-                chkGioiTinh.Checked ? cboGioiTinh.Text : null,
-                chkNgayTiepNhan.Checked ? (DateTime?)dateTuNgay.Value : null,
-                chkNgayTiepNhan.Checked ? (DateTime?)dateDenNgay.Value : null,
-                cboLoaiHV.SelectedValue.ToString());
+            try
+            {
+                ValidateSearch();
+
+                gridDSHV.DataSource = HocVien.SelectAll(chkMaHV.Checked ? txtMaHV.Text : null,
+                    chkTenHV.Checked ? txtTenHV.Text : null,
+                    chkGioiTinh.Checked ? cboGioiTinh.Text : null,
+                    chkNgayTiepNhan.Checked ? (DateTime?)dateTuNgay.Value : null,
+                    chkNgayTiepNhan.Checked ? (DateTime?)dateDenNgay.Value : null,
+                    cboLoaiHV.SelectedValue.ToString());
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             frmHocVienEdit frm = new frmHocVienEdit(HocVien.Select(gridDSHV.SelectedRows[0].Cells["clmMaHV"].Value.ToString()));
+            frm.Text = "Cập nhật thông tin học viên";
             frm.ShowDialog();
             btnXemTatCa_Click(sender, e);
         }
@@ -128,6 +158,11 @@ namespace QuanLyHocVien.Pages
             {
                 MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dateDenNgay_ValueChanged(object sender, EventArgs e)
+        {
+            dateTuNgay.MaxDate = dateDenNgay.Value;
         }
     }
 }
