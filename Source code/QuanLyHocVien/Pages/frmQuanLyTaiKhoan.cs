@@ -23,7 +23,7 @@ namespace QuanLyHocVien.Pages
         public void ValidateSearch()
         {
             if (chkTen.Checked && txtTen.Text == string.Empty)
-                throw new ArgumentException("Mã lớp không được trống");
+                throw new ArgumentException("Tên đăng nhập không được trống");
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -122,7 +122,7 @@ namespace QuanLyHocVien.Pages
                 });
 
                 MessageBox.Show("Cập nhật tài khoản thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnTimKiem_Click(sender, e);
+                btnXemTatCa_Click(sender, e);
             }
             catch
             {

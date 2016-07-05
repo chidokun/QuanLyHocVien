@@ -15,6 +15,7 @@ namespace QuanLyHocVien.Pages
     public partial class frmXepLop : Form
     {
         private List<DANGKY> dsChuaCoLop;
+        private List<HOCVIEN> dsLopChuaDu;
 
         public frmXepLop()
         {
@@ -34,6 +35,29 @@ namespace QuanLyHocVien.Pages
             {
                 string[] s = { i.MaHV, i.HOCVIEN.TenHV, i.MaPhieu, i.KHOAHOC.TenKH };
                 gridDSHV.Rows.Add(s);
+            }
+        }
+
+        /// <summary>
+        /// Nạp danh sách học viên của lớp lên giao diện
+        /// </summary>
+        public void LoadDSHVLopChuaDu()
+        {
+            try
+            {
+                string maLop = cboLop.SelectedValue.ToString();
+                dsLopChuaDu = BangDiem.SelectDSHV(maLop);
+
+                gridDSHVLop.Rows.Clear();
+                foreach (var i in dsLopChuaDu)
+                {
+                    string[] s = { i.MaHV, i.TenHV, i.NgaySinh.ToString(), i.GioiTinhHV, i.SdtHV, i.DiaChi, BangDiem.Select(i.MaHV, maLop).MaPhieu };
+                    gridDSHVLop.Rows.Add(s);
+                }
+            }
+            catch
+            {
+                gridDSHVLop.Rows.Clear();
             }
         }
 
@@ -58,8 +82,10 @@ namespace QuanLyHocVien.Pages
 
             //load lớp trống của khóa
             cboLop.DataSource = LopHoc.DanhSachLopTrong(cboKhoa.SelectedValue.ToString());
-            cboLop.DisplayMember = "MaLop";
+            cboLop.DisplayMember = "TenLop";
             cboLop.ValueMember = "MaLop";
+
+            LoadDSHVLopChuaDu();
 
         }
 
@@ -154,16 +180,30 @@ namespace QuanLyHocVien.Pages
 
                 foreach (DataGridViewRow i in rows)
                 {
-                    BangDiem.Insert(new BANGDIEM()
+                    bool isAdded = false;
+                    foreach(var j in dsLopChuaDu)
                     {
-                        MaHV = i.Cells["clmMaHVLop"].Value.ToString(),
-                        MaLop = cboLop.SelectedValue.ToString(),
-                        MaPhieu = i.Cells["clmMaPhieuLop"].Value.ToString(),
-                        DiemNghe = 0,
-                        DiemNoi = 0,
-                        DiemDoc = 0,
-                        DiemViet = 0
-                    });
+                        if(i.Cells["clmMaHVLop"].Value.ToString()==j.MaHV)
+                        {
+                            isAdded = true;
+                            break;
+                        }
+                    }
+
+                    if(!isAdded)
+                    {
+                        BangDiem.Insert(new BANGDIEM()
+                        {
+                            MaHV = i.Cells["clmMaHVLop"].Value.ToString(),
+                            MaLop = cboLop.SelectedValue.ToString(),
+                            MaPhieu = i.Cells["clmMaPhieuLop"].Value.ToString(),
+                            DiemNghe = 0,
+                            DiemNoi = 0,
+                            DiemDoc = 0,
+                            DiemViet = 0
+                        });
+                    }
+                    
                 }
 
                 LOPHOC lh = LopHoc.Select(cboLop.SelectedValue.ToString());
@@ -180,12 +220,20 @@ namespace QuanLyHocVien.Pages
 
                 MessageBox.Show("Đã xếp lớp thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnDatLai_Click(sender, e);
+                cboKhoa_SelectedValueChanged(sender, e);
             }
             catch
             {
                 MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void cboLop_SelectedValueChanged(object sender, EventArgs e)
+        {
+            LoadDSHVLopChuaDu();
+        }
+
         #endregion
+
+
     }
 }

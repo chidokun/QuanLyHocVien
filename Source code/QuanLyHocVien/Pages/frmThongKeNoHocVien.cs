@@ -53,12 +53,12 @@ namespace QuanLyHocVien.Pages
 
         private void gridBaoCao_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            lblTongCong.Text = string.Format("Tổng cộng: {0} học viên còn nợ. Tổng nợ: {1} VNĐ",gridBaoCao.Rows.Count,TongNo());
+            lblTongCong.Text = string.Format("Tổng cộng: {0} học viên còn nợ. Tổng nợ: {1:C0}",gridBaoCao.Rows.Count,TongNo());
         }
 
         private void gridBaoCao_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
-            lblTongCong.Text = string.Format("Tổng cộng: {0} học viên còn nợ. Tổng nợ: {1} VNĐ", gridBaoCao.Rows.Count, TongNo());
+            lblTongCong.Text = string.Format("Tổng cộng: {0} học viên còn nợ. Tổng nợ: {1:C0}", gridBaoCao.Rows.Count, TongNo());
         }
 
         private void btnClose_Click(object sender, EventArgs e)

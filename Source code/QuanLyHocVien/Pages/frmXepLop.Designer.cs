@@ -407,6 +407,7 @@
             this.cboLop.Name = "cboLop";
             this.cboLop.Size = new System.Drawing.Size(215, 25);
             this.cboLop.TabIndex = 67;
+            this.cboLop.SelectedValueChanged += new System.EventHandler(this.cboLop_SelectedValueChanged);
             // 
             // label4
             // 

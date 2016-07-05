@@ -98,6 +98,7 @@ namespace BusinessLogic
                     select p).Single();
         }
 
+
         /// <summary>
         /// Thêm phiếu ghi danh
         /// </summary>

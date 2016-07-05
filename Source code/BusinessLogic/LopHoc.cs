@@ -37,7 +37,7 @@ namespace BusinessLogic
         public static object SelectAll(string maLop, string tenLop, string maKH, DateTime? tuNgay, DateTime? denNgay, bool? dangMo)
         {
             return (from p in Database.LOPHOCs
-                    where (maLop==null?true:p.MaLop.Contains(maLop))&&
+                    where (maLop == null ? true : p.MaLop.Contains(maLop)) &&
                           (tenLop == null ? true : p.TenLop.Contains(tenLop)) &&
                           (maKH == null ? true : p.MaKH == maKH) &&
                           (tuNgay == null ? true : p.NgayBD <= tuNgay) &&
@@ -100,7 +100,10 @@ namespace BusinessLogic
         public static object DanhSachLopTrong(string maKhoa)
         {
             return (from p in Database.LOPHOCs
-                    where p.SiSo == 0 && p.MaKH == maKhoa
+                    where p.MaKH == maKhoa &&
+                            p.SiSo < (from q in Database.QUYDINHs
+                                      where q.MaQD == "QD0000"
+                                      select q.GiaTri).Single()
                     select new
                     {
                         MaLop = p.MaLop,

@@ -6,6 +6,7 @@
 using System.Linq;
 using DataAccess;
 using static BusinessLogic.GlobalSettings;
+using System.Collections.Generic;
 
 namespace BusinessLogic
 {
@@ -29,7 +30,7 @@ namespace BusinessLogic
         /// <param name="tenDangNhap">Theo tên đăng nhập</param>
         /// <param name="loaiTK">Theo loại tài khoản (0: Nhân viên, 1: Học viên, 2: Giảng viên)</param>
         /// <returns></returns>
-        public static object SelectAll(string tenDangNhap, UserType? loaiTK)
+        public static List<TAIKHOAN> SelectAll(string tenDangNhap, UserType? loaiTK)
         {
             switch (loaiTK)
             {
@@ -40,28 +41,16 @@ namespace BusinessLogic
                 case UserType.NhanVien:
                     return (from p in Database.NHANVIENs
                             where (tenDangNhap == null ? true : p.TenDangNhap.Contains(tenDangNhap))
-                            select new
-                            {
-                                TenDangNhap = p.TenDangNhap,
-                                MatKhau = p.TAIKHOAN.MatKhau
-                            }).ToList();
+                            select p.TAIKHOAN).ToList();
                 case UserType.HocVien:
                     return (from p in Database.HOCVIENs
                             where p.TenDangNhap != null &&
                                   (tenDangNhap == null ? true : p.TenDangNhap.Contains(tenDangNhap))
-                            select new
-                            {
-                                TenDangNhap = p.TenDangNhap,
-                                MatKhau = p.TAIKHOAN.MatKhau
-                            }).ToList();
+                            select p.TAIKHOAN).ToList();
                 case UserType.GiangVien:
                     return (from p in Database.GIANGVIENs
                             where (tenDangNhap == null ? true : p.TenDangNhap.Contains(tenDangNhap))
-                            select new
-                            {
-                                TenDangNhap = p.TenDangNhap,
-                                MatKhau = p.TAIKHOAN.MatKhau
-                            }).ToList();
+                            select p.TAIKHOAN).ToList();
                 default:
                     return null;
             }

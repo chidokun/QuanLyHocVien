@@ -7,6 +7,7 @@ using System.Linq;
 using DataAccess;
 using static BusinessLogic.GlobalSettings;
 using System;
+using System.Collections.Generic;
 
 namespace BusinessLogic
 {
@@ -94,16 +95,11 @@ namespace BusinessLogic
         /// </summary>
         /// <param name="maLop">Mã lớp</param>
         /// <returns></returns>
-        public static object SelectDSHV(string maLop)
+        public static List<HOCVIEN> SelectDSHV(string maLop)
         {
             return (from p in Database.BANGDIEMs
                     where p.MaLop == maLop
-                    select new
-                    {
-                        MaHV = p.MaHV,
-                        TenHV = p.HOCVIEN.TenHV,
-                        GioiTinhHV = p.HOCVIEN.GioiTinhHV
-                    }).ToList();
+                    select p.HOCVIEN).ToList();
         }
 
         /// <summary>

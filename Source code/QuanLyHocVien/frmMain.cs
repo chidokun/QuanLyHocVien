@@ -11,6 +11,8 @@ using DataAccess;
 using QuanLyHocVien.Pages;
 using QuanLyHocVien.Popups;
 using System.Diagnostics;
+using System.Threading;
+using System.Globalization;
 
 namespace QuanLyHocVien
 {
@@ -18,7 +20,9 @@ namespace QuanLyHocVien
     {
         public frmMain()
         {
-            InitializeComponent();                   
+            InitializeComponent();
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("vi-VN");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("vi-VN");
         }
 
         #region Ribbon bar

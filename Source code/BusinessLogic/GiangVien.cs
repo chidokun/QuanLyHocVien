@@ -59,7 +59,12 @@ namespace BusinessLogic
         /// <param name="taiKhoan">Tài khoản</param>
         public static void Insert(GIANGVIEN giangVien, TAIKHOAN taiKhoan)
         {
-            Database.TAIKHOANs.InsertOnSubmit(taiKhoan);
+            var f = TaiKhoan.SelectAll(taiKhoan.TenDangNhap, UserType.GiangVien);
+
+            if (f.Count > 0)
+                throw new Exception("Tên tài khoản đã tồn tại");
+            else
+                Database.TAIKHOANs.InsertOnSubmit(taiKhoan);
             Database.GIANGVIENs.InsertOnSubmit(giangVien);
             Database.SubmitChanges();
         }
